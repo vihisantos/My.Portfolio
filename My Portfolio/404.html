@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>404 — Página não encontrada</title>
+<meta name="description" content="A página que você procura não foi encontrada." />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#5A2A27" />
+<style>
+:root{
+--g-primary-start:#5A2A27; --g-primary-end:#9A4D42;
+--accent-gold:#D9A24A; --muted-ivory:#F7F6F5; --charcoal:#1F1F20;
+--text:#f6f6f6; --bg:#1F1F20;
+--radius-lg:16px; --radius-md:12px; --radius-sm:8px;
+--shadow-md:0 8px 24px rgba(0,0,0,.28);
+--transition:260ms cubic-bezier(.2,.8,.2,1);
+}
+@media (prefers-color-scheme: light){
+:root{ --text:#1F1F20; --bg:#F7F6F5; }
+}
+*{box-sizing:border-box}
+html{height:100%}
+body{
+margin:0; min-height:100%;
+color:var(--text); background:var(--bg);
+font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+line-height:1.6;
+display:grid; place-items:center;
+}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent-gold); outline-offset:3px}
+.skip{position:absolute; left:0; top:-40px; background:#fff; color:#000; padding:.5rem 1rem; z-index:10}
+.skip:focus{top:0}
+.page{
+position:relative; width:min(960px,92vw); margin:auto;
+border-radius:var(--radius-lg);
+overflow:hidden;
+box-shadow:var(--shadow-md);
+}
+.hero{
+position:relative; padding:3.5rem 1.5rem;
+background:linear-gradient(135deg,var(--g-primary-start),var(--g-primary-end));
+isolation:isolate;
+}
+.gloss{
+position:absolute; inset:0; pointer-events:none; mix-blend-mode:screen;
+background:radial-gradient(1000px 300px at 30% -10%, rgba(255,255,255,.24), transparent 60%);
+}
+.blob{
+position:absolute; inset:0; opacity:.18; filter:blur(8px);
+background:
+radial-gradient(60% 40% at 70% 20%, rgba(255,255,255,.35), transparent 60%),
+radial-gradient(40% 30% at 20% 80%, rgba(0,0,0,.25), transparent 60%);
+animation: float 12s ease-in-out infinite alternate;
+}
+@keyframes float{ to{ transform:translateY(-8px) translateX(6px) } }
+.content{
+position:relative; z-index:1; text-align:center; color:#fff;
+}
+.code{
+font-size: clamp(3rem, 12vw, 9rem);
+line-height:1; margin:0 0 .5rem;
+font-weight:800; letter-spacing:.04em;
+background:linear-gradient(135deg,#fff, #ffe7c2 40%, #fff);
+-webkit-background-clip:text; background-clip:text; color:transparent;
+text-shadow: 0 8px 40px rgba(0,0,0,.35);
+}
+.subtitle{
+font-size:clamp(1rem,2.6vw,1.35rem); opacity:.95; margin:0 auto 1rem; max-width:60ch;
+}
+.card{
+margin:1.25rem auto 0; width:min(760px,92%);
+background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+border:1px solid rgba(255,255,255,.16);
+backdrop-filter:blur(8px);
+border-radius:var(--radius-lg);
+padding:1rem;
+color:#fff;
+}
+.actions{
+display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; margin-top:.5rem;
+}
+.btn{
+display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+padding:.7rem 1.1rem; border-radius:12px; border:1px solid transparent;
+cursor:pointer; transition:transform .16s ease, box-shadow .16s ease, background var(--transition);
+}
+.btn:hover{ transform:translateY(-1px) }
+.btn-primary{
+color:#1f1f1f;
+background:linear-gradient(135deg, var(--accent-gold), #ffd27a);
+box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 10px 24px rgba(0,0,0,.25);
+}
+.btn-outline{
+color:#fff; background:transparent; border-color:rgba(255,255,255,.5);
+}
+.small{
+font-size:.9rem; opacity:.85; margin-top:.5rem;
+}
+footer{
+color:#fff; text-align:center; padding:1rem; font-size:.85rem;
+background:linear-gradient(135deg, rgba(0,0,0,.25), rgba(0,0,0,.15));
+}
+.brand{
+position:absolute; inset:auto 1rem 1rem auto;
+display:inline-flex; align-items:center; gap:.5rem;
+padding:.4rem .6rem; border-radius:10px;
+background:rgba(0,0,0,.28); color:#fff; border:1px solid rgba(255,255,255,.18);
+text-decoration:none; font-weight:600;
+}
+.brand-badge{ width:20px; height:20px; border-radius:50%;
+background:linear-gradient(135deg,var(--g-primary-start),var(--g-primary-end));
+box-shadow: inset 0 0 0 3px rgba(255,255,255,.3);
+}
+@media (prefers-reduced-motion: reduce){
+*{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<main id="conteudo" class="page" role="main" aria-labelledby="titulo-404">
+<section class="hero" aria-label="Página não encontrada">
+<span class="gloss" aria-hidden="true"></span>
+<span class="blob" aria-hidden="true"></span>
+
+<a class="brand" href="#" id="home-brand" aria-label="Voltar à página inicial">
+<span class="brand-badge" aria-hidden="true"></span>
+<span>Início</span>
+</a>
+
+<div class="content">
+<h1 id="titulo-404" class="code">404</h1>
+<p class="subtitle">Ops! A página que você tentou acessar não existe, foi movida ou está temporariamente indisponível.</p>
+<div class="card" role="note">
+<p style="margin:.25rem 0">Você pode voltar para a Home ou explorar os projetos.</p>
+<div class="actions">
+<a id="home-link" class="btn btn-primary">Voltar para Home</a>
+<a id="projects-link" class="btn btn-outline">Ver Projetos</a>
+</div>
+<p class="small">Se o problema persistir, atualize a página ou limpe o cache.</p>
+</div>
+</div>
+</section>
+<footer>
+© <span id="ano"></span> Seu Nome
+</footer> </main>
+
+<script>
+// Define links para Home/Projetos de forma robusta no GitHub Pages (repo path ou raiz)
+(function(){
+var segs = location.pathname.split('/').filter(Boolean);
+// Para GitHub Pages de projeto: /usuario.github.io/repositorio/... => base = /repositorio/
+// Para domínio próprio ou user page: base = /
+var base = '/';
+// heurística: se a página 404 estiver servindo em um caminho com pelo menos 1 segmento e
+// o primeiro segmento for o nome do repositório, usar esse segmento como base.
+// Não temos como saber o nome do repo aqui, então tentamos duas opções com fallback.
+var candidates = [];
+if (segs.length > 0) candidates.push('/' + segs[0] + '/');
+candidates.push('/');
+
+function setLinks(target){
+document.getElementById('home-link').setAttribute('href', target);
+document.getElementById('home-brand').setAttribute('href', target);
+document.getElementById('projects-link').setAttribute('href', target + '#projects');
+}
+
+// Tenta encontrar a base válida checando a existência de index.html
+(function tryBases(i){
+if (i >= candidates.length) { setLinks('/'); return; }
+var candidate = candidates[i];
+fetch(candidate + 'index.html', { method:'HEAD', mode:'no-cors' })
+.then(function(){ setLinks(candidate); })
+.catch(function(){ tryBases(i+1); });
+})(0);
+
+document.getElementById('ano').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

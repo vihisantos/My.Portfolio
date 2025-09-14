@@ -15,7 +15,11 @@ to { transform: scale(4); opacity: 0; }
 .typing::after { content: "▋"; margin-left: 4px; animation: caret 1s steps(1) infinite; }
 @keyframes caret { 50% { opacity: 0; } }
 
-@media (prefers-reduced-motion: reduce) {
-
-{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) {{animation: none !important; transition: none !important; scroll-behavior: auto !important; }}
+.skip-to-content:focus { top: 0; padding: .5rem 1rem; z-index: 1000; }
+@media (max-width: 600px) {
+.section-header { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 400px) {
+.nav-toggle-bar { width: 18px; height: 2px; margin: 3px 0; }
 }
