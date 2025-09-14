@@ -1,0 +1,23 @@
+:root[data-theme="light"] {
+--text: #1f1f1f;
+--bg: #F7F6F5;
+}
+:root[data-theme="dark"] {
+--text: #f6f6f6;
+--bg: #1F1F20;
+--glass: rgba(30,30,30,0.28);
+}
+@media (prefers-color-scheme: dark) {
+:root:not([data-theme]) { --text: #f6f6f6; --bg: #1F1F20; }
+}
+/* gradient glossy */
+.hero {
+background: linear-gradient(135deg, var(--g-primary-start), var(--g-primary-end));
+position: relative;
+overflow: hidden;
+}
+.hero-gloss {
+position: absolute; inset: 0;
+background: radial-gradient(1000px 300px at 30% -10%, rgba(255,255,255,.24), transparent 60%);
+mix-blend-mode: screen; pointer-events: none;
+}

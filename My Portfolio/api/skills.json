@@ -1,0 +1,26 @@
+{
+"frontend": [
+{ "name": "HTML5", "logo": "/assets/icons/external.svg", "level": 90, "desc": "Semântica, SEO e acessibilidade.", "projects": ["proj-1"] },
+{ "name": "CSS3", "logo": "/assets/icons/external.svg", "level": 85, "desc": "Layouts responsivos, Flex/Grid.", "projects": ["proj-1"] },
+{ "name": "JavaScript", "logo": "/assets/icons/external.svg", "level": 88, "desc": "ES6+, módulos e performance.", "projects": ["proj-1"] },
+{ "name": "TypeScript", "logo": "/assets/icons/external.svg", "level": 80, "desc": "Tipagem e DX.", "projects": ["proj-1"] },
+{ "name": "React", "logo": "/assets/icons/external.svg", "level": 82, "desc": "Hooks e estado.", "projects": ["proj-1"] },
+{ "name": "Vue", "logo": "/assets/icons/external.svg", "level": 65, "desc": "SFC e reatividade.", "projects": [] }
+],
+"backend": [
+{ "name": "Node.js", "logo": "/assets/icons/external.svg", "level": 82, "desc": "APIs escaláveis.", "projects": ["proj-1"] },
+{ "name": "Express", "logo": "/assets/icons/external.svg", "level": 78, "desc": "REST APIs.", "projects": ["proj-1"] },
+{ "name": "Python", "logo": "/assets/icons/external.svg", "level": 88, "desc": "Automação e web.", "projects": ["proj-2"] },
+{ "name": "Django", "logo": "/assets/icons/external.svg", "level": 70, "desc": "Apps completos.", "projects": [] },
+{ "name": "Flask", "logo": "/assets/icons/external.svg", "level": 72, "desc": "Microserviços.", "projects": [] },
+{ "name": "PostgreSQL", "logo": "/assets/icons/external.svg", "level": 75, "desc": "Consultas e índices.", "projects": ["proj-1"] }
+],
+"data": [
+{ "name": "Pandas", "logo": "/assets/icons/external.svg", "level": 85, "desc": "ETL e análise.", "projects": ["proj-2"] },
+{ "name": "NumPy", "logo": "/assets/icons/external.svg", "level": 82, "desc": "Cálculo numérico.", "projects": ["proj-2"] },
+{ "name": "PyTorch", "logo": "/assets/icons/external.svg", "level": 70, "desc": "Modelos deep.", "projects": ["proj-2"] },
+{ "name": "TensorFlow", "logo": "/assets/icons/external.svg", "level": 65, "desc": "Prod. ML.", "projects": [] },
+{ "name": "scikit-learn", "logo": "/assets/icons/external.svg", "level": 78, "desc": "ML clássico.", "projects": ["proj-2"] },
+{ "name": "SQL", "logo": "/assets/icons/external.svg", "level": 80, "desc": "Joins e otimização.", "projects": ["proj-1","proj-2"] }
+]
+}

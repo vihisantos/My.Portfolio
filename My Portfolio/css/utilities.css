@@ -1,0 +1,21 @@
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+.hidden { display: none !important; }
+.section-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.nav-toggle-bar { width: 22px; height: 2px; background: currentColor; display: block; margin: 4px 0; }
+.ripple { position: relative; overflow: hidden; }
+.ripple::after {
+content: ""; position: absolute; border-radius: 50%; transform: scale(0);
+background: rgba(255,255,255,.35); animation: none; pointer-events: none;
+}
+.ripple:active::after { animation: ripple .6s ease-out; }
+@keyframes ripple {
+to { transform: scale(4); opacity: 0; }
+}
+.typing { display: inline-block; color: #fff; }
+.typing::after { content: "▋"; margin-left: 4px; animation: caret 1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+
+{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,349 @@
+<!doctype html>
+
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfólio | Vitor Santos</title>
+<meta name="description" content="Portfolio moderno e responsivo de Desenvolvedor(a) Full-Stack." />
+<meta name="theme-color" content="#5A2A27" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="icon" href="/assets/icons/external.svg" />
+<link rel="preload" href="/assets/fonts/GASDRIFO.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/theme.css" />
+<link rel="stylesheet" href="/css/layout.css" />
+<link rel="stylesheet" href="/css/components.css" />
+<link rel="stylesheet" href="/css/utilities.css" />
+<meta property="og:title" content="Portfólio | Vitor Santos" />
+<meta property="og:description" content="Portfolio moderno e responsivo de Desenvolvedor(a) Full-Stack." />
+<meta property="og:type" content="website" />
+</head>
+<body>
+<a class="skip-to-content" href="#main-content">Pular para o conteúdo</a>
+
+<header class="main-header" role="banner">
+<nav class="main-nav" aria-label="Primária">
+<a class="brand" href="#" aria-label="Página inicial">
+<span class="brand-logo" aria-hidden="true"></span>
+<span class="brand-text">Vitor Santos</span>
+</a>
+<button class="btn-icon nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+<span class="nav-toggle-bar" aria-hidden="true"></span>
+<span class="nav-toggle-bar" aria-hidden="true"></span>
+<span class="nav-toggle-bar" aria-hidden="true"></span>
+</button>
+<ul id="nav-menu" class="nav-menu">
+<li><a href="#projects" class="nav-link">Projetos</a></li>
+<li><a href="#about" class="nav-link">Sobre</a></li>
+<li><a href="#contact" class="nav-link">Contato</a></li>
+<li><a href="#admin" class="nav-link">Admin</a></li>
+<li>
+<button id="theme-toggle" class="btn-icon" aria-label="Alternar tema">
+<span class="theme-icon sun" aria-hidden="true"></span>
+<span class="theme-icon moon" aria-hidden="true"></span>
+</button>
+</li>
+</ul>
+</nav>
+</header>
+
+<main id="main-content">
+<section class="hero" id="hero" aria-label="Hero">
+<div class="hero-gloss" aria-hidden="true"></div>
+<canvas id="liquid-canvas" class="liquid-canvas" aria-hidden="true"></canvas>
+
+<div class="hero-content container">
+<h1 class="hero-title">
+<span id="typing" class="typing" data-text='Seja bem vindo ao meu portfolio' aria-live="polite"></span>
+<button id="skip-typing" class="btn-link sr-only">Pular animação</button>
+</h1>
+
+<p class="hero-subtitle">Desenvolvedor(a) Full-Stack focado em performance, acessibilidade e UX.</p>
+
+<div class="hero-ctas">
+<a href="#projects" class="btn btn-primary ripple">Projetos</a>
+<a href="#about" class="btn btn-outline">Sobre</a>
+<a href="#contact" class="btn btn-accent">Contato</a>
+</div>
+</div>
+
+<figure class="hero-avatar-wrap">
+<img
+id="hero-avatar"
+src="/assets/images/avatar.webp"
+alt="Foto de perfil"
+class="hero-avatar"
+width="320" height="320"
+loading="eager" decoding="async" />
+</figure>
+</section>
+
+<section id="about" class="section about-section">
+<div class="container grid-2">
+<aside class="personal-logo" aria-hidden="true">
+<div class="logo-circle"></div>
+</aside>
+<div>
+<h2>Sobre mim</h2>
+<p>Sou Full-Stack com experiência em produtos escaláveis, APIs seguras e interfaces acessíveis. Gosto de transformar ideias em soluções reais com foco em resultado e qualidade.</p>
+<div class="skills-cards">
+<button class="card skill-card" data-modal="modal-frontend" aria-haspopup="dialog">
+<h3>Frontend</h3>
+<p>React, TypeScript, acessibilidade e performance.</p>
+</button>
+<button class="card skill-card" data-modal="modal-backend" aria-haspopup="dialog">
+<h3>Backend</h3>
+<p>Node.js, Python, Postgres e arquiteturas robustas.</p>
+</button>
+<button class="card skill-card" data-modal="modal-data" aria-haspopup="dialog">
+<h3>Dados / AI</h3>
+<p>ETL, ML e experimentos com PyTorch/TensorFlow.</p>
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Modais de habilidades -->
+<div id="modal-frontend" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-frontend-title" aria-describedby="modal-frontend-desc" hidden>
+<div class="modal-content card" role="document">
+<button class="modal-close btn-icon" data-close aria-label="Fechar">
+<img src="/assets/icons/close.svg" alt="" aria-hidden="true" />
+</button>
+<h3 id="modal-frontend-title">Habilidades Frontend</h3>
+<p id="modal-frontend-desc">Tecnologias, níveis e projetos relacionados.</p>
+<div class="skills-list" data-skill-category="frontend"></div>
+</div>
+</div>
+
+<div id="modal-backend" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-backend-title" aria-describedby="modal-backend-desc" hidden>
+<div class="modal-content card">
+<button class="modal-close btn-icon" data-close aria-label="Fechar">
+<img src="/assets/icons/close.svg" alt="" aria-hidden="true" />
+</button>
+<h3 id="modal-backend-title">Habilidades Backend</h3>
+<p id="modal-backend-desc">Tecnologias, níveis e projetos relacionados.</p>
+<div class="skills-list" data-skill-category="backend"></div>
+</div>
+</div>
+
+<div id="modal-data" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-data-title" aria-describedby="modal-data-desc" hidden>
+<div class="modal-content card">
+<button class="modal-close btn-icon" data-close aria-label="Fechar">
+<img src="/assets/icons/close.svg" alt="" aria-hidden="true" />
+</button>
+<h3 id="modal-data-title">Habilidades Dados / AI</h3>
+<p id="modal-data-desc">Tecnologias, níveis e projetos relacionados.</p>
+<div class="skills-list" data-skill-category="data"></div>
+</div>
+</div>
+
+<section id="projects" class="section projects-section">
+<div class="container">
+<header class="section-header">
+<h2>Projetos</h2>
+<div class="projects-controls">
+<input id="project-search" class="input" type="search" placeholder="Buscar projetos..." aria-label="Buscar projetos" />
+<select id="project-filter" class="select" aria-label="Filtrar por tag">
+<option value="all">Todas as tags</option>
+<option value="frontend">Frontend</option>
+<option value="backend">Backend</option>
+<option value="ai">AI</option>
+</select>
+</div>
+</header>
+<div id="projects-grid" class="projects-grid" role="list"></div>
+<div class="projects-actions">
+<button id="load-more" class="btn btn-outline">Carregar mais</button>
+</div>
+</div>
+</section>
+
+<!-- Modal de Projeto -->
+<div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" aria-describedby="project-modal-desc" hidden>
+<div class="modal-content card project-modal-content">
+<button class="modal-close btn-icon" data-close aria-label="Fechar">
+<img src="/assets/icons/close.svg" alt="" aria-hidden="true" />
+</button>
+<h3 id="project-modal-title">Detalhes do Projeto</h3>
+<div id="project-modal-desc" class="project-modal-body">
+<div class="carousel" aria-roledescription="carousel">
+<div class="carousel-track" id="carousel-track"></div>
+<button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+<button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
+</div>
+<div class="project-info">
+<p class="project-description"></p>
+<ul class="project-tags"></ul>
+<div class="project-links">
+<a class="btn btn-accent" target="_blank" rel="noopener noreferrer" id="project-live">Live</a>
+<a class="btn btn-outline" target="_blank" rel="noopener noreferrer" id="project-github">GitHub</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<section id="contact" class="section contact-section">
+<div class="container">
+<h2>Contato</h2>
+<form id="contact-form" class="contact-form card" method="POST" action="https://formspree.io/f/your-id" enctype="multipart/form-data" novalidate>
+<div class="form-row">
+<div class="form-group">
+<label for="name">Nome</label>
+<input id="name" name="name" type="text" class="input glass-input" placeholder="Seu nome" required />
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input id="email" name="email" type="email" class="input glass-input" placeholder="seu@email.com" required />
+</div>
+</div>
+<div class="form-row">
+<div class="form-group full">
+<label for="subject">Assunto</label>
+<input id="subject" name="subject" type="text" class="input glass-input" placeholder="Assunto" required />
+</div>
+</div>
+<div class="form-row">
+<div class="form-group full">
+<label for="message">Mensagem</label>
+<textarea id="message" name="message" class="textarea glass-input" placeholder="Escreva sua mensagem..." rows="5" required></textarea>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="file">Anexar arquivo (opcional)</label>
+<input id="file" name="file" type="file" class="input-file" aria-describedby="file-help" />
+<small id="file-help">Max 5MB. Tipos: PDF, PNG, JPG.</small>
+</div>
+<div class="form-group consent">
+<label class="checkbox">
+<input id="consent" name="consent" type="checkbox" required />
+<span>Aceito o tratamento de dados conforme a LGPD.</span>
+</label>
+</div>
+</div>
+<button class="btn btn-primary ripple" type="submit">Enviar</button>
+<p class="form-status" role="status" aria-live="polite"></p>
+</form>
+</div>
+</section>
+
+<section id="admin" class="section admin-section">
+<div class="container">
+<h2>Admin / Deploy Log</h2>
+
+<div id="auth-area" class="card auth-area">
+<form id="login-form" class="login-form">
+<div class="form-row">
+<div class="form-group">
+<label for="login-email">Email</label>
+<input id="login-email" type="email" class="input" required />
+</div>
+<div class="form-group">
+<label for="login-password">Senha</label>
+<input id="login-password" type="password" class="input" required />
+</div>
+</div>
+<button class="btn btn-primary">Entrar</button>
+<small>Dica: mock localStorage. Integração com Firebase no README.</small>
+</form>
+</div>
+
+<div id="admin-panel" class="admin-panel card" hidden>
+<div class="admin-header">
+<div class="user-info">
+<span id="current-user" aria-live="polite"></span>
+</div>
+<button id="logout" class="btn btn-outline">Sair</button>
+</div>
+<form id="update-form" class="update-form">
+<div class="form-row">
+<div class="form-group">
+<label for="project-select">Projeto</label>
+<select id="project-select" class="select"></select>
+</div>
+<div class="form-group">
+<label for="spent-time">Tempo gasto (hh:mm)</label>
+<input id="spent-time" class="input" type="text" placeholder="1:30" pattern="^\\d{1,2}:([0-5]\\d)$" required />
+</div>
+<div class="form-group">
+<label for="satisfaction">Satisfação</label>
+<div class="stars" id="satisfaction" role="radiogroup" aria-label="Nível de satisfação">
+<button type="button" class="star" data-value="1" aria-label="1 estrela">★</button>
+<button type="button" class="star" data-value="2" aria-label="2 estrelas">★</button>
+<button type="button" class="star" data-value="3" aria-label="3 estrelas">★</button>
+<button type="button" class="star" data-value="4" aria-label="4 estrelas">★</button>
+<button type="button" class="star" data-value="5" aria-label="5 estrelas">★</button>
+</div>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group full">
+<label for="change-desc">Descrição da alteração</label>
+<textarea id="change-desc" class="textarea" rows="3" required></textarea>
+</div>
+</div>
+<button class="btn btn-accent ripple">Registrar / Enviar</button>
+</form>
+
+<div class="table-controls">
+<input id="updates-search" class="input" type="search" placeholder="Buscar no histórico..." />
+<select id="updates-sort" class="select">
+<option value="date-desc">Mais recentes</option>
+<option value="date-asc">Mais antigos</option>
+<option value="time-desc">Maior tempo</option>
+<option value="time-asc">Menor tempo</option>
+</select>
+<button id="export-csv" class="btn btn-outline">Exportar CSV</button>
+</div>
+
+<div class="table-wrap">
+<table class="table" aria-label="Histórico de alterações">
+<thead>
+<tr>
+<th>Data</th>
+<th>Projeto</th>
+<th>Tempo</th>
+<th>Satisfação</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody id="updates-tbody"></tbody>
+</table>
+</div>
+</div>
+</div>
+</section> </main>
+
+<footer class="main-footer">
+<div class="container footer-content">
+<div class="social">
+<a class="social-link" href="https://github.com/seuusuario" target="_blank" rel="noopener" aria-label="GitHub">
+<img src="/assets/icons/github.svg" alt="" aria-hidden="true" />
+<span class="tooltip" role="tooltip">GitHub</span>
+</a>
+<a class="social-link" href="https://www.linkedin.com/in/seuusuario" target="_blank" rel="noopener" aria-label="LinkedIn">
+<img src="/assets/icons/linkedin.svg" alt="" aria-hidden="true" />
+<span class="tooltip" role="tooltip">LinkedIn</span>
+</a>
+<a class="social-link" href="https://twitter.com/seuusuario" target="_blank" rel="noopener" aria-label="Twitter">
+<img src="/assets/icons/twitter.svg" alt="" aria-hidden="true" />
+<span class="tooltip" role="tooltip">Twitter</span>
+</a>
+</div>
+<div class="footer-right">
+<button id="theme-toggle-footer" class="btn btn-outline">Tema</button>
+<small>© <span id="year"></span> Seu Nome. Todos os direitos reservados.</small>
+</div>
+</div>
+</footer>
+
+<div id="toast-region" class="toast-region" role="region" aria-live="polite" aria-atomic="true"></div>
+
+<script type="module" src="/js/main.js" defer></script>
+</body>
+</html>

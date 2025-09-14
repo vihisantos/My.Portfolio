@@ -1,0 +1,10 @@
+[
+{
+"id": "u-1",
+"date": "2025-01-15T14:30:00.000Z",
+"projectId": "proj-1",
+"time": "1:45",
+"satisfaction": 4,
+"desc": "Ajuste de performance e lazy load de gráficos."
+}
+]
