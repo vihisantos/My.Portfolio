@@ -1,7 +1,7 @@
-import { qs, qsa, escapeHTML } from './utils.js';
-import { openModal } from './modals.js';
-import { initCarousel } from './carousel.js';
-import { storage } from './storage.js';
+import { qs, qsa, escapeHTML } from 'utils.js';
+import { openModal } from 'modals.js';
+import { initCarousel } from 'carousel.js';
+import { storage } from 'storage.js';
 
 const PAGE_SIZE = 6;
 let allProjects = [];
