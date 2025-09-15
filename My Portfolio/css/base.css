@@ -50,7 +50,7 @@ font-display: swap;
 
 /* Reset e base */
 
-{ box-sizing: border-box; }
+* { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 /* Se JS estiver desabilitado, evita smooth para foco mais previsível */
 html.no-js { scroll-behavior: auto !important; }
