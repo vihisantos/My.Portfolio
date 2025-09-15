@@ -2,7 +2,7 @@ const CACHE_NAME = 'portfolio-cache-v12';
 
 const ASSETS = [
 // Shell
-'My.Portfolio/index.html',
+'index.html',
 '404.html',
 'manifest.webmanifest',
 
