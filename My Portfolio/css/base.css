@@ -35,14 +35,14 @@
 /* Fontes locais (paths relativos para GitHub Pages) */
 @font-face {
 font-family: "GASDRIFO";
-src: url("assets/fonts/GASDRIFO.woff2") format("woff2");
+src: url("../assets/fonts/GASDRIFO.woff2") format("woff2");
 font-weight: 700;
 font-style: normal;
 font-display: swap;
 }
 @font-face {
 font-family: "Inter";
-src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+src: url("../assets/fonts/Inter-Variable.woff2") format("woff2");
 font-weight: 100 900;
 font-style: normal;
 font-display: swap;
