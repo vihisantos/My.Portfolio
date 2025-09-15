@@ -182,6 +182,11 @@ loading="eager" decoding="async" />
 <a class="btn btn-accent" target="_blank" rel="noopener noreferrer" id="project-live">Live</a>
 <a class="btn btn-outline" target="_blank" rel="noopener noreferrer" id="project-github">GitHub</a>
 </div>
+<!-- Timeline de updates -->
+<div class="project-timeline">
+<h4>Timeline de updates</h4>
+<ul class="timeline-list"></ul>
+</div>
 </div>
 </div>
 </div>
@@ -319,31 +324,79 @@ loading="eager" decoding="async" />
 </div>
 </section> </main>
 
-<footer class="main-footer">
-<div class="container footer-content">
-<div class="social">
-<a class="social-link" href="https://github.com/vihisantos" target="_blank" rel="noopener" aria-label="GitHub">
-<img src="/assets/icons/github.svg" alt="" aria-hidden="true" />
+<!-- Command Palette Modal -->
+<div id="cmdk" class="modal cmdk" role="dialog" aria-modal="true" aria-labelledby="cmdk-title" hidden>
+<div class="cmdk-content card" role="document">
+<h3 id="cmdk-title" class="sr-only">Comandos</h3>
+<label for="cmdk-input" class="sr-only">Buscar comandos</label>
+<input id="cmdk-input" class="cmdk-input input" type="text" placeholder="Digite um comando ou busque projetos..." autocomplete="off" />
+<ul id="cmdk-list" class="cmdk-list" role="listbox" aria-labelledby="cmdk-title"></ul>
+<div class="cmdk-hint">↑↓ navegar • Enter abrir • Esc fechar</div>
+</div>
+</div>
+
+<!--footer-->
+<footer class="main-footer pro-footer">
+<div class="container pro-footer__grid">
+<div class="pro-footer__brand">
+<a class="brand" href="#hero" aria-label="Página inicial">
+<span class="brand-logo" aria-hidden="true"></span>
+<span class="brand-text">Vih Santos</span>
+</a>
+<p class="pro-footer__tag">Desenvolvedor(a) Web Full‑Stack • Performance</p>
+<p class="pro-footer__availability">
+<span class="dot dot--online" aria-hidden="true"></span>
+Disponível para novos projetos
+</p>
+</div>
+
+<nav class="pro-footer__links" aria-label="Links rápidos">
+<a href="#projects" class="footer-link">Projetos</a>
+<a href="#about" class="footer-link">Sobre</a>
+<a href="#contact" class="footer-link">Contato</a>
+<a href="#admin" class="footer-link">Admin</a>
+</nav>
+
+<div class="pro-footer__social">
+<a class="social-link" href="https://github.com/vihisantos" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+<img src="assets/icons/github.svg" alt="" aria-hidden="true" />
 <span class="tooltip" role="tooltip">GitHub</span>
+<span class="count-badge" data-count="github" aria-live="polite"></span>
 </a>
-<a class="social-link" href="https://www.linkedin.com/in/vihisantos" target="_blank" rel="noopener" aria-label="LinkedIn">
-<img src="/assets/icons/linkedin.svg" alt="" aria-hidden="true" />
+<a class="social-link" href="https://www.linkedin.com/in/vihisantos" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+<img src="assets/icons/linkedin.svg" alt="" aria-hidden="true" />
 <span class="tooltip" role="tooltip">LinkedIn</span>
+<span class="count-badge" data-count="linkedin" aria-live="polite"></span>
 </a>
-<a class="social-link" href="https://twitter.com/vihisantos" target="_blank" rel="noopener" aria-label="Twitter">
-<img src="/assets/icons/twitter.svg" alt="" aria-hidden="true" />
+<a class="social-link" href="https://twitter.com/vihisantos" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+<img src="assets/icons/twitter.svg" alt="" aria-hidden="true" />
 <span class="tooltip" role="tooltip">Twitter</span>
+<span class="count-badge" data-count="twitter" aria-live="polite"></span>
 </a>
 </div>
-<div class="footer-right">
-<button id="theme-toggle-footer" class="btn btn-outline">Tema</button>
-<small>© <span id="year"></span> Capybara Holding . Todos os direitos reservados.</small>
+
+<div class="pro-footer__cta">
+<a href="#contact" class="btn btn-primary ripple">Vamos conversar</a>
+<button id="back-to-top" class="btn btn-outline" aria-label="Voltar ao topo">↑ Topo</button>
+<!--trocar tema button-->
+<button class="theme-switch" data-theme-toggle aria-pressed="false" aria-label="Alternar tema">
+<span class="theme-switch__track" aria-hidden="true"></span>
+<span class="theme-switch__thumb" aria-hidden="true"></span>
+<span class="sr-only">Tema</span>
+</button>
+</div>
+</div>
+
+<div class="pro-footer__bottom">
+<div class="container pro-footer__bottom-content">
+<small>© <span id="year"></span> Capybara Holding. Todos os direitos reservados.</small>
 </div>
 </div>
 </footer>
 
+
 <div id="toast-region" class="toast-region" role="region" aria-live="polite" aria-atomic="true"></div>
 
-<script type="module" src="/js/main.js" defer></script>
+<script type="module" src="js/main.js" defer></script>
 </body>
 </html>

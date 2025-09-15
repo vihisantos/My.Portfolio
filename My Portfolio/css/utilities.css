@@ -45,13 +45,8 @@ transform: scale(160);
 opacity: 0;}}
 
 .typing { display: inline-block; color: #fff; }
-.typing::after {
-content: "▋";
-margin-left: 4px;
-animation: caret 1s steps(1) infinite;}
-
-@keyframes caret {
-50% { opacity: 0; }}
+.typing::after { content: "▋"; margin-left: 4px; animation: caret 1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
 
 /* Reduz animações para usuários com preferência */
 @media (prefers-reduced-motion: reduce) {

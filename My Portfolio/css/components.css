@@ -77,3 +77,71 @@ display: grid; grid-template-rows: auto 1fr auto;
 .social-link:hover { background: var(--glass); }
 .tooltip { position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); padding: .25rem .5rem; border-radius: 6px; background: rgba(0,0,0,.75); color: #fff; font-size: .75rem; opacity: 0; pointer-events: none; transition: opacity var(--transition); }
 .social-link:hover .tooltip { opacity: 1; }
+.theme-switch {
+position: relative;
+width: 56px; height: 30px;
+border: 1px solid rgba(0,0,0,.18);
+border-radius: 999px;
+background: color-mix(in oklab, var(--bg) 85%, transparent);
+cursor: pointer;
+padding: 0; display: inline-flex; align-items: center;
+}
+.theme-switch__track {
+position: absolute; inset: 0;
+border-radius: inherit;
+background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.06));
+}
+.theme-switch__thumb {
+position: relative; left: 2px;
+width: 26px; height: 26px; border-radius: 50%;
+background: linear-gradient(135deg, var(--g-primary-start), var(--g-primary-end));
+box-shadow: 0 3px 10px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.3);
+transform: translateX(0);
+transition: transform 180ms ease;
+}
+.theme-switch[aria-pressed="true"] .theme-switch__thumb {
+transform: translateX(26px);
+}
+
+/* Command Palette */
+.cmdk .cmdk-content { width: min(720px, 94vw); }
+.cmdk-input { width: 100%; margin-bottom: .75rem; }
+.cmdk-list { list-style: none; padding: 0; margin: 0; max-height: 50vh; overflow: auto; }
+.cmdk-item {
+display: grid; grid-template-columns: 1fr auto;
+gap: .5rem; padding: .6rem .7rem; border-radius: 10px;
+}
+.cmdk-item[aria-selected="true"],
+.cmdk-item:hover { background: var(--glass); }
+.cmdk-item .cmdk-meta { opacity: .75; font-size: .85rem; }
+.cmdk-hint { margin-top: .5rem; font-size: .85rem; opacity: .75; }
+
+/* Timeline no modal de projeto */
+.project-timeline { margin-top: 1rem; }
+.project-timeline h4 { margin: .5rem 0 .25rem; }
+.timeline-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
+.timeline-item {
+display: grid; grid-template-columns: auto 1fr; gap: .6rem;
+padding: .6rem .7rem; border-radius: 10px; background: var(--glass);
+}
+.timeline-date { white-space: nowrap; font-size: .85rem; opacity: .8; }
+.timeline-desc { margin: 0; }
+.timeline-stars { color: #f6b73c; }
+
+/* Componentes */
+.count-badge {
+display: inline-block;
+margin-left: .35rem;
+padding: .1rem .45rem;
+min-width: 1.6rem;
+border-radius: 999px;
+font-size: .75rem;
+text-align: center;
+color: #fff;
+background: rgba(0,0,0,.35);
+box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+:root[data-theme="light"] .count-badge {
+background: rgba(0,0,0,.25);
+}
+.count-badge:empty { display: none; }

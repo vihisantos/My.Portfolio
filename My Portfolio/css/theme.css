@@ -1,16 +1,27 @@
 :root[data-theme="light"] {
 --text: #1f1f1f;
 --bg: #F7F6F5;
+/* wallpaper claro (sutil) /
+--wallpaper: radial-gradient(1200px 600px at 20% -10%, rgba(90,42,39,.18), transparent 60%),
+radial-gradient(1000px 500px at 80% 120%, rgba(217,162,74,.12), transparent 60%);
+/ gradiente do hero e botões no modo claro */
+--g-primary-start: #5A2A27;
+--g-primary-end: #9A4D42;
 }
+
 :root[data-theme="dark"] {
 --text: #f6f6f6;
 --bg: #1F1F20;
 --glass: rgba(30,30,30,0.28);
+/* wallpaper escuro /
+--wallpaper: radial-gradient(1200px 600px at 20% -10%, rgba(90,42,39,.35), transparent 60%),
+radial-gradient(1000px 500px at 80% 120%, rgba(217,162,74,.16), transparent 60%);
+/ gradiente do hero e botões com tons mais fechados */
+--g-primary-start: #4A2220;
+--g-primary-end: #7A4037;
 }
-@media (prefers-color-scheme: dark) {
-:root:not([data-theme]) { --text: #f6f6f6; --bg: #1F1F20; }
-}
-/* gradient glossy */
+
+/* hero mantém o gradiente com as variáveis acima */
 .hero {
 background: linear-gradient(135deg, var(--g-primary-start), var(--g-primary-end));
 position: relative;

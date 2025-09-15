@@ -1,4 +1,5 @@
-const CACHE_NAME = 'portfolio-cache-v2';
+const CACHE_NAME = 'portfolio-cache-v12';
+
 const ASSETS = [
 // Shell
 'index.html',
@@ -28,15 +29,18 @@ const ASSETS = [
 'js/a11y.js',
 'js/utils.js',
 'js/pwa.js',
+'js/social.js',
+'js/palette.js',
+
+// API mocks (ficam em cache para offline)
+'api/projects.json',
+'api/skills.json',
+'api/admin-updates.json',
+'api/social.json',
 
 // Fonts
 'assets/fonts/GASDRIFO.woff2',
 'assets/fonts/Inter-Variable.woff2',
-
-// API mocks
-'api/projects.json',
-'api/skills.json',
-'api/admin-updates.json',
 
 // Images
 'assets/images/avatar.webp',
@@ -61,7 +65,9 @@ self.skipWaiting();
 self.addEventListener('activate', (event) => {
 event.waitUntil(
 caches.keys().then((keys) =>
-Promise.all(keys.map((k) => (k !== CACHE_NAME ? caches.delete(k) : undefined)))
+Promise.all(
+keys.map((k) => (k !== CACHE_NAME ? caches.delete(k) : undefined))
+)
 )
 );
 self.clients.claim();
@@ -69,33 +75,58 @@ self.clients.claim();
 
 self.addEventListener('fetch', (event) => {
 const { request } = event;
+const url = new URL(request.url);
 
-// Apenas GET e mesma origem
-if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
+// Só intercepta GET da mesma origem
+if (request.method !== 'GET' || url.origin !== self.location.origin) return;
 
-event.respondWith(
-caches.match(request).then((cached) => {
-if (cached) return cached;
-
-return fetch(request)
-.then((response) => {
-// Clona e armazena no cache apenas respostas válidas
-if (response && response.status === 200 && response.type === 'basic') {
-const copy = response.clone();
-caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+// Estratégia: network-first para /api/*
+if (url.pathname.startsWith('/api/') || url.pathname.includes('api/')) {
+event.respondWith(networkFirst(request));
+return;
 }
+
+// Navegações: tenta cache (SPA) e, offline, cai no index.html
+if (request.mode === 'navigate') {
+event.respondWith(
+caches.match('index.html').then((resp) => resp || fetch(request))
+);
+return;
+}
+
+// Demais estáticos: cache-first com atualização em background
+event.respondWith(cacheFirst(request));
+});
+
+async function networkFirst(request) {
+try {
+const response = await fetch(request);
+const cache = await caches.open(CACHE_NAME);
+cache.put(request, response.clone());
 return response;
-})
-.catch(() => {
-// Fallback para navegação offline
+} catch (err) {
+const cached = await caches.match(request);
+if (cached) return cached;
+// Fallback de navegação
 if (request.headers.get('accept')?.includes('text/html')) {
-// escolha 1 (SPA): voltar pro index
 return caches.match('index.html');
-// escolha 2 (404 offline): volte a usar '404.html'
-// return caches.match('404.html');
 }
 return new Response('', { status: 504, statusText: 'Offline' });
-});
-})
-);
-});
+}
+}
+
+async function cacheFirst(request) {
+const cached = await caches.match(request);
+if (cached) return cached;
+try {
+const response = await fetch(request);
+const cache = await caches.open(CACHE_NAME);
+cache.put(request, response.clone());
+return response;
+} catch {
+if (request.headers.get('accept')?.includes('text/html')) {
+return caches.match('index.html');
+}
+return new Response('', { status: 504, statusText: 'Offline' });
+}
+}

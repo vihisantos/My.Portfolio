@@ -8,11 +8,15 @@ import { initContact } from './contact.js';
 import { initAdmin } from './admin.js';
 import { initPWA } from './pwa.js';
 import { clamp } from './utils.js';
+import { initPalette } from './palette.js';
+import { initSocialCounts } from './social.js';
+
+
 
 document.documentElement.classList.remove('no-js');
 
 initThemeToggle();
-initTyping('typing', 'skip-typing');
+initTyping('typing', 'skip-typing', 45);
 initLiquidCanvas();
 initNav();
 initModals();
@@ -20,6 +24,8 @@ initProjects();
 initContact();
 initAdmin();
 initPWA();
+initPalette();
+initSocialCounts({ github: 'vihisantos', twitter: 'vihisantos' });
 
 // Hero avatar blur + parallax
 var avatar = document.getElementById('hero-avatar');
@@ -93,7 +99,7 @@ console.warn('Falha ao carregar skills.json', err);
 });
 })();
 
-// Delegate ESC close for modals (safety)
+//  ESC close for modals 
 document.addEventListener('keydown', function(e) {
 if (e.key === 'Escape') {
 var openBtns = document.querySelectorAll('.modal:not([hidden]) [data-close]');

@@ -48,3 +48,53 @@ border-bottom: 1px solid rgba(0,0,0,.06);
 .table-wrap { overflow-x: auto; }
 .main-footer { padding: 2rem 0; border-top: 1px solid rgba(0,0,0,.08); }
 .footer-content { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.pro-footer {
+position: relative;
+margin-top: 4rem;
+background: color-mix(in oklab, var(--bg) 88%, transparent);
+backdrop-filter: blur(8px);
+}
+.pro-footer::before {
+content: "";
+position: absolute; top: 0; left: 0; right: 0; height: 2px;
+background: linear-gradient(90deg, var(--g-primary-start), var(--g-primary-end), var(--accent-gold));
+opacity: .9;
+}
+.pro-footer__grid {
+display: grid;
+grid-template-columns: 1.2fr 1fr 1fr auto;
+gap: 1.25rem;
+align-items: start;
+padding: 2rem 0;
+}
+@media (max-width: 1024px) {
+.pro-footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+.pro-footer__grid { grid-template-columns: 1fr; text-align: center; }
+}
+.pro-footer__brand .brand { gap: .5rem; font-weight: 700; }
+.pro-footer__tag { margin: .35rem 0 .25rem; opacity: .85; }
+.pro-footer__availability { display: inline-flex; align-items: center; gap: .5rem; font-size: .95rem; opacity: .95; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot--online { background: var(--success); box-shadow: 0 0 0 4px color-mix(in oklab, var(--success) 20%, transparent); }
+.pro-footer__links { display: grid; gap: .35rem; align-content: start; }
+.footer-link { color: inherit; opacity: .9; }
+.footer-link:hover { opacity: 1; text-decoration: underline; text-decoration-color: var(--accent-gold); text-underline-offset: 3px; }
+
+.pro-footer__social { display: flex; gap: .5rem; justify-content: flex-start; }
+@media (max-width: 640px) { .pro-footer__social { justify-content: center; } }
+
+.pro-footer__cta { display: flex; gap: .5rem; justify-content: flex-end; flex-wrap: wrap; }
+@media (max-width: 640px) { .pro-footer__cta { justify-content: center; } }
+#back-to-top { opacity: 0; pointer-events: none; transition: opacity 180ms ease; }
+
+.pro-footer__bottom {
+border-top: 1px solid rgba(0,0,0,.08);
+background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.02));
+padding: .8rem 0;
+}
+.pro-footer__bottom-content {
+display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;
+font-size: .9rem; opacity: .9;
+}
