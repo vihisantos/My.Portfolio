@@ -42,13 +42,28 @@ if (!grid) return;
 if (reset) grid.innerHTML = '';
 const slice = filtered.slice(0, PAGE_SIZE * page);
 grid.innerHTML = slice.map(projectCard).join('') || '<p>Nenhum projeto encontrado.</p>';
+
+// Abrir com clique e com teclado (Enter/Espaço)
 qsa('.project-card').forEach(function (card) {
-card.addEventListener('click', function () { openProjectById(card.getAttribute('data-id')); });
+const id = card.getAttribute('data-id');
+card.addEventListener('click', function () { openProjectById(id); });
+card.addEventListener('keydown', function (e) {
+if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProjectById(id); }
+});
 });
 }
 
 function projectCard(p) {
-const tags = p.tags.map(function (t) { return '<li class="tag">' + escapeHTML(t) + '</li>'; }).join('');
+const tags = (p.tags || []).map(function (t) {
+return '<li class="tag">' + escapeHTML(t) + '</li>';
+}).join('');
+
+// até 3 tecnologias da stack como badges
+const stackBadges = (p.stack || []).slice(0, 3).map(function (s) {
+const safe = escapeHTML(String(s));
+return '<span class="badge badge-stack" title="' + safe + '">' + safe + '</span>';
+}).join('');
+
 return ''
 + '<article class="project-card card" data-id="' + escapeHTML(p.id) + '" role="listitem" tabindex="0">'
 + '<div class="project-media">'
@@ -57,12 +72,13 @@ return ''
 + '<div class="project-body">'
 + '<h3>' + escapeHTML(p.title) + '</h3>'
 + '<ul class="project-tags">' + tags + '</ul>'
-+ '<button class="btn btn-outline">Ver detalhes</button>'
++ (stackBadges ? '<div class="project-stack" aria-label="Tecnologias">' + stackBadges + '</div>' : '')
++ '<button class="btn btn-outline" type="button">Ver detalhes</button>'
 + '</div>'
 + '</article>';
 }
 
-// Export para o Command Palette ou outros módulos
+// Export para reuso (Command Palette etc.)
 export function openProjectById(id) {
 const proj = allProjects.find(function (p) { return p.id === id; });
 if (!proj) return;
@@ -70,25 +86,43 @@ if (!proj) return;
 const modal = document.getElementById('project-modal');
 modal.querySelector('#project-modal-title').textContent = proj.title;
 modal.querySelector('.project-description').textContent = proj.description;
-modal.querySelector('.project-tags').innerHTML = proj.tags.map(function (t) {
+
+modal.querySelector('.project-tags').innerHTML = (proj.tags || []).map(function (t) {
 return '<li class="tag">' + escapeHTML(t) + '</li>';
 }).join('');
+
+// Injeta/atualiza a stack completa no modal antes dos links
+const info = modal.querySelector('.project-info');
+if (info) {
+let stackBox = info.querySelector('.project-stack');
+if (!stackBox) {
+stackBox = document.createElement('div');
+stackBox.className = 'project-stack';
+info.insertBefore(stackBox, info.querySelector('.project-links'));
+}
+stackBox.innerHTML = (proj.stack || []).map(function (s) {
+const safe = escapeHTML(String(s));
+return '<span class="badge badge-stack" title="' + safe + '">' + safe + '</span>';
+}).join('');
+}
+
 modal.querySelector('#project-live').href = proj.live;
 modal.querySelector('#project-github').href = proj.github;
 
 const track = modal.querySelector('#carousel-track');
-track.innerHTML = proj.media.map(function (src) {
+track.innerHTML = (proj.media || []).map(function (src) {
 return '<div class="carousel-slide"><img src="' + src + '" alt="Imagem do projeto ' + escapeHTML(proj.title) + '" loading="lazy"/></div>';
 }).join('');
 const slides = Array.from(track.children);
 carousel.setSlides(slides);
 
-// Timeline de updates (seed + local)
+// Opcional: timeline se você já integrou
 renderTimeline(proj.id, modal);
 
 openModal('project-modal');
 }
 
+// Timeline (mantém se você já tinha; pode remover se não usa)
 async function getUpdates() {
 const local = storage.listUpdates();
 try {
@@ -96,11 +130,8 @@ const seed = await fetch('api/admin-updates.json').then(function (r) { return r.
 const byId = new Map(seed.map(function (u) { return [u.id, u]; }));
 local.forEach(function (u) { byId.set(u.id, u); });
 return Array.from(byId.values()).sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
-} catch (e) {
-return local;
+} catch (e) { return local; }
 }
-}
-
 async function renderTimeline(projectId, modal) {
 const list = modal.querySelector('.timeline-list');
 if (!list) return;
