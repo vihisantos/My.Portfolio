@@ -1,7 +1,7 @@
-import { qs, qsa, escapeHTML } from 'utils.js';
-import { openModal } from 'modals.js';
-import { initCarousel } from 'carousel.js';
-import { storage } from 'storage.js';
+import { qs, qsa, escapeHTML } from './utils.js';
+import { openModal } from './modals.js';
+import { initCarousel } from './carousel.js';
+import { storage } from './storage.js';
 
 const PAGE_SIZE = 6;
 let allProjects = [];
@@ -10,12 +10,18 @@ let page = 1;
 let carousel;
 
 export async function initProjects() {
+try {
 carousel = initCarousel();
-const res = await fetch('api/projects.json');
+const res = await fetch('api/projects.json', { cache: 'no-store' });
 allProjects = await res.json();
 filtered = allProjects;
 bindControls();
 render();
+} catch (err) {
+console.error('Falha ao carregar projects.json', err);
+const grid = qs('#projects-grid');
+if (grid) grid.innerHTML = '<p>Não foi possível carregar os projetos agora.</p>';
+}
 }
 
 function bindControls() {
@@ -43,7 +49,7 @@ if (reset) grid.innerHTML = '';
 const slice = filtered.slice(0, PAGE_SIZE * page);
 grid.innerHTML = slice.map(projectCard).join('') || '<p>Nenhum projeto encontrado.</p>';
 
-// Abrir com clique e com teclado (Enter/Espaço)
+// Clique e teclado (Enter/Espaço)
 qsa('.project-card').forEach(function (card) {
 const id = card.getAttribute('data-id');
 card.addEventListener('click', function () { openProjectById(id); });
@@ -91,7 +97,7 @@ modal.querySelector('.project-tags').innerHTML = (proj.tags || []).map(function 
 return '<li class="tag">' + escapeHTML(t) + '</li>';
 }).join('');
 
-// Injeta/atualiza a stack completa no modal antes dos links
+// Stack completa no modal
 const info = modal.querySelector('.project-info');
 if (info) {
 let stackBox = info.querySelector('.project-stack');
@@ -116,7 +122,7 @@ return '<div class="carousel-slide"><img src="' + src + '" alt="Imagem do projet
 const slides = Array.from(track.children);
 carousel.setSlides(slides);
 
-// Opcional: timeline se você já integrou
+// Timeline (se estiver usando)
 renderTimeline(proj.id, modal);
 
 openModal('project-modal');
