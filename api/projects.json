@@ -1,24 +1,90 @@
 [
 {
-"id": "proj-1",
-"title": "Dashboard de Vendas",
+"id": "dash-vendas",
+"title": "Dashboard de Vendas em Tempo Real",
 "tags": ["frontend", "backend"],
 "cover": "assets/images/project-placeholder.webp",
 "media": ["assets/images/project-placeholder.webp"],
-"description": "Dashboard responsivo com gráficos e filtros em tempo real.",
-"stack": ["React", "Node.js", "PostgreSQL"],
-"live": "https://exemplo.com/dashboard ",
-"github": "https://github.com/seuusuario/dashboard "
+"description": "Dashboard responsivo com streams, filtros e gráficos acessíveis.",
+"stack": ["Vite", "React", "Node.js", "WebSocket", "PostgreSQL"],
+"live": "https://exemplo.com/dash-vendas ",
+"github": "https://github.com/vihisantos/dash-vendas "
 },
 {
-"id": "proj-2",
-"title": "NLP Classifier",
+"id": "node-api",
+"title": "API REST Node + PostgreSQL",
+"tags": ["backend"],
+"cover": "assets/images/project-placeholder.webp",
+"media": ["assets/images/project-placeholder.webp"],
+"description": "API RESTful com autenticação, rate-limit e testes.",
+"stack": ["Node.js", "Express", "PostgreSQL", "JWT"],
+"live": "https://exemplo.com/node-api ",
+"github": "https://github.com/vihisantos/node-api "
+},
+{
+"id": "realtime-chat",
+"title": "Chat em Tempo Real",
+"tags": ["frontend", "backend"],
+"cover": "assets/images/project-placeholder.webp",
+"media": ["assets/images/project-placeholder.webp"],
+"description": "Chat com salas públicas/privadas, presença e digitação.",
+"stack": ["Node.js", "Socket.IO", "Redis"],
+"live": "https://exemplo.com/realtime-chat ",
+"github": "https://github.com/vihisantos/realtime-chat "
+},
+{
+"id": "ml-vision",
+"title": "Classificador de Imagens (PyTorch)",
 "tags": ["ai"],
 "cover": "assets/images/project-placeholder.webp",
 "media": ["assets/images/project-placeholder.webp"],
-"description": "Pipeline de NLP com classificação de intenções e métricas.",
-"stack": ["Python", "PyTorch"],
-"live": "https://exemplo.com/nlp ",
-"github": "https://github.com/seuusuario/nlp "
+"description": "Modelo CNN para classificação de imagens com métricas e experimentos.",
+"stack": ["Python", "PyTorch", "NumPy", "Pandas"],
+"live": "https://exemplo.com/ml-vision ",
+"github": "https://github.com/vihisantos/ml-vision "
+},
+{
+"id": "landing-a11y",
+"title": "Landing Page Acessível",
+"tags": ["frontend"],
+"cover": "assets/images/project-placeholder.webp",
+"media": ["assets/images/project-placeholder.webp"],
+"description": "Landing minimalista com 100% Lighthouse em A11y.",
+"stack": ["HTML5", "CSS Grid", "Vanilla JS"],
+"live": "https://exemplo.com/landing-a11y ",
+"github": "https://github.com/vihisantos/landing-a11y "
+},
+{
+"id": "etl-pipeline",
+"title": "Pipeline ETL de Dados",
+"tags": ["backend", "ai"],
+"cover": "assets/images/project-placeholder.webp",
+"media": ["assets/images/project-placeholder.webp"],
+"description": "Coleta, transformação e carga com orquestração simples e logs.",
+"stack": ["Python", "Pandas", "SQLite/BigQuery"],
+"live": "https://exemplo.com/etl-pipeline ",
+"github": "https://github.com/vihisantos/etl-pipeline "
+},
+{
+"id": "portfolio-v2",
+"title": "Este Portfólio (v2)",
+"tags": ["frontend"],
+"cover": "assets/images/project-placeholder.webp",
+"media": ["assets/images/project-placeholder.webp"],
+"description": "Portfólio com PWA, modais A11y, admin e Command Palette.",
+"stack": ["HTML", "CSS", "ES6 Módulos"],
+"live": "#",
+"github": "https://github.com/vihisantos/portfolio-v2 "
+},
+{
+"id": "nlp-intent",
+"title": "NLP — Classificação de Intenções",
+"tags": ["ai"],
+"cover": "assets/images/project-placeholder.webp",
+"media": ["assets/images/project-placeholder.webp"],
+"description": "Dataset rotulado, treino, validação e serving básico.",
+"stack": ["Python", "scikit-learn", "FastAPI"],
+"live": "https://exemplo.com/nlp-intent ",
+"github": "https://github.com/vihisantos/nlp-intent "
 }
 ]

@@ -1,10 +1,34 @@
 [
 {
-"id": "u-1",
+"id": "u-101",
 "date": "2025-01-15T14:30:00.000Z",
-"projectId": "proj-1",
+"projectId": "dash-vendas",
 "time": "1:45",
 "satisfaction": 4,
-"desc": "Ajuste de performance e lazy load de gráficos."
+"desc": "Ajustes de performance e lazy load nos gráficos."
+},
+{
+"id": "u-102",
+"date": "2025-02-01T11:00:00.000Z",
+"projectId": "ml-vision",
+"time": "2:20",
+"satisfaction": 5,
+"desc": "Treino com data augmentation e early stopping."
+},
+{
+"id": "u-103",
+"date": "2025-02-10T09:10:00.000Z",
+"projectId": "node-api",
+"time": "1:10",
+"satisfaction": 4,
+"desc": "JWT + refresh token e testes de integração."
+},
+{
+"id": "u-104",
+"date": "2025-03-03T16:05:00.000Z",
+"projectId": "realtime-chat",
+"time": "0:55",
+"satisfaction": 5,
+"desc": "Indicador de digitação e fix no debounce de presença."
 }
 ]
