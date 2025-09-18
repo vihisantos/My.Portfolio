@@ -109,3 +109,48 @@ if (btn && typeof btn.click === 'function') btn.click();
 }
 }
 });
+
+// Animações de entrada (IntersectionObserver)
+(() => {
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduced || !('IntersectionObserver' in window)) return;
+
+const obs = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+obs.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+})();
+
+(() => {
+const cards = document.querySelectorAll('.project-card');
+cards.forEach((card) => {
+let raf = 0;
+
+card.addEventListener('pointermove', (e) => {
+const r = card.getBoundingClientRect();
+const x = (e.clientX - r.left) / r.width - 0.5;
+const y = (e.clientY - r.top) / r.height - 0.5;
+
+cancelAnimationFrame(raf);
+raf = requestAnimationFrame(() => {
+const rx = (-y * 6).toFixed(2);
+const ry = (x * 6).toFixed(2);
+card.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-2px)';
+card.style.boxShadow = '0 18px 40px rgba(0,0,0,.2)';
+});
+});
+
+card.addEventListener('pointerleave', () => {
+cancelAnimationFrame(raf);
+card.style.transform = '';
+card.style.boxShadow = '';
+});
+});
+})();
+

@@ -1,34 +1,134 @@
-:root[data-theme="light"] {
---text: #1f1f1f;
---bg: #F7F6F5;
-/* wallpaper claro (sutil) /
---wallpaper: radial-gradient(1200px 600px at 20% -10%, rgba(90,42,39,.18), transparent 60%),
-radial-gradient(1000px 500px at 80% 120%, rgba(217,162,74,.12), transparent 60%);
-/ gradiente do hero e botões no modo claro */
---g-primary-start: #5A2A27;
---g-primary-end: #9A4D42;
+/* Tema claro padrão */
+:root {
+/*/ Light /
+--bg: #faf7f5;
+--surface: #ffffff;
+--surface-2: #f3efec;
+--border: #e7e0dc;
+--text: #1f2937;
+--muted: #6b7280;
+--primary: #b45309; / amber-700 /
+--primary-contrast: #ffffff;
+--accent: #0ea5a4; / teal-500 */
+--accent-contrast: #071318;
+--shadow: 0 10px 30px rgba(0,0,0,.08);
+--radius: 14px;
+--radius-sm: 10px;
+--radius-lg: 22px;
+--focus: 0 0 0 3px rgba(14,165,164,.35);
 }
 
-:root[data-theme="dark"] {
---text: #f6f6f6;
---bg: #1F1F20;
---glass: rgba(30,30,30,0.28);
-/* wallpaper escuro /
---wallpaper: radial-gradient(1200px 600px at 20% -10%, rgba(90,42,39,.35), transparent 60%),
-radial-gradient(1000px 500px at 80% 120%, rgba(217,162,74,.16), transparent 60%);
-/ gradiente do hero e botões com tons mais fechados */
---g-primary-start: #4A2220;
---g-primary-end: #7A4037;
+@media (prefers-color-scheme: dark) {
+:root {
+--bg: #0b0f19;
+--surface: #111827;
+--surface-2: #0f172a;
+--border: #243142;
+--text: #e5e7eb;
+--muted: #9ca3af;
+--primary: #f59e0b; /* amber-500 /
+--primary-contrast: #0b0f19;
+--accent: #22d3ee; / cyan-400 */
+--accent-contrast: #06151a;
+--shadow: 0 12px 40px rgba(0,0,0,.35);
+}
 }
 
-/* hero mantém o gradiente com as variáveis acima */
+html[data-theme="dark"] {
+--bg: #0b0f19;
+--surface: #111827;
+--surface-2: #0f172a;
+--border: #243142;
+--text: #e5e7eb;
+--muted: #9ca3af;
+--primary: #f59e0b;
+--primary-contrast: #0b0f19;
+--accent: #22d3ee;
+--accent-contrast: #06151a;
+--shadow: 0 12px 40px rgba(0,0,0,.35);
+}
+
+/* Transição suave ao trocar tema */
+.theme-transition * { transition: color .25s ease, background-color .25s ease, border-color .25s ease; }
+
+/* Aplicação base (não remove nada dos seus outros CSS) */
+body { background-color: var(--bg); color: var(--text); }
+
+/* Hero com gradient orgânico */
 .hero {
-background: linear-gradient(135deg, var(--g-primary-start), var(--g-primary-end));
+background:
+radial-gradient(1200px 500px at 10% 10%, rgba(245,158,11,.12), transparent 60%),
+radial-gradient(800px 400px at 80% 20%, rgba(34,211,238,.12), transparent 60%),
+radial-gradient(900px 480px at 60% 80%, rgba(180,83,9,.10), transparent 60%),
+linear-gradient(180deg, var(--surface-2), var(--surface));
 position: relative;
-overflow: hidden;
+overflow: clip;
 }
-.hero-gloss {
+.hero::after {
+content: "";
 position: absolute; inset: 0;
-background: radial-gradient(1000px 300px at 30% -10%, rgba(255,255,255,.24), transparent 60%);
-mix-blend-mode: screen; pointer-events: none;
+background: radial-gradient(600px 200px at 70% 0%, rgba(255,255,255,.06), transparent 60%);
+pointer-events: none;
 }
+
+/* Botões padrão */
+.btn, .btn-primary, .btn-secondary, .btn-ghost {
+display: inline-flex; align-items: center; justify-content: center;
+gap: 8px; padding: 10px 16px; border-radius: var(--radius-sm);
+line-height: 1; font-weight: 600; border: 1px solid transparent; cursor: pointer;
+}
+.btn-primary { background: var(--primary); color: var(--primary-contrast); box-shadow: var(--shadow); }
+.btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.btn-secondary { background: var(--surface-2); color: var(--text); border-color: var(--border); }
+.btn-secondary:hover { border-color: var(--muted); }
+.btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-ghost:hover { background: var(--surface-2); }
+
+/* Inputs/controls */
+.input, .select, .textarea {
+width: 100%; padding: 10px 12px; border-radius: 10px;
+border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+.input:focus, .select:focus, .textarea:focus, .btn-primary:focus, .btn-secondary:focus, .btn-ghost:focus {
+outline: none; box-shadow: var(--focus);
+}
+
+/* Cartões / projetos */
+.section-projects { max-width: 1120px; margin: 48px auto; padding: 0 16px; }
+.projects-grid {
+display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px; margin-top: 20px;
+}
+.project-card {
+background: var(--surface); border: 1px solid var(--border);
+border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+transform-style: preserve-3d; will-change: transform, box-shadow;
+}
+.project-media { aspect-ratio: 16/10; background: var(--surface-2); }
+.project-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.project-body { padding: 14px; display: grid; gap: 8px; }
+.project-title { font-size: 1.05rem; font-weight: 700; }
+.project-tags { color: var(--muted); font-size: .9rem; }
+.project-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Badges */
+.badge {
+display: inline-flex; align-items: center; gap: 6px;
+padding: 6px 10px; border-radius: 999px;
+background: var(--surface-2); border: 1px solid var(--border);
+color: var(--text); font-size: .85rem;
+}
+
+/* Toggle de tema (usa seu botão atual se tiver, ou este) */
+.btn-theme {
+width: 44px; height: 28px; border-radius: 999px; position: relative;
+background: var(--surface-2); border: 1px solid var(--border);
+}
+.btn-theme .dot {
+position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%;
+background: var(--primary); transition: transform .25s ease;
+}
+html[data-theme="dark"] .btn-theme .dot { transform: translateX(16px); }
+
+/* Acessibilidade: foco visível */
+:focus-visible { box-shadow: var(--focus) !important; }

@@ -171,3 +171,6 @@ background: rgba(255,255,255,.08);
 background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
 border-color: rgba(255,255,255,.16);
 }
+
+/* Compat: classes utilitárias extras para grid/container */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 16px; }

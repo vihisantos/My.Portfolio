@@ -12,7 +12,8 @@ let carousel;
 export async function initProjects() {
 try {
 carousel = initCarousel();
-const res = await fetch('api/projects.json', { cache: 'no-store' });
+const res = await fetch('api/projects.json', { cache: 'no-store' }); // sempre buscar versão mais recente
+if (!res.ok) throw new Error('HTTP ' + res.status);
 allProjects = await res.json();
 filtered = allProjects;
 bindControls();

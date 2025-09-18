@@ -1,30 +1,47 @@
-const STORAGE_KEY = 'theme';
-
-export function initThemeToggle(selector = '[data-theme-toggle]') {
+(() => {
 const root = document.documentElement;
-const btns = Array.from(document.querySelectorAll(selector));
+const getToggle = () =>
+document.querySelector('[data-theme-toggle]') ||
+document.getElementById('theme-toggle') ||
+document.querySelector('.theme-toggle') ||
+document.querySelector('.btn-theme');
 
-function systemPrefers() {
-try {
-return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-} catch {
-return 'light';
+const btn = getToggle();
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+const getStored = () => {
+try { return localStorage.getItem('theme'); } catch { return null; }
+};
+const setStored = (v) => {
+try { localStorage.setItem('theme', v); } catch {}
+};
+
+function applyTheme(theme) {
+// transição suave sem “flash”
+root.classList.add('theme-transition');
+requestAnimationFrame(() => root.classList.remove('theme-transition'));
+
+if (theme === 'dark') {
+root.setAttribute('data-theme', 'dark');
+btn?.setAttribute('aria-pressed', 'true');
+} else {
+root.removeAttribute('data-theme');
+btn?.setAttribute('aria-pressed', 'false');
 }
 }
 
-function get() {
-return root.getAttribute('data-theme') || systemPrefers();
-}
+const saved = getStored();
+applyTheme(saved ?? (prefersDark.matches ? 'dark' : 'light'));
 
-function set(mode) {
-root.setAttribute('data-theme', mode);
-try { localStorage.setItem(STORAGE_KEY, mode); } catch {}
-btns.forEach(b => b.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false'));
-try { root.dispatchEvent(new CustomEvent('themechange', { detail: { mode } })); } catch {}
-}
+btn?.addEventListener('click', () => {
+const isDark = root.getAttribute('data-theme') === 'dark';
+const next = isDark ? 'light' : 'dark';
+applyTheme(next);
+setStored(next);
+});
 
-const saved = (() => { try { return localStorage.getItem(STORAGE_KEY); } catch { return null; } })();
-set(saved || get());
-
-btns.forEach(b => b.addEventListener('click', () => set(get() === 'dark' ? 'light' : 'dark')));
-}
+// Se usuário não fixou tema, respeita mudança do SO
+prefersDark.addEventListener('change', (e) => {
+if (!getStored()) applyTheme(e.matches ? 'dark' : 'light');
+});
+})();

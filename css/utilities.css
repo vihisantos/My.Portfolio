@@ -54,3 +54,11 @@ opacity: 0;}}
 animation: none !important;
 transition: none !important;
 scroll-behavior: auto !important;}}
+
+/* Reveal on scroll + motion safety */
+@media (prefers-reduced-motion: no-preference) {
+.reveal { opacity: 0; transform: translateY(12px); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .5s ease, transform .5s ease; }
+.hero-float { animation: float 6s ease-in-out infinite; }
+@keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-8px) } }
+}
