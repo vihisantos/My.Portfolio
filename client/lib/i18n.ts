@@ -1,0 +1,720 @@
+export type Language = 'pt' | 'en';
+
+export const translations = {
+  pt: {
+    nav: {
+      projects: 'Projetos',
+      about: 'Sobre',
+      capybara: 'Capybara',
+      contact: 'Contato',
+    },
+    hero: {
+      badge: 'Desenvolvedor Full-Stack Web',
+      title: 'Construindo experiências web',
+      titleGradient: 'modernas',
+      description:
+        'Sou um desenvolvedor full-stack apaixonado por criar aplicações escaláveis e modernas. Atualmente cursando Análise e Desenvolvimento de Sistemas e Gestão de T.I.',
+      viewWork: 'Ver Meu Trabalho',
+      getInTouch: 'Entrar em Contato',
+      stats: {
+        projects: 'Projetos Completos',
+        experience: 'Anos de Experiência',
+        satisfaction: 'Satisfação dos Clientes',
+      },
+    },
+    about: {
+      badge: 'Sobre Mim',
+      title: 'Transformando ideias em',
+      titleGradient: 'soluções digitais',
+      description:
+        'Sou um desenvolvedor full-stack dedicado com paixão por criar aplicações escaláveis e de alto desempenho. Atualmente cursando Análise e Desenvolvimento de Sistemas e Gestão de T.I, combino conhecimento teórico com experiência prática.',
+      skillsTitle: 'Minhas competências',
+      educationTitle: 'Educação & Aprendizado',
+      frontend: 'Frontend',
+      backend: 'Backend',
+      databases: 'Banco de Dados',
+      devops: 'DevOps & Ferramentas',
+      frontendDesc: 'React, TypeScript, Tailwind CSS, Next.js',
+      backendDesc: 'Node.js, Express, Python, REST APIs',
+      databasesDesc: 'PostgreSQL, MongoDB, Redis, Prisma',
+      devopsDesc: 'Docker, Git, GitHub, AWS, Vercel',
+      performance: 'Performance',
+      performanceDesc: 'Otimização, escalabilidade, boas práticas',
+    },
+    projects: {
+      badge: 'Portfólio',
+      title: 'Projetos em Destaque',
+      description:
+        'Uma seleção do meu trabalho recente mostrando várias tecnologias e abordagens de resolução de problemas',
+      viewProject: 'Ver Projeto',
+      viewAll: 'Ver todos os projetos',
+      ecommerce: {
+        title: 'Confeitaria E-Commerce',
+        description:
+          'Solução de confeitaria e-commerce full-stack com integração de pagamento futuro a ser implementado, gerenciamento de estoque, notificações em tempo real, sistema de pedidos e entregas e area administrativa.',
+      },
+      taskmanagement: {
+        title: 'Portfolio Profissional',
+        description:
+          'Portfolio profissional desenvolvido com Next.js, React e TypeScript, com uma interface moderna e responsiva.',
+      },
+      analytics: {
+        title: 'Dashboard de Análise',
+        description:
+          'Plataforma de visualização de dados com gráficos interativos, relatórios personalizados e capacidade de exportação de dados.',
+      },
+      mobileapi: {
+        title: 'Backend de App Mobile',
+        description:
+          'API RESTful backend para aplicações móveis com autenticação, cache e consultas otimizadas.',
+      },
+      aichat: {
+        title: 'Vitrine360 - Gestão de Loja',
+        description:
+          'Aplicação SaaS completa para gestão de lojas físicas e online. Planos flexíveis (Free, Pro, Enterprise), controle de estoque, PDV e relatórios avançados.',
+      },
+      teamcollaboration: {
+        title: 'Ferramenta de Colaboração em Equipe',
+        description:
+          'Plataforma de espaço de trabalho para equipes distribuídas com compartilhamento de arquivos, comentários e rastreamento de atividades.',
+      },
+    },
+    capybara: {
+      badge: 'Minha Iniciativa',
+      title: 'Capybara',
+      titleGradient: 'Holding',
+      description:
+        'Fundador e criador da Capybara Holding, uma organização visionária dedicada a fomentar inovação, colaboração e crescimento no ecossistema de tecnologia. Acreditamos em construir soluções sustentáveis que causem impacto positivo e oferecemos consultoria em transformação digital.',
+      item1: 'Inovação Tecnológica & Desenvolvimento',
+      item2: 'Soluções Estratégicas de Negócios',
+      item3: 'Construção de Equipe & Mentoria',
+      item4: 'Serviços de Transformação Digital',
+      learnMore: 'Saiba Mais',
+    },
+    contact: {
+      title: "Vamos trabalhar",
+      titleGradient: 'juntos',
+      description:
+        'Se você tem um projeto em mente, quer discutir oportunidades ou apenas quer se conectar, adoraria saber de você. Vamos criar algo incrível juntos.',
+      email: 'Enviar Email',
+      schedule: 'Agendar uma Ligação',
+      available: 'Disponível para projetos freelance, posições em tempo integral e oportunidades de consultoria.',
+    },
+    footer: {
+      description:
+        'Desenvolvedor full-stack apaixonado por criar aplicações modernas e escaláveis.',
+      nav: 'Navegação',
+      skills: 'Competências',
+      connect: 'Conectar',
+      frontend: 'Desenvolvimento Frontend',
+      backend: 'Desenvolvimento Backend',
+      fullstack: 'Aplicações Full-stack',
+      rights: 'Todos os direitos reservados.',
+      crafted: 'Criado com paixão por um desenvolvedor full-stack.',
+    },
+    projectsPage: {
+      title: 'Meus Projetos',
+      subtitle: 'Confira todos os meus trabalhos, desde aplicações full-stack complexas até componentes de UI.',
+      backHome: 'Voltar para o início',
+    },
+    uiLibrary: {
+      title: 'Biblioteca de Componentes UI',
+      description: 'Uma coleção de componentes reutilizáveis.',
+      noComponents: 'Nenhum componente encontrado nesta categoria ainda.',
+      backToHome: 'Voltar para Início',
+    },
+    categories: {
+      All: 'Todos',
+      Buttons: 'Botões',
+      Loaders: 'Carregadores',
+      Inputs: 'Inputs',
+      Cards: 'Cards',
+      Text: 'Texto',
+      Tooltips: 'Tooltips',
+    },
+    contactForm: {
+      name: 'Nome',
+      email: 'Email',
+      message: 'Mensagem',
+      send: 'Enviar Mensagem',
+      success: 'Mensagem enviada com sucesso! Entraremos em contato em breve.',
+      error: 'Erro ao enviar mensagem. Tente novamente.',
+      loading: 'Enviando...',
+      required: 'Campo obrigatório',
+    },
+    playground: {
+      badge: 'Interativo',
+      title: 'Sua vez de jogar',
+    },
+    testimonials: {
+      badge: 'Depoimentos',
+      title: 'O que clientes dizem sobre meu trabalho',
+    },
+    certificates: {
+      button: "Ver Certificações",
+      title: "Certificações & Conquistas",
+      subtitle: "Minha jornada de aprendizado contínuo e validação de habilidades.",
+      viewCredential: "Ver Credencial",
+      issuer: "Emitido por",
+      date: "Concluído em"
+    },
+    pricing: {
+      title: "Planos Vitrine360",
+      subtitle: "Escolha o melhor plano para sua loja",
+      free: {
+        title: "Free",
+        description: "Ideal para começar",
+        button: "Começar Grátis"
+      },
+      pro: {
+        title: "Pro",
+        description: "Para lojas em crescimento",
+        button: "Assinar Pro"
+      },
+      enterprise: {
+        title: "Enterprise",
+        description: "Para grandes redes",
+        button: "Falar com Vendas"
+      }
+    },
+    certificatesList: [
+      {
+        id: 21,
+        title: "UX: Como Melhorar a Experiência do Usuário no Serviço Público Digital",
+        issuer: "Escola Nacional de Administração Pública - Enap",
+        date: "2025",
+        skills: ["UX Design", "Usabilidade", "Pesquisa com Usuário"],
+        credentialUrl: "#"
+      },
+      {
+        id: 20,
+        title: "Modelagem de Software",
+        issuer: "Universidade Anhembi Morumbi",
+        date: "2024",
+        skills: ["UML", "Software Architecture", "Design Patterns"],
+        credentialUrl: "#"
+      },
+      {
+        id: 1,
+        title: "Desenvolvimento com GitHub Copilot",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["AI", "Coding", "GitHub"],
+        credentialUrl: "#"
+      },
+      {
+        id: 2,
+        title: "GitHub Actions",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["DevOps", "CI/CD", "Automation"],
+        credentialUrl: "#"
+      },
+      {
+        id: 3,
+        title: "GitHub Codespaces",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["DevOps", "Cloud IDE", "Development"],
+        credentialUrl: "#"
+      },
+      {
+        id: 4,
+        title: "Segurança da Informação para Todos",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["Security", "InfoSec", "Cybersecurity"],
+        credentialUrl: "#"
+      },
+      {
+        id: 5,
+        title: "Inteligência Artificial Generativa",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "Generative AI", "Innovation"],
+        credentialUrl: "#"
+      },
+      {
+        id: 6,
+        title: "IA Generativa da Microsoft - Copilot",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "Microsoft", "Productivity"],
+        credentialUrl: "#"
+      },
+      {
+        id: 7,
+        title: "A História da IA",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "History", "Foundations"],
+        credentialUrl: "#"
+      },
+      {
+        id: 8,
+        title: "Ética em IA",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "Ethics", "Compliance"],
+        credentialUrl: "#"
+      },
+      {
+        id: 9,
+        title: "Como ser mais Produtivo usando o Bing Chat",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "Productivity", "Bing"],
+        credentialUrl: "#"
+      },
+      {
+        id: 10,
+        title: "Introdução à Ciência de Dados - Conceitos e Ferramentas",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "Analytics", "Big Data"],
+        credentialUrl: "#"
+      },
+      {
+        id: 11,
+        title: "Introdução à Ciência de Dados - Tratamento de Dados",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "ETL", "Data Processing"],
+        credentialUrl: "#"
+      },
+      {
+        id: 12,
+        title: "Introdução à Ciência de Dados - Modelos de Classificação",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "Machine Learning", "Classification"],
+        credentialUrl: "#"
+      },
+      {
+        id: 13,
+        title: "Introdução à Ciência de Dados - Conjuntos Frequentes",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "Pattern Mining", "Analytics"],
+        credentialUrl: "#"
+      },
+      {
+        id: 14,
+        title: "Introdução à Ciência de Dados - Descoberta de Tópicos em Texto",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "NLP", "Text Mining"],
+        credentialUrl: "#"
+      },
+      {
+        id: 15,
+        title: "Gestão de Pessoas",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["Management", "Leadership", "HR"],
+        credentialUrl: "#"
+      },
+      {
+        id: 16,
+        title: "Liderança e Gestão de Times Híbridos",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["Management", "Remote Work", "Leadership"],
+        credentialUrl: "#"
+      },
+      {
+        id: 17,
+        title: "Gerenciar Projetos com o Microsoft 365",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Project Management", "Microsoft 365", "Planning"],
+        credentialUrl: "#"
+      },
+      {
+        id: 18,
+        title: "Análise e Melhoria de Processos",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["BPM", "Process Improvement", "Management"],
+        credentialUrl: "#"
+      },
+      {
+        id: 19,
+        title: "CODRAS - Operações com Drones",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["Drones", "Operations", "Technology"],
+        credentialUrl: "#"
+      }
+    ]
+  },
+  en: {
+    nav: {
+      projects: 'Projects',
+      about: 'About',
+      capybara: 'Capybara',
+      contact: 'Contact',
+    },
+    hero: {
+      badge: 'Full-Stack Web Developer',
+      title: 'Building modern',
+      titleGradient: 'web experiences',
+      description:
+        'I\'m a passionate full-stack developer studying Analysis and Development of Systems and IT Management. I create scalable, beautiful applications that solve real-world problems.',
+      viewWork: 'View My Work',
+      getInTouch: 'Get in Touch',
+      stats: {
+        projects: 'Completed Projects',
+        experience: 'Years Experience',
+        satisfaction: 'Client Satisfaction',
+      },
+    },
+    about: {
+      badge: 'About Me',
+      title: 'Turning ideas into',
+      titleGradient: 'digital solutions',
+      description:
+        'I\'m a dedicated full-stack developer with a passion for creating scalable, high-performance applications. Currently studying Analysis and Development of Systems and IT Management, I combine theoretical knowledge with practical experience.',
+      skillsTitle: 'My Skills',
+      educationTitle: 'Education & Learning',
+      frontend: 'Frontend',
+      backend: 'Backend',
+      databases: 'Databases',
+      devops: 'DevOps & Tools',
+      frontendDesc: 'React, TypeScript, Tailwind CSS, Next.js',
+      backendDesc: 'Node.js, Express, Python, REST APIs',
+      databasesDesc: 'PostgreSQL, MongoDB, Redis, Prisma',
+      devopsDesc: 'Docker, Git, GitHub, AWS, Vercel',
+      performance: 'Performance',
+      performanceDesc: 'Optimization, scalability, best practices',
+    },
+    projects: {
+      badge: 'Portfolio',
+      title: 'Featured Projects',
+      description:
+        'A selection of my recent work showcasing various technologies and problem-solving approaches',
+      viewProject: 'View Project',
+      viewAll: 'View all projects',
+      ecommerce: {
+        title: 'E-Commerce Platform',
+        description:
+          'Full-stack e-commerce solution with payment integration, inventory management, and real-time notifications.',
+      },
+      taskmanagement: {
+        title: 'Task Management System',
+        description:
+          'Collaborative task management application with real-time updates, team workspaces, and analytics dashboard.',
+      },
+      analytics: {
+        title: 'Analytics Dashboard',
+        description:
+          'Data visualization platform with interactive charts, custom reporting, and data export capabilities.',
+      },
+      mobileapi: {
+        title: 'Mobile App Backend',
+        description:
+          'RESTful API backend for mobile applications with authentication, caching, and optimized queries.',
+      },
+      aichat: {
+        title: 'Vitrine360 - Store Management',
+        description:
+          'Complete SaaS application for physical and online store management. Flexible plans (Free, Pro, Enterprise), inventory control, POS, and advanced reports.',
+      },
+      teamcollaboration: {
+        title: 'Team Collaboration Tool',
+        description:
+          'Workspace platform for distributed teams with file sharing, comments, and activity tracking.',
+      },
+    },
+    capybara: {
+      badge: 'My Initiative',
+      title: 'Capybara',
+      titleGradient: 'Holding',
+      description:
+        'Founder and creator of Capybara Holding, a visionary organization dedicated to fostering innovation, collaboration, and growth in the tech ecosystem. We believe in building sustainable solutions that make a positive impact.',
+      item1: 'Technology Innovation & Development',
+      item2: 'Strategic Business Solutions',
+      item3: 'Team Building & Mentorship',
+      item4: 'Digital Transformation Services',
+      learnMore: 'Learn More',
+    },
+    contact: {
+      title: "Let's work",
+      titleGradient: 'together',
+      description:
+        'Whether you have a project in mind, want to discuss opportunities, or just want to connect, I\'d love to hear from you. Let\'s create something amazing together.',
+      email: 'Send me an Email',
+      schedule: 'Schedule a Call',
+      available: 'Available for freelance projects, full-time positions, and consulting opportunities.',
+    },
+    footer: {
+      description:
+        'Full-stack web developer passionate about creating modern, scalable applications.',
+      nav: 'Navigation',
+      skills: 'Skills',
+      connect: 'Connect',
+      frontend: 'Frontend Development',
+      backend: 'Backend Development',
+      fullstack: 'Full-stack Applications',
+      rights: 'All rights reserved.',
+      crafted: 'Crafted with passion by a full-stack developer.',
+    },
+    projectsPage: {
+      title: 'My Projects',
+      subtitle: 'Check out all my work, from complex full-stack applications to UI components.',
+      backHome: 'Back to home',
+    },
+    uiLibrary: {
+      title: 'UI Component Library',
+      description: 'A collection of reusable components.',
+      noComponents: 'No components found in this category yet.',
+      backToHome: 'Back to Home',
+    },
+    categories: {
+      All: 'All',
+      Buttons: 'Buttons',
+      Loaders: 'Loaders',
+      Inputs: 'Inputs',
+      Cards: 'Cards',
+      Text: 'Text',
+      Tooltips: 'Tooltips',
+    },
+    contactForm: {
+      name: 'Name',
+      email: 'Email',
+      message: 'Message',
+      send: 'Send Message',
+      success: 'Message sent successfully! We will get back to you soon.',
+      error: 'Error sending message. Please try again.',
+      loading: 'Sending...',
+      required: 'Required field',
+    },
+    playground: {
+      badge: 'Interactive',
+      title: 'Your turn to play',
+    },
+    testimonials: {
+      badge: 'Testimonials',
+      title: 'What clients say about my work',
+    },
+    certificates: {
+      button: "View Certifications",
+      title: "Certifications & Achievements",
+      subtitle: "My journey of continuous learning and skill validation.",
+      viewCredential: "View Credential",
+      issuer: "Issued by",
+      date: "Completed in"
+    },
+    pricing: {
+      title: "Vitrine360 Plans",
+      subtitle: "Choose the best plan for your store",
+      free: {
+        title: "Free",
+        description: "Ideal for starters",
+        button: "Start Free"
+      },
+      pro: {
+        title: "Pro",
+        description: "For growing stores",
+        button: "Subscribe Pro"
+      },
+      enterprise: {
+        title: "Enterprise",
+        description: "For large networks",
+        button: "Contact Sales"
+      }
+    },
+    certificatesList: [
+      {
+        id: 21,
+        title: "UX: Improving User Experience in Digital Public Services",
+        issuer: "National School of Public Administration - Enap",
+        date: "2025",
+        skills: ["UX Design", "Usability", "User Research"],
+        credentialUrl: "#"
+      },
+      {
+        id: 20,
+        title: "Software Modeling",
+        issuer: "Universidade Anhembi Morumbi",
+        date: "2024",
+        skills: ["UML", "Software Architecture", "Design Patterns"],
+        credentialUrl: "#"
+      },
+      {
+        id: 1,
+        title: "Development with GitHub Copilot",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["AI", "Coding", "GitHub"],
+        credentialUrl: "#"
+      },
+      {
+        id: 2,
+        title: "GitHub Actions",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["DevOps", "CI/CD", "Automation"],
+        credentialUrl: "#"
+      },
+      {
+        id: 3,
+        title: "GitHub Codespaces",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["DevOps", "Cloud IDE", "Development"],
+        credentialUrl: "#"
+      },
+      {
+        id: 4,
+        title: "Information Security for Everyone",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["Security", "InfoSec", "Cybersecurity"],
+        credentialUrl: "#"
+      },
+      {
+        id: 5,
+        title: "Generative Artificial Intelligence",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "Generative AI", "Innovation"],
+        credentialUrl: "#"
+      },
+      {
+        id: 6,
+        title: "Microsoft Generative AI - Copilot",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "Microsoft", "Productivity"],
+        credentialUrl: "#"
+      },
+      {
+        id: 7,
+        title: "The History of AI",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "History", "Foundations"],
+        credentialUrl: "#"
+      },
+      {
+        id: 8,
+        title: "AI Ethics",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "Ethics", "Compliance"],
+        credentialUrl: "#"
+      },
+      {
+        id: 9,
+        title: "How to be More Productive using Bing Chat",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["AI", "Productivity", "Bing"],
+        credentialUrl: "#"
+      },
+      {
+        id: 10,
+        title: "Introduction to Data Science - Concepts and Tools",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "Analytics", "Big Data"],
+        credentialUrl: "#"
+      },
+      {
+        id: 11,
+        title: "Introduction to Data Science - Data Processing",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "ETL", "Data Processing"],
+        credentialUrl: "#"
+      },
+      {
+        id: 12,
+        title: "Introduction to Data Science - Classification Models",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "Machine Learning", "Classification"],
+        credentialUrl: "#"
+      },
+      {
+        id: 13,
+        title: "Introduction to Data Science - Frequent Sets",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "Pattern Mining", "Analytics"],
+        credentialUrl: "#"
+      },
+      {
+        id: 14,
+        title: "Introduction to Data Science - Topic Discovery in Text",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Data Science", "NLP", "Text Mining"],
+        credentialUrl: "#"
+      },
+      {
+        id: 15,
+        title: "People Management",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["Management", "Leadership", "HR"],
+        credentialUrl: "#"
+      },
+      {
+        id: 16,
+        title: "Leadership and Management of Hybrid Teams",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["Management", "Remote Work", "Leadership"],
+        credentialUrl: "#"
+      },
+      {
+        id: 17,
+        title: "Managing Projects with Microsoft 365",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["Project Management", "Microsoft 365", "Planning"],
+        credentialUrl: "#"
+      },
+      {
+        id: 18,
+        title: "Process Analysis and Improvement",
+        issuer: "EV.G / ENAP",
+        date: "2024",
+        skills: ["BPM", "Process Improvement", "Management"],
+        credentialUrl: "#"
+      },
+      {
+        id: 19,
+        title: "CODRAS - Drone Operations",
+        issuer: "EV.G / ENAP",
+        date: "2023",
+        skills: ["Drones", "Operations", "Technology"],
+        credentialUrl: "#"
+      }
+    ]
+  },
+};
+
+export function getTranslation(lang: Language, key: string): string {
+  const keys = key.split('.');
+  let current: any = translations[lang];
+
+  for (const k of keys) {
+    if (current && typeof current === 'object' && k in current) {
+      current = current[k];
+    } else {
+      // Fallback to English
+      current = translations.en;
+      for (const fallbackKey of keys) {
+        if (current && typeof current === 'object' && fallbackKey in current) {
+          current = current[fallbackKey];
+        }
+      }
+      return String(current) || key;
+    }
+  }
+
+  return String(current) || key;
+}

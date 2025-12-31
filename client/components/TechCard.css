@@ -1,0 +1,177 @@
+/* CSS Variables are expected to be set on the component:
+   --button-bg
+   --button-border
+   --button-hover-bg
+   --button-hover-border
+   --button-shadow-color
+*/
+
+/* Dark Mode */
+.dark .brutalist-button {
+    --button-bg: #1e293b;
+    --button-shadow-opacity: 0.4;
+    color: #e5dede;
+}
+
+.brutalist-button {
+    /* Default (Light Mode) */
+    --button-bg: #ffffff;
+    --button-shadow-opacity: 0.1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 142px;
+    color: #334155;
+    /* Slate 700 for light mode text */
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    background-color: var(--button-bg);
+    border: 3px solid var(--button-border);
+    border-radius: 12px;
+    box-shadow: 4px 4px 1px #000000;
+    padding: 8px;
+}
+
+.brutalist-button:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-border);
+    transform: translate(-3px, -3px) rotate(1deg);
+    box-shadow: 6px 6px 0 #000000, 10px 10px 10px var(--button-shadow-color);
+}
+
+.brutalist-button::before,
+.brutalist-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    transition: 0.6s;
+    z-index: 1;
+}
+
+.brutalist-button::before {
+    left: -100%;
+}
+
+.brutalist-button::after {
+    left: 100%;
+}
+
+.brutalist-button:hover::before {
+    animation: swipeRight 1.5s infinite;
+}
+
+.brutalist-button:hover::after {
+    animation: swipeLeft 1.5s infinite;
+}
+
+@keyframes swipeRight {
+    100% {
+        transform: translateX(200%) skew(-45deg);
+    }
+}
+
+@keyframes swipeLeft {
+    100% {
+        transform: translateX(-200%) skew(-45deg);
+    }
+}
+
+.tech-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 3;
+}
+
+.tech-icon {
+    width: 64px;
+    height: 64px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    object-fit: contain;
+}
+
+.tech-text {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    text-align: center;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 3;
+}
+
+.button-text span {
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 1.2;
+    max-width: 100%;
+}
+
+/* Hover effects */
+.brutalist-button:hover .tech-icon-container {
+    transform: translateY(-12px);
+}
+
+.brutalist-button:hover .tech-icon {
+    width: 32px;
+    height: 32px;
+    animation: spin-and-zoom 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+.brutalist-button:hover .button-text,
+.brutalist-button:hover .tech-text {
+    opacity: 1;
+    max-height: 80px;
+    margin-top: 4px;
+}
+
+@keyframes spin-and-zoom {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.brutalist-button:active .tech-icon,
+.brutalist-button:active .tech-text,
+.brutalist-button:active .button-text {
+    transform: scale(0.95);
+}
