@@ -15,8 +15,8 @@ const timelineData: Record<string, TimelineItem[]> = {
   pt: [
     {
       type: 'education',
-      title: 'Gestão de T.I',
-      institution: 'Faculdade Inovação',
+      title: 'Gestão de T.I - Graduação',
+      institution: 'Universidade Anhembi Morumbi',
       year: '2025 - Presente',
       description: 'Foco em gestão ágil, liderança técnica e infraestrutura cloud.',
     },
@@ -29,8 +29,8 @@ const timelineData: Record<string, TimelineItem[]> = {
     },
     {
       type: 'education',
-      title: 'Análise e Desenvolvimento de Sistemas',
-      institution: 'Universidade Tech',
+      title: 'Análise e Desenvolvimento de Sistemas - Graduação',
+      institution: 'Universidade Anhembi Morumbi',
       year: '2024 - Presente',
       description: 'Estudando análise de sistemas, desenvolvimento de software e boas práticas de engenharia.',
     },
@@ -52,8 +52,8 @@ const timelineData: Record<string, TimelineItem[]> = {
   en: [
     {
       type: 'education',
-      title: 'IT Management',
-      institution: 'Innovation College',
+      title: 'IT Management - Undergraduate',
+      institution: 'Anhembi Morumbi University',
       year: '2025 - Present',
       description: 'Focus on agile management, technical leadership and cloud infrastructure.',
     },
@@ -66,8 +66,8 @@ const timelineData: Record<string, TimelineItem[]> = {
     },
     {
       type: 'education',
-      title: 'Analysis and Development of Systems',
-      institution: 'Tech University',
+      title: 'Analysis and Development of Systems - Undergraduate',
+      institution: 'Anhembi Morumbi University',
       year: '2024 - Present',
       description: 'Studying systems analysis, software development and engineering best practices.',
     },
