@@ -15,8 +15,8 @@ export function Navigation() {
             <div className="flex items-center gap-2">
               <div className="relative w-8 h-8">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg blur-sm opacity-70"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">V.D</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center overflow-hidden p-1">
+                  <img src="/favicon.svg" alt="vitor.dev logo" className="w-full h-full object-contain brightness-0 invert" />
                 </div>
               </div>
               <span className="font-bold text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
