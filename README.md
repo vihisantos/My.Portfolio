@@ -66,6 +66,8 @@ Acesse o site online aqui: **[https://vihisantos.github.io/My.Portfolio/](https:
 
 ## 📄 Licença
 
-Este projeto é de uso pessoal como portfólio. Sinta-se à vontade para explorar o código!
+**© 2025 Vitor Santos. Todos os direitos reservados.**
 
-Desenvolvido com ❤️ por [Vitor Santos](https://github.com/vihisantos).
+Este repositório existe exclusivamente para fins de demonstração de portfólio. O código-fonte, design e ativos **não são de código aberto**. É proibida a cópia, redistribuição ou uso de qualquer parte deste projeto para fins comerciais ou pessoais sem autorização prévia.
+
+Desenvolvido por [Vitor Santos](https://github.com/vihisantos).
