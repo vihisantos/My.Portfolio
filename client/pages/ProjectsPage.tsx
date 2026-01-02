@@ -79,7 +79,14 @@ export default function ProjectsPage() {
                                             <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 smooth-transition" />
                                         </div>
 
-                                        <h3 className="font-bold text-lg mb-2">{project.title}</h3>
+                                        <div className="flex items-center justify-between mb-2">
+                                            <h3 className="font-bold text-lg">{project.title}</h3>
+                                            {project.badge && (
+                                                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 border-emerald-500/20 animate-pulse">
+                                                    {project.badge}
+                                                </span>
+                                            )}
+                                        </div>
                                         <p className="text-muted-foreground text-sm mb-4">
                                             {project.description}
                                         </p>
