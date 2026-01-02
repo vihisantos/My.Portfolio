@@ -15,8 +15,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Code2, Database, GitBranch, Zap } from "lucide-react";
 import ecommerceImg from "@/assets/projects/ecommerce.png";
 import taskManagementImg from "@/assets/projects/task-management.png";
-import analyticsImg from "@/assets/projects/analytics.png";
-import mobileApiImg from "@/assets/projects/mobile-api.png";
 import { useState, useMemo } from "react";
 import { ProjectModal } from "@/components/ProjectModal";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";

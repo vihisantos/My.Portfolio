@@ -1,10 +1,6 @@
-
 import ecommerceImg from "@/assets/projects/ecommerce.png";
 import taskManagementImg from "@/assets/projects/task-management.png";
-import analyticsImg from "@/assets/projects/analytics.png";
-import mobileApiImg from "@/assets/projects/mobile-api.png";
 import aiChatImg from "@/assets/projects/ai-chat.png";
-import teamCollaborationImg from "@/assets/projects/team-collaboration.png";
 
 export const getProjects = (t: any) => [
     {
