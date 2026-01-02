@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 export function FloatingWhatsApp() {
-    const phoneNumber = "5511986658103"; // Replace with actual number
+    const phoneNumber = "5511937507066"; // Replace with actual number
     const message = "Olá! Gostaria de falar sobre um projeto.";
 
     return (

@@ -9,9 +9,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackToTop } from "@/components/BackToTop";
+import { PageLoadingWrapper } from "@/components/PageLoadingWrapper";
 import Index from "./pages/Index";
 import ProjectsPage from "./pages/ProjectsPage";
 import UILibrary from "./pages/UILibrary";
+import CapybaraHolding from "./pages/CapybaraHolding";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,13 +28,16 @@ function RootApp() {
           <Toaster />
           <Sonner />
           <BrowserRouter basename={import.meta.env.BASE_URL}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/ui-library" element={<UILibrary />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <PageLoadingWrapper>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/ui-library" element={<UILibrary />} />
+                <Route path="/capybara-holding" element={<CapybaraHolding />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </PageLoadingWrapper>
           </BrowserRouter>
         </LanguageProvider>
       </TooltipProvider>

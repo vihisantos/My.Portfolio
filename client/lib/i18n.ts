@@ -56,27 +56,13 @@ export const translations = {
       taskmanagement: {
         title: 'Portfolio Profissional',
         description:
-          'Portfolio profissional desenvolvido com Next.js, React e TypeScript, com uma interface moderna e responsiva.',
-      },
-      analytics: {
-        title: 'Dashboard de Análise',
-        description:
-          'Plataforma de visualização de dados com gráficos interativos, relatórios personalizados e capacidade de exportação de dados.',
-      },
-      mobileapi: {
-        title: 'Backend de App Mobile',
-        description:
-          'API RESTful backend para aplicações móveis com autenticação, cache e consultas otimizadas.',
+          'Software as a Product (SaaP). Plataforma de alta performance com design UI/UX exclusivo incluso. Totalmente customizável para sua marca, com suporte a atualizações e expansões sob demanda.',
+        badge: 'Template p/ Venda',
       },
       aichat: {
         title: 'Vitrine360 - Gestão de Loja',
         description:
           'Aplicação SaaS completa para gestão de lojas físicas e online. Planos flexíveis (Free, Pro, Enterprise), controle de estoque, PDV e relatórios avançados.',
-      },
-      teamcollaboration: {
-        title: 'Ferramenta de Colaboração em Equipe',
-        description:
-          'Plataforma de espaço de trabalho para equipes distribuídas com compartilhamento de arquivos, comentários e rastreamento de atividades.',
       },
     },
     capybara: {
@@ -145,6 +131,31 @@ export const translations = {
     playground: {
       badge: 'Interativo',
       title: 'Sua vez de jogar',
+    },
+    holding: {
+      title: "Capybara Holding",
+      subtitle: "Ecossistema de Inovação & Tecnologia",
+      description: "A Capybara Holding nasceu da necessidade de centralizar e profissionalizar a gestão de diversas iniciativas tecnológicas, criando um ecossistema onde cada projeto potencializa o outro.",
+      mission: {
+        title: "Nossa Missão",
+        text: "Desenvolver soluções que simplifiquem a vida de empreendedores e usuários, utilizando o que há de mais moderno em tecnologia e design."
+      },
+      vitrine360: {
+        title: "Vitrine360",
+        tagline: "Sua loja, em qualquer lugar.",
+        description: "O projeto principal da holding. Uma plataforma SaaS completa para gestão de vendas, estoque e presença digital, focada em pequenos e médios lojistas que buscam profissionalismo sem complexidade.",
+        features: [
+          "PDV (Ponto de Venda) intuitivo",
+          "Gestão de estoque inteligente",
+          "Integração com e-commerce",
+          "Relatórios financeiros avançados"
+        ]
+      },
+      ecosystem: {
+        title: "O Ecossistema",
+        description: "Além do Vitrine360, a holding gerencia outras soluções em desenvolvimento, focadas em automação e produtividade."
+      },
+      cta: "Quero saber mais sobre a Holding"
     },
     testimonials: {
       badge: 'Depoimentos',
@@ -401,29 +412,15 @@ export const translations = {
           'Full-stack e-commerce solution with payment integration, inventory management, and real-time notifications.',
       },
       taskmanagement: {
-        title: 'Task Management System',
+        title: 'Professional Portfolio',
         description:
-          'Collaborative task management application with real-time updates, team workspaces, and analytics dashboard.',
-      },
-      analytics: {
-        title: 'Analytics Dashboard',
-        description:
-          'Data visualization platform with interactive charts, custom reporting, and data export capabilities.',
-      },
-      mobileapi: {
-        title: 'Mobile App Backend',
-        description:
-          'RESTful API backend for mobile applications with authentication, caching, and optimized queries.',
+          'Software as a Product (SaaP). High-performance platform with exclusive UI/UX design included. Fully customizable for your brand, with on-demand update and expansion support.',
+        badge: 'For Sale',
       },
       aichat: {
         title: 'Vitrine360 - Store Management',
         description:
           'Complete SaaS application for physical and online store management. Flexible plans (Free, Pro, Enterprise), inventory control, POS, and advanced reports.',
-      },
-      teamcollaboration: {
-        title: 'Team Collaboration Tool',
-        description:
-          'Workspace platform for distributed teams with file sharing, comments, and activity tracking.',
       },
     },
     capybara: {
@@ -492,6 +489,31 @@ export const translations = {
     playground: {
       badge: 'Interactive',
       title: 'Your turn to play',
+    },
+    holding: {
+      title: "Capybara Holding",
+      subtitle: "Innovation & Technology Ecosystem",
+      description: "Capybara Holding was born from the need to centralize and professionalize the management of various technological initiatives, creating an ecosystem where each project empowers the others.",
+      mission: {
+        title: "Our Mission",
+        text: "Develop solutions that simplify the lives of entrepreneurs and users, using the latest in technology and design."
+      },
+      vitrine360: {
+        title: "Vitrine360",
+        tagline: "Your store, anywhere.",
+        description: "The holding's flagship project. A complete SaaS platform for sales, inventory, and digital presence management, focused on small and medium-sized merchants seeking professionalism without complexity.",
+        features: [
+          "Intuitive POS (Point of Sale)",
+          "Smart inventory management",
+          "E-commerce integration",
+          "Advanced financial reports"
+        ]
+      },
+      ecosystem: {
+        title: "The Ecosystem",
+        description: "In addition to Vitrine360, the holding manages other solutions under development, focused on automation and productivity."
+      },
+      cta: "Learn more about the Holding"
     },
     testimonials: {
       badge: 'Testimonials',

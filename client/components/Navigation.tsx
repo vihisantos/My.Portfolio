@@ -13,10 +13,10 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link to="/" className="group">
             <div className="flex items-center gap-2">
-              <div className="relative w-8 h-8">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg blur-sm opacity-70"></div>
-                <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-lg flex items-center justify-center overflow-hidden p-1">
-                  <img src="/favicon.svg" alt="vitor.dev logo" className="w-full h-full object-contain" />
+              <div className="relative w-10 h-10">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl blur-sm opacity-70 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-xl flex items-center justify-center overflow-hidden shadow-inner border border-white/10">
+                  <img src="/My.Portfolio/favicon.svg" alt="vitor.dev logo" className="w-full h-full object-contain scale-[1.8] group-hover:scale-[2.1] transition-transform" />
                 </div>
               </div>
               <span className="font-bold text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -38,12 +38,12 @@ export function Navigation() {
             >
               {t('nav.about')}
             </a>
-            <a
-              href="#capybara"
+            <Link
+              to="/capybara-holding"
               className="text-sm font-medium smooth-transition hover:text-primary"
             >
               {t('nav.capybara')}
-            </a>
+            </Link>
             <div className="flex items-center gap-2">
               <ThemeToggle />
               <LanguageSwitcher />

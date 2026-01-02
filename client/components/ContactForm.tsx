@@ -30,8 +30,8 @@ export function ContactForm() {
     setStatus('loading');
 
     try {
-      // Using Formspree for email (free tier - example email)
-      const response = await fetch('https://formspree.io/f/xyzabcde', {
+      // Usando vitrsv462@gmail.com como destino do formulário
+      const response = await fetch('https://formspree.io/f/vitrsv462@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -121,8 +121,8 @@ export function ContactForm() {
       {message && (
         <div
           className={`p-4 rounded-lg font-medium ${status === 'success'
-              ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
-              : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+            : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
             }`}
         >
           {message}

@@ -265,10 +265,19 @@ export default function Index() {
                       <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 smooth-transition" />
                     </div>
 
-                    <h3 className="font-bold text-lg mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      {project.description}
-                    </p>
+                    <div className="flex flex-col flex-grow">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{project.title}</h3>
+                        {project.badge && (
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 border-emerald-500/20 animate-pulse">
+                            {project.badge}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                        {project.description}
+                      </p>
+                    </div>
 
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
@@ -312,9 +321,58 @@ export default function Index() {
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-3xl blur-3xl"></div>
               <div className="relative bg-gradient-to-br from-secondary/10 to-primary/10 rounded-3xl p-12 border border-secondary/30 dark:border-secondary/20 flex items-center justify-center min-h-96">
-                <div className="text-center">
-                  <div className="text-6xl font-bold gradient-text">🐹</div>
-                  <p className="mt-4 text-lg font-semibold">Capybara Holding</p>
+                <div className="w-full max-w-md bg-white/5 dark:bg-slate-900/50 backdrop-blur-md rounded-2xl border border-primary/20 p-6 shadow-2xl relative overflow-hidden group">
+                  {/* Decorative Elements */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl -z-10"></div>
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/10 blur-3xl -z-10"></div>
+
+                  {/* Header Mockup */}
+                  <div className="flex items-center justify-between mb-6 border-b border-border/50 pb-4">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-400/50"></div>
+                      <div className="w-3 h-3 rounded-full bg-amber-400/50"></div>
+                      <div className="w-3 h-3 rounded-full bg-emerald-400/50"></div>
+                    </div>
+                    <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
+                      HOLDING COMMAND CENTER
+                    </div>
+                  </div>
+
+                  {/* Metrics Grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-white dark:bg-slate-800/80 p-3 rounded-xl border border-border/50 group-hover:border-primary/30 transition-colors">
+                      <p className="text-[10px] text-muted-foreground uppercase">{t('capybara.activeProjects') || 'Projetos Ativos'}</p>
+                      <p className="text-2xl font-bold gradient-text">01</p>
+                    </div>
+                    <div className="bg-white dark:bg-slate-800/80 p-3 rounded-xl border border-border/50 group-hover:border-secondary/30 transition-colors">
+                      <p className="text-[10px] text-muted-foreground uppercase">{t('capybara.incubating') || 'Em Incubação'}</p>
+                      <p className="text-2xl font-bold text-slate-400">02</p>
+                    </div>
+                  </div>
+
+                  {/* Status Bar */}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-muted-foreground">Ecosystem Health</span>
+                      <span className="text-emerald-500 font-medium">99.9%</span>
+                    </div>
+                    <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-primary to-secondary w-[99.9%] animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  {/* Project Badge */}
+                  <div className="mt-6 flex items-center gap-3 bg-primary/5 p-2 rounded-lg border border-primary/10">
+                    <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-xs font-bold text-primary">V3</div>
+                    <div className="text-left">
+                      <p className="text-[10px] font-bold text-primary leading-tight">VITRINE 360</p>
+                      <p className="text-[9px] text-muted-foreground leading-tight">Live Operation</p>
+                    </div>
+                    <div className="ml-auto flex items-center gap-1">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></div>
+                      <span className="text-[8px] font-bold text-emerald-500">LIVE</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -344,12 +402,12 @@ export default function Index() {
                 ))}
               </div>
 
-              <a
-                href="#contact"
+              <Link
+                to="/capybara-holding"
                 className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-secondary to-primary text-white font-semibold smooth-transition hover:shadow-lg hover:shadow-secondary/30"
               >
                 {t('capybara.learnMore')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
