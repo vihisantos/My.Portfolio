@@ -181,6 +181,14 @@ const data: MyRouteResponse = await response.json();
 - Localização: `client/components/Timeline.tsx`
 - Atualização: Refatorado para suportar múltiplos tipos de eventos (Educação, Trabalho, Livros, Certificações) com ícones e cores distintos.
 
+### PageLoadingWrapper
+- Localização: `client/components/PageLoadingWrapper.tsx`
+- Descrição: Wrapper global que gerencia transições suaves entre rotas. Exibe a animação de loader (passarinho) com um delay artificial para garantir um "feel" premium e reseta o scroll para o topo automaticamente.
+
+### Capybara Holding Page
+- Localização: `client/pages/CapybaraHolding.tsx`
+- Descrição: Página institucional dedicada à iniciativa Capybara Holding. Apresenta visão, missão e serviços com animações de fade-in e estética minimalista dark/light.
+
 ## UI Component Library
 
 ### Descrição Geral

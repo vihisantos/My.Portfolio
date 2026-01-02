@@ -9,14 +9,13 @@ Acesse o site online aqui: **[https://vihisantos.github.io/My.Portfolio/](https:
 
 ---
 
-## ✨ Destaques do Projeto
-
-- **🎨 Design Moderno**: Interface construída com **React 18** e **TailwindCSS**, focada em estética premium e experiência do usuário (UX).
-- **📱 Responsivo**: Adaptado para qualquer dispositivo, de celulares a monitores ultrawide.
+- **🎨 Design Moderno & Premium**: Interface construída com **React 18** e **TailwindCSS**, focada em estética de alta fidelidade e experiência do usuário (UX).
+- **🛍️ Portfolio as a Product (SaaP)**: O template do portfólio foi transformado em um produto comercial, pronto para venda e customização.
+- **✨ Transições Globais**: Sistema de carregamento fluido com animações personalizadas em todas as trocas de página.
+- **📱 Responsivo & Otimizado**: Adaptado para qualquer dispositivo e livre de "resíduos" de código (codebase auditada).
 - **🛠️ UI Library**: Uma galeria exclusiva de componentes interativos e animados (loaders, botões, switches).
 - **🌍 Internacionalização**: Suporte completo a **Português (PT)** e **Inglês (EN)**.
 - **⚡ Performance SPA**: Navegação ultra rápida usando **React Router 6**.
-- **🔄 Deploy Automático**: Pipeline de CI/CD configurado via **GitHub Actions**.
 
 ## 🛠️ Tech Stack
 
