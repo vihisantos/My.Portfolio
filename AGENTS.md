@@ -219,3 +219,11 @@ Uma coleção massiva de componentes de UI altamente interativos, animados e com
 - **Social Integration**: Atualização dos links de LinkedIn, Instagram e Uiverse no `SocialHub` e no `Footer`.
 - **UX Certificate**: Adição do novo certificado de UX da Enap à Timeline, destacando a conquista mais recente.
 - **UI Library Refinement**: Ajuste de responsividade e escala do `TruckLoader` e padronização de nomes de tecnologias nos filtros para evitar duplicatas.
+
+## Mudanças Recentes (01/01/2026 - 02/01/2026)
+
+- **Commercial Rebranding**: Transformação do projeto "Portfolio Profissional" em um produto (SaaP). Adição de badges "Template p/ Venda", botões de CTA direto para WhatsApp e remoção de links técnicos (Git/Demo) para focar em conversão.
+- **Global Transitions**: Implementação do `PageLoadingWrapper` em todo o ecossistema do app, garantindo que todas as navegações passem por um loader polido.
+- **Codebase Purge**: Auditoria completa e remoção de "resíduos" (componentes órfãos, imagens não utilizadas e arquivos de teste legados) para otimização de performance e manutenção.
+- **Visual Sync**: Sincronização estética dos badges esmeralda em todas as listagens de projetos (Home e Galeria Completo).
+- **Contact Sync**: Atualização global do número de contato e integração direta com WhatsApp em múltiplos pontos de conversão.
