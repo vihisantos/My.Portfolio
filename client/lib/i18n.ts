@@ -6,6 +6,7 @@ export const translations = {
       projects: 'Projetos',
       about: 'Sobre',
       capybara: 'Capybara',
+      sponsorship: 'Seja Apoiador',
       contact: 'Contato',
     },
     hero: {
@@ -63,6 +64,16 @@ export const translations = {
         title: 'Vitrine360 - Gestão de Loja',
         description:
           'Aplicação SaaS completa para gestão de lojas físicas e online. Planos flexíveis (Free, Pro, Enterprise), controle de estoque, PDV e relatórios avançados.',
+      },
+      colorflicks: {
+        title: 'ColorFlicks - Inteligência de Cores',
+        description:
+          'Ferramenta cinemática que analisa pôsteres de filmes para extrair paletas e "humor". Apresenta extração de cores client-side e design premium.',
+      },
+      capyflow: {
+        title: 'CapyFlow Academy',
+        description:
+          'Plataforma de ensino gamificada focada em desenvolvimento de software com arquitetura Monorepo.',
       },
     },
     capybara: {
@@ -151,9 +162,86 @@ export const translations = {
           "Relatórios financeiros avançados"
         ]
       },
+      colorflicks: {
+        title: "ColorFlicks",
+        tagline: "A psicologia das cores no cinema.",
+        description: "Explore o humor e a estética dos seus filmes favoritos através de paletas de cores geradas por inteligência algorítmica. Uma ferramenta visual para designers e cinéfilos.",
+        features: [
+          "Análise de Humor",
+          "Paletas Cinemáticas",
+          "Compartilhamento Social"
+        ]
+      },
+      capyflow: {
+        title: "CapyFlow Academy",
+        tagline: "A academia de escrita para programadores.",
+        description: "Plataforma de ensino gamificada focada em desenvolvimento de software. Domine habilidades full-stack com desafios práticos.",
+        features: [
+          "Ensino Gamificado",
+          "Arquitetura Monorepo",
+          "Desafios Reais"
+        ]
+      },
       ecosystem: {
         title: "O Ecossistema",
-        description: "Além do Vitrine360, a holding gerencia outras soluções em desenvolvimento, focadas em automação e produtividade."
+        description: "A Capybara Holding não é apenas um grupo de projetos, é uma simbiose tecnológica. O Vitrine360 oferece a infraestrutura comercial, o ColorFlicks traz a inteligência criativa e visual, e o CapyFlow Academy forma os engenheiros que construirão o futuro. Juntos, cobrimos todo o ciclo de vida digital: Vendas, Criatividade e Talento. E isso é apenas o começo. Estamos empenhados em melhorar a vida de todos que cruzam nosso caminho."
+      },
+      sponsorship: {
+        hero: {
+          badge: "Apoie a Visão",
+          title: "Impulsione o Futuro",
+          subtitle: "da Tecnologia",
+          description: "A Capybara Holding é construída sobre a ideia de que a tecnologia deve servir às pessoas. Ao se tornar um patrocinador, você está investindo diretamente em inovação, educação e ferramentas que empoderam criadores e empreendedores.",
+          cta: "Quero Apoiar"
+        },
+        tiers: {
+          visionary: {
+            title: "Visionário",
+            price: "Sob Consulta",
+            description: "Apoie o ecossistema inteiro. Seu nome/marca em destaque em todos os projetos.",
+            features: ["Logo em Todos os Projetos", "Acesso Antecipado", "Consultoria Estratégica"]
+          },
+          guardian: {
+            title: "Guardião de Projeto",
+            price: "R$ 200/mês",
+            description: "Escolha um projeto (Vitrine360, ColorFlicks, CapyFlow) para apadrinhar diretamente.",
+            features: ["Logo no Projeto", "Badge Exclusivo", "Reports de Impacto"]
+          },
+          community: {
+            title: "Apoiador da Comunidade",
+            price: "Valor Livre",
+            description: "Contribuição pontual para manter nossos servidores e café rodando.",
+            features: ["Nome no Mural", "Agradecimento Social", "Good Vibes"]
+          }
+        },
+        why: {
+          innovation: {
+            title: "Inovação Aberta",
+            desc: "Fomentamos tecnologias que outros não ousam tentar."
+          },
+          education: {
+            title: "Educação Gratuita",
+            desc: "Mantemos o CapyFlow acessível para estudantes carentes."
+          },
+          impact: {
+            title: "Impacto Real",
+            desc: "Ferramentas que geram renda para pequenos negócios."
+          }
+        },
+        form: {
+          title: "Entre em contato para patrocinar",
+          name: "Nome da Empresa/Pessoa",
+          email: "Email Profissional",
+          interest: "Nível de Interesse",
+          message: "Mensagem",
+          submit: "Enviar Proposta"
+        },
+        wallOfFame: {
+          title: "Mural da Comunidade",
+          subtitle: "Pessoas incríveis que ajudam a tornar tudo isso possível.",
+          beTheFirst: "Seja o primeiro!",
+          joinUs: "Junte-se a nós"
+        }
       },
       cta: "Quero saber mais sobre a Holding"
     },
@@ -364,6 +452,7 @@ export const translations = {
       projects: 'Projects',
       about: 'About',
       capybara: 'Capybara',
+      sponsorship: 'Become a Sponsor',
       contact: 'Contact',
     },
     hero: {
@@ -421,6 +510,16 @@ export const translations = {
         title: 'Vitrine360 - Store Management',
         description:
           'Complete SaaS application for physical and online store management. Flexible plans (Free, Pro, Enterprise), inventory control, POS, and advanced reports.',
+      },
+      colorflicks: {
+        title: 'ColorFlicks - Color Intelligence',
+        description:
+          'Cinematic tool that analyzes movie posters to extract palettes and "mood". Features client-side color extraction and premium design.',
+      },
+      capyflow: {
+        title: 'CapyFlow Academy',
+        description:
+          'Gamified teaching platform focused on software development with Monorepo architecture.',
       },
     },
     capybara: {
@@ -509,9 +608,86 @@ export const translations = {
           "Advanced financial reports"
         ]
       },
+      colorflicks: {
+        title: "ColorFlicks",
+        tagline: "The psychology of color in cinema.",
+        description: "Explore the mood and aesthetics of your favorite movies through algorithmically generated color palettes. A visual tool for designers and cinephiles.",
+        features: [
+          "Mood Analysis",
+          "Cinematic Palettes",
+          "Social Sharing"
+        ]
+      },
+      capyflow: {
+        title: "CapyFlow Academy",
+        tagline: "The coding academy for developers.",
+        description: "Gamified learning platform focused on software development. Master full-stack skills with hands-on challenges.",
+        features: [
+          "Gamified Learning",
+          "Monorepo Architecture",
+          "Real-world Challenges"
+        ]
+      },
       ecosystem: {
         title: "The Ecosystem",
-        description: "In addition to Vitrine360, the holding manages other solutions under development, focused on automation and productivity."
+        description: "Capybara Holding is not just a group of projects, it's a technological symbiosis. Vitrine360 provides the commercial infrastructure, ColorFlicks brings creative and visual intelligence, and CapyFlow Academy trains the engineers who will build the future. Together, we cover the entire digital lifecycle: Sales, Creativity, and Talent. And this is just the beginning. We are committed to improving the lives of everyone we touch."
+      },
+      sponsorship: {
+        hero: {
+          badge: "Back the Vision",
+          title: "Fuel the Future",
+          subtitle: "of Technology",
+          description: "Capybara Holding is built on the idea that technology must serve people. By becoming a sponsor, you invest directly in innovation, education, and tools that empower creators and entrepreneurs.",
+          cta: "I Want to Support"
+        },
+        tiers: {
+          visionary: {
+            title: "Visionary",
+            price: "Custom / Contact Us",
+            description: "Support the entire ecosystem. Your name/brand featured across all projects.",
+            features: ["Logo on All Projects", "Early Access", "Strategic Consulting"]
+          },
+          guardian: {
+            title: "Project Guardian",
+            price: "$40/mo",
+            description: "Choose a project (Vitrine360, ColorFlicks, CapyFlow) to sponsor directly.",
+            features: ["Logo on Project", "Exclusive Badge", "Impact Reports"]
+          },
+          community: {
+            title: "Community Supporter",
+            price: "Pay What You Want",
+            description: "One-time contribution to keep our servers running and coffee flowing.",
+            features: ["Name on Wall", "Social Shoutout", "Good Vibes"]
+          }
+        },
+        why: {
+          innovation: {
+            title: "Open Innovation",
+            desc: "We foster technologies others dare not try."
+          },
+          education: {
+            title: "Free Education",
+            desc: "We keep CapyFlow accessible to underprivileged students."
+          },
+          impact: {
+            title: "Real Impact",
+            desc: "Tools that generate income for small businesses."
+          }
+        },
+        form: {
+          title: "Get in touch to sponsor",
+          name: "Company/Person Name",
+          email: "Professional Email",
+          interest: "Interest Level",
+          message: "Message",
+          submit: "Send Proposal"
+        },
+        wallOfFame: {
+          title: "Community Wall",
+          subtitle: "Amazing people who help make all of this possible.",
+          beTheFirst: "Be the first!",
+          joinUs: "Join us"
+        }
       },
       cta: "Learn more about the Holding"
     },

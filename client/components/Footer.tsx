@@ -37,6 +37,11 @@ export function Footer() {
                   {t('nav.capybara')}
                 </a>
               </li>
+              <li>
+                <Link to="/sponsorship" className="hover:text-primary smooth-transition">
+                  {t('nav.sponsorship')}
+                </Link>
+              </li>
             </ul>
           </div>
 

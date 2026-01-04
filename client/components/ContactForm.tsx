@@ -31,7 +31,7 @@ export function ContactForm() {
 
     try {
       // Usando vitrsv462@gmail.com como destino do formulário
-      const response = await fetch('https://formspree.io/f/vitrsv462@gmail.com', {
+      const response = await fetch('https://formspree.io/f/xnjnozgn', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

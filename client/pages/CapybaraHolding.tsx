@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowLeft, Rocket, Shield, Zap, Layout, ShoppingBag, BarChart3, Users } from "lucide-react";
+import { ArrowLeft, Rocket, Shield, Zap, Layout, ShoppingBag, BarChart3, Users, Clapperboard, Palette, Share2, Code2, GraduationCap, Laptop } from "lucide-react";
 import { Link } from "react-router-dom";
 import { translations } from "@/lib/i18n";
 
@@ -87,9 +87,6 @@ export default function CapybaraHolding() {
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <ScrollFadeIn>
-                            <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-                                Projeto em Destaque
-                            </span>
                             <h2 className="text-4xl font-bold mt-2">{t('holding.vitrine360.title')}</h2>
                             <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
                                 {t('holding.vitrine360.tagline')}
@@ -118,7 +115,7 @@ export default function CapybaraHolding() {
                                         to="/#contact"
                                         className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-bold hover:shadow-lg hover:shadow-primary/30 smooth-transition"
                                     >
-                                        {t('holding.cta')} <Rocket size={20} />
+                                        {t('projects.viewProject')} <ArrowLeft className="rotate-180" size={20} />
                                     </Link>
                                 </div>
                             </div>
@@ -155,6 +152,146 @@ export default function CapybaraHolding() {
                 </div>
             </section>
 
+            {/* ColorFlicks Section */}
+            <section className="section-padding bg-white dark:bg-slate-950">
+                <div className="container-custom">
+                    <div className="text-center mb-16">
+                        <ScrollFadeIn>
+                            <h2 className="text-4xl font-bold mt-2">{t('holding.colorflicks.title')}</h2>
+                            <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                                {t('holding.colorflicks.tagline')}
+                            </p>
+                        </ScrollFadeIn>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <ScrollFadeIn>
+                            <div className="relative group order-2 lg:order-1">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                                <div className="relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-border shadow-2xl aspect-[4/5] max-h-[500px] flex items-center justify-center p-8 mx-auto w-full max-w-md">
+                                    {/* Abstract Poster Mockup */}
+                                    <div className="w-full h-full bg-slate-100 dark:bg-slate-800 rounded-xl relative overflow-hidden flex flex-col">
+                                        <div className="h-3/4 bg-slate-200 dark:bg-slate-700 w-full relative">
+                                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20"></div>
+                                            <Clapperboard className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-600 opacity-50" size={64} />
+                                        </div>
+                                        <div className="h-1/4 p-4 flex flex-col gap-2">
+                                            <div className="h-4 w-3/4 bg-slate-300 dark:bg-slate-600 rounded animate-pulse"></div>
+                                            <div className="h-3 w-1/2 bg-slate-300 dark:bg-slate-600 rounded animate-pulse"></div>
+                                            <div className="flex gap-2 mt-auto">
+                                                <div className="w-6 h-6 rounded-full bg-red-400"></div>
+                                                <div className="w-6 h-6 rounded-full bg-blue-400"></div>
+                                                <div className="w-6 h-6 rounded-full bg-green-400"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ScrollFadeIn>
+
+                        <ScrollFadeIn delay={200}>
+                            <div className="glass-card p-8 rounded-3xl border-secondary/20 bg-slate-50/50 dark:bg-slate-900/50 order-1 lg:order-2">
+                                <p className="text-lg mb-8 text-muted-foreground">
+                                    {t('holding.colorflicks.description')}
+                                </p>
+                                <div className="space-y-4">
+                                    {holdingTranslations.colorflicks.features.map((feature: string, index: number) => (
+                                        <div key={index} className="flex items-center gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                                                <Palette size={14} />
+                                            </div>
+                                            <span className="font-medium text-slate-700 dark:text-slate-200">{feature}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="mt-10">
+                                    <Link
+                                        to="/projects"
+                                        className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-bold hover:shadow-lg hover:shadow-secondary/30 smooth-transition"
+                                    >
+                                        {t('projects.viewProject')} <ArrowLeft className="rotate-180" size={20} />
+                                    </Link>
+                                </div>
+                            </div>
+                        </ScrollFadeIn>
+                    </div>
+                </div>
+            </section>
+
+            {/* CapyFlow Academy Section */}
+            <section className="section-padding bg-slate-50 dark:bg-slate-900/50">
+                <div className="container-custom">
+                    <div className="text-center mb-16">
+                        <ScrollFadeIn>
+                            <h2 className="text-4xl font-bold mt-2">{t('holding.capyflow.title')}</h2>
+                            <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                                {t('holding.capyflow.tagline')}
+                            </p>
+                        </ScrollFadeIn>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <ScrollFadeIn>
+                            <div className="glass-card p-8 rounded-3xl border-primary/20 bg-white/50 dark:bg-slate-900/50">
+                                <p className="text-lg mb-8 text-muted-foreground">
+                                    {t('holding.capyflow.description')}
+                                </p>
+                                <div className="space-y-4">
+                                    {holdingTranslations.capyflow.features.map((feature: string, index: number) => (
+                                        <div key={index} className="flex items-center gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                                <GraduationCap size={14} />
+                                            </div>
+                                            <span className="font-medium text-slate-700 dark:text-slate-200">{feature}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="mt-10">
+                                    <Link
+                                        to="/projects"
+                                        className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-bold hover:shadow-lg hover:shadow-primary/30 smooth-transition"
+                                    >
+                                        {t('projects.viewProject')} <ArrowLeft className="rotate-180" size={20} />
+                                    </Link>
+                                </div>
+                            </div>
+                        </ScrollFadeIn>
+
+                        <ScrollFadeIn delay={200}>
+                            <div className="relative group">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                                <div className="relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-border shadow-2xl aspect-[4/5] max-h-[500px] flex items-center justify-center p-8 mx-auto w-full max-w-md">
+                                    {/* Abstract Code Editor Mockup */}
+                                    <div className="w-full h-full bg-slate-950 rounded-xl relative overflow-hidden flex flex-col border border-slate-800">
+                                        <div className="h-8 bg-slate-900 border-b border-slate-800 flex items-center px-4 gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                                        </div>
+                                        <div className="flex-1 p-4 relative">
+                                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/5"></div>
+                                            <Code2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-slate-700 dark:text-slate-800 opacity-50" size={64} />
+
+                                            <div className="space-y-2">
+                                                <div className="h-2 w-1/3 bg-slate-800 rounded animate-pulse"></div>
+                                                <div className="h-2 w-1/2 bg-slate-800 rounded animate-pulse delay-75"></div>
+                                                <div className="h-2 w-2/3 bg-slate-800 rounded animate-pulse delay-150"></div>
+                                                <div className="h-2 w-1/4 bg-slate-800 rounded animate-pulse delay-200"></div>
+                                            </div>
+
+                                            <div className="space-y-2 mt-8 ml-4">
+                                                <div className="h-2 w-1/2 bg-slate-800 rounded animate-pulse"></div>
+                                                <div className="h-2 w-1/3 bg-slate-800 rounded animate-pulse delay-75"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ScrollFadeIn>
+                    </div>
+                </div>
+            </section>
+
             {/* Ecosystem Section */}
             <section className="section-padding">
                 <div className="container-custom">
@@ -167,25 +304,43 @@ export default function CapybaraHolding() {
                             <p className="text-xl text-slate-300 leading-relaxed mb-12">
                                 {t('holding.ecosystem.description')}
                             </p>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                                <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
-                                        <Zap className="text-primary" />
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                                <div className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition duration-300">
+                                    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 text-primary">
+                                        <ShoppingBag />
                                     </div>
-                                    <div>
-                                        <h3 className="font-bold text-lg mb-1">Inovação</h3>
-                                        <p className="text-slate-400 text-sm">Sempre na fronteira tecnológica.</p>
-                                    </div>
+                                    <h3 className="font-bold text-lg mb-2">Comércio</h3>
+                                    <p className="text-slate-400 text-sm">Infraestrutura SaaS robusta para vendas.</p>
                                 </div>
-                                <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
-                                        <Users className="text-secondary" />
+                                <div className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition duration-300">
+                                    <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 text-secondary">
+                                        <Palette />
                                     </div>
-                                    <div>
-                                        <h3 className="font-bold text-lg mb-1">Colaboração</h3>
-                                        <p className="text-slate-400 text-sm">Ecossistema interconectado.</p>
-                                    </div>
+                                    <h3 className="font-bold text-lg mb-2">Criatividade</h3>
+                                    <p className="text-slate-400 text-sm">Inteligência visual e design.</p>
                                 </div>
+                                <div className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition duration-300">
+                                    <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4 text-blue-400">
+                                        <GraduationCap />
+                                    </div>
+                                    <h3 className="font-bold text-lg mb-2">Educação</h3>
+                                    <p className="text-slate-400 text-sm">Formação de talentos tech.</p>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-4 mt-12">
+                                <Link
+                                    to="/sponsorship"
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-slate-900 font-bold hover:shadow-lg hover:bg-slate-100 transition duration-300"
+                                >
+                                    {t('holding.sponsorship.hero.cta') || "Seja um Patrocinador"} <ArrowLeft className="rotate-180" size={20} />
+                                </Link>
+                                <Link
+                                    to="/#contact"
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/20 text-white font-bold hover:bg-white/10 transition duration-300"
+                                >
+                                    {t('holding.cta')}
+                                </Link>
                             </div>
                         </div>
                     </div>

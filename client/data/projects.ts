@@ -1,6 +1,8 @@
 import ecommerceImg from "@/assets/projects/ecommerce.png";
 import taskManagementImg from "@/assets/projects/task-management.png";
 import aiChatImg from "@/assets/projects/ai-chat.png";
+import colorFlicksImg from "@/assets/projects/ColorFlick.png";
+import capyFlowImg from "@/assets/projects/capyflowacademy.png";
 
 export const getProjects = (t: any) => [
     {
@@ -24,5 +26,19 @@ export const getProjects = (t: any) => [
         description: t('projects.aichat.description'),
         technologies: ["React", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Supabase", "JWT"],
         image: aiChatImg,
+    },
+    {
+        id: 6,
+        title: t('projects.colorflicks.title'),
+        description: t('projects.colorflicks.description'),
+        technologies: ["React", "Vite", "Tailwind CSS", "TVMaze API", "ColorThief"],
+        image: colorFlicksImg,
+    },
+    {
+        id: 7,
+        title: t('projects.capyflow.title'),
+        description: t('projects.capyflow.description'),
+        technologies: ["Next.js 16", "NestJS 11", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+        image: capyFlowImg,
     }
 ];

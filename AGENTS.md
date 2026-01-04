@@ -189,41 +189,27 @@ const data: MyRouteResponse = await response.json();
 - Localização: `client/pages/CapybaraHolding.tsx`
 - Descrição: Página institucional dedicada à iniciativa Capybara Holding. Apresenta visão, missão e serviços com animações de fade-in e estética minimalista dark/light.
 
-## UI Component Library
+### Sponsorship System
+- Localização: `client/pages/Sponsorship.tsx`
+- Descrição: Sistema completo de patrocínio com 3 tiers (Visionário, Guardião, Comunidade).
+- Features: Integração com Formspree para pagamentos/contato, "Wall of Fame" dinâmico renderizado via array de dados, e cartões de patrocinadores com estilização única (Coroa para Visionários, Escudo para Guardiões, Coração para Comunidade).
+- Dados: Lista de patrocinadores centralizada no arquivo para fácil adição (`sponsors` array).
 
-### Descrição Geral
-Uma coleção massiva de componentes de UI altamente interativos, animados e com estética premium, localizados em `client/components/ui-library/`. Esta biblioteca serve como um "showcase" de habilidades técnicas e criativas.
+## Mudanças Recentes (04/01/2026)
 
-### Principais Categorias
-- **Loaders**: Mais de 40 loaders customizados (Ex: `TruckLoader`, `WalkingManLoader`, `HamsterLoader`, `MatrixLoader`).
-- **Buttons**: Botões com micro-interações avançadas (Ex: `NatureButton`, `OpenAIButton`, `PlayNowButton`, `ShineButton`).
-- **Inputs & Switches**: Componentes de formulário temáticos (Ex: `ThreeDInput`, `DayNightSwitch`, `MinecraftSwitch`, `GooeySwitch`).
-- **Cards & Extras**: Componentes complexos como `Error404Card`, `SocialGrid`, e `GlassIcons`.
+### ColorFlicks
+- **Visão Geral**: Ferramenta de inteligência de cores cinemática que analisa pôsteres de filmes para extrair paletas e "humor".
+- **Tech Stack**: React 18, Vite, Tailwind CSS v4, ColorThief, TVMaze API.
+- **Destaques**: Extração de cores client-side, suporte bilarngue (EN/PT), modo escuro/claro robusto e compartilhamento social com html2canvas.
+- **Status**: Adicionado ao portfólio e à página da Capybara Holding.
 
-### Showcase
-- **Página**: `client/pages/UILibrary.tsx`
-- **Componente Base**: `ComponentShowcase.tsx` (provê visualização de código e estados de animação).
+### CapyFlow Academy
+- **Visão Geral**: Plataforma de ensino gamificada focada em desenvolvimento de software (Monorepo).
+- **Tech Stack**: Next.js 16, NestJS 11, TypeScript, Tailwind CSS v4, Postgres, Firebase.
+- **Destaques**: Editor de código (Monaco), autenticação híbrida, arquitetura em camadas.
+- **Status**: Adicionado ao portfólio e à página da Capybara Holding.
 
-## Mudanças Recentes (29/12/2025)
-
-- **NatureButton Refinement**: Refatoração completa para incluir um SVG de folha de cannabis de alta fidelidade, com animações de hover premium e gradientes suaves.
-- **UI Library Expansion**: Adição de dezenas de novos loaders e componentes interativos para o portfólio.
-- **GithubStats**: Removido por preferência de design e substituído por métricas mais personalizadas.
-
-## Mudanças Recentes (30/12/2025)
-
-- **Vitrine360 Pivot**: Rebranding completo do projeto "AI Chat Interface" para "Vitrine360 - Gestão de loja", focando em uma solução SaaS com tabelas de preços e funcionalidades de gestão.
-- **Dedicated Projects Page**: Implementação de uma página exclusiva para projetos (`/projects`) com filtragem por tecnologia, permitindo uma home mais limpa.
-- **Homepage Optimization**: Restruturação da seção de projetos na home para exibir apenas os 6 principais, com link para a galeria completa.
-- **Internationalization (i18n)**: Tradução completa da nova página de projetos e elementos de navegação para Português e Inglês.
-- **Social Integration**: Atualização dos links de LinkedIn, Instagram e Uiverse no `SocialHub` e no `Footer`.
-- **UX Certificate**: Adição do novo certificado de UX da Enap à Timeline, destacando a conquista mais recente.
-- **UI Library Refinement**: Ajuste de responsividade e escala do `TruckLoader` e padronização de nomes de tecnologias nos filtros para evitar duplicatas.
-
-## Mudanças Recentes (01/01/2026 - 02/01/2026)
-
-- **Commercial Rebranding**: Transformação do projeto "Portfolio Profissional" em um produto (SaaP). Adição de badges "Template p/ Venda", botões de CTA direto para WhatsApp e remoção de links técnicos (Git/Demo) para focar em conversão.
-- **Global Transitions**: Implementação do `PageLoadingWrapper` em todo o ecossistema do app, garantindo que todas as navegações passem por um loader polido.
-- **Codebase Purge**: Auditoria completa e remoção de "resíduos" (componentes órfãos, imagens não utilizadas e arquivos de teste legados) para otimização de performance e manutenção.
-- **Visual Sync**: Sincronização estética dos badges esmeralda em todas as listagens de projetos (Home e Galeria Completo).
-- **Contact Sync**: Atualização global do número de contato e integração direta com WhatsApp em múltiplos pontos de conversão.
+### Sponsorship & Ecosystem
+- **Capybara Holding**: Lançamento da página "holding" unificando os projetos (Commerce, Education, Creative).
+- **Sponsorship**: Lançamento da página de apoadores com integração Formspree funcional, tiers definidos e grid de "Wall of Fame" escalável.
+- **Visual Polish**: Refinamento visual dos cards de patrocinadores com ícones temáticos (Crown, Shield, Heart) e animações de hover.

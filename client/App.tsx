@@ -14,6 +14,7 @@ import Index from "./pages/Index";
 import ProjectsPage from "./pages/ProjectsPage";
 import UILibrary from "./pages/UILibrary";
 import CapybaraHolding from "./pages/CapybaraHolding";
+import Sponsorship from "./pages/Sponsorship";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ function RootApp() {
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/ui-library" element={<UILibrary />} />
                 <Route path="/capybara-holding" element={<CapybaraHolding />} />
+                <Route path="/sponsorship" element={<Sponsorship />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
