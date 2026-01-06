@@ -35,8 +35,12 @@ const Loader = () => {
           height: 7px;
           width: 45px;
           border-radius: 4px;
-          box-shadow: 0 5px 0 #f2f2f2, -35px 50px 0 #f2f2f2, -70px 95px 0 #f2f2f2;
+          box-shadow: 0 5px 0 #000, -35px 50px 0 #000, -70px 95px 0 #000;
           animation: bouncing-ball-step 1s ease-in-out infinite;
+        }
+
+        .dark .bouncing-ball-loader:after {
+          box-shadow: 0 5px 0 #f2f2f2, -35px 50px 0 #f2f2f2, -70px 95px 0 #f2f2f2;
         }
 
         @keyframes bouncing-ball-bounce {
@@ -47,6 +51,21 @@ const Loader = () => {
         }
 
         @keyframes bouncing-ball-step {
+          0% {
+            box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
+                    0 10px 0 #000,
+                    -35px 50px 0 #000,
+                    -70px 90px 0 #000;
+          }
+          100% {
+            box-shadow: 0 10px 0 #000,
+                    -35px 50px 0 #000,
+                    -70px 90px 0 #000,
+                    -70px 90px 0 rgba(0, 0, 0, 0);
+          }
+        }
+
+        @keyframes bouncing-ball-step-dark {
           0% {
             box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
                     0 10px 0 #f2f2f2,
@@ -60,6 +79,10 @@ const Loader = () => {
                     -70px 90px 0 rgba(0, 0, 0, 0);
           }
         }
+
+        .dark .bouncing-ball-loader:after {
+           animation-name: bouncing-ball-step-dark;
+        }
         \`}
       </style>
       <div className="bouncing-ball-loader" />
@@ -71,11 +94,11 @@ export default Loader;
 `;
 
 export function BouncingBallLoader() {
-    return (
-        <ComponentShowcase title="Bouncing Ball Loader" code={code} className="min-h-[250px] flex items-center justify-center">
-            <div className="bouncing-ball-loader-wrapper w-full h-full min-h-[200px] flex items-center justify-center bg-slate-800 rounded-lg">
-                <style>
-                    {`
+  return (
+    <ComponentShowcase title="Bouncing Ball Loader" code={code} className="min-h-[250px] flex items-center justify-center">
+      <div className="bouncing-ball-loader-wrapper w-full h-full min-h-[200px] flex items-center justify-center bg-transparent rounded-lg">
+        <style>
+          {`
             .bouncing-ball-loader {
               position: relative;
               width: 120px;
@@ -129,9 +152,9 @@ export function BouncingBallLoader() {
               }
             }
             `}
-                </style>
-                <div className="bouncing-ball-loader" />
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="bouncing-ball-loader" />
+      </div>
+    </ComponentShowcase>
+  );
 }

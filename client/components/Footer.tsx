@@ -23,22 +23,26 @@ export function Footer() {
             <h4 className="font-semibold mb-4">{t('footer.nav')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link to="/projects" className="hover:text-primary smooth-transition">
+                <Link to="/projects" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:w-3 transition-all"></span>
                   {t('nav.projects')}
                 </Link>
               </li>
               <li>
-                <a href="#about" className="hover:text-primary smooth-transition">
+                <a href="#about" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:w-3 transition-all"></span>
                   {t('nav.about')}
                 </a>
               </li>
               <li>
-                <a href="#capybara" className="hover:text-primary smooth-transition">
+                <a href="#capybara" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:w-3 transition-all"></span>
                   {t('nav.capybara')}
                 </a>
               </li>
               <li>
-                <Link to="/sponsorship" className="hover:text-primary smooth-transition">
+                <Link to="/sponsorship" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:w-3 transition-all"></span>
                   {t('nav.sponsorship')}
                 </Link>
               </li>
@@ -96,6 +100,10 @@ export function Footer() {
                 </svg>
               </a>
             </div>
+            <Link to="/docs" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group mt-4">
+              <span className="w-1 h-1 rounded-full bg-primary/50 group-hover:w-2 transition-all"></span>
+              Documentação
+            </Link>
           </div>
         </div>
 

@@ -112,7 +112,7 @@ export default JumpingCirclesLoader;
 export function JumpingCirclesLoader() {
   return (
     <ComponentShowcase title="Jumping Circles Loader" code={code} className="min-h-[200px] flex items-center justify-center">
-      <div className="jumping-circles-view bg-primary p-10 rounded-xl flex items-center justify-center overflow-hidden">
+      <div className="jumping-circles-view bg-transparent p-10 rounded-xl flex items-center justify-center overflow-hidden">
         <style>
           {`
             .jumping-circles-wrapper {
@@ -127,7 +127,7 @@ export function JumpingCirclesLoader() {
               height: 20px;
               position: absolute;
               border-radius: 50%;
-              background-color: #fff;
+              background-color: hsl(var(--primary));
               left: 15%;
               transform-origin: 50%;
               animation: jumping-circle-anim .5s alternate infinite ease;

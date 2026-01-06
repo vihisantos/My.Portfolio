@@ -28,7 +28,7 @@ const metrics = [
     },
     {
         id: 4,
-        label: "Noites Kodando",
+        label: "Noites codando",
         value: "∞",
         icon: Moon,
         color: "text-purple-500",

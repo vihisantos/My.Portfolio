@@ -13,7 +13,7 @@ const skillsData = {
     { name: 'Node.js', percentage: 88 },
     { name: 'Tailwind CSS', percentage: 95 },
     { name: 'PostgreSQL', percentage: 85 },
-    { name: 'Docker', percentage: 80 },
+    { name: 'Docker', percentage: 60 },
   ],
   en: [
     { name: 'React', percentage: 95 },
@@ -21,7 +21,7 @@ const skillsData = {
     { name: 'Node.js', percentage: 88 },
     { name: 'Tailwind CSS', percentage: 95 },
     { name: 'PostgreSQL', percentage: 85 },
-    { name: 'Docker', percentage: 80 },
+    { name: 'Docker', percentage: 60 },
   ],
 };
 

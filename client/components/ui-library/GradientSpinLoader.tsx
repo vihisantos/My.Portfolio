@@ -54,11 +54,11 @@ export default GradientSpinLoader;
 `;
 
 export function GradientSpinLoader() {
-    return (
-        <ComponentShowcase title="Gradient Spin Loader" code={code} className="min-h-[200px] flex items-center justify-center">
-            <div className="gradient-spin-loader-wrapper bg-[#212121] p-10 rounded-xl">
-                <style>
-                    {`
+   return (
+      <ComponentShowcase title="Gradient Spin Loader" code={code} className="min-h-[200px] flex items-center justify-center">
+         <div className="gradient-spin-loader-wrapper bg-transparent p-10 rounded-xl">
+            <style>
+               {`
             .gradient-spin-loader {
                position: relative;
                width: 60px;
@@ -83,7 +83,7 @@ export function GradientSpinLoader() {
             .gradient-spin-loader:after {
                width: 85%;
                height: 85%;
-               background-color: #212121;
+               background-color: hsl(var(--card));
                top: 50%;
                left: 50%;
                transform: translate(-50%, -50%);
@@ -95,9 +95,9 @@ export function GradientSpinLoader() {
                }
             }
             `}
-                </style>
-                <div className="gradient-spin-loader" />
-            </div>
-        </ComponentShowcase>
-    );
+            </style>
+            <div className="gradient-spin-loader" />
+         </div>
+      </ComponentShowcase>
+   );
 }

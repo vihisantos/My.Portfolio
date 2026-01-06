@@ -211,5 +211,19 @@ const data: MyRouteResponse = await response.json();
 
 ### Sponsorship & Ecosystem
 - **Capybara Holding**: Lançamento da página "holding" unificando os projetos (Commerce, Education, Creative).
-- **Sponsorship**: Lançamento da página de apoadores com integração Formspree funcional, tiers definidos e grid de "Wall of Fame" escalável.
+- **Sponsorship**: Lançamento da página de apoiadores com integração Formspree funcional, tiers definidos e grid de "Wall of Fame" escalável.
 - **Visual Polish**: Refinamento visual dos cards de patrocinadores com ícones temáticos (Crown, Shield, Heart) e animações de hover.
+
+### Optimization & Completeness (06/01/2026)
+- **Performance**: Implementação de **Code Splitting** e **Lazy Loading** em todas as rotas principais, garantindo carregamento inicial mais rápido. Configuração de chunks manuais no Vite.
+- **SEO Dinâmico**: Integração do `react-helmet-async` com componente `<SEO />` reutilizável para gestão de meta tags (OG, Twitter) página por página.
+- **Acessibilidade (A11y)**: Auditoria e correção de rótulos (`aria-label`) em navegação, botões de ícone e links sociais.
+- **Robustez**: Adicionado `ErrorBoundary` global para capturar falhas de renderização e exibir uma interface amigável.
+
+### Documentation & UX Polish (06/01/2026)
+- **Documentation Page**: Lançamento da rota `/docs` que renderiza automaticamente o `README.md` do projeto com estilização rica (Tailwind Typography), garantindo documentação sempre atualizada e acessível via rodapé.
+- **Identidade Visual**: Correção definitiva do carregamento do logo na navegação, movendo assets para `client/assets` para garantir bundling correto em produção e desenvolvimento.
+- **Theme Persistence**: Implementação de persistência de preferência de tema (Dark/Light) via `localStorage`, garantindo consistência na recarga da página.
+- **Loader Themes**: Refinamento visual dos componentes de carregamento (`MusicEqualizer`, `BouncingBall`, etc.) para se adaptarem dinamicamente às cores do tema do cartão e fundo.
+- **Micro-interações**: Adição de animação "Dot Expansion" (ponto que estica) em todos os links do rodapé para padronização visual com o link de documentação.
+- **Refinamento de Logo**: Troca do logo SVG para PNG (`logo.png`) na barra de navegação garantindo fidelidade visual conforme solicitado.

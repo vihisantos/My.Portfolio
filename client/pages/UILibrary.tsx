@@ -167,10 +167,23 @@ export default function UILibrary() {
                     </div>
                 </div>
 
+                <style>{`
+                    .ui-lib-item *, 
+                    .ui-lib-item *::before, 
+                    .ui-lib-item *::after {
+                        animation-play-state: paused !important;
+                    }
+                    .ui-lib-item:hover *, 
+                    .ui-lib-item:hover *::before, 
+                    .ui-lib-item:hover *::after {
+                        animation-play-state: running !important;
+                    }
+                `}</style>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredComponents.length > 0 ? (
                         filteredComponents.map((item) => (
-                            <div key={item.id} className="animate-in fade-in zoom-in-95 duration-300">
+                            <div key={item.id} className="animate-in fade-in zoom-in-95 duration-300 ui-lib-item group">
                                 {item.component}
                             </div>
                         ))

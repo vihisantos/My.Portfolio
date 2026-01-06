@@ -9,14 +9,16 @@ const ModernWordLoader = () => {
             <style>
                 {\`
                 .modern-loader-card {
-                    --bg-color: #111;
+                    --bg-color: hsl(var(--card));
                     background-color: var(--bg-color);
                     padding: 1rem 2rem;
                     border-radius: 1.25rem;
+                    border: 1px solid hsl(var(--border));
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
                 }
                 
                 .modern-loader {
-                    color: rgb(124, 124, 124);
+                    color: hsl(var(--muted-foreground));
                     font-family: "Poppins", sans-serif;
                     font-weight: 500;
                     font-size: 25px;
@@ -52,7 +54,7 @@ const ModernWordLoader = () => {
                     display: block;
                     height: 100%;
                     padding-left: 6px;
-                    color: #956afa;
+                    color: hsl(var(--primary));
                     animation: modern_spin 4s infinite;
                 }
 
@@ -92,14 +94,16 @@ export function ModernWordLoader() {
             <div className="modern-word-loader-view">
                 <style>{`
                     .modern-word-loader-view .modern-loader-card {
-                        --bg-color: #111;
+                        --bg-color: hsl(var(--card));
                         background-color: var(--bg-color);
                         padding: 1rem 2rem;
                         border-radius: 1.25rem;
+                        border: 1px solid hsl(var(--border));
+                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
                     }
                     
                     .modern-word-loader-view .modern-loader {
-                        color: rgb(124, 124, 124);
+                        color: hsl(var(--muted-foreground));
                         font-family: inherit;
                         font-weight: 500;
                         font-size: 25px;
@@ -107,6 +111,7 @@ export function ModernWordLoader() {
                         padding: 10px 10px;
                         display: flex;
                         border-radius: 8px;
+                        box-sizing: content-box;
                     }
 
                     .modern-word-loader-view .modern-words {
@@ -131,7 +136,7 @@ export function ModernWordLoader() {
                         display: block;
                         height: 100%;
                         padding-left: 6px;
-                        color: #956afa;
+                        color: hsl(var(--primary));
                         animation: modern_spin_preview 4s infinite;
                     }
 

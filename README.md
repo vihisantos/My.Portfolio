@@ -1,11 +1,13 @@
-# 🚀 Portfolio | Vitor.dev
+# Portfolio | Vitor.dev
 
 Bem-vindo ao repositório do meu portfólio profissional! Este projeto foi desenvolvido para demonstrar minhas habilidades técnicas como desenvolvedor full-stack, apresentando uma interface moderna, interativa e de alta fidelidade.
 
-![Vitor.dev Banner](https://vihisantos.github.io/My.Portfolio/favicon.svg) <!-- Você pode substituir por um print real do site depois -->
+![Vitor.dev Banner](public/logo.png)
 
 ## 🔗 Link Direto
 Acesse o site online aqui: **[https://vihisantos.github.io/My.Portfolio/](https://vihisantos.github.io/My.Portfolio/)**
+
+📚 **Documentação Online:** Você também pode ler esta documentação formatada diretamente no site em: [https://vihisantos.github.io/My.Portfolio/docs](https://vihisantos.github.io/My.Portfolio/docs)
 
 ---
 
@@ -17,7 +19,9 @@ Acesse o site online aqui: **[https://vihisantos.github.io/My.Portfolio/](https:
 - **📱 Responsivo & Otimizado**: Adaptado para qualquer dispositivo e livre de "resíduos" de código (codebase auditada).
 - **🛠️ UI Library**: Uma galeria exclusiva de componentes interativos e animados (loaders, botões, switches).
 - **🌍 Internacionalização**: Suporte completo a **Português (PT)** e **Inglês (EN)**.
-- **⚡ Performance SPA**: Navegação ultra rápida usando **React Router 6**.
+- **⚡ Performance SPA**: Navegação ultra rápida usando **React Router 6** com **Lazy Loading** e **Code Splitting**.
+- **🔍 SEO Ready**: Meta tags dinâmicas e suporte a redes sociais (Open Graph) em todas as páginas.
+- **♿ Acessível**: Componentes otimizados para leitores de tela e navegação por teclado.
 
 ## 🛠️ Tech Stack
 
@@ -67,7 +71,7 @@ Acesse o site online aqui: **[https://vihisantos.github.io/My.Portfolio/](https:
 
 ## 📄 Licença
 
-**© 2025 Vitor Santos. Todos os direitos reservados.**
+**© 2026 Vitor Santos. Todos os direitos reservados.**
 
 Este repositório existe exclusivamente para fins de demonstração de portfólio. O código-fonte, design e ativos **não são de código aberto**. É proibida a cópia, redistribuição ou uso de qualquer parte deste projeto para fins comerciais ou pessoais sem autorização prévia.
 

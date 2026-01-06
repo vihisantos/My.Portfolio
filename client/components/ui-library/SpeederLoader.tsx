@@ -232,18 +232,23 @@ export default Loader;
 `;
 
 export function SpeederLoader() {
-    return (
-        <ComponentShowcase title="Speeder Loader" code={code} className="min-h-[250px] flex items-center justify-center">
-            <div className="speeder-loader-wrapper w-full h-full min-h-[200px] flex items-center justify-center bg-white rounded-lg overflow-hidden relative">
-                <style>
-                    {`
+  return (
+    <ComponentShowcase title="Speeder Loader" code={code} className="min-h-[250px] flex items-center justify-center">
+      <div className="speeder-loader-wrapper w-full h-full min-h-[200px] flex items-center justify-center bg-transparent rounded-lg overflow-hidden relative">
+        <style>
+          {`
             .speeder-loader-container {
+              --speeder-color: #000;
               position: relative;
               width: 100%;
               height: 100%;
               overflow: hidden;
-              background: #fff;
+              background: transparent;
               min-height: 200px;
+            }
+
+            .dark .speeder-loader-container {
+              --speeder-color: #fff;
             }
 
             .speeder-loader {
@@ -257,7 +262,7 @@ export function SpeederLoader() {
             .speeder-loader > span {
               height: 5px;
               width: 35px;
-              background: #000;
+              background: var(--speeder-color);
               position: absolute;
               top: -19px;
               left: 60px;
@@ -269,7 +274,7 @@ export function SpeederLoader() {
               width: 0;
               height: 0;
               border-top: 6px solid transparent;
-              border-right: 100px solid #000;
+              border-right: 100px solid var(--speeder-color);
               border-bottom: 6px solid transparent;
             }
             
@@ -278,7 +283,7 @@ export function SpeederLoader() {
               height: 22px;
               width: 22px;
               border-radius: 50%;
-              background: #000;
+              background: var(--speeder-color);
               position: absolute;
               right: -110px;
               top: -16px;
@@ -290,7 +295,7 @@ export function SpeederLoader() {
               width: 0;
               height: 0;
               border-top: 0 solid transparent;
-              border-right: 55px solid #000;
+              border-right: 55px solid var(--speeder-color);
               border-bottom: 16px solid transparent;
               top: -16px;
               right: -98px;
@@ -300,7 +305,7 @@ export function SpeederLoader() {
               position: absolute;
               height: 12px;
               width: 20px;
-              background: #000;
+              background: var(--speeder-color);
               border-radius: 20px 20px 0 0;
               transform: rotate(-40deg);
               right: -125px;
@@ -311,7 +316,7 @@ export function SpeederLoader() {
               content: "";
               height: 12px;
               width: 12px;
-              background: #000;
+              background: var(--speeder-color);
               right: 4px;
               top: 7px;
               position: absolute;
@@ -326,7 +331,7 @@ export function SpeederLoader() {
             .speeder-loader > span > span:nth-child(4) {
               width: 30px;
               height: 1px;
-              background: #000;
+              background: var(--speeder-color);
               position: absolute;
               animation: speeder-fazer1 0.2s linear infinite;
             }
@@ -394,7 +399,7 @@ export function SpeederLoader() {
               position: absolute;
               height: 2px;
               width: 20%;
-              background: #000;
+              background: var(--speeder-color);
             }
             
             .speeder-longfazers span:nth-child(1) {
@@ -440,20 +445,20 @@ export function SpeederLoader() {
               100% { left: -100%; opacity: 0; }
             }
             `}
-                </style>
-                <div className="speeder-loader-container">
-                    <div className="speeder-loader">
-                        <span><span /><span /><span /><span /></span>
-                        <div className="speeder-base">
-                            <span />
-                            <div className="speeder-face" />
-                        </div>
-                    </div>
-                    <div className="speeder-longfazers">
-                        <span /><span /><span /><span />
-                    </div>
-                </div>
+        </style>
+        <div className="speeder-loader-container">
+          <div className="speeder-loader">
+            <span><span /><span /><span /><span /></span>
+            <div className="speeder-base">
+              <span />
+              <div className="speeder-face" />
             </div>
-        </ComponentShowcase>
-    );
+          </div>
+          <div className="speeder-longfazers">
+            <span /><span /><span /><span />
+          </div>
+        </div>
+      </div>
+    </ComponentShowcase>
+  );
 }

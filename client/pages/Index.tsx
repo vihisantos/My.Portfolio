@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { Playground } from "@/components/Playground";
 import { Footer } from "@/components/Footer";
@@ -63,6 +64,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950">
+      <SEO />
       <Navigation />
 
       {/* Hero Section */}

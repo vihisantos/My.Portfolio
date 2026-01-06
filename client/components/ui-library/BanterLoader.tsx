@@ -201,11 +201,11 @@ export default Loader;
 `;
 
 export function BanterLoader() {
-    return (
-        <ComponentShowcase title="Banter Loader" code={code} className="min-h-[250px] flex items-center justify-center">
-            <div className="banter-loader-wrapper w-full h-full min-h-[150px] relative bg-slate-800 rounded-lg">
-                <style>
-                    {`
+  return (
+    <ComponentShowcase title="Banter Loader" code={code} className="min-h-[250px] flex items-center justify-center">
+      <div className="banter-loader-wrapper w-full h-full min-h-[150px] relative bg-transparent rounded-lg">
+        <style>
+          {`
             .banter-loader {
               position: absolute;
               left: 50%;
@@ -231,6 +231,10 @@ export function BanterLoader() {
               top: 0;
               width: 100%;
               height: 100%;
+              background: #000;
+            }
+
+            .dark .banter-box:before {
               background: #fff;
             }
 
@@ -379,19 +383,19 @@ export function BanterLoader() {
               100% { transform: translate(0px, 0); }
             }
             `}
-                </style>
-                <div className="banter-loader">
-                    <div className="banter-box" />
-                    <div className="banter-box" />
-                    <div className="banter-box" />
-                    <div className="banter-box" />
-                    <div className="banter-box" />
-                    <div className="banter-box" />
-                    <div className="banter-box" />
-                    <div className="banter-box" />
-                    <div className="banter-box" />
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="banter-loader">
+          <div className="banter-box" />
+          <div className="banter-box" />
+          <div className="banter-box" />
+          <div className="banter-box" />
+          <div className="banter-box" />
+          <div className="banter-box" />
+          <div className="banter-box" />
+          <div className="banter-box" />
+          <div className="banter-box" />
+        </div>
+      </div>
+    </ComponentShowcase>
+  );
 }
