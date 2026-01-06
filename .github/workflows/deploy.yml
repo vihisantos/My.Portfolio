@@ -28,7 +28,9 @@ jobs:
         run: pnpm install
 
       - name: Build 🏗️
-        run: pnpm run build:client
+        run: |
+          pnpm run build:client
+          cp dist/spa/index.html dist/spa/404.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
