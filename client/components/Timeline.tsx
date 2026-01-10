@@ -11,7 +11,7 @@ interface TimelineItem {
   description: string;
 }
 
-const timelineData: Record<string, TimelineItem[]> = {
+export const timelineData: Record<string, TimelineItem[]> = {
   pt: [
     {
       type: 'education',
