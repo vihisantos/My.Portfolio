@@ -87,6 +87,8 @@ export const translations = {
       item3: 'Construção de Equipe & Mentoria',
       item4: 'Serviços de Transformação Digital',
       learnMore: 'Saiba Mais',
+      activeProjects: 'Projetos Ativos',
+      incubating: 'Em Incubação',
     },
     contact: {
       title: "Vamos trabalhar",
@@ -246,9 +248,31 @@ export const translations = {
       cta: "Quero saber mais sobre a Holding"
     },
     testimonials: {
-      badge: 'Depoimentos',
-      title: 'O que clientes dizem sobre meu trabalho',
+      badge: 'O que ofereço',
+      title: 'Soluções sob medida para seu negócio',
     },
+    servicesList: [
+      {
+        title: "Desenvolvimento Full-Stack",
+        description: "Aplicações web completas, do banco de dados ao frontend, usando React, Node.js e arquiteturas modernas.",
+        icon: "Code2"
+      },
+      {
+        title: "UI/UX Design",
+        description: "Interfaces bonitas, intuitivas e responsivas. Foco na experiência do usuário e acessibilidade.",
+        icon: "Palette"
+      },
+      {
+        title: "Otimização & Performance",
+        description: "Seu site carregando em milissegundos. Core Web Vitals, SEO técnico e melhores práticas.",
+        icon: "Zap"
+      },
+      {
+        title: "Consultoria Técnica",
+        description: "Ajudo a escolher a melhor tecnologia para sua ideia e desenho a arquitetura do seu projeto.",
+        icon: "Terminal"
+      }
+    ],
     certificates: {
       button: "Ver Certificações",
       title: "Certificações & Conquistas",
@@ -533,6 +557,8 @@ export const translations = {
       item3: 'Team Building & Mentorship',
       item4: 'Digital Transformation Services',
       learnMore: 'Learn More',
+      activeProjects: 'Active Projects',
+      incubating: 'Incubating',
     },
     contact: {
       title: "Let's work",
@@ -692,9 +718,31 @@ export const translations = {
       cta: "Learn more about the Holding"
     },
     testimonials: {
-      badge: 'Testimonials',
-      title: 'What clients say about my work',
+      badge: 'What I Offer',
+      title: 'Tailored solutions for your business',
     },
+    servicesList: [
+      {
+        title: "Full-Stack Development",
+        description: "Complete web applications, from database to frontend, using React, Node.js and modern architectures.",
+        icon: "Code2"
+      },
+      {
+        title: "UI/UX Design",
+        description: "Beautiful, intuitive and responsive interfaces. Focus on user experience and accessibility.",
+        icon: "Palette"
+      },
+      {
+        title: "Optimization & Performance",
+        description: "Your site loading in milliseconds. Core Web Vitals, technical SEO and best practices.",
+        icon: "Zap"
+      },
+      {
+        title: "Technical Consulting",
+        description: "I help choose the best technology for your idea and design your project architecture.",
+        icon: "Terminal"
+      }
+    ],
     certificates: {
       button: "View Certifications",
       title: "Certifications & Achievements",
@@ -908,11 +956,13 @@ export function getTranslation(lang: Language, key: string): string {
       for (const fallbackKey of keys) {
         if (current && typeof current === 'object' && fallbackKey in current) {
           current = current[fallbackKey];
+        } else {
+          return key; // Return key if not found in English either
         }
       }
-      return String(current) || key;
+      return typeof current === 'string' ? current : key;
     }
   }
 
-  return String(current) || key;
+  return typeof current === 'string' ? current : key;
 }

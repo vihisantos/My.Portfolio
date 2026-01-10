@@ -342,7 +342,7 @@ export default function Index() {
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="bg-white dark:bg-slate-800/80 p-3 rounded-xl border border-border/50 group-hover:border-primary/30 transition-colors">
                       <p className="text-[10px] text-muted-foreground uppercase">{t('capybara.activeProjects') || 'Projetos Ativos'}</p>
-                      <p className="text-2xl font-bold gradient-text">01</p>
+                      <p className="text-2xl font-bold gradient-text">05</p>
                     </div>
                     <div className="bg-white dark:bg-slate-800/80 p-3 rounded-xl border border-border/50 group-hover:border-secondary/30 transition-colors">
                       <p className="text-[10px] text-muted-foreground uppercase">{t('capybara.incubating') || 'Em Incubação'}</p>
@@ -429,21 +429,10 @@ export default function Index() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-padding bg-slate-50 dark:bg-slate-900/30">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-              {t('testimonials.badge')}
-            </span>
-            <h2 className="text-4xl font-bold mt-2">
-              {t('testimonials.title')}
-            </h2>
-          </div>
-
-          <ScrollFadeIn>
-            <Testimonials />
-          </ScrollFadeIn>
-        </div>
+      <section className="bg-slate-50 dark:bg-slate-900/30">
+        <ScrollFadeIn>
+          <Testimonials />
+        </ScrollFadeIn>
       </section>
 
       {/* Contact Section */}
