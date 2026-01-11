@@ -24,7 +24,8 @@ import { CarLoader } from "@/components/ui-library/CarLoader";
 import { FlowingSpinnerLoader } from "@/components/ui-library/FlowingSpinnerLoader";
 import { CircularPulseLoader } from "@/components/ui-library/CircularPulseLoader";
 import { CrystalLoader } from "@/components/ui-library/CrystalLoader";
-import { DayNightSwitch } from "@/components/ui-library/DayNightSwitch";
+import { GyroLoader } from "@/components/ui-library/GyroLoader";
+import { LikeButton } from "@/components/ui-library/LikeButton";
 import { BanterLoader } from "@/components/ui-library/BanterLoader";
 import { MatrixLoader } from "@/components/ui-library/MatrixLoader";
 import { HamsterLoader } from "@/components/ui-library/HamsterLoader";
@@ -60,6 +61,44 @@ import { PlayNowButton } from "@/components/ui-library/PlayNowButton";
 import { GradientRingLoader } from "@/components/ui-library/GradientRingLoader";
 import { SocialPlatformGrid } from "@/components/ui-library/SocialPlatformGrid";
 import { InputDemo } from "@/components/ui-library/InputDemo";
+import { RealismButton } from "@/components/ui-library/RealismButton";
+import { GlitchText } from "@/components/ui-library/GlitchText";
+import { MagneticButton } from "@/components/ui-library/MagneticButton";
+import { VoltageButton } from "@/components/ui-library/VoltageButton";
+import { UnlockProButton } from "@/components/ui-library/UnlockProButton";
+import { PayButton } from "@/components/ui-library/PayButton";
+import { GalaxyButton } from "@/components/ui-library/GalaxyButton";
+import { NeonGradientCard } from "@/components/ui-library/NeonGradientCard";
+import { ExplosiveGrowthCard } from "@/components/ui-library/ExplosiveGrowthCard";
+import { SoftInput } from "@/components/ui-library/SoftInput";
+import { LogoutButton } from "@/components/ui-library/LogoutButton";
+import { LiquidLoader } from "@/components/ui-library/LiquidLoader";
+import { GlassCard } from "@/components/ui-library/GlassCard";
+import { SketchButton } from "@/components/ui-library/SketchButton";
+import { CloudSaveButton } from "@/components/ui-library/CloudSaveButton";
+import { ScrollDownButton } from "@/components/ui-library/ScrollDownButton";
+import { CodePenButton } from "@/components/ui-library/CodePenButton";
+import { SparkleSwitch } from "@/components/ui-library/SparkleSwitch";
+import { DayNightSwitch } from "@/components/ui-library/DayNightSwitch";
+import { WhatsAppButton } from "@/components/ui-library/WhatsAppButton";
+import { StarButton } from "@/components/ui-library/StarButton";
+import { StarRating } from "@/components/ui-library/StarRating";
+import { RGBButton } from "@/components/ui-library/RGBButton";
+import { RecipeCard } from "@/components/ui-library/RecipeCard";
+import { NumberCard } from "@/components/ui-library/NumberCard";
+import { UIVerseCard } from "@/components/ui-library/UIVerseCard";
+import { PegtopLoader } from "@/components/ui-library/PegtopLoader";
+import { AIMatrixLoader } from "@/components/ui-library/AIMatrixLoader";
+import { SoapBubbleLoader } from "@/components/ui-library/SoapBubbleLoader";
+import { HoneycombLoader } from "@/components/ui-library/HoneycombLoader";
+import { TerminalCard } from "@/components/ui-library/TerminalCard";
+import { CodeEditorCard } from "@/components/ui-library/CodeEditorCard";
+import { EthereumCard } from "@/components/ui-library/EthereumCard";
+import { GradientPricingCard } from "@/components/ui-library/GradientPricingCard";
+import { PremiumDesignCard } from "@/components/ui-library/PremiumDesignCard";
+import { ThemeRadio } from "@/components/ui-library/ThemeRadio";
+import { MatrixCube } from "@/components/ui-library/MatrixCube";
+import { GradientSelect } from "@/components/ui-library/GradientSelect";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -90,6 +129,7 @@ const components = [
     { id: "flowing-spinner-loader", category: "Loaders", component: <FlowingSpinnerLoader /> },
     { id: "circular-pulse-loader", category: "Loaders", component: <CircularPulseLoader /> },
     { id: "crystal-loader", category: "Loaders", component: <CrystalLoader /> },
+    { id: "gyro-loader", category: "Loaders", component: <GyroLoader /> },
     { id: "day-night-switch", category: "Inputs", component: <DayNightSwitch /> },
     { id: "banter-loader", category: "Loaders", component: <BanterLoader /> },
     { id: "matrix-loader", category: "Loaders", component: <MatrixLoader /> },
@@ -126,6 +166,45 @@ const components = [
     { id: "cola-loader", category: "Loaders", component: <ColaLoader /> },
     { id: "social-platform-grid", category: "Buttons", component: <SocialPlatformGrid /> },
     { id: "input-demo", category: "Inputs", component: <InputDemo /> },
+    { id: "realism-button", category: "Buttons", component: <RealismButton /> },
+    { id: "glitch-text", category: "Text", component: <GlitchText /> },
+    { id: "magnetic-button", category: "Buttons", component: <MagneticButton /> },
+    { id: "galaxy-button", category: "Buttons", component: <GalaxyButton /> },
+    { id: "neon-gradient-card", category: "Cards", component: <NeonGradientCard /> },
+    { id: "explosive-growth-card", category: "Cards", component: <ExplosiveGrowthCard /> },
+    { id: "glass-card", category: "Cards", component: <GlassCard /> },
+    { id: "recipe-card", category: "Cards", component: <RecipeCard /> },
+    { id: "number-card", category: "Cards", component: <NumberCard /> },
+    { id: "uiverse-card", category: "Cards", component: <UIVerseCard /> },
+    { id: "terminal-card", category: "Cards", component: <TerminalCard /> },
+    { id: "code-editor-card", category: "Cards", component: <CodeEditorCard /> },
+    { id: "ethereum-card", category: "Cards", component: <EthereumCard /> },
+    { id: "gradient-pricing-card", category: "Cards", component: <GradientPricingCard /> },
+    { id: "premium-design-card", category: "Cards", component: <PremiumDesignCard /> },
+    { id: "matrix-cube", category: "Animations", component: <MatrixCube /> },
+    { id: "soft-input", category: "Text", component: <SoftInput /> },
+    { id: "gradient-select", category: "Text", component: <GradientSelect /> },
+    { id: "theme-radio", category: "Inputs", component: <ThemeRadio /> },
+    { id: "logout-button", category: "Buttons", component: <LogoutButton /> },
+    { id: "sketch-button", category: "Buttons", component: <SketchButton /> },
+    { id: "codepen-button", category: "Buttons", component: <CodePenButton /> },
+    { id: "voltage-button", category: "Buttons", component: <VoltageButton /> },
+    { id: "unlock-pro-button", category: "Buttons", component: <UnlockProButton /> },
+    { id: "pay-button", category: "Buttons", component: <PayButton /> },
+    { id: "cloud-save-button", category: "Buttons", component: <CloudSaveButton /> },
+    { id: "like-button", category: "Buttons", component: <LikeButton /> },
+    { id: "sparkle-switch", category: "Buttons", component: <SparkleSwitch /> },
+    { id: "day-night-switch", category: "Buttons", component: <DayNightSwitch /> },
+    { id: "whatsapp-button", category: "Buttons", component: <WhatsAppButton /> },
+    { id: "star-button", category: "Buttons", component: <StarButton /> },
+    { id: "star-rating", category: "Buttons", component: <StarRating /> },
+    { id: "rgb-button", category: "Buttons", component: <RGBButton /> },
+    { id: "scroll-down-button", category: "Buttons", component: <ScrollDownButton /> },
+    { id: "liquid-loader", category: "Loaders", component: <LiquidLoader /> },
+    { id: "pegtop-loader", category: "Loaders", component: <PegtopLoader /> },
+    { id: "ai-matrix-loader", category: "Loaders", component: <AIMatrixLoader /> },
+    { id: "soap-bubble-loader", category: "Loaders", component: <SoapBubbleLoader /> },
+    { id: "honeycomb-loader", category: "Loaders", component: <HoneycombLoader /> },
 ];
 
 export default function UILibrary() {
