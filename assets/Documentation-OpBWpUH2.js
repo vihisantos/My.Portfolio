@@ -1,4 +1,4 @@
-import{j as e,_ as x}from"./ui-TpyMRij5.js";import{H as f}from"./index-BwoOZUJb.js";import{L as b}from"./vendor-DdPwulCh.js";const g=`# Portfolio | Vitor.dev
+import{j as e,_ as x}from"./ui-TpyMRij5.js";import{H as f}from"./index-B9ZVOiwf.js";import{L as b}from"./vendor-DdPwulCh.js";const g=`# Portfolio | Vitor.dev
 
 Bem-vindo ao repositório do meu portfólio profissional! Este projeto foi desenvolvido para demonstrar minhas habilidades técnicas como desenvolvedor full-stack, apresentando uma interface moderna, interativa e de alta fidelidade.
 
@@ -13,6 +13,7 @@ Acesse o site online aqui: **[https://vihisantos.github.io/My.Portfolio/](https:
 
 - **🎨 Design Moderno & Premium**: Interface construída com **React 18** e **TailwindCSS**, focada em estética de alta fidelidade e experiência do usuário (UX).
 - **🐊 Capybara Holding**: Nova seção institucional integrando projetos de todas as verticais (Commerce, Education, Creative).
+- **📺 Mizin Youtube App**: Nova ferramenta desktop para download de vídeos, integrada com modal exclusivo e instruções de uso.
 - **💚 Sponsorship System**: Sistema completo de apoiadores com integração de pagamentos e mural da fama dinâmico.
 - **🛍️ Portfolio as a Product (SaaP)**: O template do portfólio foi transformado em um produto comercial, pronto para venda e customização.
 - **✨ Transições Globais**: Sistema de carregamento fluido com animações personalizadas em todas as trocas de página.
