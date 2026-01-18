@@ -28,6 +28,7 @@ dist-ssr
 .env
 
 
+AGENTS.md
 orçamento.txt
 # Large files
 *.zip
