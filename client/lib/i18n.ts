@@ -75,6 +75,11 @@ export const translations = {
         description:
           'Plataforma de ensino gamificada focada em desenvolvimento de software com arquitetura Monorepo.',
       },
+      mizinapp: {
+        title: 'Mizin Youtube App',
+        description:
+          'Ferramenta poderosa e elegante para baixar vídeos e playlists inteiras do YouTube com máxima qualidade. Totalmente gratuito e com design premium.',
+      },
     },
     capybara: {
       badge: 'Minha Iniciativa',
@@ -121,6 +126,30 @@ export const translations = {
       description: 'Uma coleção de componentes reutilizáveis.',
       noComponents: 'Nenhum componente encontrado nesta categoria ainda.',
       backToHome: 'Voltar para Início',
+      downloadFreeTool: 'Baixar Ferramenta Gratuita',
+      learnToUse: 'Aprenda a usar',
+      iAmInterested: 'Tenho Interesse',
+      newFreeApp: 'Nova Aplicação Gratuita',
+    },
+    instructions: {
+      title: "Como Instalar e Usar",
+      subtitle: "Guia rápido para começar a usar o Mizin Youtube App",
+      step1: {
+        title: "Baixe o Arquivo",
+        desc: "Clique no botão 'Baixar Ferramenta Gratuita' para salvar o arquivo .zip no seu computador.",
+      },
+      step2: {
+        title: "Extraia os Arquivos",
+        desc: "Clique com o botão direito no arquivo baixado e selecione 'Extrair Tudo' ou use seu descompactador preferido.",
+      },
+      step3: {
+        title: "Execute o Aplicativo",
+        desc: "Abra a pasta extraída e clique duas vezes em 'MizinYoutubeApp.exe' para iniciar. Não é necessário instalação!",
+      },
+      note: {
+        title: "Nota Importante",
+        desc: "O Windows pode exibir um aviso de proteção. Como é um aplicativo independente, clique em 'Mais informações' e depois em 'Executar mesmo assim'.",
+      },
     },
     categories: {
       All: 'Todos',
@@ -545,6 +574,11 @@ export const translations = {
         description:
           'Gamified teaching platform focused on software development with Monorepo architecture.',
       },
+      mizinapp: {
+        title: 'Mizin Youtube App',
+        description:
+          'Powerful and elegant tool to download videos and playlists from YouTube with maximum quality. Completely free with premium design.',
+      },
     },
     capybara: {
       badge: 'My Initiative',
@@ -591,6 +625,30 @@ export const translations = {
       description: 'A collection of reusable components.',
       noComponents: 'No components found in this category yet.',
       backToHome: 'Back to Home',
+      downloadFreeTool: 'Download Free Tool',
+      learnToUse: 'Learn how to use',
+      iAmInterested: 'I am Interested',
+      newFreeApp: 'New Free App',
+    },
+    instructions: {
+      title: "How to Install and Use",
+      subtitle: "Quick guide to start using Mizin Youtube App",
+      step1: {
+        title: "Download the File",
+        desc: "Click the 'Download Free Tool' button to save the .zip file to your computer.",
+      },
+      step2: {
+        title: "Extract Files",
+        desc: "Right-click the downloaded file and select 'Extract All' or use your preferred unzipper.",
+      },
+      step3: {
+        title: "Run the App",
+        desc: "Open the extracted folder and double-click 'MizinYoutubeApp.exe' to start. No installation required!",
+      },
+      note: {
+        title: "Important Note",
+        desc: "Windows might show a protection warning. As it is an independent app, click 'More info' and then 'Run anyway'.",
+      },
     },
     categories: {
       All: 'All',

@@ -3,10 +3,12 @@ import taskManagementImg from "@/assets/projects/task-management.png";
 import aiChatImg from "@/assets/projects/ai-chat.png";
 import colorFlicksImg from "@/assets/projects/ColorFlick.png";
 import capyFlowImg from "@/assets/projects/capyflowacademy.png";
+import mizinAppImg from "@/assets/projects/Mizin.png";
 
 export const getProjects = (t: any) => [
+
     {
-        id: 1,
+        id: 8,
         title: t('projects.ecommerce.title'),
         description: t('projects.ecommerce.description'),
         technologies: ["React", "Vite", "Tailwind CSS", "Supabase", "PWA"],
@@ -40,5 +42,14 @@ export const getProjects = (t: any) => [
         description: t('projects.capyflow.description'),
         technologies: ["Next.js 16", "NestJS 11", "TypeScript", "PostgreSQL", "Tailwind CSS"],
         image: capyFlowImg,
+    },
+    {
+        id: 1,
+        title: t('projects.mizinapp.title'),
+        description: t('projects.mizinapp.description'),
+        technologies: ["Python 3.14", "CustomTkinter"],
+        image: mizinAppImg,
+        badge: "New",
+        downloadLink: "https://drive.google.com/file/d/1dGPSta5n3k7fQQsaPdVg72K0ztsUT-9C/view?usp=sharing",
     }
 ];

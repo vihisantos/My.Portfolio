@@ -29,3 +29,9 @@ dist-ssr
 
 AGENTS.md
 orçamento.txt
+# Large files
+*.zip
+*.exe
+*.rar
+public/downloads/
+temp_extract/

@@ -270,7 +270,7 @@ export default function Index() {
                         <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{project.title}</h3>
                         {project.badge && (
                           <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 border-emerald-500/20 animate-pulse">
-                            {project.badge}
+                            {project.badge === "New" ? (t('uiLibrary.newFreeApp') || "Nova Aplicação Gratuita") : project.badge}
                           </span>
                         )}
                       </div>
