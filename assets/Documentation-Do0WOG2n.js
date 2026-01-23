@@ -1,4 +1,4 @@
-import{j as e,_ as x}from"./ui-TpyMRij5.js";import{H as f}from"./index-B9ZVOiwf.js";import{L as b}from"./vendor-DdPwulCh.js";const g=`# Portfolio | Vitor.dev
+import{j as e,_ as x}from"./ui-Z7efeLqO.js";import{H as f}from"./index-HguVifwb.js";import{L as b}from"./vendor-DdPwulCh.js";const g=`# Portfolio | Vitor.dev
 
 Bem-vindo ao repositório do meu portfólio profissional! Este projeto foi desenvolvido para demonstrar minhas habilidades técnicas como desenvolvedor full-stack, apresentando uma interface moderna, interativa e de alta fidelidade.
 
