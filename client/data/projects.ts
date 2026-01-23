@@ -21,6 +21,7 @@ export const getProjects = (t: any) => [
         technologies: ["React", "Vite", "CSS Vanilla"],
         image: taskManagementImg,
         badge: t('projects.taskmanagement.badge'),
+        demoUrl: "https://vihisantos.github.io/portfolio-profissional/",
     },
     {
         id: 5,
