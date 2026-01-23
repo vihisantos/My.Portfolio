@@ -35,6 +35,7 @@ export const getProjects = (t: any) => [
         description: t('projects.colorflicks.description'),
         technologies: ["React", "Vite", "Tailwind CSS", "TVMaze API", "ColorThief"],
         image: colorFlicksImg,
+        demoUrl: "https://vihisantos.github.io/ColorFlicks/",
     },
     {
         id: 7,

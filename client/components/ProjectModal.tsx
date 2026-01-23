@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Rocket } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import GalaxyButton from "./GalaxyButton";
 import { InstructionModal } from "./InstructionModal";
@@ -132,7 +132,14 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                         </div>
                     </div>
 
-                    <div className="pt-4 border-t border-border">
+                    <div className="pt-4 border-t border-border flex flex-col gap-3">
+                        {project.demoUrl && (
+                            <Button className="w-full gap-2 bg-secondary hover:bg-secondary/90 text-white font-bold h-12 rounded-[24px]" asChild>
+                                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                                    <Rocket className="w-5 h-5" /> {t('projects.viewProject') || "Ver Projeto"}
+                                </a>
+                            </Button>
+                        )}
                         <Button className="w-full gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold h-12 rounded-[24px]" asChild>
                             <a href={waUrl} target="_blank" rel="noopener noreferrer">
                                 <MessageCircle className="w-5 h-5" /> Tenho Interesse

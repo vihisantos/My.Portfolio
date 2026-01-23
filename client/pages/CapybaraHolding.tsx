@@ -205,12 +205,14 @@ export default function CapybaraHolding() {
                                     ))}
                                 </div>
                                 <div className="mt-10">
-                                    <Link
-                                        to="/projects"
+                                    <a
+                                        href="https://vihisantos.github.io/ColorFlicks/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-bold hover:shadow-lg hover:shadow-secondary/30 smooth-transition"
                                     >
                                         {t('projects.viewProject')} <ArrowLeft className="rotate-180" size={20} />
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         </ScrollFadeIn>
