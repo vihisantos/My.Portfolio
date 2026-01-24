@@ -44,7 +44,9 @@ export const getProjects = (t: any) => [
         description: t('projects.capyflow.description'),
         technologies: ["Next.js 16", "NestJS 11", "TypeScript", "PostgreSQL", "Tailwind CSS"],
         image: capyFlowImg,
+        demoUrl: "https://vihisantos.github.io/CapyFlow-Academy/",
     },
+
     {
         id: 1,
         title: t('projects.mizinapp.title'),
