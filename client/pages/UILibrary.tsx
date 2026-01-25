@@ -99,6 +99,11 @@ import { PremiumDesignCard } from "@/components/ui-library/PremiumDesignCard";
 import { ThemeRadio } from "@/components/ui-library/ThemeRadio";
 import { MatrixCube } from "@/components/ui-library/MatrixCube";
 import { GradientSelect } from "@/components/ui-library/GradientSelect";
+import { MagicBento } from "@/components/ui-library/MagicBento";
+import { ConfettiButton } from "@/components/ui-library/ConfettiButton";
+import { RainbowButton } from "@/components/ui-library/RainbowButton";
+import { AtomicLoader } from "@/components/ui-library/AtomicLoader";
+import { CleanCircleLoader } from "@/components/ui-library/CleanCircleLoader";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -205,6 +210,11 @@ const components = [
     { id: "ai-matrix-loader", category: "Loaders", component: <AIMatrixLoader /> },
     { id: "soap-bubble-loader", category: "Loaders", component: <SoapBubbleLoader /> },
     { id: "honeycomb-loader", category: "Loaders", component: <HoneycombLoader /> },
+    { id: "magic-bento", category: "Cards", component: <MagicBento /> },
+    { id: "confetti-button", category: "Buttons", component: <ConfettiButton /> },
+    { id: "rainbow-button", category: "Buttons", component: <RainbowButton /> },
+    { id: "atomic-loader", category: "Loaders", component: <AtomicLoader /> },
+    { id: "clean-circle-loader", category: "Loaders", component: <CleanCircleLoader /> },
 ];
 
 export default function UILibrary() {

@@ -104,6 +104,10 @@ export function Footer() {
               <span className="w-1 h-1 rounded-full bg-primary/50 group-hover:w-2 transition-all"></span>
               Documentação
             </Link>
+            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group mt-2">
+              <span className="w-1 h-1 rounded-full bg-primary/50 group-hover:w-2 transition-all"></span>
+              Sitemap.xml
+            </a>
           </div>
         </div>
 

@@ -3,9 +3,10 @@ import { Navigation } from "@/components/Navigation";
 import { Playground } from "@/components/Playground";
 import { Footer } from "@/components/Footer";
 import { TechStack } from "@/components/TechStack";
+// import { technologies } from "@/components/TechStack";
 import { FunMetrics } from "@/components/FunMetrics";
 import { Timeline } from "@/components/Timeline";
-import { SkillChart } from "@/components/SkillChart";
+// import { SkillChart } from "@/components/SkillChart";
 import { ProjectFilter } from "@/components/ProjectFilter";
 import { ContactForm } from "@/components/ContactForm";
 import { Testimonials } from "@/components/Testimonials";
@@ -140,29 +141,71 @@ export default function Index() {
       {/* About Section */}
       <section id="about" className="section-padding">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Bio Section - Full Width */}
+          <div className="mb-12 space-y-8 max-w-4xl">
+            <div>
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                {t('about.badge')}
+              </span>
+              <h2 className="text-4xl font-bold mt-2">
+                {t('about.title')}{" "}
+                <span className="gradient-text">{t('about.titleGradient')}</span>
+              </h2>
+            </div>
+
+            <p className="text-lg text-muted-foreground">
+              {t('about.description')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-8">
-              <div>
-                <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-                  {t('about.badge')}
-                </span>
-                <h2 className="text-4xl font-bold mt-2">
-                  {t('about.title')}{" "}
-                  <span className="gradient-text">{t('about.titleGradient')}</span>
-                </h2>
-              </div>
-
-              <p className="text-lg text-muted-foreground">
-                {t('about.description')}
-              </p>
-
+              {/* 
               <div>
                 <h3 className="font-bold text-lg mb-6">{t('about.skillsTitle')}</h3>
                 <SkillChart />
               </div>
+              */}
 
               <div>
-                <h3 className="font-bold text-lg mb-6">Tech Stack</h3>
+                <h3 className="font-bold text-lg mb-6">Minhas Competências</h3>
+
+                {/* Skills Cards - Moved from Right Column */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-primary/50 transition-colors group">
+                    <Code2 className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="font-semibold">{t('about.frontend')}</h3>
+                    <p className="text-sm text-muted-foreground min-h-[40px]">
+                      {t('about.frontendDesc')}
+                    </p>
+                  </div>
+
+                  <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-secondary/50 transition-colors group">
+                    <Database className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="font-semibold">{t('about.backend')}</h3>
+                    <p className="text-sm text-muted-foreground min-h-[40px]">
+                      {t('about.backendDesc')}
+                    </p>
+                  </div>
+
+                  <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-accent/50 transition-colors group">
+                    <GitBranch className="w-8 h-8 text-accent group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="font-semibold">{t('about.databases')}</h3>
+                    <p className="text-sm text-muted-foreground min-h-[40px]">
+                      {t('about.databasesDesc')}
+                    </p>
+                  </div>
+
+                  <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-primary/50 transition-colors group">
+                    <Zap className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="font-semibold">{t('about.devops')}</h3>
+                    <p className="text-sm text-muted-foreground min-h-[40px]">
+                      {t('about.devopsDesc')}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tech Stack - Categorized Icons */}
                 <TechStack />
               </div>
 
@@ -189,41 +232,6 @@ export default function Index() {
                     alt="Profile"
                     className="w-full h-auto rounded-2xl object-cover"
                   />
-                </div>
-              </div>
-
-              {/* Skills Cards */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="glass-card p-6 rounded-2xl space-y-2">
-                  <Code2 className="w-8 h-8 text-primary" />
-                  <h3 className="font-semibold">{t('about.frontend')}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {t('about.frontendDesc')}
-                  </p>
-                </div>
-
-                <div className="glass-card p-6 rounded-2xl space-y-2">
-                  <Database className="w-8 h-8 text-secondary" />
-                  <h3 className="font-semibold">{t('about.backend')}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {t('about.backendDesc')}
-                  </p>
-                </div>
-
-                <div className="glass-card p-6 rounded-2xl space-y-2">
-                  <GitBranch className="w-8 h-8 text-accent" />
-                  <h3 className="font-semibold">{t('about.databases')}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {t('about.databasesDesc')}
-                  </p>
-                </div>
-
-                <div className="glass-card p-6 rounded-2xl space-y-2">
-                  <Zap className="w-8 h-8 text-primary" />
-                  <h3 className="font-semibold">{t('about.devops')}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {t('about.devopsDesc')}
-                  </p>
                 </div>
               </div>
             </div>
