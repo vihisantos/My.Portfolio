@@ -18,7 +18,7 @@ export function Testimonials() {
     <section className="py-20 relative overflow-hidden" id="services">
       {/* Background elements */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none" />
 
       <div className="container px-4 mx-auto relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -37,15 +37,17 @@ export function Testimonials() {
             return (
               <div
                 key={index}
-                className="group p-8 rounded-2xl bg-white border border-slate-200 dark:bg-white/5 dark:border-white/10 hover:border-primary/50 dark:hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 backdrop-blur-sm relative overflow-hidden shadow-lg dark:shadow-none"
+                className="group p-8 rounded-3xl bg-white border border-slate-200 dark:bg-slate-900/50 dark:border-white/5 hover:border-primary/50 dark:hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all duration-500 backdrop-blur-sm relative overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2"
               >
-                <div className="absolute top-0 right-0 p-4 opacity-5 dark:opacity-10 group-hover:opacity-10 dark:group-hover:opacity-20 transition-opacity text-primary dark:text-white">
-                  <Icon size={120} />
+                {/* Watermark Icon - Animated */}
+                <div className="absolute -top-6 -right-6 opacity-[0.03] dark:opacity-[0.02] group-hover:opacity-[0.08] dark:group-hover:opacity-[0.05] transition-all duration-700 text-primary dark:text-white transform group-hover:scale-150 group-hover:rotate-12">
+                  <Icon size={200} />
                 </div>
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Icon size={28} />
+                  {/* Icon Box - Floating Effect */}
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 text-white shadow-lg shadow-primary/20 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300">
+                    <Icon size={28} strokeWidth={2.5} />
                   </div>
 
                   <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors">

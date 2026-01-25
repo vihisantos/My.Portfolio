@@ -44,7 +44,8 @@ export const translations = {
     },
     projects: {
       badge: 'Portfólio',
-      title: 'Projetos em Destaque',
+      title: 'Projetos em',
+      titleGradient: 'Destaque',
       description:
         'Uma seleção do meu trabalho recente mostrando várias tecnologias e abordagens de resolução de problemas',
       viewProject: 'Ver Projeto',
@@ -543,7 +544,8 @@ export const translations = {
     },
     projects: {
       badge: 'Portfolio',
-      title: 'Featured Projects',
+      title: 'Featured',
+      titleGradient: 'Projects',
       description:
         'A selection of my recent work showcasing various technologies and problem-solving approaches',
       viewProject: 'View Project',

@@ -1,5 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
+import { SectionDivider } from "@/components/SectionDivider";
 import { Playground } from "@/components/Playground";
 import { Footer } from "@/components/Footer";
 import { TechStack } from "@/components/TechStack";
@@ -69,8 +70,8 @@ export default function Index() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
-        <div className="container-custom">
+      <section className="section-padding pb-32 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 relative">
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="inline-block">
@@ -95,13 +96,16 @@ export default function Index() {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
                   href="#projects"
-                  className="px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold smooth-transition hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2"
+                  className="group relative px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold smooth-transition hover:shadow-xl hover:shadow-primary/30 flex items-center justify-center gap-2 overflow-hidden hover-lift"
                 >
-                  {t('hero.viewWork')} <ArrowRight size={18} />
+                  <span className="relative z-10 flex items-center gap-2">
+                    {t('hero.viewWork')} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-25deg] -translate-x-full group-hover:animate-shine" />
                 </a>
                 <a
                   href="#contact"
-                  className="px-8 py-3 rounded-lg border border-border hover:border-primary text-primary hover:bg-primary/5 font-semibold smooth-transition flex items-center justify-center gap-2"
+                  className="px-8 py-3 rounded-lg border border-primary/20 bg-primary/5 dark:bg-white/5 backdrop-blur-sm hover:border-primary text-primary hover:bg-primary/10 font-semibold smooth-transition flex items-center justify-center gap-2 hover-lift"
                 >
                   {t('hero.getInTouch')}
                 </a>
@@ -136,6 +140,9 @@ export default function Index() {
             </div>
           </div>
         </div>
+
+        {/* Wave Divider to blend into About Section */}
+        <SectionDivider position="bottom" fill="text-white dark:text-slate-950" type="wave" height="h-24" className="scale-y-[-1]" />
       </section>
 
       {/* About Section */}
@@ -239,70 +246,98 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="section-padding bg-slate-50 dark:bg-slate-900/30">
-        <div className="container-custom">
-          <div className="text-center mb-16">
+      {/* Featured Projects Section */}
+      <section id="projects" className="section-padding bg-slate-50 dark:bg-slate-900 pb-32 relative">
+        <div className="container-custom relative z-10">
+          <div className="mb-12 text-center max-w-2xl mx-auto">
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">
               {t('projects.badge')}
             </span>
-            <h2 className="text-4xl font-bold mt-2 mb-4">
-              {t('projects.title')}
+            <h2 className="text-4xl font-bold mt-2">
+              {t('projects.title')}{" "}
+              <span className="gradient-text">{t('projects.titleGradient')}</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mt-4">
               {t('projects.description')}
             </p>
           </div>
 
           <ProjectFilter technologies={allTechnologies} onFilterChange={setSelectedTechs} />
+          <div className="mb-12" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayProjects.map((project, index) => {
+              // Calculate delay for stagger effect
+              const delay = index * 100;
+
               return (
-                <ScrollFadeIn key={project.id} delay={index * 100}>
+                <ScrollFadeIn key={project.id} delay={delay}>
                   <div
-                    className="glass-card rounded-2xl p-6 group hover:shadow-lg smooth-transition hover:-translate-y-1 border border-white/50 dark:border-slate-700/50 overflow-hidden h-full flex flex-col cursor-pointer"
                     onClick={() => handleProjectClick(project)}
+                    className="group bg-white dark:bg-slate-950/50 rounded-2xl overflow-hidden border border-border hover:border-primary/50 smooth-transition cursor-pointer hover:shadow-xl hover:-translate-y-2 h-full flex flex-col"
                   >
-                    <div className="mb-6 rounded-lg overflow-hidden aspect-video relative group-hover:scale-105 smooth-transition">
+                    <div className="relative aspect-video overflow-hidden">
+                      <div className="absolute inset-0 bg-primary/20 group-hover:opacity-0 smooth-transition z-10" />
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 smooth-transition" />
-                    </div>
-
-                    <div className="flex flex-col flex-grow">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{project.title}</h3>
-                        {project.badge && (
-                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 border-emerald-500/20 animate-pulse">
-                            {project.badge === "New" ? (t('uiLibrary.newFreeApp') || "Nova Aplicação Gratuita") : project.badge}
+                      <div className="absolute top-4 right-4 z-20">
+                        {project.badgeType === 'sale' ? (
+                          <span className="bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-emerald-400 shadow-lg shadow-emerald-500/20 uppercase tracking-wider">
+                            {project.badge}
+                          </span>
+                        ) : project.badgeType === 'new' ? (
+                          <span className="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-blue-400 shadow-lg shadow-blue-500/20 uppercase tracking-wider">
+                            {t('uiLibrary.newFreeApp')}
+                          </span>
+                        ) : (
+                          <span className="bg-background/80 backdrop-blur-sm text-foreground text-xs font-bold px-3 py-1 rounded-full border border-border">
+                            {project.badge || project.technologies[0]}
                           </span>
                         )}
                       </div>
-                      <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                    </div>
+
+                    <div className="p-6 flex-1 flex flex-col">
+                      <div className="flex justify-between items-start mb-4">
+                        <h3 className="text-xl font-bold group-hover:text-primary smooth-transition line-clamp-1">
+                          {project.title}
+                        </h3>
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary smooth-transition"
+                        >
+                          <Zap size={18} />
+                        </a>
+                      </div>
+
+                      <p className="text-muted-foreground text-sm mb-6 line-clamp-3 flex-1">
                         {project.description}
                       </p>
-                    </div>
 
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-muted-foreground"
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {project.technologies.slice(0, 3).map((tech: string) => (
+                          <span
+                            key={tech}
+                            className="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-md font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="mt-4 opacity-0 group-hover:opacity-100 smooth-transition">
+                        <div
+                          className="text-sm font-semibold text-primary flex items-center gap-1"
                         >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="mt-4 opacity-0 group-hover:opacity-100 smooth-transition">
-                      <div
-                        className="text-sm font-semibold text-primary flex items-center gap-1"
-                      >
-                        {t('projects.viewProject')} <ArrowRight size={14} />
+                          {t('projects.viewProject')} <ArrowRight size={14} />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -314,12 +349,15 @@ export default function Index() {
           <div className="mt-12 text-center">
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-white dark:bg-slate-900 border border-border hover:border-primary text-primary font-semibold smooth-transition hover:shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-white dark:bg-slate-950 border border-border hover:border-primary text-primary font-semibold smooth-transition hover:shadow-lg"
             >
               {t('projects.viewAll')} <ArrowRight size={18} />
             </Link>
           </div>
         </div>
+
+        {/* Curve Divider to blend into Capybara Section */}
+        <SectionDivider position="bottom" fill="text-white dark:text-slate-950" type="curve" height="h-24" className="scale-y-[-1]" />
       </section>
 
       {/* Capybara Holding Section */}
@@ -422,8 +460,8 @@ export default function Index() {
       </section>
 
       {/* Playground Section */}
-      <section className="section-padding overflow-hidden">
-        <div className="container-custom">
+      <section className="section-padding overflow-hidden pb-32 relative">
+        <div className="container-custom relative z-10">
           <div className="text-center mb-10">
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">
               {t('playground.badge')}
@@ -434,18 +472,24 @@ export default function Index() {
           </div>
           <Playground />
         </div>
+
+        {/* Wave Divider to blend into Testimonials Section */}
+        <SectionDivider position="bottom" fill="text-slate-50 dark:text-slate-900" type="wave" height="h-24" className="scale-y-[-1]" />
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-slate-50 dark:bg-slate-900/30">
+      <section className="bg-slate-50 dark:bg-slate-900">
         <ScrollFadeIn>
           <Testimonials />
         </ScrollFadeIn>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section-padding bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container-custom">
+      <section id="contact" className="section-padding pt-32 bg-gradient-to-br from-primary/5 to-secondary/5 relative">
+        {/* Wave Divider blending from Testimonials */}
+        <SectionDivider position="top" fill="text-slate-50 dark:text-slate-900" type="wave" height="h-24" className="scale-y-[-1]" />
+
+        <div className="container-custom relative z-10">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">

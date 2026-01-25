@@ -21,6 +21,7 @@ export const getProjects = (t: any) => [
         technologies: ["React", "Vite", "CSS Vanilla"],
         image: taskManagementImg,
         badge: t('projects.taskmanagement.badge'),
+        badgeType: 'sale',
         demoUrl: "https://vihisantos.github.io/portfolio-profissional/",
     },
     {
@@ -53,7 +54,7 @@ export const getProjects = (t: any) => [
         description: t('projects.mizinapp.description'),
         technologies: ["Python 3.14", "CustomTkinter"],
         image: mizinAppImg,
-        badge: "New",
+        badgeType: 'new',
         downloadLink: "https://drive.google.com/file/d/1dGPSta5n3k7fQQsaPdVg72K0ztsUT-9C/view?usp=sharing",
     }
 ];
