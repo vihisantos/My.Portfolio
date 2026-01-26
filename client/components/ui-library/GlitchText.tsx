@@ -84,7 +84,7 @@ const GlitchText = ({ text = "CYBERPUNK", className = "" }: { text?: string, cla
 export default GlitchText;
 `;
 
-export function GlitchText() {
+export function GlitchText({ text = "GLITCH" }: { text?: string }) {
   return (
     <ComponentShowcase title="Glitch Text" code={code} className="flex items-center justify-center p-12 transition-colors duration-300 min-h-[300px]">
       <div className="glitch-wrapper">
@@ -168,8 +168,8 @@ export function GlitchText() {
         }
         `}
         </style>
-        <h1 className="glitch-text" data-text="GLITCH">
-          GLITCH
+        <h1 className="glitch-text" data-text={text}>
+          {text}
         </h1>
       </div>
     </ComponentShowcase>

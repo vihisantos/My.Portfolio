@@ -186,7 +186,7 @@ export const translations = {
       vitrine360: {
         title: "Vitrine360",
         tagline: "Sua loja, em qualquer lugar.",
-        description: "O projeto principal da holding. Uma plataforma SaaS completa para gestão de vendas, estoque e presença digital, focada em pequenos e médios lojistas que buscam profissionalismo sem complexidade.",
+        description: "Uma plataforma SaaS completa para gestão de vendas, estoque e presença digital, focada em pequenos e médios lojistas que buscam profissionalismo sem complexidade.",
         features: [
           "PDV (Ponto de Venda) intuitivo",
           "Gestão de estoque inteligente",
@@ -214,9 +214,20 @@ export const translations = {
           "Desafios Reais"
         ]
       },
+      mizin: {
+        title: "Mizin",
+        tagline: "Sua playlist offline, sem complicações.",
+        description: "A ferramenta de organização e download definitiva para o ecossistema. O Mizin é totalmente gratuito e permite salvar vídeos ou playlists inteiras do YouTube em MP3 ou MP4, sem restrições de quantidade.",
+        features: [
+          "Download de Playlists",
+          "Qualidade 4K Ultra HD",
+          "Conversão p/ MP3 Ultra",
+          "Interface Minimalista"
+        ]
+      },
       ecosystem: {
         title: "O Ecossistema",
-        description: "A Capybara Holding não é apenas um grupo de projetos, é uma simbiose tecnológica. O Vitrine360 oferece a infraestrutura comercial, o ColorFlicks traz a inteligência criativa e visual, e o CapyFlow Academy forma os engenheiros que construirão o futuro. Juntos, cobrimos todo o ciclo de vida digital: Vendas, Criatividade e Talento. E isso é apenas o começo. Estamos empenhados em melhorar a vida de todos que cruzam nosso caminho."
+        description: "A Capybara Holding é uma simbiose tecnológica. Enquanto o Vitrine360 cuida da infraestrutura comercial, o ColorFlicks da inteligência visual e o Mizin oferece ferramentas práticas de mídia, o CapyFlow Academy forma os talentos que construirão o futuro. Juntos, cobrimos diversos domínios: Vendas, Criatividade, Utilidade e Educação."
       },
       sponsorship: {
         hero: {
@@ -686,7 +697,7 @@ export const translations = {
       vitrine360: {
         title: "Vitrine360",
         tagline: "Your store, anywhere.",
-        description: "The holding's flagship project. A complete SaaS platform for sales, inventory, and digital presence management, focused on small and medium-sized merchants seeking professionalism without complexity.",
+        description: "A complete SaaS platform for sales, inventory, and digital presence management, focused on small and medium-sized merchants seeking professionalism without complexity.",
         features: [
           "Intuitive POS (Point of Sale)",
           "Smart inventory management",
@@ -714,9 +725,20 @@ export const translations = {
           "Real-world Challenges"
         ]
       },
+      mizin: {
+        title: "Mizin",
+        tagline: "Your offline playlist, simplified.",
+        description: "The definitive organization and download tool for the ecosystem. Mizin is completely free and allows you to save videos or entire YouTube playlists in MP3 or MP4 format, with no quantity restrictions.",
+        features: [
+          "Playlist Download",
+          "4K Ultra HD Quality",
+          "Ultra MP3 Conversion",
+          "Minimalist Interface"
+        ]
+      },
       ecosystem: {
         title: "The Ecosystem",
-        description: "Capybara Holding is not just a group of projects, it's a technological symbiosis. Vitrine360 provides the commercial infrastructure, ColorFlicks brings creative and visual intelligence, and CapyFlow Academy trains the engineers who will build the future. Together, we cover the entire digital lifecycle: Sales, Creativity, and Talent. And this is just the beginning. We are committed to improving the lives of everyone we touch."
+        description: "Capybara Holding is a technological symbiosis. While Vitrine360 handles commercial infrastructure, ColorFlicks provides visual intelligence, and Mizin offers practical media utilities, the CapyFlow Academy trains the talents of the future. Together, we cover diverse domains: Sales, Creativity, Utility, and Education."
       },
       sponsorship: {
         hero: {

@@ -11,6 +11,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackToTop } from "@/components/BackToTop";
 import { PageLoadingWrapper } from "@/components/PageLoadingWrapper";
 import { Loader } from "@/components/Loader";
+import { CommandBar } from "@/components/CommandBar";
 import { Suspense, lazy, useEffect } from "react";
 
 // Lazy load pages for performance
@@ -51,6 +52,7 @@ function RootApp() {
               <Toaster />
               <Sonner />
               <BrowserRouter basename={import.meta.env.BASE_URL}>
+                <CommandBar />
                 <PageLoadingWrapper>
                   <Suspense fallback={<Loader />}>
                     <Routes>
