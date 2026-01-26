@@ -8,6 +8,8 @@ interface ComponentShowcaseProps {
     children: React.ReactNode;
     code: string;
     className?: string;
+    scale?: number; // Visual scale (default 0.65)
+    renderScale?: number; // Internal render size multiplier (default 1.5 -> 150%)
 }
 
 export function ComponentShowcase({
@@ -15,6 +17,8 @@ export function ComponentShowcase({
     children,
     code,
     className,
+    scale = 0.65,
+    renderScale = 1.5,
 }: ComponentShowcaseProps) {
     const [copied, setCopied] = useState(false);
     const [showCode, setShowCode] = useState(false);
@@ -25,6 +29,10 @@ export function ComponentShowcase({
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
+
+    // Calculate percentage strings
+    const renderWidthPercent = `${renderScale * 100}%`;
+    const renderHeightPercent = `${renderScale * 100}%`;
 
     return (
         <div
@@ -65,12 +73,26 @@ export function ComponentShowcase({
                 </Button>
             </div>
 
-            {/* Content Container */}
+            {/* Content Container - with smart scaling to prevent layout breaking */}
             <div className={cn(
-                "component-showcase-content relative flex h-64 w-full items-center justify-center p-8 transition-all duration-300 ease-in-out",
+                "component-showcase-content relative flex h-64 w-full items-center justify-center p-0 transition-all duration-300 ease-in-out overflow-hidden",
                 showCode ? "opacity-0 scale-95" : "opacity-100 scale-100"
             )}>
-                {children}
+                {/* 
+                    Scaling Wrapper: 
+                    Renders content at renderScale (default 150%) to allow layouts to breathe,
+                    then scales down (default 0.65) to fit the card.
+                 */}
+                <div
+                    className="flex items-center justify-center origin-center"
+                    style={{
+                        width: renderWidthPercent,
+                        height: renderHeightPercent,
+                        transform: `scale(${scale})`
+                    }}
+                >
+                    {children}
+                </div>
             </div>
 
             {/* Code Overlay */}

@@ -136,7 +136,7 @@ const components = [
     { id: "tower_loader", category: "Loaders", component: <TowerLoader /> },
     { id: "jumping_box", category: "Loaders", component: <JumpingBoxLoader /> },
     { id: "word_spinner", category: "Loaders", component: <WordSpinnerLoader /> },
-    { id: "walking_man", category: "Loaders", component: <WalkingManLoader /> },
+    { id: "walking_man", category: "Loaders", size: "large", component: <WalkingManLoader /> },
     { id: "geometric_spinner", category: "Loaders", component: <GeometricSpinnerLoader /> },
     { id: "dot_pulse", category: "Loaders", component: <DotPulseLoader /> },
     { id: "three_body", category: "Loaders", component: <ThreeBodyLoader /> },
@@ -161,7 +161,7 @@ const components = [
     { id: "speeder_loader", category: "Loaders", component: <SpeederLoader /> },
     { id: "cola_loader", category: "Loaders", component: <ColaLoader /> },
     { id: "push_loader", category: "Loaders", component: <PushLoader /> },
-    { id: "geometric_shapes", category: "Loaders", component: <GeometricShapesLoader /> },
+    { id: "geometric_shapes", category: "Loaders", size: "medium", component: <GeometricShapesLoader /> },
     { id: "gradient_spin", category: "Loaders", component: <GradientSpinLoader /> },
     { id: "jumping_circles", category: "Loaders", component: <JumpingCirclesLoader /> },
     { id: "circular_spinner", category: "Loaders", component: <CircularSpinnerLoader /> },
@@ -199,14 +199,14 @@ const components = [
     { id: "star_button", category: "Buttons", component: <StarButton /> },
     { id: "rgb_button", category: "Buttons", component: <RGBButton /> },
     { id: "confetti_button", category: "Buttons", component: <ConfettiButton /> },
-    { id: "rainbow_button", category: "Buttons", component: <RainbowButton /> },
+    { id: "rainbow_button", category: "Buttons", size: "medium", component: <RainbowButton /> },
     { id: "logout_button", category: "Buttons", component: <LogoutButton /> },
     { id: "social_platform_grid", category: "Buttons", size: "medium", component: <SocialPlatformGrid /> },
 
     // --- INPUTS ---
     { id: "day_night_switch", category: "Inputs", component: <DayNightSwitch /> },
     { id: "minecraft_switch", category: "Inputs", component: <MinecraftSwitch /> },
-    { id: "pill_radio", category: "Inputs", component: <PillRadio /> },
+    { id: "pill_radio", category: "Inputs", size: "medium", component: <PillRadio /> },
     { id: "gooey_switch", category: "Inputs", component: <GooeySwitch /> },
     { id: "three_d_input", category: "Inputs", component: <ThreeDInput /> },
     { id: "soft_input", category: "Inputs", component: <SoftInput /> },
@@ -230,7 +230,7 @@ const components = [
     { id: "tooltip_basic", category: "Tooltips", component: <Tooltip text="Magic Lab Tooltip" /> },
     { id: "glass_icons", category: "Text", size: "medium", component: <GlassIcons /> },
     { id: "map_tooltip", category: "Tooltips", component: <MapLocationTooltip /> },
-    { id: "glitch_text", category: "Text", component: <GlitchText text="Vitor's Lab" /> },
+    { id: "glitch_text", category: "Text", size: "medium", component: <GlitchText text="Vitor's Lab" /> },
     { id: "star_rating", category: "Text", component: <StarRating /> },
 ];
 
@@ -359,23 +359,12 @@ export default function UILibrary() {
              display: flex;
              align-items: center;
              justify-content: center;
-             overflow: visible; /* Allow controls to be accessible */
+             overflow: hidden;
           }
 
-          /* BREATHING ROOM SCALING: 
-             1. Give components 150% space to render layout (prevent text wrapping)
-             2. Scale down (0.65) to fit back into 320px grid (150% * 0.65 ≈ 97.5%)
-          */
           .ui-lib-item .lab-component-wrapper > * {
-             width: 150% !important;
-             height: 150% !important;
-             transform: scale(0.65);
-             transform-origin: center center;
-             min-height: 0 !important; /* Kill fixed limits */
-             max-width: none !important;
-             max-height: none !important;
-             border: none !important;
-             box-shadow: none !important;
+             width: 100%;
+             height: 100%;
           }
           
           /* Re-enable animations on hover */
@@ -412,15 +401,11 @@ export default function UILibrary() {
                                     layout: { type: "spring", stiffness: 200, damping: 25 }
                                 }}
                                 className={cn(
-                                    "ui-lib-item group relative overflow-visible rounded-3xl bg-muted/20 border border-white/5 hover:border-primary/50 transition-colors duration-500",
-                                    item.size === 'medium' ? 'grid-item-medium' : item.size === 'large' ? 'grid-item-large' : ''
+                                    "ui-lib-item group relative overflow-hidden rounded-3xl border border-white/5 hover:border-primary/50 transition-colors duration-500",
+                                    item.size === 'medium' ? 'grid-item-medium' : item.size === 'large' ? 'grid-item-large' : '',
+                                    "bg-[#201E1D]" // Requested background color
                                 )}
                             >
-                                {/* Visual Flair */}
-                                <div className="absolute top-4 right-4 z-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                    <Sparkles className="size-4 text-primary animate-spin-slow" />
-                                </div>
-
                                 {/* Backdrop effect */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -429,13 +414,6 @@ export default function UILibrary() {
                                     <div className="lab-component-wrapper">
                                         {item.component}
                                     </div>
-                                </div>
-
-                                {/* ID Tag - Moved to be less intrusive */}
-                                <div className="absolute bottom-3 left-4 z-20 pointer-events-none">
-                                    <span className="text-[10px] font-mono font-bold text-muted-foreground/30 uppercase tracking-[0.2em] group-hover:text-primary transition-colors">
-                                        {item.id.replace(/-/g, '_')}
-                                    </span>
                                 </div>
                             </motion.div>
                         ))}

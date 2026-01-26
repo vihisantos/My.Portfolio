@@ -685,7 +685,7 @@ export const MagicBento: React.FC<BentoProps> = ({
   `, [glowColor]);
 
     return (
-        <ComponentShowcase title="Magic Bento" code={code} className="flex items-center justify-center p-12 bg-black min-h-[600px] w-full">
+        <ComponentShowcase title="Magic Bento" code={code} className="flex items-center justify-center p-12 bg-[#201E1D] min-h-[600px] w-full">
             <style>{styles}</style>
 
             {enableSpotlight && (

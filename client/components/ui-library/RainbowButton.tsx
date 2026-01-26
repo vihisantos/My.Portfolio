@@ -61,51 +61,51 @@ const StyledWrapper = styled.div\`
 export default Button;`;
 
 export const RainbowButton = () => {
-    const btnRef = useRef<HTMLButtonElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-        if (!btnRef.current) return;
-        const btn = btnRef.current;
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!btnRef.current) return;
+    const btn = btnRef.current;
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-        // Calculate rotation based on mouse position
-        // Max rotation 15deg
-        const width = rect.width;
-        const height = rect.height;
+    // Calculate rotation based on mouse position
+    // Max rotation 15deg
+    const width = rect.width;
+    const height = rect.height;
 
-        // ry: varies from -15 to 15 based on x
-        const ry = ((x / width) - 0.5) * 30; // 0.5 * 30 * 2 ?? No ((0..1) - 0.5) = -0.5..0.5 -> *30 = -15..15
+    // ry: varies from -15 to 15 based on x
+    const ry = ((x / width) - 0.5) * 30; // 0.5 * 30 * 2 ?? No ((0..1) - 0.5) = -0.5..0.5 -> *30 = -15..15
 
-        // rx: varies from 15 to -15 based on y (inverted because y goes down)
-        const rx = ((y / height) - 0.5) * -30;
+    // rx: varies from 15 to -15 based on y (inverted because y goes down)
+    const rx = ((y / height) - 0.5) * -30;
 
-        btn.style.setProperty('--rx', `${rx}deg`);
-        btn.style.setProperty('--ry', `${ry}deg`);
-    };
+    btn.style.setProperty('--rx', `${rx}deg`);
+    btn.style.setProperty('--ry', `${ry}deg`);
+  };
 
-    const handleMouseLeave = () => {
-        if (!btnRef.current) return;
-        const btn = btnRef.current;
-        btn.style.setProperty('--rx', '0deg');
-        btn.style.setProperty('--ry', '0deg');
-    };
+  const handleMouseLeave = () => {
+    if (!btnRef.current) return;
+    const btn = btnRef.current;
+    btn.style.setProperty('--rx', '0deg');
+    btn.style.setProperty('--ry', '0deg');
+  };
 
-    return (
-        <ComponentShowcase title="Rainbow Button" code={code}>
-            <div className="rainbow-button-wrapper">
-                <button
-                    ref={btnRef}
-                    data-label="Register"
-                    className="rainbow-hover"
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <span className="sp">Register</span>
-                </button>
-            </div>
-            <style>{`
+  return (
+    <ComponentShowcase title="Rainbow Button" code={code} scale={0.85}>
+      <div className="rainbow-button-wrapper">
+        <button
+          ref={btnRef}
+          data-label="Register"
+          className="rainbow-hover"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <span className="sp">Register</span>
+        </button>
+      </div>
+      <style>{`
         .rainbow-button-wrapper .rainbow-hover {
           font-size: 16px;
           font-weight: 700;
@@ -149,8 +149,8 @@ export const RainbowButton = () => {
           transform: scale(0.93) perspectiva(600px) rotateX(0deg) rotateY(0deg); /* Reset rotation on click for feel */
         }
       `}</style>
-        </ComponentShowcase>
-    );
+    </ComponentShowcase>
+  );
 }
 
 export default RainbowButton;
