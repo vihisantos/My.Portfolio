@@ -28,7 +28,7 @@ export const translations = {
       title: 'Transformando ideias em',
       titleGradient: 'soluções digitais',
       description:
-        'Sou um desenvolvedor full-stack dedicado com paixão por criar aplicações escaláveis e de alto desempenho. Atualmente cursando Análise e Desenvolvimento de Sistemas e Gestão de T.I, combino conhecimento teórico com experiência prática.',
+        'Sou um desenvolvedor full-stack e UX/UI Designer dedicado com paixão por criar aplicações escaláveis e de alto desempenho. Atualmente cursando Análise e Desenvolvimento de Sistemas e Gestão de T.I, combino conhecimento teórico com experiência prática.',
       skillsTitle: 'Minhas competências',
       educationTitle: 'Educação & Aprendizado',
       frontend: 'Frontend',
@@ -594,7 +594,7 @@ export const translations = {
       title: 'Turning ideas into',
       titleGradient: 'digital solutions',
       description:
-        'I\'m a dedicated full-stack developer with a passion for creating scalable, high-performance applications. Currently studying Analysis and Development of Systems and IT Management, I combine theoretical knowledge with practical experience.',
+        'I\'m a dedicated full-stack developer and UX/UI Designer with a passion for creating scalable, high-performance applications. Currently studying Analysis and Development of Systems and IT Management, I combine theoretical knowledge with practical experience.',
       skillsTitle: 'My Skills',
       educationTitle: 'Education & Learning',
       frontend: 'Frontend',
