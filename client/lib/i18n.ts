@@ -101,6 +101,7 @@ export const translations = {
         title: 'Site Institucional Moderno',
         description:
           'Aplicação web institucional de alta performance para empresas que buscam consolidar sua presença digital com elegância e velocidade.',
+        badge: 'Template p/ Venda',
         story: {
           challenge: 'Empresas tradicionais sofrem com sites lentos, não responsivos e difíceis de manter, prejudicando sua credibilidade online.',
           solution: 'Desenvolvimento de uma SPA (Single Page Application) moderna utilizando React e Vite, focada em Core Web Vitals e SEO.',
@@ -664,6 +665,7 @@ export const translations = {
         title: 'Modern Institutional Site',
         description:
           'High-performance institutional web application for companies seeking to consolidate their digital presence with elegance and speed.',
+        badge: 'For Sale',
         story: {
           challenge: 'Traditional companies suffer from slow, unresponsive, and hard-to-maintain websites, hurting their online credibility.',
           solution: 'Development of a modern SPA (Single Page Application) using React and Vite, focused on Core Web Vitals and SEO.',

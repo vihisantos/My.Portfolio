@@ -85,6 +85,8 @@ export const getProjects = (t: any) => [
         description: t('projects.siteinstitucional.description'),
         technologies: ["React", "Vite", "Tailwind CSS", "TypeScript", "Framer Motion"],
         image: siteInstitucionalImg,
+        badge: t('projects.siteinstitucional.badge'),
+        badgeType: 'sale',
         demoUrl: "https://vihisantos.github.io/site_institucional/",
         challenge: t('projects.siteinstitucional.story.challenge'),
         solution: t('projects.siteinstitucional.story.solution'),
