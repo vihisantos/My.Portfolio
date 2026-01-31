@@ -54,6 +54,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>{t('footer.frontend')}</li>
               <li>{t('footer.backend')}</li>
+              <li>{t('footer.uiux')}</li>
               <li>{t('footer.fullstack')}</li>
             </ul>
           </div>

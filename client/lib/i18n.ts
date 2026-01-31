@@ -10,7 +10,7 @@ export const translations = {
       contact: 'Contato',
     },
     hero: {
-      badge: 'Desenvolvedor Full-Stack Web',
+      badge: 'Desenvolvedor Full-Stack Web & UX/UI Design',
       title: 'Construindo experiências web',
       titleGradient: 'modernas',
       description:
@@ -164,6 +164,7 @@ export const translations = {
       connect: 'Conectar',
       frontend: 'Desenvolvimento Frontend',
       backend: 'Desenvolvimento Backend',
+      uiux: 'UI/UX Design',
       fullstack: 'Aplicações Full-stack',
       rights: 'Todos os direitos reservados.',
       crafted: 'Criado com paixão por um desenvolvedor full-stack.',
@@ -575,7 +576,7 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      badge: 'Full-Stack Web Developer',
+      badge: 'Full-Stack Web Developer & UX/UI Design',
       title: 'Building modern',
       titleGradient: 'web experiences',
       description:
@@ -728,6 +729,7 @@ export const translations = {
       connect: 'Connect',
       frontend: 'Frontend Development',
       backend: 'Backend Development',
+      uiux: 'UI/UX Design',
       fullstack: 'Full-stack Applications',
       rights: 'All rights reserved.',
       crafted: 'Crafted with passion by a full-stack developer.',
