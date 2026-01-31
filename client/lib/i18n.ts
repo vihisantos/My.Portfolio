@@ -122,6 +122,15 @@ export const translations = {
           impact: 'Melhoria na taxa de retenção de clientes e aumento direto na conversão de leads vindos do WhatsApp.'
         }
       },
+      medhub: {
+        title: 'Med Hub - Gestão de Escalas',
+        description: 'O Sistema Operacional para gestão de escalas médicas. Conecte hospitais de ponta com profissionais de elite através de IA.',
+        story: {
+          challenge: 'Hospitais sofrem com furos em escalas e dificuldade de encontrar profissionais qualificados rapidamente.',
+          solution: 'Plataforma que utiliza IA para match automático entre vagas e profissionais, com gestão financeira e de escalas em tempo real.',
+          impact: 'Redução drástica no tempo de fechamento de escalas e maior satisfação dos profissionais.'
+        }
+      },
     },
     capybara: {
       badge: 'Minha Iniciativa',
@@ -674,6 +683,15 @@ export const translations = {
           challenge: 'Businesses lose thousands in sales by failing to turn WhatsApp conversations into actionable data and long-lasting relationships.',
           solution: 'A conversational intelligence platform that uses AI to analyze, automate, and optimize every interaction, focusing on conversion.',
           impact: 'Improvement in customer retention rates and direct increase in lead conversion from WhatsApp.'
+        }
+      },
+      medhub: {
+        title: 'Med Hub - Shift Management',
+        description: 'The Operating System for medical shift management. Connecting world-class hospitals with top-tier professionals via AI.',
+        story: {
+          challenge: 'Hospitals struggle with shift gaps and difficulty finding qualified professionals quickly.',
+          solution: 'Platform using AI for automatic matching between shifts and professionals, with real-time financial and schedule management.',
+          impact: 'Drastic reduction in shift closing time and higher professional satisfaction.'
         }
       },
     },

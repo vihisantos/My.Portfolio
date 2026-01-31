@@ -6,6 +6,7 @@ import capyFlowImg from "@/assets/projects/capyflowacademy.png";
 import mizinAppImg from "@/assets/projects/Mizin.png";
 import siteInstitucionalImg from "@/assets/projects/site institucional.png";
 import zapediaImg from "@/assets/projects/zapedia.png";
+import medHubImg from "@/assets/projects/med-hub.png";
 
 export const getProjects = (t: any) => [
 
@@ -99,5 +100,16 @@ export const getProjects = (t: any) => [
         challenge: t('projects.zapedia.story.challenge'),
         solution: t('projects.zapedia.story.solution'),
         impact: t('projects.zapedia.story.impact'),
+    },
+    {
+        id: 11,
+        title: t('projects.medhub.title'),
+        description: t('projects.medhub.description'),
+        technologies: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Node.js"],
+        image: medHubImg,
+        demoUrl: "https://vihisantos.github.io/Med_Hub/",
+        challenge: t('projects.medhub.story.challenge'),
+        solution: t('projects.medhub.story.solution'),
+        impact: t('projects.medhub.story.impact'),
     }
 ];
