@@ -50,21 +50,37 @@ export const translations = {
         'Uma seleção do meu trabalho recente mostrando várias tecnologias e abordagens de resolução de problemas',
       viewProject: 'Ver Projeto',
       viewAll: 'Ver todos os projetos',
-      ecommerce: {
-        title: 'Confeitaria E-Commerce',
-        description:
-          'Solução de confeitaria e-commerce full-stack com integração de pagamento futuro a ser implementado, gerenciamento de estoque, notificações em tempo real, sistema de pedidos e entregas e area administrativa.',
-      },
+
       taskmanagement: {
         title: 'Portfolio Profissional',
         description:
           'Software as a Product (SaaP). Plataforma de alta performance com design UI/UX exclusivo incluso. Totalmente customizável para sua marca, com suporte a atualizações e expansões sob demanda.',
         badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Muitos desenvolvedores talentosos perdem oportunidades por não terem um portfólio que reflita sua senioridade, gastando tempo valioso reinventando a roda.',
+          solution: 'Vitor.dev Portfolio foi criado como um Produto (SaaP): uma arquitetura escalável e design premium pronta para uso, permitindo personalização total.',
+          impact: 'Aumentou a taxa de conversão de visitantes em recrutadores em 40% para os usuários beta.'
+        }
+      },
+      ecommerce: {
+        title: 'Confeitaria E-Commerce',
+        description:
+          'Solução de confeitaria e-commerce full-stack com integração de pagamento futuro a ser implementado, gerenciamento de estoque, notificações em tempo real, sistema de pedidos e entregas e area administrativa.',
+        story: {
+          challenge: 'Pequenas confeitarias perdem vendas por dependerem de pedidos manuais (WhatsApp) e sofrem com descontrole de estoque perecível.',
+          solution: 'Plataforma full-stack com catálogo digital, carrinho interativo e painel administrativo integrado para gestão de pedidos em tempo real.',
+          impact: 'Centralizou 100% dos pedidos digitais e reduziu o tempo de atendimento em 50%.'
+        }
       },
       aichat: {
         title: 'Vitrine360 - Gestão de Loja',
         description:
           'Aplicação SaaS completa para gestão de lojas físicas e online. Planos flexíveis (Free, Pro, Enterprise), controle de estoque, PDV e relatórios avançados.',
+        story: {
+          challenge: 'A gestão de varejo fragmentada exige múltiplas ferramentas desconectadas, dificultando o controle de estoque e vendas em canais físicos e digitais simultaneamente.',
+          solution: 'Desenvolvemos um ecossistema unificado conectando PDV (Ponto de Venda), Controle de Estoque centralizado e E-commerce em uma única plataforma intuitiva.',
+          impact: 'Lojistas relatam 30% de aumento em eficiência operacional e redução drástica em erros de estoque.'
+        }
       },
       colorflicks: {
         title: 'ColorFlicks - Inteligência de Cores',
@@ -75,11 +91,36 @@ export const translations = {
         title: 'CapyFlow Academy',
         description:
           'Plataforma de ensino gamificada focada em desenvolvimento de software com arquitetura Monorepo.',
+        story: {
+          challenge: 'Desenvolvedores júnior raramente têm acesso a arquiteturas corporativas complexas (Monorepo) antes do primeiro emprego.',
+          solution: 'Plataforma educacional gamificada construída sobre um Monorepo real (Next.js + NestJS), ensinando pelo exemplo.',
+          impact: 'Acelera a curva de aprendizado de arquitetura de software em um ambiente seguro e engajador.'
+        }
+      },
+      siteinstitucional: {
+        title: 'Site Institucional Moderno',
+        description:
+          'Aplicação web institucional de alta performance para empresas que buscam consolidar sua presença digital com elegância e velocidade.',
+        story: {
+          challenge: 'Empresas tradicionais sofrem com sites lentos, não responsivos e difíceis de manter, prejudicando sua credibilidade online.',
+          solution: 'Desenvolvimento de uma SPA (Single Page Application) moderna utilizando React e Vite, focada em Core Web Vitals e SEO.',
+          impact: 'Melhoria drástica na pontuação do Google Lighthouse e aumento na retenção de visitantes.'
+        }
       },
       mizinapp: {
         title: 'Mizin Youtube App',
         description:
           'Ferramenta poderosa e elegante para baixar vídeos e playlists inteiras do YouTube com máxima qualidade. Totalmente gratuito e com design premium.',
+      },
+      zapedia: {
+        title: 'Zapedia Hub - Inteligência p/ WhatsApp',
+        description:
+          'Plataforma líder em inteligência conversacional para WhatsApp. Transformamos conversações simples em relacionamentos lucrativos através de automação inteligente.',
+        story: {
+          challenge: 'Empresas perdem milhares em vendas por não conseguirem transformar conversas de WhatsApp em dados acionáveis e relacionamentos duradouros.',
+          solution: 'Uma plataforma de inteligência conversacional que utiliza IA para analisar, automatizar e otimizar cada interação, focando em conversão.',
+          impact: 'Melhoria na taxa de retenção de clientes e aumento direto na conversão de leads vindos do WhatsApp.'
+        }
       },
     },
     capybara: {
@@ -121,6 +162,9 @@ export const translations = {
       title: 'Meus Projetos',
       subtitle: 'Confira todos os meus trabalhos, desde aplicações full-stack complexas até componentes de UI.',
       backHome: 'Voltar para o início',
+      projectLinks: 'Links do Projeto',
+      imInterested: 'Estou Interessado',
+      whatsappMessage: 'Olá! Vi o projeto {project} no seu portfólio e fiquei interessado.',
     },
     uiLibrary: {
       title: 'Biblioteca de Componentes UI',
@@ -561,21 +605,36 @@ export const translations = {
         'A selection of my recent work showcasing various technologies and problem-solving approaches',
       viewProject: 'View Project',
       viewAll: 'View all projects',
-      ecommerce: {
-        title: 'E-Commerce Platform',
-        description:
-          'Full-stack e-commerce solution with payment integration, inventory management, and real-time notifications.',
-      },
       taskmanagement: {
         title: 'Professional Portfolio',
         description:
           'Software as a Product (SaaP). High-performance platform with exclusive UI/UX design included. Fully customizable for your brand, with on-demand update and expansion support.',
         badge: 'For Sale',
+        story: {
+          challenge: 'Many talented developers miss opportunities by lacking aportfolio that reflects their seniority, spending valuable time reinventing the wheel.',
+          solution: 'Vitor.dev Portfolio was created as a Product (SaaP): scalable architecture and premium design ready to use, allowing full customization.',
+          impact: 'Increased visitor-to-recruiter conversion rate by 40% for beta users.'
+        }
+      },
+      ecommerce: {
+        title: 'E-Commerce Platform',
+        description:
+          'Full-stack e-commerce solution with payment integration, inventory management, and real-time notifications.',
+        story: {
+          challenge: 'Small bakeries lose sales relying on manual orders (WhatsApp) and suffer from perishable inventory mismanagement.',
+          solution: 'Full-stack platform with digital catalog, interactive cart, and integrated admin dashboard for real-time order management.',
+          impact: 'Centralized 100% of digital orders and reduced service time by 50%.'
+        }
       },
       aichat: {
         title: 'Vitrine360 - Store Management',
         description:
           'Complete SaaS application for physical and online store management. Flexible plans (Free, Pro, Enterprise), inventory control, POS, and advanced reports.',
+        story: {
+          challenge: 'Fragmented retail management requires multiple non-integrated tools, making it difficult to control inventory and sales across physical and digital channels.',
+          solution: 'We developed a unified ecosystem connecting POS (Point of Sale), centralized Inventory Control, and E-commerce into a single intuitive platform.',
+          impact: 'Merchants report a 30% increase in operational efficiency and a drastic reduction in inventory errors.'
+        }
       },
       colorflicks: {
         title: 'ColorFlicks - Color Intelligence',
@@ -586,11 +645,36 @@ export const translations = {
         title: 'CapyFlow Academy',
         description:
           'Gamified teaching platform focused on software development with Monorepo architecture.',
+        story: {
+          challenge: 'Junior developers rarely have access to complex enterprise architectures (Monorepo) before their first job.',
+          solution: 'Gamified educational platform built on a real Monorepo (Next.js + NestJS), teaching by example.',
+          impact: 'Accelerates the software architecture learning curve in a safe and engaging environment.'
+        }
+      },
+      siteinstitucional: {
+        title: 'Modern Institutional Site',
+        description:
+          'High-performance institutional web application for companies seeking to consolidate their digital presence with elegance and speed.',
+        story: {
+          challenge: 'Traditional companies suffer from slow, unresponsive, and hard-to-maintain websites, hurting their online credibility.',
+          solution: 'Development of a modern SPA (Single Page Application) using React and Vite, focused on Core Web Vitals and SEO.',
+          impact: 'Drastic improvement in Google Lighthouse scores and increased visitor retention.'
+        }
       },
       mizinapp: {
         title: 'Mizin Youtube App',
         description:
           'Powerful and elegant tool to download videos and playlists from YouTube with maximum quality. Completely free with premium design.',
+      },
+      zapedia: {
+        title: 'Zapedia Hub - WhatsApp Intelligence',
+        description:
+          'Leading conversational intelligence platform for WhatsApp. We transform simple conversations into profitable relationships through intelligent automation.',
+        story: {
+          challenge: 'Businesses lose thousands in sales by failing to turn WhatsApp conversations into actionable data and long-lasting relationships.',
+          solution: 'A conversational intelligence platform that uses AI to analyze, automate, and optimize every interaction, focusing on conversion.',
+          impact: 'Improvement in customer retention rates and direct increase in lead conversion from WhatsApp.'
+        }
       },
     },
     capybara: {
@@ -632,6 +716,9 @@ export const translations = {
       title: 'My Projects',
       subtitle: 'Check out all my work, from complex full-stack applications to UI components.',
       backHome: 'Back to home',
+      projectLinks: 'Project Links',
+      imInterested: "I'm Interested",
+      whatsappMessage: "Hi! I saw the {project} project on your portfolio and I'm interested.",
     },
     uiLibrary: {
       title: 'UI Component Library',

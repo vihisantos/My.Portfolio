@@ -17,6 +17,7 @@ import { Suspense, lazy, useEffect } from "react";
 // Lazy load pages for performance
 const Index = lazy(() => import("./pages/Index"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const UILibrary = lazy(() => import("./pages/UILibrary"));
 const CapybaraHolding = lazy(() => import("./pages/CapybaraHolding"));
 const Sponsorship = lazy(() => import("./pages/Sponsorship"));
@@ -58,6 +59,7 @@ function RootApp() {
                     <Routes>
                       <Route path="/" element={<Index />} />
                       <Route path="/projects" element={<ProjectsPage />} />
+                      <Route path="/project/:id" element={<ProjectDetails />} />
                       <Route path="/ui-library" element={<UILibrary />} />
                       <Route path="/capybara-holding" element={<CapybaraHolding />} />
                       <Route path="/sponsorship" element={<Sponsorship />} />

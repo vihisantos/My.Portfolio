@@ -3,26 +3,20 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ProjectFilter } from "@/components/ProjectFilter";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
+import { SectionDivider } from "@/components/SectionDivider";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Zap } from "lucide-react";
 import { useState, useMemo } from "react";
-import { ProjectModal } from "@/components/ProjectModal";
-import { Loader } from "@/components/Loader";
 import { getProjects } from "@/data/projects";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ProjectsPage() {
     const { t } = useLanguage();
     const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
-    const [selectedProject, setSelectedProject] = useState<any | null>(null);
-    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleProjectClick = (project: any) => {
-        setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-            setSelectedProject(project);
-        }, 1000);
+        navigate(`/project/${project.id}`);
     };
 
     const allProjects = useMemo(() => getProjects(t), [t]);
@@ -47,8 +41,8 @@ export default function ProjectsPage() {
         <div className="min-h-screen bg-white dark:bg-slate-950">
             <Navigation />
 
-            <section className="section-padding bg-slate-50 dark:bg-slate-900/30 pt-32 pb-20">
-                <div className="container-custom">
+            <section className="section-padding bg-slate-50 dark:bg-slate-900/30 pt-32 pb-40 relative">
+                <div className="container-custom relative z-10">
                     <Link to="/" className="inline-flex items-center gap-2 text-primary font-medium mb-8 hover:underline">
                         <ArrowLeft size={18} /> {t('projectsPage.backHome')}
                     </Link>
@@ -67,44 +61,71 @@ export default function ProjectsPage() {
                             return (
                                 <ScrollFadeIn key={project.id} delay={index * 50}>
                                     <div
-                                        className="glass-card rounded-2xl p-6 group hover:shadow-lg smooth-transition hover:-translate-y-1 border border-white/50 dark:border-slate-700/50 overflow-hidden h-full flex flex-col cursor-pointer"
                                         onClick={() => handleProjectClick(project)}
+                                        className="group bg-white dark:bg-slate-950/50 rounded-2xl overflow-hidden border border-border hover:border-primary/50 smooth-transition cursor-pointer hover:shadow-xl hover:-translate-y-2 h-full flex flex-col"
                                     >
-                                        <div className="mb-6 rounded-lg overflow-hidden aspect-video relative group-hover:scale-105 smooth-transition">
+                                        <div className="relative aspect-video overflow-hidden">
+                                            <div className="absolute inset-0 bg-primary/20 group-hover:opacity-0 smooth-transition z-10" />
                                             <img
                                                 src={project.image}
                                                 alt={project.title}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                                loading="lazy"
                                             />
-                                            <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 smooth-transition" />
+                                            <div className="absolute top-4 right-4 z-20">
+                                                {project.badgeType === 'sale' ? (
+                                                    <span className="bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-emerald-400 shadow-lg shadow-emerald-500/20 uppercase tracking-wider">
+                                                        {project.badge}
+                                                    </span>
+                                                ) : project.badgeType === 'new' ? (
+                                                    <span className="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-blue-400 shadow-lg shadow-blue-500/20 uppercase tracking-wider">
+                                                        {t('uiLibrary.newFreeApp')}
+                                                    </span>
+                                                ) : (
+                                                    <span className="bg-background/80 backdrop-blur-sm text-foreground text-xs font-bold px-3 py-1 rounded-full border border-border">
+                                                        {project.badge || project.technologies[0]}
+                                                    </span>
+                                                )}
+                                            </div>
                                         </div>
 
-                                        <div className="flex items-center justify-between mb-2">
-                                            <h3 className="font-bold text-lg">{project.title}</h3>
-                                            {project.badge && (
-                                                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 border-emerald-500/20 animate-pulse">
-                                                    {project.badge === "New" ? (t('uiLibrary.newFreeApp') || "Nova Aplicação Gratuita") : project.badge}
-                                                </span>
-                                            )}
-                                        </div>
-                                        <p className="text-muted-foreground text-sm mb-4">
-                                            {project.description}
-                                        </p>
-
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.technologies.map((tech) => (
-                                                <span
-                                                    key={tech}
-                                                    className="text-xs px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-muted-foreground"
+                                        <div className="p-6 flex-1 flex flex-col">
+                                            <div className="flex justify-between items-start mb-4">
+                                                <h3 className="text-xl font-bold group-hover:text-primary smooth-transition line-clamp-1">
+                                                    {project.title}
+                                                </h3>
+                                                <a
+                                                    href={project.demoUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary smooth-transition"
                                                 >
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
+                                                    <Zap size={18} />
+                                                </a>
+                                            </div>
 
-                                        <div className="mt-4 opacity-0 group-hover:opacity-100 smooth-transition">
-                                            <div className="text-sm font-semibold text-primary flex items-center gap-1">
-                                                {t('projects.viewProject')} <ArrowRight size={14} />
+                                            <p className="text-muted-foreground text-sm mb-6 line-clamp-3 flex-1">
+                                                {project.description}
+                                            </p>
+
+                                            <div className="flex flex-wrap gap-2 mt-auto">
+                                                {project.technologies.slice(0, 3).map((tech: string) => (
+                                                    <span
+                                                        key={tech}
+                                                        className="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-md font-medium"
+                                                    >
+                                                        {tech}
+                                                    </span>
+                                                ))}
+                                            </div>
+
+                                            <div className="mt-4 opacity-0 group-hover:opacity-100 smooth-transition">
+                                                <div
+                                                    className="text-sm font-semibold text-primary flex items-center gap-1"
+                                                >
+                                                    {t('projects.viewProject')} <ArrowRight size={14} />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -113,15 +134,18 @@ export default function ProjectsPage() {
                         })}
                     </div>
                 </div>
+
+                {/* Wave Divider to blend into Footer */}
+                <SectionDivider
+                    position="bottom"
+                    fill="text-[#f8fafc] dark:text-[#090F20]"
+                    type="wave"
+                    height="h-24"
+                    className="scale-y-[-1]"
+                />
             </section>
 
             <Footer />
-            <ProjectModal
-                project={selectedProject}
-                isOpen={!!selectedProject}
-                onClose={() => setSelectedProject(null)}
-            />
-            {isLoading && <Loader />}
         </div>
     );
 }

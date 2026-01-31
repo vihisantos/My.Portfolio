@@ -19,28 +19,22 @@ import { ArrowRight, Code2, Database, GitBranch, Zap } from "lucide-react";
 import ecommerceImg from "@/assets/projects/ecommerce.png";
 import taskManagementImg from "@/assets/projects/task-management.png";
 import { useState, useMemo } from "react";
-import { ProjectModal } from "@/components/ProjectModal";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { SpotifyWidget } from "@/components/SpotifyWidget";
 import { SocialHub } from "@/components/SocialHub";
-import { Loader } from "@/components/Loader";
+// import { Loader } from "@/components/Loader";
 import { getProjects } from "@/data/projects";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const profilePhotoUrl = "https://cdn.builder.io/api/v1/image/assets%2Fcc7241044f564726a1519da181bd3eaa%2F5c680c48aefc4fabb891e721833c1d9e?format=webp&width=800";
 
 export default function Index() {
   const { t, language } = useLanguage();
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
-  const [selectedProject, setSelectedProject] = useState<any | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleProjectClick = (project: any) => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setSelectedProject(project);
-    }, 1500); // 1.5 second delay
+    navigate(`/project/${project.id}`);
   };
 
   const allProjects = useMemo(() => getProjects(t), [t]);
@@ -485,7 +479,7 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section-padding pt-32 bg-gradient-to-br from-primary/5 to-secondary/5 relative">
+      <section id="contact" className="section-padding pt-32 pb-40 bg-gradient-to-br from-primary/5 to-secondary/5 relative">
         {/* Wave Divider blending from Testimonials */}
         <SectionDivider position="top" fill="text-slate-50 dark:text-slate-900" type="wave" height="h-24" className="scale-y-[-1]" />
 
@@ -513,17 +507,20 @@ export default function Index() {
             </div>
           </div>
         </div>
+
+        {/* Wave Divider to blend into Footer */}
+        <SectionDivider
+          position="bottom"
+          fill="text-[#f8fafc] dark:text-[#090F20]"
+          type="wave"
+          height="h-24"
+          className="scale-y-[-1]"
+        />
       </section>
 
       <Footer />
       <FloatingWhatsApp />
       <SpotifyWidget />
-      <ProjectModal
-        project={selectedProject}
-        isOpen={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
-      {isLoading && <Loader />}
     </div>
   );
 }

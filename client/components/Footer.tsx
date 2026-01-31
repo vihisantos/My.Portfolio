@@ -7,7 +7,7 @@ export function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="border-t border-border bg-slate-50 dark:bg-slate-900/50">
+    <footer className="bg-[#f8fafc] dark:bg-[#090F20]">
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -104,10 +104,7 @@ export function Footer() {
               <span className="w-1 h-1 rounded-full bg-primary/50 group-hover:w-2 transition-all"></span>
               Documentação
             </Link>
-            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group mt-2">
-              <span className="w-1 h-1 rounded-full bg-primary/50 group-hover:w-2 transition-all"></span>
-              Sitemap.xml
-            </a>
+
           </div>
         </div>
 

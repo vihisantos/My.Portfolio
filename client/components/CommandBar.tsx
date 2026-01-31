@@ -12,9 +12,11 @@ import {
     Languages,
     Terminal,
     ArrowRight,
-    Contact2
+    Contact2,
+    Rocket
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getProjects } from "@/data/projects";
 
 export const CommandBar = () => {
     const [open, setOpen] = useState(false);
@@ -142,6 +144,19 @@ export const CommandBar = () => {
                                             icon={<Terminal className="w-4 h-4" />}
                                             label="GitHub Repository"
                                         />
+                                    </Command.Group>
+
+                                    <Command.Separator className="h-px bg-slate-200 dark:bg-white/5 my-2" />
+
+                                    <Command.Group heading={language === 'pt' ? 'Projetos' : 'Projects'} className="px-2 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                                        {getProjects(t).map((project) => (
+                                            <Item
+                                                key={project.id}
+                                                onSelect={() => runCommand(() => navigate(`/project/${project.id}`))}
+                                                icon={<Rocket className="w-4 h-4" />}
+                                                label={project.title}
+                                            />
+                                        ))}
                                     </Command.Group>
                                 </Command.List>
 
