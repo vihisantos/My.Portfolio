@@ -22,18 +22,18 @@
     <loc>https://vihisantos.github.io/My.Portfolio/ui-library</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vihisantos.github.io/My.Portfolio/sponsorship</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vihisantos.github.io/My.Portfolio/docs</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.2</priority>
   </url>
 </urlset>
