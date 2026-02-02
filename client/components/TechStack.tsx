@@ -11,16 +11,15 @@ interface Tech {
 }
 
 export const technologies: Tech[] = [
-  // UI/UX & Basics (Highlight)
-  { name: 'HTML5', color: '#E34F26', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', category: 'Frontend' },
-  { name: 'CSS3', color: '#1572B6', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', category: 'Frontend' },
-
-  // Frontend Frameworks
+  // Frontend & Design
   { name: 'React', color: '#61DAFB', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: 'Frontend' },
+  { name: 'Next.js', color: '#000000', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', category: 'Frontend' },
   { name: 'Vue.js', color: '#4FC08D', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg', category: 'Frontend' },
   { name: 'Angular', color: '#DD0031', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg', category: 'Frontend' },
-  { name: 'TypeScript', color: '#3178C6', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', category: 'Frontend' },
-  { name: 'Tailwind', color: '#06B6D4', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', category: 'Frontend' },
+  { name: 'HTML5', color: '#E34F26', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', category: 'Frontend' },
+  { name: 'CSS3', color: '#1572B6', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', category: 'Frontend' },
+  { name: 'UI/UX Design', color: '#F24E1E', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg', category: 'Frontend' }, // Using Figma icon for UI/UX
+  { name: 'Three.js', color: '#000000', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg', category: 'Frontend' },
 
   // Backend
   { name: 'Node.js', color: '#339933', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: 'Backend' },

@@ -40,26 +40,7 @@ Acesse o site online aqui: **[https://vihisantos.github.io/My.Portfolio/](https:
 
 ---
 
-## 🚀 Como rodar localmente
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/vihisantos/My.Portfolio.git
-   cd My.Portfolio
-   ```
-
-2. **Instale as dependências:**
-   ```bash
-   pnpm install
-   ```
-
-3. **Inicie o servidor de desenvolvimento:**
-   ```bash
-   pnpm dev
-   ```
-   Acesse `http://localhost:8080`.
-
----
 
 ## 📁 Estrutura do Projeto
 

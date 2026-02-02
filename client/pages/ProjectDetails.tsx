@@ -59,7 +59,7 @@ export default function ProjectDetails() {
                     <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent dark:from-slate-950/20" />
                 </div>
 
-                <div className="container-custom relative z-10 h-full flex flex-col justify-end pb-12">
+                <div className="container-custom relative z-30 h-full flex flex-col justify-end pb-12">
                     <Link
                         to="/projects"
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-6 w-fit bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/50"

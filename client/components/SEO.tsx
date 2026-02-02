@@ -10,7 +10,7 @@ interface SEOProps {
 export function SEO({
     title = "Vitor.dev | Full-stack Developer Portfolio",
     description = "Portfolio de Vitor.dev, desenvolvedor full-stack apaixonado por criar experiências digitais modernas, interativas e escaláveis.",
-    image = "/favicon.svg",
+    image = "/og-image.png",
     url
 }: SEOProps) {
     const siteUrl = "https://vihisantos.github.io/My.Portfolio";

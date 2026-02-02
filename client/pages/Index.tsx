@@ -18,13 +18,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Code2, Database, GitBranch, Zap } from "lucide-react";
 import ecommerceImg from "@/assets/projects/ecommerce.png";
 import taskManagementImg from "@/assets/projects/task-management.png";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { SpotifyWidget } from "@/components/SpotifyWidget";
 import { SocialHub } from "@/components/SocialHub";
 // import { Loader } from "@/components/Loader";
 import { getProjects } from "@/data/projects";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const profilePhotoUrl = "https://cdn.builder.io/api/v1/image/assets%2Fcc7241044f564726a1519da181bd3eaa%2F5c680c48aefc4fabb891e721833c1d9e?format=webp&width=800";
 
@@ -32,6 +32,19 @@ export default function Index() {
   const { t, language } = useLanguage();
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Scroll to hash on mount or hash change
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // Small delay to ensure DOM is ready
+      }
+    }
+  }, [location.hash]);
 
   const handleProjectClick = (project: any) => {
     navigate(`/project/${project.id}`);

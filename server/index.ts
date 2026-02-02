@@ -21,25 +21,7 @@ export function createServer() {
   app.use(limiter);
 
   // CORS Configuration
-  const allowedOrigins = [
-    "http://localhost:5173", // Vite Dev Server
-    process.env.CLIENT_URL || "",
-  ].filter(Boolean);
-
-  app.use(
-    cors({
-      origin: (origin, callback) => {
-        // Allow requests with no origin (like mobile apps or curl requests)
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) !== -1) {
-          callback(null, true);
-        } else {
-          callback(new Error("Not allowed by CORS"));
-        }
-      },
-      credentials: true,
-    })
-  );
+  app.use(cors({ origin: true, credentials: true })); // Allow all origins for now
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
