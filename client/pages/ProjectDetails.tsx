@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getProjects } from "@/data/projects";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft, Rocket, ExternalLink, Calendar, Layers, Download, MessageCircle } from "lucide-react";
 import { SectionDivider } from "@/components/SectionDivider";
 import { useEffect } from "react";
@@ -44,6 +45,11 @@ export default function ProjectDetails() {
 
     return (
         <div className="min-h-screen bg-white dark:bg-slate-950">
+            <SEO
+                title={`${project.title} | Vitor.dev`}
+                description={project.description.slice(0, 160)}
+                image={project.image}
+            />
             <Navigation />
 
             {/* Hero Header */}

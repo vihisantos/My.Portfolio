@@ -19,31 +19,31 @@ export function Navigation() {
   const isLinkActive = (path: string) => location.pathname === path;
 
   /* 
-     Function to handle smooth scrolling 
-     If we are on the home page, scroll to the element.
-     If we are elsewhere, the Link/a tag will navigate us there.
+     Função para lidar com rolagem suave 
+     Se estivermos na página inicial, rola para o elemento.
+     Se estivermos em outro lugar, a tag Link/a nos levará até lá.
   */
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    // Only handle hash links
+    // Apenas lidar com links de hash
     if (!path.includes('#')) return;
 
     const [pathname, hash] = path.split('#');
     const targetId = hash;
 
-    // If we are on the home page and the link targets home
+    // Se estamos na página inicial e o link aponta para a home
     if (location.pathname === '/' && (pathname === '/' || pathname === '')) {
       e.preventDefault();
       const element = document.getElementById(targetId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        closeMenu(); // Close mobile menu if open
+        closeMenu(); // Fechar menu móvel se estiver aberto
       }
     }
   };
 
   const closeMenu = () => setIsOpen(false);
 
-  // Configuration of menu items
+  // Configuração dos itens de menu
   const menuItems = [
     { label: t('nav.projects') || "Projects", path: "/projects", type: "link" },
     { label: t('nav.about') || "About", path: "/#about", type: "anchor" },
@@ -68,7 +68,7 @@ export function Navigation() {
           </Link>
         </div>
 
-        {/* Desktop Menu */}
+        {/* Menu Desktop */}
         <div className="hidden sm:flex items-center gap-1 md:gap-4">
           {menuItems.map((item) => (
             item.type === 'link' ? (
@@ -83,14 +83,14 @@ export function Navigation() {
                 {item.label}
               </Link>
             ) : (
-              <a
+              <Link
                 key={item.path}
-                href={item.path}
+                to={item.path}
                 onClick={(e) => handleScroll(e, item.path)}
                 className="text-sm font-medium smooth-transition px-3 py-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800"
               >
                 {item.label}
-              </a>
+              </Link>
             )
           ))}
 
@@ -113,9 +113,9 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Menu (Hamburger) */}
+        {/* Menu Móvel (Hambúrguer) */}
         <div className="sm:hidden flex items-center gap-2">
-          {/* Always visible on mobile */}
+          {/* Sempre visível no celular */}
           <ThemeToggle />
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -150,14 +150,17 @@ export function Navigation() {
                       {item.label}
                     </Link>
                   ) : (
-                    <a
+                    <Link
                       key={item.path}
-                      href={item.path}
-                      onClick={(e) => handleScroll(e, item.path)}
+                      to={item.path}
+                      onClick={(e) => {
+                        closeMenu();
+                        handleScroll(e, item.path);
+                      }}
                       className="flex items-center py-3 px-4 rounded-xl text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800/50 text-muted-foreground transition-colors"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   )
                 ))}
 
@@ -188,6 +191,6 @@ export function Navigation() {
           </Sheet>
         </div>
       </div>
-    </nav>
+    </nav >
   );
 }

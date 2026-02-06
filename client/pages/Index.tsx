@@ -72,8 +72,11 @@ export default function Index() {
   const displayProjects = filteredProjects.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950">
-      <SEO />
+    <div className="min-h-screen bg-white dark:bg-slate-950 overflow-x-hidden">
+      <SEO
+        title={t('seo.home.title')}
+        description={t('seo.home.description')}
+      />
       <Navigation />
 
       {/* Hero Section */}

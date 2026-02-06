@@ -14,7 +14,7 @@ import { Loader } from "@/components/Loader";
 import { CommandBar } from "@/components/CommandBar";
 import { Suspense, lazy, useEffect } from "react";
 
-// Lazy load pages for performance
+// Carregamento lento de páginas para desempenho
 const Index = lazy(() => import("./pages/Index"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
@@ -31,7 +31,7 @@ const queryClient = new QueryClient();
 
 function RootApp() {
   useEffect(() => {
-    // Initialize theme from localStorage
+    // Inicializar tema do localStorage
     const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -64,7 +64,7 @@ function RootApp() {
                       <Route path="/capybara-holding" element={<CapybaraHolding />} />
                       <Route path="/sponsorship" element={<Sponsorship />} />
                       <Route path="/docs" element={<Documentation />} />
-                      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                      {/* ADICIONAR TODAS AS ROTAS PERSONALIZADAS ACIMA DA ROTA "CATCH-ALL" "*" */}
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </Suspense>

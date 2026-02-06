@@ -42,6 +42,25 @@ export const translations = {
       performance: 'Performance',
       performanceDesc: 'Otimização, escalabilidade, boas práticas',
     },
+    seo: {
+      defaultTitle: 'Vitor.dev | Desenvolvedor Full-Stack',
+      defaultDescription: 'Portfólio de Vitor.dev. Desenvolvedor Full-stack e Designer UX/UI criando experiências digitais modernas.',
+      home: {
+        title: 'Vitor.dev | Início',
+        description: 'Bem-vindo ao meu laboratório digital. Explore meus projetos e experimentos.'
+      },
+      projects: {
+        title: 'Vitor.dev | Projetos',
+        description: 'Confira meus estudos de caso e projetos recentes em desenvolvimento web.'
+      },
+      uiLibrary: {
+        title: 'Vitor.dev | Biblioteca UI',
+        description: 'Uma coleção de componentes de interface modernos e interativos.'
+      },
+      projectDetails: {
+        title: 'Projeto | Vitor.dev',
+      }
+    },
     projects: {
       badge: 'Portfólio',
       title: 'Projetos em',
@@ -178,6 +197,12 @@ export const translations = {
       whatsappMessage: 'Olá! Vi o projeto {project} no seu portfólio e fiquei interessado.',
     },
     uiLibrary: {
+      badge: "Laboratório do Vitor",
+      titleUI: "UI",
+      titleLibrary: "BIBLIOTECA",
+      featuredExperiment: "Experimento em Destaque",
+      systemActive: "SISTEMA_ATIVO",
+      componentsActive: "Componentes Ativos",
       title: 'Biblioteca de Componentes UI',
       description: 'Uma coleção de componentes reutilizáveis.',
       noComponents: 'Nenhum componente encontrado nesta categoria ainda.',
@@ -375,7 +400,18 @@ export const translations = {
       subtitle: "Minha jornada de aprendizado contínuo e validação de habilidades.",
       viewCredential: "Ver Credencial",
       issuer: "Emitido por",
-      date: "Concluído em"
+      date: "Concluído em",
+      searchPlaceholder: "Buscar certificados...",
+      noCertificates: "Nenhum certificado encontrado.",
+      clearFilters: "Limpar filtros",
+      all: "Todos",
+      categories: {
+        "Design & UX": "Design & UX",
+        "AI & Data": "IA & Dados",
+        "DevOps & Security": "DevOps & Segurança",
+        "Engineering": "Engenharia",
+        "Management": "Gestão"
+      }
     },
     pricing: {
       title: "Planos Vitrine360",
@@ -406,11 +442,19 @@ export const translations = {
         credentialUrl: "#"
       },
       {
+        id: 22,
+        title: "Figma na Prática: Crie seu Primeiro Protótipo do Zero Com IA",
+        issuer: "EBAC",
+        date: "2026",
+        skills: ["Figma", "UI Design", "Prototipagem", "AI"],
+        credentialUrl: "#"
+      },
+      {
         id: 20,
         title: "Modelagem de Software",
         issuer: "Universidade Anhembi Morumbi",
         date: "2024",
-        skills: ["UML", "Software Architecture", "Design Patterns"],
+        skills: ["UML", "Arquitetura de Software", "Padrões de Projeto"],
         credentialUrl: "#"
       },
       {
@@ -418,7 +462,7 @@ export const translations = {
         title: "Desenvolvimento com GitHub Copilot",
         issuer: "EV.G / ENAP",
         date: "2023",
-        skills: ["AI", "Coding", "GitHub"],
+        skills: ["IA", "Codificação", "GitHub"],
         credentialUrl: "#"
       },
       {
@@ -426,7 +470,7 @@ export const translations = {
         title: "GitHub Actions",
         issuer: "EV.G / ENAP",
         date: "2023",
-        skills: ["DevOps", "CI/CD", "Automation"],
+        skills: ["DevOps", "CI/CD", "Automação"],
         credentialUrl: "#"
       },
       {
@@ -434,7 +478,7 @@ export const translations = {
         title: "GitHub Codespaces",
         issuer: "EV.G / ENAP",
         date: "2023",
-        skills: ["DevOps", "Cloud IDE", "Development"],
+        skills: ["DevOps", "IDE em Nuvem", "Desenvolvimento"],
         credentialUrl: "#"
       },
       {
@@ -442,7 +486,7 @@ export const translations = {
         title: "Segurança da Informação para Todos",
         issuer: "EV.G / ENAP",
         date: "2023",
-        skills: ["Security", "InfoSec", "Cybersecurity"],
+        skills: ["Segurança", "Segurança da Informação", "Cibersegurança"],
         credentialUrl: "#"
       },
       {
@@ -450,7 +494,7 @@ export const translations = {
         title: "Inteligência Artificial Generativa",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["AI", "Generative AI", "Innovation"],
+        skills: ["IA", "IA Generativa", "Inovação"],
         credentialUrl: "#"
       },
       {
@@ -458,7 +502,7 @@ export const translations = {
         title: "IA Generativa da Microsoft - Copilot",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["AI", "Microsoft", "Productivity"],
+        skills: ["IA", "Microsoft", "Produtividade"],
         credentialUrl: "#"
       },
       {
@@ -466,7 +510,7 @@ export const translations = {
         title: "A História da IA",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["AI", "History", "Foundations"],
+        skills: ["IA", "História", "Fundamentos"],
         credentialUrl: "#"
       },
       {
@@ -474,7 +518,7 @@ export const translations = {
         title: "Ética em IA",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["AI", "Ethics", "Compliance"],
+        skills: ["IA", "Ética", "Conformidade"],
         credentialUrl: "#"
       },
       {
@@ -482,7 +526,7 @@ export const translations = {
         title: "Como ser mais Produtivo usando o Bing Chat",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["AI", "Productivity", "Bing"],
+        skills: ["IA", "Produtividade", "Bing"],
         credentialUrl: "#"
       },
       {
@@ -490,7 +534,7 @@ export const translations = {
         title: "Introdução à Ciência de Dados - Conceitos e Ferramentas",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["Data Science", "Analytics", "Big Data"],
+        skills: ["Ciência de Dados", "Analytics", "Big Data"],
         credentialUrl: "#"
       },
       {
@@ -498,7 +542,7 @@ export const translations = {
         title: "Introdução à Ciência de Dados - Tratamento de Dados",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["Data Science", "ETL", "Data Processing"],
+        skills: ["Ciência de Dados", "ETL", "Processamento de Dados"],
         credentialUrl: "#"
       },
       {
@@ -506,7 +550,7 @@ export const translations = {
         title: "Introdução à Ciência de Dados - Modelos de Classificação",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["Data Science", "Machine Learning", "Classification"],
+        skills: ["Ciência de Dados", "Machine Learning", "Classificação"],
         credentialUrl: "#"
       },
       {
@@ -514,7 +558,7 @@ export const translations = {
         title: "Introdução à Ciência de Dados - Conjuntos Frequentes",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["Data Science", "Pattern Mining", "Analytics"],
+        skills: ["Ciência de Dados", "Mineração de Padrões", "Analytics"],
         credentialUrl: "#"
       },
       {
@@ -522,7 +566,7 @@ export const translations = {
         title: "Introdução à Ciência de Dados - Descoberta de Tópicos em Texto",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["Data Science", "NLP", "Text Mining"],
+        skills: ["Ciência de Dados", "NLP", "Mineração de Texto"],
         credentialUrl: "#"
       },
       {
@@ -530,7 +574,7 @@ export const translations = {
         title: "Gestão de Pessoas",
         issuer: "EV.G / ENAP",
         date: "2023",
-        skills: ["Management", "Leadership", "HR"],
+        skills: ["Gestão", "Liderança", "RH"],
         credentialUrl: "#"
       },
       {
@@ -538,7 +582,7 @@ export const translations = {
         title: "Liderança e Gestão de Times Híbridos",
         issuer: "EV.G / ENAP",
         date: "2023",
-        skills: ["Management", "Remote Work", "Leadership"],
+        skills: ["Gestão", "Trabalho Remoto", "Liderança"],
         credentialUrl: "#"
       },
       {
@@ -546,7 +590,7 @@ export const translations = {
         title: "Gerenciar Projetos com o Microsoft 365",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["Project Management", "Microsoft 365", "Planning"],
+        skills: ["Gestão de Projetos", "Microsoft 365", "Planejamento"],
         credentialUrl: "#"
       },
       {
@@ -554,7 +598,7 @@ export const translations = {
         title: "Análise e Melhoria de Processos",
         issuer: "EV.G / ENAP",
         date: "2024",
-        skills: ["BPM", "Process Improvement", "Management"],
+        skills: ["BPM", "Melhoria de Processos", "Gestão"],
         credentialUrl: "#"
       },
       {
@@ -562,7 +606,7 @@ export const translations = {
         title: "CODRAS - Operações com Drones",
         issuer: "EV.G / ENAP",
         date: "2023",
-        skills: ["Drones", "Operations", "Technology"],
+        skills: ["Drones", "Operações", "Tecnologia"],
         credentialUrl: "#"
       }
     ]
@@ -607,6 +651,25 @@ export const translations = {
       devopsDesc: 'Docker, Git, GitHub, AWS, Vercel, Netlify, Render, Formspree, Stripe',
       performance: 'Performance',
       performanceDesc: 'Optimization, scalability, best practices',
+    },
+    seo: {
+      defaultTitle: 'Vitor.dev | Full-Stack Developer',
+      defaultDescription: 'Vitor.dev Portfolio. Full-stack Developer and UX/UI Designer creating modern digital experiences.',
+      home: {
+        title: 'Vitor.dev | Home',
+        description: 'Welcome to my digital lab. Explore my projects and experiments.'
+      },
+      projects: {
+        title: 'Vitor.dev | Projects',
+        description: 'Check out my case studies and recent web development projects.'
+      },
+      uiLibrary: {
+        title: 'Vitor.dev | UI Library',
+        description: 'A collection of modern and interactive UI components.'
+      },
+      projectDetails: {
+        title: 'Project | Vitor.dev',
+      }
     },
     projects: {
       badge: 'Portfolio',
@@ -743,6 +806,12 @@ export const translations = {
       whatsappMessage: "Hi! I saw the {project} project on your portfolio and I'm interested.",
     },
     uiLibrary: {
+      badge: "Vitor's Lab",
+      titleUI: "UI",
+      titleLibrary: "LIBRARY",
+      featuredExperiment: "Featured Experiment",
+      systemActive: "SYSTEM_ACTIVE",
+      componentsActive: "Components Active",
       title: 'UI Component Library',
       description: 'A collection of reusable components.',
       noComponents: 'No components found in this category yet.',
@@ -940,7 +1009,18 @@ export const translations = {
       subtitle: "My journey of continuous learning and skill validation.",
       viewCredential: "View Credential",
       issuer: "Issued by",
-      date: "Completed in"
+      date: "Completed in",
+      searchPlaceholder: "Search certificates...",
+      noCertificates: "No certificates found.",
+      clearFilters: "Clear filters",
+      all: "All",
+      categories: {
+        "Design & UX": "Design & UX",
+        "AI & Data": "AI & Data",
+        "DevOps & Security": "DevOps & Security",
+        "Engineering": "Engineering",
+        "Management": "Management"
+      }
     },
     pricing: {
       title: "Vitrine360 Plans",
@@ -968,6 +1048,14 @@ export const translations = {
         issuer: "National School of Public Administration - Enap",
         date: "2025",
         skills: ["UX Design", "Usability", "User Research"],
+        credentialUrl: "#"
+      },
+      {
+        id: 22,
+        title: "Figma in Practice: Create Your First Prototype from Scratch with AI",
+        issuer: "EBAC",
+        date: "2026",
+        skills: ["Figma", "UI Design", "Prototyping", "AI"],
         credentialUrl: "#"
       },
       {
@@ -1142,13 +1230,13 @@ export function getTranslation(lang: Language, key: string): string {
     if (current && typeof current === 'object' && k in current) {
       current = current[k];
     } else {
-      // Fallback to English
+      // Fallback para Inglês
       current = translations.en;
       for (const fallbackKey of keys) {
         if (current && typeof current === 'object' && fallbackKey in current) {
           current = current[fallbackKey];
         } else {
-          return key; // Return key if not found in English either
+          return key; // Retornar chave se não encontrada em inglês também
         }
       }
       return typeof current === 'string' ? current : key;

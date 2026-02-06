@@ -38,11 +38,11 @@ export default defineConfig(({ mode }) => ({
 function expressPlugin(): Plugin {
   return {
     name: "express-plugin",
-    apply: "serve", // Only apply during development (serve mode)
+    apply: "serve", // Aplicar apenas durante o desenvolvimento (modo serve)
     configureServer(server) {
       const app = createServer();
 
-      // Add Express app as middleware to Vite dev server
+      // Adicionar aplicativo Express como middleware ao servidor de desenvolvimento Vite
       server.middlewares.use(app);
     },
   };

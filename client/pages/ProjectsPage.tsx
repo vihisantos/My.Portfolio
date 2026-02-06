@@ -1,5 +1,6 @@
 
 import { Navigation } from "@/components/Navigation";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ProjectFilter } from "@/components/ProjectFilter";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
@@ -39,6 +40,10 @@ export default function ProjectsPage() {
 
     return (
         <div className="min-h-screen bg-white dark:bg-slate-950">
+            <SEO
+                title={t('seo.projects.title')}
+                description={t('seo.projects.description')}
+            />
             <Navigation />
 
             <section className="section-padding bg-slate-50 dark:bg-slate-900/30 pt-32 pb-40 relative">
