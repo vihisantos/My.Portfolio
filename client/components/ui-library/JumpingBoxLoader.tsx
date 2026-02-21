@@ -83,12 +83,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function JumpingBoxLoader() {
-    return (
-        <ComponentShowcase title="Jumping Box Loader" code={code} className="min-h-[250px]">
-            <div className="jumping-box-loader-wrapper">
-                <style>
-                    {`
+export function JumpingBoxLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <div className="jumping-box-loader-wrapper">
+        <style>
+          {`
             .jumping-loader {
             width: 48px;
             height: 48px;
@@ -155,9 +155,17 @@ export function JumpingBoxLoader() {
             }
             }
             `}
-                </style>
-                <div className="jumping-loader" />
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="jumping-loader" />
+      </div>
+    </div>
+  );
+}
+
+export function JumpingBoxLoader() {
+  return (
+    <ComponentShowcase title="Jumping Box Loader" code={code} className="min-h-[250px]">
+      <JumpingBoxLoaderContent />
+    </ComponentShowcase>
+  );
 }

@@ -172,12 +172,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function TowerLoader() {
-    return (
-        <ComponentShowcase title="Tower Loader" code={code} className="min-h-[250px]">
-            <div className="tower-loader-wrapper">
-                <style>
-                    {`
+export function TowerLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <div className="tower-loader-wrapper">
+        <style>
+          {`
             /* 3D tower loader made by: csozi | Website: www.csozi.hu*/
 
             .loader {
@@ -312,30 +312,38 @@ export function TowerLoader() {
             }
             }
             `}
-                </style>
-                <div className="loader">
-                    <div className="box box-1">
-                        <div className="side-left" />
-                        <div className="side-right" />
-                        <div className="side-top" />
-                    </div>
-                    <div className="box box-2">
-                        <div className="side-left" />
-                        <div className="side-right" />
-                        <div className="side-top" />
-                    </div>
-                    <div className="box box-3">
-                        <div className="side-left" />
-                        <div className="side-right" />
-                        <div className="side-top" />
-                    </div>
-                    <div className="box box-4">
-                        <div className="side-left" />
-                        <div className="side-right" />
-                        <div className="side-top" />
-                    </div>
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="loader">
+          <div className="box box-1">
+            <div className="side-left" />
+            <div className="side-right" />
+            <div className="side-top" />
+          </div>
+          <div className="box box-2">
+            <div className="side-left" />
+            <div className="side-right" />
+            <div className="side-top" />
+          </div>
+          <div className="box box-3">
+            <div className="side-left" />
+            <div className="side-right" />
+            <div className="side-top" />
+          </div>
+          <div className="box box-4">
+            <div className="side-left" />
+            <div className="side-right" />
+            <div className="side-top" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function TowerLoader() {
+  return (
+    <ComponentShowcase title="Tower Loader" code={code} className="min-h-[250px]">
+      <TowerLoaderContent />
+    </ComponentShowcase>
+  );
 }

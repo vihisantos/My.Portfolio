@@ -176,11 +176,11 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function HandLoader() {
-    return (
-        <ComponentShowcase title="Hand Loader" code={code} className="min-h-[250px]">
-            <style>
-                {`
+export function HandLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <style>
+        {`
         .🤚 {
           --skin-color: #E4C560;
           --tap-speed: 0.6s;
@@ -333,15 +333,23 @@ export function HandLoader() {
           }
         }
         `}
-            </style>
-            <div className="🤚">
-                <div className="👉" />
-                <div className="👉" />
-                <div className="👉" />
-                <div className="👉" />
-                <div className="🌴" />
-                <div className="👍" />
-            </div>
-        </ComponentShowcase>
-    );
+      </style>
+      <div className="🤚">
+        <div className="👉" />
+        <div className="👉" />
+        <div className="👉" />
+        <div className="👉" />
+        <div className="🌴" />
+        <div className="👍" />
+      </div>
+    </div>
+  );
+}
+
+export function HandLoader() {
+  return (
+    <ComponentShowcase title="Hand Loader" code={code} className="min-h-[250px]">
+      <HandLoaderContent />
+    </ComponentShowcase>
+  );
 }

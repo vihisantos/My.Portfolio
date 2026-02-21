@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentShowcase } from "./ComponentShowcase";
+import { GlitchTextContent } from "./GlitchTextContent";
 
 const code = `import React from 'react';
 
@@ -84,94 +85,10 @@ const GlitchText = ({ text = "CYBERPUNK", className = "" }: { text?: string, cla
 export default GlitchText;
 `;
 
-export function GlitchText({ text = "GLITCH" }: { text?: string }) {
+export function GlitchText({ text = "ERROR", className = "" }: { text?: string, className?: string }) {
   return (
-    <ComponentShowcase title="Glitch Text" code={code} className="flex items-center justify-center p-12 transition-colors duration-300 min-h-[300px]">
-      <div className="glitch-wrapper">
-        <style>
-          {`
-        .glitch-wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .glitch-text {
-          position: relative;
-          font-size: 3rem;
-          font-weight: 900;
-          /* Light Mode Color */
-          color: #000;
-          letter-spacing: 0.1em;
-          z-index: 1;
-          font-family: inherit;
-          text-transform: uppercase;
-        }
-
-        /* Dark Mode Override */
-        .dark .glitch-text {
-            color: #fff;
-        }
-
-        .glitch-text::before,
-        .glitch-text::after {
-          display: block;
-          content: attr(data-text);
-          position: absolute;
-          top: 0;
-          left: 0;
-          opacity: 0.8;
-          z-index: -1;
-        }
-
-        .glitch-text::before {
-          color: #0ff;
-          animation: glitch-anim-1 2s infinite linear alternate-reverse;
-        }
-        
-        /* Adjust glitch color for light mode contrast if needed, keeping cyan OK for now */
-        .dark .glitch-text::before {
-            color: #0ff;
-        }
-
-        .glitch-text::after {
-          color: #f0f;
-          animation: glitch-anim-2 3s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim-1 {
-          0% { clip: rect(30px, 9999px, 10px, 0); transform: translate(-2px); }
-          10% { clip: rect(50px, 9999px, 80px, 0); transform: translate(2px); }
-          20% { clip: rect(10px, 9999px, 90px, 0); transform: translate(-1px); }
-          30% { clip: rect(80px, 9999px, 20px, 0); transform: translate(1px); }
-          40% { clip: rect(20px, 9999px, 60px, 0); transform: translate(-2px); }
-          50% { clip: rect(60px, 9999px, 40px, 0); transform: translate(2px); }
-          60% { clip: rect(10px, 9999px, 30px, 0); transform: translate(-1px); }
-          70% { clip: rect(90px, 9999px, 70px, 0); transform: translate(1px); }
-          80% { clip: rect(40px, 9999px, 50px, 0); transform: translate(-2px); }
-          90% { clip: rect(70px, 9999px, 10px, 0); transform: translate(2px); }
-          100% { clip: rect(20px, 9999px, 90px, 0); transform: translate(-1px); }
-        }
-
-        @keyframes glitch-anim-2 {
-          0% { clip: rect(10px, 9999px, 90px, 0); transform: translate(2px); }
-          10% { clip: rect(90px, 9999px, 30px, 0); transform: translate(-2px); }
-          20% { clip: rect(40px, 9999px, 10px, 0); transform: translate(1px); }
-          30% { clip: rect(60px, 9999px, 80px, 0); transform: translate(-1px); }
-          40% { clip: rect(20px, 9999px, 50px, 0); transform: translate(2px); }
-          50% { clip: rect(80px, 9999px, 10px, 0); transform: translate(-2px); }
-          60% { clip: rect(30px, 9999px, 70px, 0); transform: translate(1px); }
-          70% { clip: rect(70px, 9999px, 20px, 0); transform: translate(-1px); }
-          80% { clip: rect(50px, 9999px, 60px, 0); transform: translate(2px); }
-          90% { clip: rect(10px, 9999px, 40px, 0); transform: translate(-2px); }
-          100% { clip: rect(50px, 9999px, 80px, 0); transform: translate(1px); }
-        }
-        `}
-        </style>
-        <h1 className="glitch-text" data-text={text}>
-          {text}
-        </h1>
-      </div>
+    <ComponentShowcase title="Glitch Text" code={code} className={`flex justify-center items-center bg-[#111] min-h-[400px] ${className}`}>
+      <GlitchTextContent text={text} />
     </ComponentShowcase>
   );
 }

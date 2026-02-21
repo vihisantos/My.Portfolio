@@ -71,113 +71,33 @@ const Pattern = () => {
 export default Pattern;
 `;
 
+export function MatrixLoaderContent() {
+  const chars = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ";
+  const repeatedChars = Array(200).fill(chars).join("");
+  return (
+    <div className="matrix-loader-wrapper w-full h-full absolute inset-0">
+      <style>{`
+                .matrix-container { background-color: #05050a; width: 100%; height: 100%; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); grid-auto-rows: 30px; font-size: 24px; color: rgba(0,150,255,0.4); font-family: "Courier New", Courier, monospace; justify-content: center; align-content: center; }
+                .matrix-container > span { text-align: center; text-shadow: 0 0 5px rgba(0,150,255,0.5); user-select: none; transition: color 0.5s, text-shadow 0.5s; line-height: 1; }
+                .matrix-container > span:nth-child(19n+2){animation:matrix-pulse 3.5s ease-in-out infinite 0.2s}
+                .matrix-container > span:nth-child(29n+1){animation:matrix-pulse 4.1s ease-in-out infinite 0.7s}
+                .matrix-container > span:nth-child(11n){color:rgba(100,200,255,0.7);animation:matrix-pulse 2.9s ease-in-out infinite 1.1s}
+                .matrix-container > span:nth-child(37n+10){animation:matrix-pulse 5.3s ease-in-out infinite 1.5s}
+                .matrix-container > span:nth-child(41n+1){animation:matrix-pulse 3.9s ease-in-out infinite 0.4s}
+                .matrix-container > span:nth-child(17n+9){animation:matrix-pulse 2.8s ease-in-out infinite 0.9s}
+                @keyframes matrix-pulse { 0%,100%{color:rgba(0,150,255,0.4);text-shadow:0 0 5px rgba(0,150,255,0.5)} 30%{color:rgba(100,200,255,1);text-shadow:0 0 10px rgba(100,200,255,1)} 50%{color:rgba(255,105,180,1);text-shadow:0 0 10px rgba(255,105,180,1)} 70%{color:#fff;text-shadow:0 0 10px #fff,0 0 15px #fff} }
+            `}</style>
+      <div className="matrix-container">
+        {repeatedChars.split("").map((c, i) => <span key={i}>{c}</span>)}
+      </div>
+    </div>
+  );
+}
+
 export function MatrixLoader() {
-    // Generating a manageable amount of spans for the demo to fill the card
-    const chars = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ";
-    const repeatedChars = Array(200).fill(chars).join(""); // Enough to fill the grid
-
-    return (
-        <ComponentShowcase title="Matrix Loader" code={code} className="min-h-[300px] flex items-center justify-center overflow-hidden">
-            <div className="matrix-loader-wrapper w-full h-full absolute inset-0">
-                <style>
-                    {`
-            .matrix-container {
-              background-color: #05050a;
-              width: 100%;
-              height: 100%;
-              overflow: hidden;
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); /* Slightly smaller for card */
-              grid-auto-rows: 30px;
-              font-size: 24px; /* Slightly smaller for card */
-              color: rgba(0, 150, 255, 0.4);
-              font-family: "Courier New", Courier, monospace;
-              justify-content: center;
-              align-content: center;
-            }
-
-            .matrix-container > span {
-              text-align: center;
-              text-shadow: 0 0 5px rgba(0, 150, 255, 0.5);
-              user-select: none;
-              transition:
-                color 0.5s,
-                text-shadow 0.5s;
-              line-height: 1;
-            }
-
-            .matrix-container > span:nth-child(19n + 2) {
-              animation: matrix-pulse 3.5s ease-in-out infinite 0.2s;
-            }
-            .matrix-container > span:nth-child(29n + 1) {
-              animation: matrix-pulse 4.1s ease-in-out infinite 0.7s;
-            }
-            .matrix-container > span:nth-child(11n) {
-              color: rgba(100, 200, 255, 0.7);
-              animation: matrix-pulse 2.9s ease-in-out infinite 1.1s;
-            }
-            .matrix-container > span:nth-child(37n + 10) {
-              animation: matrix-pulse 5.3s ease-in-out infinite 1.5s;
-            }
-            .matrix-container > span:nth-child(41n + 1) {
-              animation: matrix-pulse 3.9s ease-in-out infinite 0.4s;
-            }
-            .matrix-container > span:nth-child(17n + 9) {
-              animation: matrix-pulse 2.8s ease-in-out infinite 0.9s;
-            }
-            .matrix-container > span:nth-child(23n + 18) {
-              animation: matrix-pulse 4.3s ease-in-out infinite 1.3s;
-            }
-            .matrix-container > span:nth-child(31n + 4) {
-              animation: matrix-pulse 5.6s ease-in-out infinite 0.1s;
-            }
-            .matrix-container > span:nth-child(43n + 20) {
-              animation: matrix-pulse 3.6s ease-in-out infinite 1.8s;
-            }
-            .matrix-container > span:nth-child(13n + 6) {
-              animation: matrix-pulse 3.2s ease-in-out infinite 1.2s;
-            }
-            .matrix-container > span:nth-child(53n + 5) {
-              animation: matrix-pulse 4.9s ease-in-out infinite 0.5s;
-            }
-            .matrix-container > span:nth-child(47n + 15) {
-              animation: matrix-pulse 5.9s ease-in-out infinite 1s;
-            }
-
-            @keyframes matrix-pulse {
-              0%,
-              100% {
-                color: rgba(0, 150, 255, 0.4);
-                text-shadow: 0 0 5px rgba(0, 150, 255, 0.5);
-              }
-              30% {
-                color: rgba(100, 200, 255, 1);
-                text-shadow:
-                  0 0 10px rgba(100, 200, 255, 1),
-                  0 0 15px rgba(100, 200, 255, 1);
-              }
-              50% {
-                color: rgba(255, 105, 180, 1);
-                text-shadow:
-                  0 0 10px rgba(255, 105, 180, 1),
-                  0 0 15px rgba(255, 105, 180, 1);
-              }
-              70% {
-                color: #ffffff;
-                text-shadow:
-                  0 0 10px #fff,
-                  0 0 15px #fff,
-                  0 0 20px #fff;
-              }
-            }
-            `}
-                </style>
-                <div className="matrix-container">
-                    {repeatedChars.split("").map((c, i) => (
-                        <span key={i}>{c}</span>
-                    ))}
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+  return (
+    <ComponentShowcase title="Matrix Loader" code={code} className="min-h-[300px] flex items-center justify-center overflow-hidden">
+      <MatrixLoaderContent />
+    </ComponentShowcase>
+  );
 }

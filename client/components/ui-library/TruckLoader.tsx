@@ -1,8 +1,8 @@
 import React from 'react';
 
-export function TruckLoader() {
+export function TruckLoaderContent() {
   return (
-    <div className="truck-loader-container min-h-[250px] w-full flex items-center justify-center bg-[#201E1D]">
+    <div className="w-full h-full flex items-center justify-center">
       <style>
         {`
         .truck-loader-container {
@@ -133,6 +133,14 @@ export function TruckLoader() {
           </svg>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function TruckLoader() {
+  return (
+    <div className="truck-loader-container w-full flex items-center justify-center">
+      <TruckLoaderContent />
     </div>
   );
 }

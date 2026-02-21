@@ -352,13 +352,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function CarLoader() {
-    return (
-        <ComponentShowcase title="Car Loader" code={code} className="min-h-[250px] overflow-hidden">
-            {/* Scale the car down slightly to ensure it fits comfortably */}
-            <div className="car-loader-wrapper scale-75 origin-center">
-                <style>
-                    {`
+export function CarLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <div className="car-loader-wrapper scale-75 origin-center">
+        <style>
+          {`
             .car-loader-container {
               position: relative;
               width: 400px;
@@ -683,20 +682,28 @@ export function CarLoader() {
               left: -7px;
             }
             `}
-                </style>
-                <div className="car-loader-container">
-                    <div className="car-loader-car">
-                        <div className="car-loader-window" />
-                        <div className="car-loader-cargo-details" />
-                        <div className="car-loader-door" />
-                        <div className="car-loader-lights" />
-                    </div>
-                    <div className="car-loader-wheels car-loader-wheels1" />
-                    <div className="car-loader-wheels car-loader-wheels2" />
-                    <div className="car-loader-street" />
-                    <div className="car-loader-post" />
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="car-loader-container">
+          <div className="car-loader-car">
+            <div className="car-loader-window" />
+            <div className="car-loader-cargo-details" />
+            <div className="car-loader-door" />
+            <div className="car-loader-lights" />
+          </div>
+          <div className="car-loader-wheels car-loader-wheels1" />
+          <div className="car-loader-wheels car-loader-wheels2" />
+          <div className="car-loader-street" />
+          <div className="car-loader-post" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function CarLoader() {
+  return (
+    <ComponentShowcase title="Car Loader" code={code} className="min-h-[250px] overflow-hidden">
+      <CarLoaderContent />
+    </ComponentShowcase>
+  );
 }

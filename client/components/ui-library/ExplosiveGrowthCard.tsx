@@ -234,10 +234,10 @@ const ExplosiveGrowthCard = () => {
 export default ExplosiveGrowthCard;
 `;
 
-export function ExplosiveGrowthCard() {
+export const ExplosiveGrowthCardContent: React.FC = () => {
   return (
-    <ComponentShowcase title="Explosive Growth Card" code={code} className="flex items-center justify-center p-12">
-      <div className="explosive-growth-card-wrapper">
+    <div className="flex items-center justify-center w-full h-full min-h-[500px]">
+      <div className="explosive-growth-card-wrapper scale-90">
         <style>
           {`
         .explosive-growth-card-wrapper .explosive-card {
@@ -460,6 +460,14 @@ export function ExplosiveGrowthCard() {
           <button className="button">Book a Call</button>
         </div>
       </div>
+    </div>
+  );
+};
+
+export function ExplosiveGrowthCard() {
+  return (
+    <ComponentShowcase title="Explosive Growth Card" code={code} className="flex items-center justify-center p-12">
+      <ExplosiveGrowthCardContent />
     </ComponentShowcase>
   );
 }

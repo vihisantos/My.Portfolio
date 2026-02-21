@@ -109,9 +109,9 @@ const JumpingCirclesLoader = () => {
 export default JumpingCirclesLoader;
 `;
 
-export function JumpingCirclesLoader() {
+export function JumpingCirclesLoaderContent() {
   return (
-    <ComponentShowcase title="Jumping Circles Loader" code={code} className="min-h-[200px] flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center min-h-[200px]">
       <div className="jumping-circles-view bg-transparent p-10 rounded-xl flex items-center justify-center overflow-hidden">
         <style>
           {`
@@ -210,6 +210,15 @@ export function JumpingCirclesLoader() {
           <div className="jumping-shadow" />
         </div>
       </div>
+    </div>
+  );
+}
+
+export function JumpingCirclesLoader() {
+  return (
+    <ComponentShowcase title="Jumping Circles Loader" code={code} className="min-h-[200px] flex items-center justify-center">
+      <JumpingCirclesLoaderContent />
     </ComponentShowcase>
   );
 }
+

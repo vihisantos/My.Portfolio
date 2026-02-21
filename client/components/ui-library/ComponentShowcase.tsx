@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Copy, Code, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -22,6 +22,18 @@ export function ComponentShowcase({
 }: ComponentShowcaseProps) {
     const [copied, setCopied] = useState(false);
     const [showCode, setShowCode] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const [isInitialRun, setIsInitialRun] = useState(true);
+
+    useEffect(() => {
+        // Let animations run briefly on mount to reach a visible frame, then pause to save performance
+        const timer = setTimeout(() => {
+            setIsInitialRun(false);
+        }, 1200);
+        return () => clearTimeout(timer);
+    }, []);
+
+    const shouldPlay = isHovered || isInitialRun;
 
     const handleCopy = (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -40,18 +52,11 @@ export function ComponentShowcase({
                 "group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md",
                 className
             )}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
         >
             {/* Global style to force pause/play logic within this component */}
-            <style>
-                {`
-                .component-showcase-content * {
-                    animation-play-state: paused !important;
-                }
-                .group:hover .component-showcase-content * {
-                    animation-play-state: running !important;
-                }
-                `}
-            </style>
+
 
             <div className="absolute top-3 left-4 z-20 flex items-center gap-2">
                 <h3 className="font-semibold text-sm text-foreground/80">{title}</h3>
@@ -75,7 +80,8 @@ export function ComponentShowcase({
 
             {/* Content Container - with smart scaling to prevent layout breaking */}
             <div className={cn(
-                "component-showcase-content relative flex h-64 w-full items-center justify-center p-0 transition-all duration-300 ease-in-out overflow-hidden",
+                "component-showcase-content relative flex h-full w-full items-center justify-center p-0 transition-all duration-300 ease-in-out overflow-hidden",
+                !shouldPlay && "is-paused",
                 showCode ? "opacity-0 scale-95" : "opacity-100 scale-100"
             )}>
                 {/* 

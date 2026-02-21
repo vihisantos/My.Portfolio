@@ -81,12 +81,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function ClassicSpinnerLoader() {
-    return (
-        <ComponentShowcase title="Classic Spinner" code={code} className="min-h-[250px]">
-            <div className="classic-spinner-wrapper relative w-full h-[100px]">
-                <style>
-                    {`
+export function ClassicSpinnerLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <div className="classic-spinner-wrapper relative w-full h-[100px]">
+        <style>
+          {`
             .classic-spinner {
               font-size: 28px;
               position: relative;
@@ -138,22 +138,30 @@ export function ClassicSpinnerLoader() {
               }
             }
             `}
-                </style>
-                <div className="classic-spinner center">
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                    <div className="classic-spinner-blade" />
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="classic-spinner center">
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+          <div className="classic-spinner-blade" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ClassicSpinnerLoader() {
+  return (
+    <ComponentShowcase title="Classic Spinner" code={code} className="min-h-[250px]">
+      <ClassicSpinnerLoaderContent />
+    </ComponentShowcase>
+  );
 }

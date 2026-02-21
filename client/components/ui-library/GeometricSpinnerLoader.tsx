@@ -93,12 +93,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function GeometricSpinnerLoader() {
-    return (
-        <ComponentShowcase title="Geometric Spinner" code={code} className="min-h-[300px]">
-            <div className="geometric-spinner-wrapper">
-                <style>
-                    {`
+export function GeometricSpinnerLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[300px]">
+      <div className="geometric-spinner-wrapper">
+        <style>
+          {`
             .geometric-loader {
               --size: 100px; /* Adjusted size for the container */
               --duration: 4s;
@@ -162,22 +162,30 @@ export function GeometricSpinnerLoader() {
               }
             }
             `}
-                </style>
-                <figure className="geometric-loader">
-                    <div style={{ "--i": 1 } as React.CSSProperties} />
-                    <div style={{ "--i": 2 } as React.CSSProperties} />
-                    <div style={{ "--i": 3 } as React.CSSProperties} />
-                    <div style={{ "--i": 4 } as React.CSSProperties} />
-                    <div style={{ "--i": 5 } as React.CSSProperties} />
-                    <div style={{ "--i": 6 } as React.CSSProperties} />
-                    <div style={{ "--i": 7 } as React.CSSProperties} />
-                    <div style={{ "--i": 8 } as React.CSSProperties} />
-                    <div style={{ "--i": 9 } as React.CSSProperties} />
-                    <div style={{ "--i": 10 } as React.CSSProperties} />
-                    <div style={{ "--i": 11 } as React.CSSProperties} />
-                    <div style={{ "--i": 12 } as React.CSSProperties} />
-                </figure>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <figure className="geometric-loader">
+          <div style={{ "--i": 1 } as React.CSSProperties} />
+          <div style={{ "--i": 2 } as React.CSSProperties} />
+          <div style={{ "--i": 3 } as React.CSSProperties} />
+          <div style={{ "--i": 4 } as React.CSSProperties} />
+          <div style={{ "--i": 5 } as React.CSSProperties} />
+          <div style={{ "--i": 6 } as React.CSSProperties} />
+          <div style={{ "--i": 7 } as React.CSSProperties} />
+          <div style={{ "--i": 8 } as React.CSSProperties} />
+          <div style={{ "--i": 9 } as React.CSSProperties} />
+          <div style={{ "--i": 10 } as React.CSSProperties} />
+          <div style={{ "--i": 11 } as React.CSSProperties} />
+          <div style={{ "--i": 12 } as React.CSSProperties} />
+        </figure>
+      </div>
+    </div>
+  );
+}
+
+export function GeometricSpinnerLoader() {
+  return (
+    <ComponentShowcase title="Geometric Spinner" code={code} className="min-h-[300px]">
+      <GeometricSpinnerLoaderContent />
+    </ComponentShowcase>
+  );
 }

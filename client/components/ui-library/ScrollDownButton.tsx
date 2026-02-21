@@ -111,12 +111,12 @@ const ScrollDownButton = () => {
 export default ScrollDownButton;
 `;
 
-export function ScrollDownButton() {
-    return (
-        <ComponentShowcase title="Scroll Down Button" code={code} className="flex items-center justify-center p-12 min-h-[200px]">
-            <div className="sdb-wrapper">
-                <style>
-                    {`
+export const ScrollDownButtonContent: React.FC = () => {
+  return (
+    <div className="flex items-center justify-center w-full h-full min-h-[200px]">
+      <div className="sdb-wrapper">
+        <style>
+          {`
         .sdb-wrapper .sdb-scrolldown {
           --sdb-color: skyblue;
           --sdb-sizeX: 30px;
@@ -206,14 +206,22 @@ export function ScrollDownButton() {
           }
         }
         `}
-                </style>
-                <div className="sdb-scrolldown">
-                    <div className="sdb-chevrons">
-                        <div className="sdb-chevrondown" />
-                        <div className="sdb-chevrondown" />
-                    </div>
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="sdb-scrolldown">
+          <div className="sdb-chevrons">
+            <div className="sdb-chevrondown" />
+            <div className="sdb-chevrondown" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export function ScrollDownButton() {
+  return (
+    <ComponentShowcase title="Scroll Down Button" code={code} className="flex items-center justify-center p-12 min-h-[200px]">
+      <ScrollDownButtonContent />
+    </ComponentShowcase>
+  );
 }

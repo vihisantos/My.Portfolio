@@ -21,6 +21,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.36",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "express-rate-limit": "^8.2.1",
@@ -28,6 +29,7 @@
     "helmet": "^8.1.0",
     "jspdf": "^4.0.0",
     "react-helmet-async": "^2.0.5",
+    "styled-components": "^6.3.9",
     "zod": "^3.25.76"
   },
   "devDependencies": {

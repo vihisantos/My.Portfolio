@@ -50,12 +50,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function SleepingLoader() {
-    return (
-        <ComponentShowcase title="Sleeping Loader" code={code} className="min-h-[250px]">
-            <div className="sleeping-loader-wrapper">
-                <style>
-                    {`
+export function SleepingLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <div className="sleeping-loader-wrapper">
+        <style>
+          {`
             .z {
             position: absolute;
             font-size: 32px;
@@ -84,14 +84,22 @@ export function SleepingLoader() {
             }
             }
             `}
-                </style>
-                <div style={{ position: 'relative', width: '100px', height: '100px', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
-                    <div className="z z-1">Z</div>
-                    <div className="z z-2">Z</div>
-                    <div className="z z-3">Z</div>
-                    <div className="z z-4">Z</div>
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div style={{ position: 'relative', width: '100px', height: '100px', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
+          <div className="z z-1">Z</div>
+          <div className="z z-2">Z</div>
+          <div className="z z-3">Z</div>
+          <div className="z z-4">Z</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function SleepingLoader() {
+  return (
+    <ComponentShowcase title="Sleeping Loader" code={code} className="min-h-[250px]">
+      <SleepingLoaderContent />
+    </ComponentShowcase>
+  );
 }

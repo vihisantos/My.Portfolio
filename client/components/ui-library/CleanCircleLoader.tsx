@@ -33,32 +33,38 @@ const StyledWrapper = styled.div\`
 
 export default Loader;`;
 
-export const CleanCircleLoader = () => {
-    return (
-        <ComponentShowcase title="Clean Circle Loader" code={code}>
-            <div className="clean-circle-loader-wrapper">
-                <div className="loader" />
-            </div>
-            <style>{`
-        .clean-circle-loader-wrapper .loader {
-          width: 4rem;
-          height: 4rem;
-          border-radius: 50%;
-          box-sizing: border-box;
-          border-top: 8px solid #fff;
-          border-left: 8px solid #fff;
-          border-right: 8px solid transparent;
-          animation: cleanCircleLoaderAnim .7s infinite linear;
-        }
+export function CleanCircleLoaderContent() {
+  return (
+    <div className="clean-circle-loader-wrapper w-full h-full flex items-center justify-center p-4">
+      <div className="loader" />
+      <style>{`
+                .clean-circle-loader-wrapper .loader {
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    border-top: 8px solid #fff;
+                    border-left: 8px solid #fff;
+                    border-right: 8px solid transparent;
+                    animation: cleanCircleLoaderAnim .7s infinite linear;
+                }
 
-        @keyframes cleanCircleLoaderAnim {
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
-        </ComponentShowcase>
-    );
+                @keyframes cleanCircleLoaderAnim {
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            `}</style>
+    </div>
+  );
+}
+
+export const CleanCircleLoader = () => {
+  return (
+    <ComponentShowcase title="Clean Circle Loader" code={code}>
+      <CleanCircleLoaderContent />
+    </ComponentShowcase>
+  );
 }
 
 export default CleanCircleLoader;

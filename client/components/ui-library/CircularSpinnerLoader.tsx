@@ -43,9 +43,9 @@ const CircularSpinnerLoader = () => {
 
 export default CircularSpinnerLoader;`;
 
-export function CircularSpinnerLoader() {
+export function CircularSpinnerLoaderContent() {
     return (
-        <ComponentShowcase title="Circular Spinner Loader" code={code} className="min-h-[150px] flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center min-h-[150px]">
             <div className="circular-spinner-view">
                 <style>{`
                     .circular-spinner-view .circular-loader {
@@ -69,6 +69,14 @@ export function CircularSpinnerLoader() {
                 `}</style>
                 <div className="circular-loader" />
             </div>
+        </div>
+    );
+}
+
+export function CircularSpinnerLoader() {
+    return (
+        <ComponentShowcase title="Circular Spinner Loader" code={code} className="min-h-[150px] flex items-center justify-center">
+            <CircularSpinnerLoaderContent />
         </ComponentShowcase>
     );
 }

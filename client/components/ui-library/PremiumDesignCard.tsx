@@ -253,12 +253,11 @@ const PremiumDesignCard = () => {
 export default PremiumDesignCard;
 `;
 
-export function PremiumDesignCard() {
-    return (
-        <ComponentShowcase title="Premium Design Card" code={code} className="flex items-center justify-center p-12 min-h-[400px]">
-            <div className="pdc-wrapper">
-                <style>
-                    {`
+export function PremiumDesignCardContent() {
+  return (
+    <div className="pdc-wrapper w-full h-full flex items-center justify-center">
+      <style>
+        {`
         .pdc-wrapper .pdc-card {
           --pdc-card-bg: #ffffff;
           --pdc-card-accent: #7c3aed;
@@ -476,28 +475,35 @@ export function PremiumDesignCard() {
           100% { transform: scale(1); }
         }
         `}
-                </style>
-                <div className="pdc-card">
-                    <div className="pdc-shine" />
-                    <div className="pdc-glow" />
-                    <div className="pdc-content">
-                        <div className="pdc-badge">NEW</div>
-                        <div className="pdc-image" />
-                        <div className="pdc-text">
-                            <p className="pdc-title">Premium Design</p>
-                            <p className="pdc-description">Hover to reveal stunning effects</p>
-                        </div>
-                        <div className="pdc-footer">
-                            <div className="pdc-price">$49.99</div>
-                            <div className="pdc-button">
-                                <svg height={16} width={16} viewBox="0 0 24 24">
-                                    <path strokeWidth={2} stroke="currentColor" d="M4 12H20M12 4V20" fill="currentColor" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      </style>
+      <div className="pdc-card">
+        <div className="pdc-shine" />
+        <div className="pdc-glow" />
+        <div className="pdc-content">
+          <div className="pdc-badge">NEW</div>
+          <div className="pdc-image" />
+          <div className="pdc-text">
+            <p className="pdc-title">Premium Design</p>
+            <p className="pdc-description">Hover to reveal stunning effects</p>
+          </div>
+          <div className="pdc-footer">
+            <div className="pdc-price">$49.99</div>
+            <div className="pdc-button">
+              <svg height={16} width={16} viewBox="0 0 24 24">
+                <path strokeWidth={2} stroke="currentColor" d="M4 12H20M12 4V20" fill="currentColor" />
+              </svg>
             </div>
-        </ComponentShowcase>
-    );
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function PremiumDesignCard() {
+  return (
+    <ComponentShowcase title="Premium Design Card" code={code} className="flex items-center justify-center p-12 min-h-[400px]">
+      <PremiumDesignCardContent />
+    </ComponentShowcase>
+  );
 }

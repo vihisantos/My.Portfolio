@@ -252,12 +252,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function HamsterLoader() {
-    return (
-        <ComponentShowcase title="Hamster Loader" code={code} className="min-h-[250px] flex items-center justify-center">
-            <div className="hamster-loader-wrapper scale-75">
-                <style>
-                    {`
+export function HamsterLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <div className="hamster-loader-wrapper scale-75">
+        <style>
+          {`
             .hamster-wheel-and-hamster {
               --dur: 1s;
               position: relative;
@@ -476,26 +476,34 @@ export function HamsterLoader() {
               to { transform: rotate(-1turn); }
             }
             `}
-                </style>
-                <div aria-label="Orange and tan hamster running in a metal wheel" role="img" className="hamster-wheel-and-hamster">
-                    <div className="hamster-wheel" />
-                    <div className="hamster">
-                        <div className="hamster__body">
-                            <div className="hamster__head">
-                                <div className="hamster__ear" />
-                                <div className="hamster__eye" />
-                                <div className="hamster__nose" />
-                            </div>
-                            <div className="hamster__limb hamster__limb--fr" />
-                            <div className="hamster__limb hamster__limb--fl" />
-                            <div className="hamster__limb hamster__limb--br" />
-                            <div className="hamster__limb hamster__limb--bl" />
-                            <div className="hamster__tail" />
-                        </div>
-                    </div>
-                    <div className="hamster-spoke" />
-                </div>
+        </style>
+        <div aria-label="Orange and tan hamster running in a metal wheel" role="img" className="hamster-wheel-and-hamster">
+          <div className="hamster-wheel" />
+          <div className="hamster">
+            <div className="hamster__body">
+              <div className="hamster__head">
+                <div className="hamster__ear" />
+                <div className="hamster__eye" />
+                <div className="hamster__nose" />
+              </div>
+              <div className="hamster__limb hamster__limb--fr" />
+              <div className="hamster__limb hamster__limb--fl" />
+              <div className="hamster__limb hamster__limb--br" />
+              <div className="hamster__limb hamster__limb--bl" />
+              <div className="hamster__tail" />
             </div>
-        </ComponentShowcase>
-    );
+          </div>
+          <div className="hamster-spoke" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function HamsterLoader() {
+  return (
+    <ComponentShowcase title="Hamster Loader" code={code} className="min-h-[250px] flex items-center justify-center">
+      <HamsterLoaderContent />
+    </ComponentShowcase>
+  );
 }

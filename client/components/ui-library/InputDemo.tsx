@@ -15,13 +15,21 @@ export function InputDemo() {
 }
 `;
 
+export const InputDemoContent: React.FC = () => {
+  return (
+    <div className="flex items-center justify-center w-full h-full min-h-[150px]">
+      <div className="grid w-full max-w-xs items-center gap-1.5">
+        <Label htmlFor="email-demo">Email</Label>
+        <Input type="email" id="email-demo" placeholder="Email" />
+      </div>
+    </div>
+  );
+};
+
 export function InputDemo() {
-    return (
-        <ComponentShowcase title="Input" code={code}>
-            <div className="grid w-full max-w-xs items-center gap-1.5">
-                <Label htmlFor="email-demo">Email</Label>
-                <Input type="email" id="email-demo" placeholder="Email" />
-            </div>
-        </ComponentShowcase>
-    );
+  return (
+    <ComponentShowcase title="Input" code={code}>
+      <InputDemoContent />
+    </ComponentShowcase>
+  );
 }

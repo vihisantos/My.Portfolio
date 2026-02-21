@@ -53,9 +53,9 @@ const GradientSpinLoader = () => {
 export default GradientSpinLoader;
 `;
 
-export function GradientSpinLoader() {
+export function GradientSpinLoaderContent() {
    return (
-      <ComponentShowcase title="Gradient Spin Loader" code={code} className="min-h-[200px] flex items-center justify-center">
+      <div className="w-full h-full flex items-center justify-center min-h-[200px]">
          <div className="gradient-spin-loader-wrapper bg-transparent p-10 rounded-xl">
             <style>
                {`
@@ -98,6 +98,15 @@ export function GradientSpinLoader() {
             </style>
             <div className="gradient-spin-loader" />
          </div>
+      </div>
+   );
+}
+
+export function GradientSpinLoader() {
+   return (
+      <ComponentShowcase title="Gradient Spin Loader" code={code} className="min-h-[200px] flex items-center justify-center">
+         <GradientSpinLoaderContent />
       </ComponentShowcase>
    );
 }
+

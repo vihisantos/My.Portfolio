@@ -268,12 +268,12 @@ const SketchButton = () => {
 export default SketchButton;
 `;
 
-export function SketchButton() {
-    return (
-        <ComponentShowcase title="Sketch Button" code={code} className="flex items-center justify-center p-12 min-h-[300px]">
-            <div className="sketch-button-wrapper">
-                <style>
-                    {`
+export const SketchButtonContent: React.FC = () => {
+  return (
+    <div className="flex items-center justify-center w-full h-full min-h-[300px]">
+      <div className="sketch-button-wrapper">
+        <style>
+          {`
         .sketch-button-wrapper .type--A {
           --line_color: #555555;
           --back_color: #ffecf6;
@@ -517,17 +517,25 @@ export function SketchButton() {
           }
         }
         `}
-                </style>
-                <div className="container flex justify-center items-center">
-                    <a href="#" className="sketch-button type--C">
-                        <div className="sketch-button__line" />
-                        <div className="sketch-button__line" />
-                        <span className="sketch-button__text">ENTRY</span>
-                        <div className="sketch-button__drow1" />
-                        <div className="sketch-button__drow2" />
-                    </a>
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="container flex justify-center items-center">
+          <a href="#" className="sketch-button type--C">
+            <div className="sketch-button__line" />
+            <div className="sketch-button__line" />
+            <span className="sketch-button__text">ENTRY</span>
+            <div className="sketch-button__drow1" />
+            <div className="sketch-button__drow2" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export function SketchButton() {
+  return (
+    <ComponentShowcase title="Sketch Button" code={code} className="flex items-center justify-center p-12 min-h-[300px]">
+      <SketchButtonContent />
+    </ComponentShowcase>
+  );
 }

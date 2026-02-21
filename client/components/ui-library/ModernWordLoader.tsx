@@ -88,9 +88,9 @@ const ModernWordLoader = () => {
 
 export default ModernWordLoader;`;
 
-export function ModernWordLoader() {
+export function ModernWordLoaderContent() {
     return (
-        <ComponentShowcase title="Modern Word Loader" code={code} className="min-h-[200px] flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center min-h-[200px]">
             <div className="modern-word-loader-view">
                 <style>{`
                     .modern-word-loader-view .modern-loader-card {
@@ -164,6 +164,15 @@ export function ModernWordLoader() {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+export function ModernWordLoader() {
+    return (
+        <ComponentShowcase title="Modern Word Loader" code={code} className="min-h-[200px] flex items-center justify-center">
+            <ModernWordLoaderContent />
         </ComponentShowcase>
     );
 }
+

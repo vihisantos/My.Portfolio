@@ -113,12 +113,12 @@ const HoneycombLoader = () => {
 export default HoneycombLoader;
 `;
 
-export function HoneycombLoader() {
-    return (
-        <ComponentShowcase title="Honeycomb Loader" code={code} className="flex items-center justify-center p-20 min-h-[200px]">
-            <div className="honeycomb-wrapper">
-                <style>
-                    {`
+export function HoneycombLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[200px]">
+      <div className="honeycomb-wrapper">
+        <style>
+          {`
         @keyframes honeycomb-animate {
           0%, 20%, 80%, 100% {
             opacity: 0;
@@ -207,17 +207,25 @@ export function HoneycombLoader() {
           top: 0;
         }
         `}
-                </style>
-                <div className="honeycomb-loader">
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                </div>
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="honeycomb-loader">
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function HoneycombLoader() {
+  return (
+    <ComponentShowcase title="Honeycomb Loader" code={code} className="flex items-center justify-center p-20 min-h-[200px]">
+      <HoneycombLoaderContent />
+    </ComponentShowcase>
+  );
 }

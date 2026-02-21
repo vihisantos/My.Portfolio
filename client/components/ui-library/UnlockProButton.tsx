@@ -67,12 +67,11 @@ const UnlockProButton = () => {
 export default UnlockProButton;
 `;
 
-export function UnlockProButton() {
-    return (
-        <ComponentShowcase title="Unlock Pro Button" code={code} className="flex items-center justify-center p-12 min-h-[200px]">
-            <div className="unlock-pro-btn-wrapper">
-                <style>
-                    {`
+export function UnlockProButtonContent() {
+  return (
+    <div className="unlock-pro-btn-wrapper w-full h-full flex items-center justify-center p-4">
+      <style>
+        {`
         .unlock-pro-btn-wrapper .unlock-pro-btn {
           width: fit-content;
           display: flex;
@@ -118,14 +117,21 @@ export function UnlockProButton() {
           transition: 0.3s ease;
         }
         `}
-                </style>
-                <button className="unlock-pro-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
-                        <path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z" />
-                    </svg>
-                    Unlock Pro
-                </button>
-            </div>
-        </ComponentShowcase>
-    );
+      </style>
+      <button className="unlock-pro-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+          <path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z" />
+        </svg>
+        Unlock Pro
+      </button>
+    </div>
+  );
+}
+
+export function UnlockProButton() {
+  return (
+    <ComponentShowcase title="Unlock Pro Button" code={code} className="flex items-center justify-center p-12 min-h-[200px]">
+      <UnlockProButtonContent />
+    </ComponentShowcase>
+  );
 }

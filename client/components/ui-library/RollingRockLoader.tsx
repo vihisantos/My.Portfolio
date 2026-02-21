@@ -93,12 +93,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function RollingRockLoader() {
-    return (
-        <ComponentShowcase title="Rolling Rock Loader" code={code} className="min-h-[250px]">
-            <div className="rolling-rock-wrapper">
-                <style>
-                    {`
+export function RollingRockLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <div className="rolling-rock-wrapper">
+        <style>
+          {`
             .rolling-rock-loader {
               position: relative;
               font-size: 16px;
@@ -176,9 +176,17 @@ export function RollingRockLoader() {
               }
             }
             `}
-                </style>
-                <div className="rolling-rock-loader" />
-            </div>
-        </ComponentShowcase>
-    );
+        </style>
+        <div className="rolling-rock-loader" />
+      </div>
+    </div>
+  );
+}
+
+export function RollingRockLoader() {
+  return (
+    <ComponentShowcase title="Rolling Rock Loader" code={code} className="min-h-[250px]">
+      <RollingRockLoaderContent />
+    </ComponentShowcase>
+  );
 }

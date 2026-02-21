@@ -257,12 +257,11 @@ const Button = () => {
 export default Button;
 `;
 
-export function CreditsButton() {
-    return (
-        <ComponentShowcase title="Credits Button" code={code} className="min-h-[250px]">
-            <div className="credits-button-wrapper">
-                <style>
-                    {`
+export function CreditsButtonContent() {
+  return (
+    <div className="credits-button-wrapper w-full h-full flex items-center justify-center p-4">
+      <style>
+        {`
             .credits-btn {
               --h-button: 48px;
               --w-button: 102px;
@@ -483,29 +482,36 @@ export function CreditsButton() {
               }
             }
             `}
-                </style>
-                <button type="button" className="credits-btn">
-                    <span className="credits-fold" />
-                    <div className="credits-points-wrapper">
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                        <i className="credits-point" />
-                    </div>
-                    <span className="credits-inner">
-                        <svg className="credits-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
-                            <polyline points="13.18 1.37 13.18 9.64 21.45 9.64 10.82 22.63 10.82 14.36 2.55 14.36 13.18 1.37" />
-                        </svg>
-                        Credits
-                    </span>
-                </button>
-            </div>
-        </ComponentShowcase>
-    );
+      </style>
+      <button type="button" className="credits-btn">
+        <span className="credits-fold" />
+        <div className="credits-points-wrapper">
+          <i className="credits-point" />
+          <i className="credits-point" />
+          <i className="credits-point" />
+          <i className="credits-point" />
+          <i className="credits-point" />
+          <i className="credits-point" />
+          <i className="credits-point" />
+          <i className="credits-point" />
+          <i className="credits-point" />
+          <i className="credits-point" />
+        </div>
+        <span className="credits-inner">
+          <svg className="credits-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
+            <polyline points="13.18 1.37 13.18 9.64 21.45 9.64 10.82 22.63 10.82 14.36 2.55 14.36 13.18 1.37" />
+          </svg>
+          Credits
+        </span>
+      </button>
+    </div>
+  );
+}
+
+export function CreditsButton() {
+  return (
+    <ComponentShowcase title="Credits Button" code={code} className="min-h-[250px] flex items-center justify-center">
+      <CreditsButtonContent />
+    </ComponentShowcase>
+  );
 }

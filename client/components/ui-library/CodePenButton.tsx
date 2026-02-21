@@ -3,7 +3,7 @@ import { ComponentShowcase } from "./ComponentShowcase";
 
 const code = `import React from 'react';
 
-const CodePenButton = () => {
+export const CodePenButtonContent = () => {
   return (
     <div className="codepen-btn-wrapper">
       <style>
@@ -66,15 +66,14 @@ const CodePenButton = () => {
   );
 }
 
-export default CodePenButton;
+export default CodePenButtonContent;
 `;
 
-export function CodePenButton() {
-    return (
-        <ComponentShowcase title="CodePen Button" code={code} className="flex items-center justify-center p-12 min-h-[200px]">
-            <div className="codepen-btn-wrapper">
-                <style>
-                    {`
+export const CodePenButtonContent = () => {
+  return (
+    <div className="flex items-center justify-center w-full h-full min-h-[100px]">
+      <style>
+        {`
         .codepen-btn-wrapper .codepen-btn {
           display: block;
           cursor: pointer;
@@ -127,9 +126,18 @@ export function CodePenButton() {
           height: 100%;
         }
         `}
-                </style>
-                <a className="codepen-btn"><span>Start Coding</span></a>
-            </div>
-        </ComponentShowcase>
-    );
+      </style>
+      <div className="codepen-btn-wrapper">
+        <a className="codepen-btn"><span>Start Coding</span></a>
+      </div>
+    </div>
+  );
+}
+
+export function CodePenButton() {
+  return (
+    <ComponentShowcase title="CodePen Button" code={code} className="flex items-center justify-center p-12 min-h-[200px]">
+      <CodePenButtonContent />
+    </ComponentShowcase>
+  );
 }

@@ -75,10 +75,10 @@ const GradientRingLoader = () => {
 
 export default GradientRingLoader;`;
 
-export function GradientRingLoader() {
+export function GradientRingLoaderContent() {
     return (
-        <ComponentShowcase title="Gradient Ring Loader" code={code} className="min-h-[200px] flex items-center justify-center">
-            <div className="gradient-ring-view">
+        <div className="w-full h-full flex items-center justify-center min-h-[200px]">
+            <div className="gradient-ring-view scale-75 sm:scale-100">
                 <style>{`
                     .gradient-ring-view .g-ring {
                         position: relative;
@@ -133,6 +133,14 @@ export function GradientRingLoader() {
                     <span />
                 </div>
             </div>
+        </div>
+    );
+}
+
+export function GradientRingLoader() {
+    return (
+        <ComponentShowcase title="Gradient Ring Loader" code={code} className="min-h-[200px] flex items-center justify-center">
+            <GradientRingLoaderContent />
         </ComponentShowcase>
     );
 }

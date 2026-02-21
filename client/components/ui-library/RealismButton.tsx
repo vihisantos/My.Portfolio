@@ -107,12 +107,11 @@ const RealismButton = () => {
 export default RealismButton;
 `;
 
-export function RealismButton() {
+export function RealismButtonContent() {
   return (
-    <ComponentShowcase title="Realism Button" code={code} className="flex items-center justify-center p-12 transition-colors duration-300">
-      <div className="realism-button-wrapper">
-        <style>
-          {`
+    <div className="realism-button-wrapper w-full h-full flex items-center justify-center p-4">
+      <style>
+        {`
         .realism-button {
           cursor: pointer;
           font-size: 1.4rem;
@@ -218,13 +217,20 @@ export function RealismButton() {
           position: absolute;
         }
         `}
-        </style>
-        <button className="realism-button">
-          <div className="realism-blob1" />
-          <div className="realism-blob2" />
-          <div className="realism-inner">Realism</div>
-        </button>
-      </div>
+      </style>
+      <button className="realism-button">
+        <div className="realism-blob1" />
+        <div className="realism-blob2" />
+        <div className="realism-inner">Realism</div>
+      </button>
+    </div>
+  );
+}
+
+export function RealismButton() {
+  return (
+    <ComponentShowcase title="Realism Button" code={code} className="flex items-center justify-center p-12 transition-colors duration-300 min-h-[200px]">
+      <RealismButtonContent />
     </ComponentShowcase>
   );
 }

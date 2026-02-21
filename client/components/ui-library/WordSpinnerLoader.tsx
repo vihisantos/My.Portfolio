@@ -135,12 +135,12 @@ const Loader = () => {
 export default Loader;
 `;
 
-export function WordSpinnerLoader() {
-    return (
-        <ComponentShowcase title="Word Spinner Loader" code={code} className="min-h-[250px]">
-            <div className="word-spinner-wrapper">
-                <style>
-                    {`
+export function WordSpinnerLoaderContent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center min-h-[250px]">
+      <div className="word-spinner-wrapper">
+        <style>
+          {`
             .spinnerContainer {
             display: flex;
             flex-direction: column;
@@ -247,21 +247,29 @@ export function WordSpinnerLoader() {
             }
             }
             `}
-                </style>
-                <div className="spinnerContainer">
-                    <div className="spinner" />
-                    <div className="word-loader">
-                        <p>loading</p>
-                        <div className="words">
-                            <span className="word">posts</span>
-                            <span className="word">images</span>
-                            <span className="word">followers</span>
-                            <span className="word">hashtags</span>
-                            <span className="word">posts</span>
-                        </div>
-                    </div>
-                </div>
+        </style>
+        <div className="spinnerContainer">
+          <div className="spinner" />
+          <div className="word-loader">
+            <p>loading</p>
+            <div className="words">
+              <span className="word">posts</span>
+              <span className="word">images</span>
+              <span className="word">followers</span>
+              <span className="word">hashtags</span>
+              <span className="word">posts</span>
             </div>
-        </ComponentShowcase>
-    );
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function WordSpinnerLoader() {
+  return (
+    <ComponentShowcase title="Word Spinner Loader" code={code} className="min-h-[250px]">
+      <WordSpinnerLoaderContent />
+    </ComponentShowcase>
+  );
 }
