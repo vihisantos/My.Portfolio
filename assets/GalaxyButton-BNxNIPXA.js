@@ -1,4 +1,4 @@
-import{j as r}from"./ui-CM6BS-nX.js";import{C as e}from"./UILibrary-Bvk9o8Bo.js";import"./vendor-BZTSXe9S.js";import"./index-CixlYlvQ.js";import"./framer-dTkxxdwU.js";import"./SEO-DdUQtVuZ.js";import"./Navigation-DNrO-W9z.js";import"./input-zT_OvQos.js";const a=`import React from 'react';
+import{j as r}from"./ui-qcFD9uuN.js";import{C as e}from"./UILibrary-BNPNXrJE.js";import"./vendor-BZTSXe9S.js";import"./index-BEYwci-1.js";import"./framer-Bz8kBvrX.js";import"./SEO-DEs_-UPA.js";import"./Navigation-Cm6ZgnSK.js";import"./input-CL1zhkqX.js";const a=`import React from 'react';
 
 const GalaxyButton = () => {
   return (
