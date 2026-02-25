@@ -19,6 +19,7 @@ import { ArrowRight, Code2, Database, GitBranch, Zap } from "lucide-react";
 import ecommerceImg from "@/assets/projects/ecommerce.png";
 import taskManagementImg from "@/assets/projects/task-management.png";
 import { useState, useMemo, useEffect } from "react";
+import { motion } from "framer-motion";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { SpotifyWidget } from "@/components/SpotifyWidget";
 import { SocialHub } from "@/components/SocialHub";
@@ -377,49 +378,108 @@ export default function Index() {
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-3xl blur-3xl"></div>
               <div className="relative bg-gradient-to-br from-secondary/10 to-primary/10 rounded-3xl p-12 border border-secondary/30 dark:border-secondary/20 flex items-center justify-center min-h-96">
-                <div className="w-full max-w-md bg-white/5 dark:bg-slate-900/50 backdrop-blur-md rounded-2xl border border-primary/20 p-6 shadow-2xl relative overflow-hidden group">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full max-w-md bg-white/5 dark:bg-slate-900/50 backdrop-blur-md rounded-2xl border border-primary/20 p-6 shadow-2xl relative overflow-hidden group"
+                >
                   {/* Decorative Elements */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl -z-10"></div>
-                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/10 blur-3xl -z-10"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl -z-10 group-hover:bg-primary/20 transition-colors duration-500"></div>
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/10 blur-3xl -z-10 group-hover:bg-secondary/20 transition-colors duration-500"></div>
 
                   {/* Header Mockup */}
                   <div className="flex items-center justify-between mb-6 border-b border-border/50 pb-4">
                     <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-400/50"></div>
-                      <div className="w-3 h-3 rounded-full bg-amber-400/50"></div>
-                      <div className="w-3 h-3 rounded-full bg-emerald-400/50"></div>
+                      <div className="w-3 h-3 rounded-full bg-red-400/50 hover:bg-red-400 transition-colors cursor-pointer"></div>
+                      <div className="w-3 h-3 rounded-full bg-amber-400/50 hover:bg-amber-400 transition-colors cursor-pointer"></div>
+                      <div className="w-3 h-3 rounded-full bg-emerald-400/50 hover:bg-emerald-400 transition-colors cursor-pointer"></div>
                     </div>
-                    <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
+                    <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                       HOLDING COMMAND CENTER
                     </div>
                   </div>
 
+                  {/* Live Terminal Log */}
+                  <div className="mb-6 h-12 bg-black/5 dark:bg-black/20 rounded-lg p-3 border border-border/50 font-mono text-[10px] sm:text-xs text-muted-foreground flex items-center overflow-hidden">
+                    <span className="text-secondary mr-2">{">"}</span>
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 3, ease: "linear", repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
+                      className="overflow-hidden whitespace-nowrap"
+                    >
+                      [LIVE] Analyzing ecosystem metrics...
+                    </motion.div>
+                  </div>
+
                   {/* Metrics Grid */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-white dark:bg-slate-800/80 p-3 rounded-xl border border-border/50 group-hover:border-primary/30 transition-colors">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white dark:bg-slate-800/80 p-3 rounded-xl border border-border/50 group-hover:border-primary/30 transition-all cursor-default"
+                    >
                       <p className="text-[10px] text-muted-foreground uppercase">{t('capybara.activeProjects') || 'Projetos Ativos'}</p>
-                      <p className="text-2xl font-bold gradient-text">05</p>
-                    </div>
-                    <div className="bg-white dark:bg-slate-800/80 p-3 rounded-xl border border-border/50 group-hover:border-secondary/30 transition-colors">
+                      <div className="flex items-baseline gap-1">
+                        <motion.p
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+                          className="text-2xl font-bold gradient-text"
+                        >
+                          08
+                        </motion.p>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white dark:bg-slate-800/80 p-3 rounded-xl border border-border/50 group-hover:border-secondary/30 transition-all cursor-default"
+                    >
                       <p className="text-[10px] text-muted-foreground uppercase">{t('capybara.incubating') || 'Em Incubação'}</p>
-                      <p className="text-2xl font-bold text-slate-400">02</p>
-                    </div>
+                      <motion.p
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
+                        className="text-2xl font-bold text-slate-400"
+                      >
+                        02
+                      </motion.p>
+                    </motion.div>
                   </div>
 
                   {/* Status Bar */}
                   <div className="space-y-3">
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-muted-foreground">Ecosystem Health</span>
-                      <span className="text-emerald-500 font-medium">99.9%</span>
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
+                        className="text-emerald-500 font-medium"
+                      >
+                        99.9%
+                      </motion.span>
                     </div>
                     <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-primary to-secondary w-[99.9%] animate-pulse"></div>
+                      <motion.div
+                        initial={{ width: "0%" }}
+                        whileInView={{ width: "99.9%" }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="h-full bg-gradient-to-r from-primary to-secondary relative"
+                      >
+                        <div className="absolute top-0 right-0 bottom-0 w-10 bg-white/30 skew-x-[-20deg] animate-[shimmer_2s_infinite]"></div>
+                      </motion.div>
                     </div>
                   </div>
 
                   {/* Project Badge */}
-                  <div className="mt-6 flex items-center gap-3 bg-primary/5 p-2 rounded-lg border border-primary/10">
-                    <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-xs font-bold text-primary">V3</div>
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    className="mt-6 flex items-center gap-3 bg-primary/5 p-2 rounded-lg border border-primary/10 cursor-pointer hover:bg-primary/10 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-xs font-bold text-primary shadow-inner">V3</div>
                     <div className="text-left">
                       <p className="text-[10px] font-bold text-primary leading-tight">VITRINE 360</p>
                       <p className="text-[9px] text-muted-foreground leading-tight">Live Operation</p>
@@ -428,8 +488,8 @@ export default function Index() {
                       <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></div>
                       <span className="text-[8px] font-bold text-emerald-500">LIVE</span>
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
 

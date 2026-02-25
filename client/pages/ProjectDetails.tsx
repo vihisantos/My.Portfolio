@@ -4,9 +4,10 @@ import { getProjects } from "@/data/projects";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { ArrowLeft, Rocket, ExternalLink, Calendar, Layers, Download, MessageCircle } from "lucide-react";
+import { ArrowLeft, Rocket, ExternalLink, Calendar, Layers, Download, MessageCircle, Search } from "lucide-react";
 import { SectionDivider } from "@/components/SectionDivider";
 import { useEffect } from "react";
+import GalaxyButton from "@/components/GalaxyButton";
 
 export default function ProjectDetails() {
     const { id } = useParams();
@@ -32,13 +33,42 @@ export default function ProjectDetails() {
 
     if (!project) {
         return (
-            <div className="min-h-screen bg-white dark:bg-slate-950 flex items-center justify-center">
-                <div className="text-center">
-                    <h2 className="text-2xl font-bold mb-4">Project Not Found</h2>
-                    <Link to="/projects" className="text-primary hover:underline">
-                        Back to Projects
-                    </Link>
+            <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col relative overflow-hidden">
+                <Navigation />
+
+                {/* Abstract Background Effects */}
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                    <div className="absolute top-1/4 -left-1/4 w-[40rem] h-[40rem] bg-primary/5 rounded-full blur-3xl opacity-50 dark:opacity-20 animate-pulse" />
+                    <div className="absolute bottom-1/4 -right-1/4 w-[30rem] h-[30rem] bg-secondary/5 rounded-full blur-3xl opacity-50 dark:opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
                 </div>
+
+                <div className="flex-1 flex items-center justify-center section-padding relative z-10 w-full">
+                    <div className="container-custom max-w-3xl flex flex-col items-center justify-center text-center">
+                        <div className="relative mb-12 group">
+                            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110 group-hover:scale-[1.60] transition-transform duration-700 opacity-60"></div>
+                            <div className="relative z-10 w-36 h-36 rounded-[2rem] bg-white/10 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-slate-800/60 shadow-[0_0_40px_rgba(0,0,0,0.1)] dark:shadow-[0_0_40px_rgba(0,0,0,0.3)] flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-primary/50 group-hover:bg-white/20 dark:group-hover:bg-slate-800/60">
+                                <Search size={64} className="text-primary/80 mb-2 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 drop-shadow-md" />
+                                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/10 to-transparent"></div>
+                                {/* Animated scanline */}
+                                <div className="absolute top-1/2 left-0 w-full h-[2px] bg-primary/50 blur-[1px] -translate-y-[4rem] group-hover:translate-y-[4rem] transition-transform duration-[1.5s] ease-in-out opacity-0 group-hover:opacity-100"></div>
+                            </div>
+                        </div>
+
+                        <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter gradient-text drop-shadow-lg">
+                            Projeto Classificado
+                        </h2>
+
+                        <p className="text-xl md:text-2xl text-muted-foreground/90 mb-12 leading-relaxed max-w-2xl drop-shadow-sm font-medium">
+                            Você tentou acessar um projeto ultra-secreto ou que foi realocado para outra dimensão 🚀.<br /> <span className="opacity-70 text-lg">Acesso negado.</span>
+                        </p>
+
+                        <div className="w-full max-w-[280px] mx-auto">
+                            <GalaxyButton href="/projects" text="Voltar aos Projetos" />
+                        </div>
+                    </div>
+                </div>
+
+                <Footer />
             </div>
         );
     }

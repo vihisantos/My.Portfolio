@@ -151,6 +151,35 @@ export const translations = {
           impact: 'Redução drástica no tempo de fechamento de escalas e maior satisfação dos profissionais.'
         }
       },
+      portfoliofotografo: {
+        title: 'FrameStudio - Fotografia',
+        description: 'Template premium para fotógrafos e artistas visuais. Design com foco brutal na estética e na experiência do usuário.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Fotógrafos precisam de portfólios que destaquem suas imagens sem distrações, mas templates comuns são genéricos e lentos.',
+          solution: 'Template dark mode nativo com animações Framer Motion, layout Masonry e performance extrema.',
+          impact: 'Aumenta a percepção de valor e converte visitantes em clientes de alto ticket.'
+        }
+      },
+      ongtemplate: {
+        title: 'LoveFlow - ONGs',
+        description: 'Template moderno, acessível e bonito estruturado para organizações sem fins lucrativos e projetos de impacto social.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Muitas ONGs têm sites desatualizados e não acessíveis, o que dificulta a arrecadação de fundos e a comunicação de impacto.',
+          solution: 'Plataforma rápida e otimizada para SEO, com foco em acessibilidade (WCAG AAA) e conversão de doações.',
+          impact: 'Garante 100% de acessibilidade e eleva a credibilidade institucional da ONG.'
+        }
+      },
+      imersiveblock: {
+        title: 'Imersive Block 3D',
+        description: 'Experiência imersiva em 3D rodando direto no navegador utilizando a poderosa integração entre React e Three.js.',
+        story: {
+          challenge: 'Criar experiências web 3D costuma exigir alto processamento e códigos complexos que sacrificam a performance.',
+          solution: 'Aplicação interativa desenvolvida com React Three Fiber e Vite, entregando gráficos impressionantes sem perder fluidez.',
+          impact: 'Demonstra a capacidade de renderização 3D avançada em interfaces web modernas e performáticas.'
+        }
+      },
     },
     capybara: {
       badge: 'Minha Iniciativa',
@@ -758,6 +787,35 @@ export const translations = {
           challenge: 'Hospitals struggle with shift gaps and difficulty finding qualified professionals quickly.',
           solution: 'Platform using AI for automatic matching between shifts and professionals, with real-time financial and schedule management.',
           impact: 'Drastic reduction in shift closing time and higher professional satisfaction.'
+        }
+      },
+      portfoliofotografo: {
+        title: 'FrameStudio - Photography',
+        description: 'Premium template for photographers and visual artists. Design with a brutal focus on aesthetics and user experience.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Photographers need portfolios that highlight their images without distractions, but common templates are generic and slow.',
+          solution: 'Native dark mode template with Framer Motion animations, Masonry layout, and extreme performance.',
+          impact: 'Increases value perception and converts visitors into high-ticket clients.'
+        }
+      },
+      ongtemplate: {
+        title: 'LoveFlow - NGOs',
+        description: 'Modern, accessible, and beautiful template structured for non-profit organizations and social impact projects.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Many NGOs have outdated and inaccessible websites, making it difficult to raise funds and communicate impact.',
+          solution: 'Fast and SEO-optimized platform, focusing on accessibility (WCAG AAA) and donation conversion.',
+          impact: 'Ensures 100% accessibility and raises the institutional credibility of the NGO.'
+        }
+      },
+      imersiveblock: {
+        title: 'Imersive Block 3D',
+        description: 'Immersive 3D experience running right in the browser using the powerful integration between React and Three.js.',
+        story: {
+          challenge: 'Creating 3D web experiences usually requires high processing and complex code that sacrifices performance.',
+          solution: 'Interactive application developed with React Three Fiber and Vite, delivering impressive graphics without losing fluidity.',
+          impact: 'Demonstrates advanced 3D rendering capabilities in modern and performant web interfaces.'
         }
       },
     },

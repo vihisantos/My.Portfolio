@@ -7,9 +7,48 @@ import mizinAppImg from "@/assets/projects/Mizin.png";
 import siteInstitucionalImg from "@/assets/projects/site institucional.png";
 import zapediaImg from "@/assets/projects/zapedia.png";
 import medHubImg from "@/assets/projects/med-hub.png";
+import fotografoImg from "@/assets/projects/fotografo+template.png";
+import ongTemplateImg from "@/assets/projects/ong_template.png";
+import imersiveblockImg from "@/assets/projects/imersiveblock.png";
 
 export const getProjects = (t: any) => [
-
+    {
+        id: 12,
+        title: t('projects.portfoliofotografo.title'),
+        description: t('projects.portfoliofotografo.description'),
+        technologies: ["React", "Vite", "Tailwind CSS", "Framer Motion", "TypeScript"],
+        image: fotografoImg,
+        badge: t('projects.portfoliofotografo.badge'),
+        badgeType: 'sale',
+        demoUrl: "https://vihisantos.github.io/portfolio-fotografo/",
+        challenge: t('projects.portfoliofotografo.story.challenge'),
+        solution: t('projects.portfoliofotografo.story.solution'),
+        impact: t('projects.portfoliofotografo.story.impact'),
+    },
+    {
+        id: 13,
+        title: t('projects.ongtemplate.title'),
+        description: t('projects.ongtemplate.description'),
+        technologies: ["React", "Vite", "Tailwind CSS", "TypeScript", "WCAG AAA"],
+        image: ongTemplateImg,
+        badge: t('projects.ongtemplate.badge'),
+        badgeType: 'sale',
+        demoUrl: "https://vihisantos.github.io/ong-template/",
+        challenge: t('projects.ongtemplate.story.challenge'),
+        solution: t('projects.ongtemplate.story.solution'),
+        impact: t('projects.ongtemplate.story.impact'),
+    },
+    {
+        id: 14,
+        title: t('projects.imersiveblock.title'),
+        description: t('projects.imersiveblock.description'),
+        technologies: ["React", "Vite", "Three.js", "React Three Fiber", "Tailwind CSS"],
+        image: imersiveblockImg,
+        demoUrl: "https://vihisantos.github.io/imersiveblock/",
+        challenge: t('projects.imersiveblock.story.challenge'),
+        solution: t('projects.imersiveblock.story.solution'),
+        impact: t('projects.imersiveblock.story.impact'),
+    },
     {
         id: 8,
         title: t('projects.ecommerce.title'),
