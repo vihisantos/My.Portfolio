@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface GalaxyButtonProps {
   href: string;
@@ -274,25 +274,48 @@ const GalaxyButton = ({ href, text, download }: GalaxyButtonProps) => {
         }
         `}
       </style>
-      <a href={href} download={download} className="no-underline block w-full">
-        <div className="uiverse w-full">
-          <div className="wrapper">
-            <span>{text}</span>
-            <div className="circle circle-12" />
-            <div className="circle circle-11" />
-            <div className="circle circle-10" />
-            <div className="circle circle-9" />
-            <div className="circle circle-8" />
-            <div className="circle circle-7" />
-            <div className="circle circle-6" />
-            <div className="circle circle-5" />
-            <div className="circle circle-4" />
-            <div className="circle circle-3" />
-            <div className="circle circle-2" />
-            <div className="circle circle-1" />
+
+      {download || href.startsWith('http') ? (
+        <a href={href} download={download} className="no-underline block w-full">
+          <div className="uiverse w-full">
+            <div className="wrapper">
+              <span>{text}</span>
+              <div className="circle circle-12" />
+              <div className="circle circle-11" />
+              <div className="circle circle-10" />
+              <div className="circle circle-9" />
+              <div className="circle circle-8" />
+              <div className="circle circle-7" />
+              <div className="circle circle-6" />
+              <div className="circle circle-5" />
+              <div className="circle circle-4" />
+              <div className="circle circle-3" />
+              <div className="circle circle-2" />
+              <div className="circle circle-1" />
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      ) : (
+        <Link to={href} className="no-underline block w-full">
+          <div className="uiverse w-full">
+            <div className="wrapper">
+              <span>{text}</span>
+              <div className="circle circle-12" />
+              <div className="circle circle-11" />
+              <div className="circle circle-10" />
+              <div className="circle circle-9" />
+              <div className="circle circle-8" />
+              <div className="circle circle-7" />
+              <div className="circle circle-6" />
+              <div className="circle circle-5" />
+              <div className="circle circle-4" />
+              <div className="circle circle-3" />
+              <div className="circle circle-2" />
+              <div className="circle circle-1" />
+            </div>
+          </div>
+        </Link>
+      )}
     </div>
   );
 };
