@@ -33,40 +33,63 @@ export default function ProjectDetails() {
 
     if (!project) {
         return (
-            <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col relative overflow-hidden">
+            <div className="min-h-screen bg-slate-950 flex flex-col relative overflow-hidden text-white">
                 <Navigation />
 
-                {/* Abstract Background Effects */}
+                {/* Cinematic Background */}
                 <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                    <div className="absolute top-1/4 -left-1/4 w-[40rem] h-[40rem] bg-primary/5 rounded-full blur-3xl opacity-50 dark:opacity-20 animate-pulse" />
-                    <div className="absolute bottom-1/4 -right-1/4 w-[30rem] h-[30rem] bg-secondary/5 rounded-full blur-3xl opacity-50 dark:opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute top-1/4 -left-1/4 w-[50rem] h-[50rem] bg-primary/10 rounded-full blur-[120px] opacity-30 animate-pulse" />
+                    <div className="absolute bottom-1/4 -right-1/4 w-[40rem] h-[40rem] bg-secondary/10 rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
                 </div>
 
                 <div className="flex-1 flex items-center justify-center section-padding relative z-10 w-full">
-                    <div className="container-custom max-w-3xl flex flex-col items-center justify-center text-center">
+                    <div className="container-custom max-w-4xl flex flex-col items-center justify-center text-center">
                         <div className="relative mb-12 group">
-                            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110 group-hover:scale-[1.60] transition-transform duration-700 opacity-60"></div>
-                            <div className="relative z-10 w-36 h-36 rounded-[2rem] bg-white/10 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-slate-800/60 shadow-[0_0_40px_rgba(0,0,0,0.1)] dark:shadow-[0_0_40px_rgba(0,0,0,0.3)] flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-primary/50 group-hover:bg-white/20 dark:group-hover:bg-slate-800/60">
-                                <Search size={64} className="text-primary/80 mb-2 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 drop-shadow-md" />
-                                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/10 to-transparent"></div>
-                                {/* Animated scanline */}
-                                <div className="absolute top-1/2 left-0 w-full h-[2px] bg-primary/50 blur-[1px] -translate-y-[4rem] group-hover:translate-y-[4rem] transition-transform duration-[1.5s] ease-in-out opacity-0 group-hover:opacity-100"></div>
+                            {/* Animated Scanner Aura */}
+                            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110 group-hover:scale-[1.8] transition-transform duration-1000 opacity-60"></div>
+
+                            <div className="relative z-10 w-44 h-44 rounded-[2.5rem] bg-slate-900/80 backdrop-blur-2xl border-2 border-white/10 shadow-2xl flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:border-primary/50">
+                                <Search size={80} className="text-primary/80 relative z-10 group-hover:scale-110 transition-transform duration-700" />
+
+                                {/* Moving Scanline */}
+                                <div className="absolute top-0 left-0 w-full h-[3px] bg-primary shadow-[0_0_15px_rgba(59,130,246,0.8)] z-20 animate-scanline"></div>
+
+                                {/* Classified UI Decoration */}
+                                <div className="absolute top-4 left-4 text-[8px] font-mono opacity-40 text-primary uppercase">Auth_Level: 0</div>
+                                <div className="absolute bottom-4 right-4 text-[8px] font-mono opacity-40 text-primary uppercase">Status: Missing</div>
                             </div>
                         </div>
 
-                        <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter gradient-text drop-shadow-lg">
+                        <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase italic italic-gradient drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                             Projeto Classificado
                         </h2>
 
-                        <p className="text-xl md:text-2xl text-muted-foreground/90 mb-12 leading-relaxed max-w-2xl drop-shadow-sm font-medium">
-                            Você tentou acessar um projeto ultra-secreto ou que foi realocado para outra dimensão 🚀.<br /> <span className="opacity-70 text-lg">Acesso negado.</span>
+                        <p className="text-xl md:text-2xl text-slate-400 mb-12 leading-relaxed max-w-2xl font-medium">
+                            Você tentou acessar um documento ultra-secreto ou que foi realocado para outra dimensão 🚀.<br />
+                            <span className="text-primary font-black tracking-widest uppercase text-sm mt-4 inline-block px-4 py-1 border border-primary/30 rounded-md bg-primary/5">Acesso negado: 404_NOT_FOUND</span>
                         </p>
 
-                        <div className="w-full max-w-[280px] mx-auto">
-                            <GalaxyButton href="/projects" text="Voltar aos Projetos" />
+                        <div className="w-full max-w-[300px] mx-auto scale-110">
+                            <GalaxyButton href="/projects" text="Retornar aos Projetos" />
                         </div>
                     </div>
                 </div>
+
+                <style>{`
+                    .italic-gradient {
+                        background: linear-gradient(to bottom, #fff 30%, #64748b 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                    @keyframes scanline {
+                        0% { top: -10%; }
+                        100% { top: 110%; }
+                    }
+                    .animate-scanline {
+                        animation: scanline 2s linear infinite;
+                    }
+                `}</style>
 
                 <Footer />
             </div>

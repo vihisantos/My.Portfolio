@@ -23,6 +23,7 @@ const CapybaraHolding = lazy(() => import("./pages/CapybaraHolding"));
 const Sponsorship = lazy(() => import("./pages/Sponsorship"));
 const Documentation = lazy(() => import("./pages/Documentation"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const ServerError = lazy(() => import("./pages/ServerError"));
 
 import { HelmetProvider } from "react-helmet-async";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -64,6 +65,7 @@ function RootApp() {
                       <Route path="/capybara-holding" element={<CapybaraHolding />} />
                       <Route path="/sponsorship" element={<Sponsorship />} />
                       <Route path="/docs" element={<Documentation />} />
+                      <Route path="/500" element={<ServerError />} />
                       {/* ADICIONAR TODAS AS ROTAS PERSONALIZADAS ACIMA DA ROTA "CATCH-ALL" "*" */}
                       <Route path="*" element={<NotFound />} />
                     </Routes>
