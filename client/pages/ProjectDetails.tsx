@@ -33,61 +33,107 @@ export default function ProjectDetails() {
 
     if (!project) {
         return (
-            <div className="min-h-screen bg-slate-950 flex flex-col relative overflow-hidden text-white">
+            <div className="min-h-screen bg-black flex flex-col relative overflow-hidden text-white font-mono selection:bg-primary/30">
                 <Navigation />
 
-                {/* Cinematic Background */}
-                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                    <div className="absolute top-1/4 -left-1/4 w-[50rem] h-[50rem] bg-primary/10 rounded-full blur-[120px] opacity-30 animate-pulse" />
-                    <div className="absolute bottom-1/4 -right-1/4 w-[40rem] h-[40rem] bg-secondary/10 rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
-                </div>
+                {/* ADVANCED CINEMATIC OVERLAY */}
+                <div className="absolute inset-0 z-50 pointer-events-none border-[20px] md:border-[40px] border-black/80 mix-blend-multiply" />
+                <div className="absolute inset-0 z-40 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
 
-                <div className="flex-1 flex items-center justify-center section-padding relative z-10 w-full">
-                    <div className="container-custom max-w-4xl flex flex-col items-center justify-center text-center">
-                        <div className="relative mb-12 group">
-                            {/* Animated Scanner Aura */}
-                            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110 group-hover:scale-[1.8] transition-transform duration-1000 opacity-60"></div>
+                {/* LENS DISTORTION & SCANLINES */}
+                <div className="absolute inset-0 z-30 pointer-events-none opacity-20 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,118,0.06))] bg-[size:100%_4px,3px_100%]" />
 
-                            <div className="relative z-10 w-44 h-44 rounded-[2.5rem] bg-slate-900/80 backdrop-blur-2xl border-2 border-white/10 shadow-2xl flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:border-primary/50">
-                                <Search size={80} className="text-primary/80 relative z-10 group-hover:scale-110 transition-transform duration-700" />
-
-                                {/* Moving Scanline */}
-                                <div className="absolute top-0 left-0 w-full h-[3px] bg-primary shadow-[0_0_15px_rgba(59,130,246,0.8)] z-20 animate-scanline"></div>
-
-                                {/* Classified UI Decoration */}
-                                <div className="absolute top-4 left-4 text-[8px] font-mono opacity-40 text-primary uppercase">Auth_Level: 0</div>
-                                <div className="absolute bottom-4 right-4 text-[8px] font-mono opacity-40 text-primary uppercase">Status: Missing</div>
+                <div className="flex-1 flex items-center justify-center section-padding relative z-10 w-full overflow-hidden">
+                    {/* BACKGROUND DATA STREAM */}
+                    <div className="absolute inset-0 opacity-10 flex flex-wrap gap-4 p-4 text-[10px] overflow-hidden whitespace-nowrap select-none">
+                        {Array.from({ length: 40 }).map((_, i) => (
+                            <div key={i} className="animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}>
+                                0x{Math.random().toString(16).slice(2, 10).toUpperCase()} ERROR_SIG_LOST_V{i} [DECRYPTING...]
                             </div>
+                        ))}
+                    </div>
+
+                    <div className="container-custom max-w-5xl flex flex-col items-center justify-center text-center relative px-6">
+
+                        <div className="relative mb-16">
+                            {/* GLITCH BOX */}
+                            <div className="relative z-10 w-56 h-56 md:w-64 md:h-64 bg-slate-900/40 backdrop-blur-3xl border border-white/5 rounded-sm flex items-center justify-center group overflow-hidden shadow-[0_0_100px_rgba(59,130,246,0.1)] transition-transform duration-700 hover:scale-110">
+                                <Search size={100} className="text-white/10 group-hover:text-primary/40 transition-colors duration-1000" />
+
+                                {/* DYNAMIC SCANLINE */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-transparent h-20 -top-20 animate-v-scan" />
+
+                                {/* SECURITY CORNERS */}
+                                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-primary/50" />
+                                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-primary/50" />
+                                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-primary/50" />
+                                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-primary/50" />
+
+                                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.3em] font-black opacity-30 select-none text-primary">SECURE_LINK_BROKEN</div>
+                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[8px] font-mono opacity-20 text-white tracking-widest uppercase">Unauthorized Access Detected</div>
+                            </div>
+
+                            {/* RADAR DECORATION */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-primary/10 rounded-full animate-ping opacity-20" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-secondary/5 rounded-full animate-pulse opacity-10" />
                         </div>
 
-                        <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase italic italic-gradient drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                            Projeto Classificado
-                        </h2>
+                        <div className="space-y-8">
+                            <h2 className="text-6xl md:text-9xl font-black italic tracking-tighter uppercase glitch-text" data-text="PROJETO CLASSIFICADO">
+                                PROJETO CLASSIFICADO
+                            </h2>
 
-                        <p className="text-xl md:text-2xl text-slate-400 mb-12 leading-relaxed max-w-2xl font-medium">
-                            Você tentou acessar um documento ultra-secreto ou que foi realocado para outra dimensão 🚀.<br />
-                            <span className="text-primary font-black tracking-widest uppercase text-sm mt-4 inline-block px-4 py-1 border border-primary/30 rounded-md bg-primary/5">Acesso negado: 404_NOT_FOUND</span>
-                        </p>
+                            <div className="flex flex-col items-center gap-4">
+                                <p className="text-xl md:text-2xl text-slate-400 font-bold max-w-3xl leading-relaxed terminal-text italic">
+                                    // SINAL_INTERROMPIDO: O arquivo solicitado foi expurgado dos servidores centrais ou encontra-se em nível de sigilo 0.
+                                </p>
 
-                        <div className="w-full max-w-[300px] mx-auto scale-110">
-                            <GalaxyButton href="/projects" text="Retornar aos Projetos" />
+                                <div className="mt-4 flex items-center gap-6 text-[10px] md:text-xs font-black tracking-[0.5em] text-primary bg-primary/10 px-8 py-3 border-y border-primary/30 animate-pulse rounded-sm">
+                                    [ACESSO_NEGADO_IDENTIFICADO]
+                                </div>
+                            </div>
+
+                            <div className="pt-12 flex flex-col md:flex-row items-center justify-center gap-10 content-fade-in transition-all">
+                                <div className="scale-125 hover:scale-[1.35] transition-transform duration-500">
+                                    <GalaxyButton href="/projects" text="Retornar à Central" />
+                                </div>
+                                <Link
+                                    to="/contact"
+                                    className="text-white/40 hover:text-primary transition-all font-black text-xs uppercase tracking-widest border-b border-white/5 pb-2 hover:border-primary hover:tracking-[0.8em]"
+                                >
+                                    Solicitar Credenciais
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <style>{`
-                    .italic-gradient {
-                        background: linear-gradient(to bottom, #fff 30%, #64748b 100%);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                    .glitch-text {
+                        position: relative;
+                        color: white;
+                        text-shadow: 0.05em 0 0 #ff00ff, -0.025em -0.05em 0 #00ffff, 0.025em 0.05em 0 #ff0000;
+                        animation: glitch 1.5s infinite;
                     }
-                    @keyframes scanline {
-                        0% { top: -10%; }
-                        100% { top: 110%; }
+
+                    @keyframes glitch {
+                        0% { text-shadow: 0.05em 0 0 #ff00ff, -0.025em -0.05em 0 #00ffff, 0.025em 0.05em 0 #ff0000; transform: translate(0); }
+                        20% { text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff, -0.05em -0.05em 0 #ff0000; transform: translate(-2px, 2px); }
+                        40% { text-shadow: 0.05em 0 0 #ff00ff, -0.025em -0.05em 0 #00ffff, 0.025em 0.05em 0 #ff0000; transform: translate(2px, -2px); }
+                        60% { text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff, -0.05em -0.05em 0 #ff0000; transform: translate(-2px, -2px); }
+                        80% { text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff, 0.05em -0.05em 0 #ff0000; transform: translate(2px, 2px); }
+                        100% { text-shadow: -0.025em 0 0 #ff00ff, -0.025em -0.025em 0 #00ffff, -0.025em -0.05em 0 #ff0000; transform: translate(0); }
                     }
-                    .animate-scanline {
-                        animation: scanline 2s linear infinite;
+
+                    @keyframes v-scan {
+                        0% { top: -100%; }
+                        100% { top: 200%; }
+                    }
+                    .animate-v-scan {
+                        animation: v-scan 3s linear infinite;
+                    }
+                    .terminal-text {
+                        text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
                     }
                 `}</style>
 
