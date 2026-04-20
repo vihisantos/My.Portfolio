@@ -2,6 +2,8 @@ import { SEO } from "@/components/SEO";
 import { Navigation } from "@/components/Navigation";
 import { SectionDivider } from "@/components/SectionDivider";
 import { Playground } from "@/components/Playground";
+import { FigmaCard } from "@/components/ui-library/FigmaCard";
+import { HolographicCard } from "@/components/HolographicCard";
 import { Footer } from "@/components/Footer";
 import { TechStack } from "@/components/TechStack";
 // import { technologies } from "@/components/TechStack";
@@ -283,75 +285,77 @@ export default function Index() {
 
               return (
                 <ScrollFadeIn key={project.id} delay={delay}>
-                  <div
-                    onClick={() => handleProjectClick(project)}
-                    className="group bg-white dark:bg-slate-950/50 rounded-2xl overflow-hidden border border-border hover:border-primary/50 smooth-transition cursor-pointer hover:shadow-xl hover:-translate-y-2 h-full flex flex-col"
-                  >
-                    <div className="relative aspect-video overflow-hidden">
-                      <div className="absolute inset-0 bg-primary/20 group-hover:opacity-0 smooth-transition z-10" />
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        loading="lazy"
-                      />
-                      <div className="absolute top-4 right-4 z-20">
-                        {project.badgeType === 'sale' ? (
-                          <span className="bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-emerald-400 shadow-lg shadow-emerald-500/20 uppercase tracking-wider">
-                            {project.badge}
-                          </span>
-                        ) : project.badgeType === 'new' ? (
-                          <span className="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-blue-400 shadow-lg shadow-blue-500/20 uppercase tracking-wider">
-                            {t('uiLibrary.newFreeApp')}
-                          </span>
-                        ) : (
-                          <span className="bg-background/80 backdrop-blur-sm text-foreground text-xs font-bold px-3 py-1 rounded-full border border-border">
-                            {project.badge || project.technologies[0]}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="p-6 flex-1 flex flex-col">
-                      <div className="flex justify-between items-start mb-4">
-                        <h3 className="text-xl font-bold group-hover:text-primary smooth-transition line-clamp-1">
-                          {project.title}
-                        </h3>
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary smooth-transition"
-                        >
-                          <Zap size={18} />
-                        </a>
+                  <HolographicCard>
+                    <div
+                      onClick={() => handleProjectClick(project)}
+                      className="group bg-white dark:bg-slate-950/50 rounded-2xl overflow-hidden border border-border hover:border-primary/50 smooth-transition cursor-pointer hover:shadow-xl h-full flex flex-col"
+                    >
+                      <div className="relative aspect-video overflow-hidden">
+                        <div className="absolute inset-0 bg-primary/20 group-hover:opacity-0 smooth-transition z-10" />
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-4 right-4 z-20">
+                          {project.badgeType === 'sale' ? (
+                            <span className="bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-emerald-400 shadow-lg shadow-emerald-500/20 uppercase tracking-wider">
+                              {project.badge}
+                            </span>
+                          ) : project.badgeType === 'new' ? (
+                            <span className="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-blue-400 shadow-lg shadow-blue-500/20 uppercase tracking-wider">
+                              {t('uiLibrary.newFreeApp')}
+                            </span>
+                          ) : (
+                            <span className="bg-background/80 backdrop-blur-sm text-foreground text-xs font-bold px-3 py-1 rounded-full border border-border">
+                              {project.badge || project.technologies[0]}
+                            </span>
+                          )}
+                        </div>
                       </div>
 
-                      <p className="text-muted-foreground text-sm mb-6 line-clamp-3 flex-1">
-                        {project.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2 mt-auto">
-                        {project.technologies.slice(0, 3).map((tech: string) => (
-                          <span
-                            key={tech}
-                            className="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-md font-medium"
+                      <div className="p-6 flex-1 flex flex-col">
+                        <div className="flex justify-between items-start mb-4">
+                          <h3 className="text-xl font-bold group-hover:text-primary smooth-transition line-clamp-1 relative z-20">
+                            {project.title}
+                          </h3>
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary smooth-transition relative z-20"
                           >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                            <Zap size={18} />
+                          </a>
+                        </div>
 
-                      <div className="mt-4 opacity-0 group-hover:opacity-100 smooth-transition">
-                        <div
-                          className="text-sm font-semibold text-primary flex items-center gap-1"
-                        >
-                          {t('projects.viewProject')} <ArrowRight size={14} />
+                        <p className="text-muted-foreground text-sm mb-6 line-clamp-3 flex-1 relative z-20">
+                          {project.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mt-auto relative z-20">
+                          {project.technologies.slice(0, 3).map((tech: string) => (
+                            <span
+                              key={tech}
+                              className="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-md font-medium"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="mt-4 opacity-0 group-hover:opacity-100 smooth-transition relative z-20">
+                          <div
+                            className="text-sm font-semibold text-primary flex items-center gap-1"
+                          >
+                            {t('projects.viewProject')} <ArrowRight size={14} />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </HolographicCard>
                 </ScrollFadeIn>
               );
             })}

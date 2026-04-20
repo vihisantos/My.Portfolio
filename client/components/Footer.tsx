@@ -112,7 +112,18 @@ export function Footer() {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>&copy; {currentYear} {t('footer.rights')}</p>
-            <p>{t('footer.crafted')}</p>
+            <div className="flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity">
+              <span className="text-[10px] uppercase tracking-tighter text-slate-500 font-bold">Developed by</span>
+              <a 
+                href="https://github.com/vihisantos" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="glitch-text font-black text-primary tracking-tight"
+                data-text="Capybara Holding"
+              >
+                Capybara Holding
+              </a>
+            </div>
           </div>
         </div>
       </div>

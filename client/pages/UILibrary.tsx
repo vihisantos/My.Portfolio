@@ -249,6 +249,7 @@ import InputDemoCode from "@/components/ui-library/InputDemo.tsx?raw";
 import NeonGradientCardCode from "@/components/ui-library/NeonGradientCard.tsx?raw";
 import ExplosiveGrowthCardCode from "@/components/ui-library/ExplosiveGrowthCard.tsx?raw";
 import GlassCardCode from "@/components/ui-library/GlassCard.tsx?raw";
+import FigmaCardCode from "@/components/ui-library/FigmaCard.tsx?raw";
 import RecipeCardCode from "@/components/ui-library/RecipeCard.tsx?raw";
 import NumberCardCode from "@/components/ui-library/NumberCard.tsx?raw";
 import EthereumCardCode from "@/components/ui-library/EthereumCard.tsx?raw";
@@ -264,6 +265,7 @@ import { MagicBentoContent } from "@/components/ui-library/MagicBentoContent";
 import { TiltCardContent } from "@/components/ui-library/TiltCardContent";
 import { CodeEditorCardContent } from "@/components/ui-library/CodeEditorCardContent";
 import { GlassCardContent } from "@/components/ui-library/GlassCardContent";
+import { FigmaCard, FigmaCardContent } from "@/components/ui-library/FigmaCard";
 import { RecipeCardContent } from "@/components/ui-library/RecipeCardContent";
 import { NumberCardContent } from "@/components/ui-library/NumberCardContent";
 import { EthereumCardContent } from "@/components/ui-library/EthereumCardContent";
@@ -273,9 +275,15 @@ import { TooltipContent } from "@/components/ui-library/TooltipContent";
 import { GlassIconsContent } from "@/components/ui-library/GlassIconsContent";
 import { MapLocationTooltipContent } from "@/components/ui-library/MapLocationTooltipContent";
 import { GlitchTextContent } from "@/components/ui-library/GlitchTextContent";
+import { BasicIconKit, BasicIconKitContent } from "@/components/ui-library/BasicIconKit";
+import BasicIconKitCode from "@/components/ui-library/BasicIconKit.tsx?raw";
+import { SocialIconKit, SocialIconKitContent } from "@/components/ui-library/SocialIconKit";
+import SocialIconKitCode from "@/components/ui-library/SocialIconKit.tsx?raw";
+import { FrontendTechKit, BackendTechKit, DatabaseTechKit } from "@/components/ui-library/TechStackIconKits";
+import TechStackIconKitsCode from "@/components/ui-library/TechStackIconKits.tsx?raw";
 
 
-const categories = ["All", "Buttons", "Loaders", "Inputs", "Cards", "Text", "Tooltips"];
+const categories = ["All", "Buttons", "Loaders", "Inputs", "Cards", "Text", "Tooltips", "Icons"];
 
 import { CarLoaderContent } from "@/components/ui-library/CarLoader";
 import { HamsterLoaderContent } from "@/components/ui-library/HamsterLoader";
@@ -398,10 +406,11 @@ const _components = [
     { id: "neon_gradient_card", category: "Cards", code: NeonGradientCardCode, component: <NeonGradientCard /> },
     { id: "explosive_growth", category: "Cards", code: ExplosiveGrowthCardCode, component: <ExplosiveGrowthCard /> },
     { id: "glass_card", category: "Cards", code: GlassCardCode, component: <GlassCard /> },
+    { id: "figma_card", category: "Cards", size: "large", code: FigmaCardCode, component: <FigmaCard /> },
     { id: "recipe_card", category: "Cards", code: RecipeCardCode, component: <RecipeCard /> },
     { id: "number_card", category: "Cards", code: NumberCardCode, component: <NumberCard /> },
     { id: "ethereum_card", category: "Cards", code: EthereumCardCode, component: <EthereumCard /> },
-    { id: "gradient_pricing", category: "Cards", code: GradientPricingCardCode, component: <GradientPricingCard /> },
+    { id: "gradient_pricing", category: "Cards", size: "large", code: GradientPricingCardCode, component: <GradientPricingCard /> },
     // { id: "matrix_cube", category: "Cards", code: MatrixCubeCode, component: <MatrixCube /> },
 
     // --- TEXTO & TOOLTIPS ---
@@ -410,6 +419,13 @@ const _components = [
     { id: "map_tooltip", category: "Tooltips", code: MapLocationTooltipCode, component: <MapLocationTooltip /> },
     { id: "glitch_text", category: "Text", size: "medium", code: GlitchTextCode, component: <GlitchText text="Vitor's Lab" /> },
     { id: "star_rating", category: "Text", code: StarRatingCode, component: <StarRating /> },
+    
+    // --- ICON KITS ---
+    { id: "basic_icon_kit", category: "Icons", size: "large", code: BasicIconKitCode, component: <BasicIconKit /> },
+    { id: "social_icon_kit", category: "Icons", size: "large", code: SocialIconKitCode, component: <SocialIconKit /> },
+    { id: "tech_frontend_kit", category: "Icons", size: "large", code: TechStackIconKitsCode, component: <FrontendTechKit /> },
+    { id: "tech_backend_kit", category: "Icons", size: "large", code: TechStackIconKitsCode, component: <BackendTechKit /> },
+    { id: "tech_database_kit", category: "Icons", size: "large", code: TechStackIconKitsCode, component: <DatabaseTechKit /> },
 ];
 
 
@@ -522,7 +538,7 @@ const components: any[] = [
     { id: "scroll_down", category: "Buttons", code: ScrollDownButtonCode, component: <ScrollDownButtonContent /> },
 
     // --- NEW BLOCK M (rows 33-34): 2 small + large + 2 small ---
-    { id: "gradient_pricing", category: "Cards", code: GradientPricingCardCode, component: <GradientPricingCardContent /> },
+    { id: "gradient_pricing", category: "Cards", size: "large", code: GradientPricingCardCode, component: <GradientPricingCardContent /> },
     { id: "tooltip_basic", category: "Tooltips", code: TooltipBasicCode, component: <TooltipContent text="Magic Lab Tooltip" /> },
     { id: "glass_icons", category: "Text", size: "large", code: GlassIconsCode, component: <GlassIconsContent /> },
     { id: "map_tooltip", category: "Tooltips", code: MapLocationTooltipCode, component: <MapLocationTooltipContent /> },
@@ -534,10 +550,18 @@ const components: any[] = [
 
     // --- NEW BLOCK O (rows 37-38): 2 small + large + 2 small ---
     { id: "glass_card", category: "Cards", code: GlassCardCode, component: <GlassCardContent /> },
+    { id: "figma_card", category: "Cards", size: "large", code: FigmaCardCode, component: <FigmaCardContent /> },
     { id: "recipe_card", category: "Cards", code: RecipeCardCode, component: <RecipeCardContent /> },
     { id: "glitch_text", category: "Text", size: "large", code: GlitchTextCode, component: <GlitchTextContent text="Vitor's Lab" /> },
     { id: "number_card", category: "Cards", code: NumberCardCode, component: <NumberCardContent /> },
     { id: "ethereum_card", category: "Cards", code: EthereumCardCode, component: <EthereumCardContent /> },
+    
+    // --- NEW BLOCK P (Icons category only) ---
+    { id: "basic_icon_kit", category: "Icons", size: "large", code: BasicIconKitCode, component: <BasicIconKitContent /> },
+    { id: "social_icon_kit", category: "Icons", size: "large", code: SocialIconKitCode, component: <SocialIconKitContent /> },
+    { id: "tech_frontend_kit", category: "Icons", size: "large", code: TechStackIconKitsCode, component: <FrontendTechKit /> },
+    { id: "tech_backend_kit", category: "Icons", size: "large", code: TechStackIconKitsCode, component: <BackendTechKit /> },
+    { id: "tech_database_kit", category: "Icons", size: "large", code: TechStackIconKitsCode, component: <DatabaseTechKit /> },
 ];
 
 export default function UILibrary() {
@@ -546,7 +570,7 @@ export default function UILibrary() {
     console.log(_components); // Keep imports used
 
     const featuredComponent = components.find(c => c.featured);
-    const otherComponents = components.filter(c => !c.featured && (activeCategory === "All" || c.category === activeCategory));
+    const otherComponents = components.filter(c => !c.featured && ((activeCategory === "All" && c.category !== "Icons") || c.category === activeCategory));
 
     return (
         <div className="min-h-screen bg-background font-sans relative overflow-hidden">

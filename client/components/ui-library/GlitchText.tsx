@@ -85,7 +85,7 @@ const GlitchText = ({ text = "CYBERPUNK", className = "" }: { text?: string, cla
 export default GlitchText;
 `;
 
-export function GlitchText({ text = "ERROR", className = "" }: { text?: string, className?: string }) {
+export function GlitchText({ text = "ERROR", className = "" }: { text?: string; className?: string }) {
   return (
     <ComponentShowcase title="Glitch Text" code={code} className={`flex justify-center items-center bg-[#111] min-h-[400px] ${className}`}>
       <GlitchTextContent text={text} />

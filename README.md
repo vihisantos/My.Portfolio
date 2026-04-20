@@ -1,60 +1,56 @@
-# Portfolio | Vitor.dev
+# CAPYBARA HOLDING | The Vision 🐊
 
-Bem-vindo ao repositório do meu portfólio profissional! Este projeto foi desenvolvido para demonstrar minhas habilidades técnicas como desenvolvedor full-stack, apresentando uma interface moderna, interativa e de alta fidelidade.
+> "Engineering the pulse of the digital ecosystem. Preserving quality, accelerating innovation."
 
-![Vitor.dev Banner](public/logo.png)
-
-## 🔗 Link Direto
-Acesse o site online aqui: **[https://vihisantos.github.io/My.Portfolio/](https://vihisantos.github.io/My.Portfolio/)**
-
-📚 **Documentação Online:** Você também pode ler esta documentação formatada diretamente no site em: [https://vihisantos.github.io/My.Portfolio/docs](https://vihisantos.github.io/My.Portfolio/docs)
+Welcome to the central vision repository of **Capybara Holding**. This is not just a codebase; it is the manifestation of a premium digital strategy centered around high-fidelity engineering, visionary design, and consistent excellence.
 
 ---
 
-- **🎨 Design Moderno & Premium**: Interface construída com **React 18** e **TailwindCSS**, focada em estética de alta fidelidade e experiência do usuário (UX).
-- **🐊 Capybara Holding**: Nova seção institucional integrando projetos de todas as verticais (Commerce, Education, Creative).
-- **📺 Mizin Youtube App**: Nova ferramenta desktop para download de vídeos, integrada com modal exclusivo e instruções de uso.
-- **💚 Sponsorship System**: Sistema completo de apoiadores com integração de pagamentos e mural da fama dinâmico.
-- **🛍️ Portfolio as a Product (SaaP)**: O template do portfólio foi transformado em um produto comercial, pronto para venda e customização.
-- **✨ Transições Globais**: Sistema de carregamento fluido com animações personalizadas em todas as trocas de página.
-- **📱 Responsivo & Otimizado**: Adaptado para qualquer dispositivo e livre de "resíduos" de código (codebase auditada).
-- **🛠️ UI Library**: Uma galeria exclusiva de componentes interativos e animados (loaders, botões, switches).
-- **🌍 Internacionalização**: Suporte completo a **Português (PT)** e **Inglês (EN)**.
-- **⚡ Performance SPA**: Navegação ultra rápida usando **React Router 6** com **Lazy Loading** e **Code Splitting**.
-- **🔍 SEO Ready**: Meta tags dinâmicas e suporte a redes sociais (Open Graph) em todas as páginas.
-- **♿ Acessível**: Componentes otimizados para leitores de tela e navegação por teclado.
+## 💎 Core Values (P0 Principles)
 
-## 🛠️ Tech Stack
+### 1. Soul & Preservation
+We believe digital products should have a soul. We preserve "delighters"—those small, premium details that make a user smile—and ensure that performance NEVER comes at the cost of aesthetics.
 
-### Frontend
-- **React 18 + TypeScript**
-- **Vite** (Build tool)
-- **TailwindCSS** (Estilização)
-- **Framer Motion** (Animações complexas)
-- **Lucide React** (Ícones)
-- **Radix UI** (Componentes acessíveis)
+### 2. Radical Transparency
+Every architectural decision is documented with intent. We don't just write code; we architect solutions that are self-explanatory and robust.
 
-### Backend (Serverless Ready)
-- **Express / Node.js** (API integrada)
-- **Netlify Functions** (Pronto para ambiente cloud)
+### 3. Global Compliance
+Our branding is our promise. From the exact glitch-ratio in our footer to the HSL tokens in our design system, every pixel reflects the Holding's global standards.
 
 ---
 
+## 🚀 The Portfolio Ecosystem
 
+This repository serves as the flagship demonstration of our technical "Tech Stack Kit", featuring:
 
-## 📁 Estrutura do Projeto
-
-- `client/`: Todo o código do frontend (Páginas, Componentes, Estilos).
-- `server/`: Backend Express para lógica de servidor e rotas de API.
-- `shared/`: Tipos e interfaces compartilhadas entre cliente e servidor.
-- `public/`: Ativos estáticos como o Favicon e robos.txt.
+- **✨ Magic Lab Components**: A UI library of premium, semi-transparent, and high-performance components.
+- **⚡ SVG Morphing Architecture**: Advanced micro-interactions that bridge the gap between static icons and interactive experiences.
+- **🌍 Adaptive Brand Intelligence**: Real-time context-aware feedback systems for modern web interactions.
 
 ---
 
-## 📄 Licença
+## 🛠️ The Holding's Arsenal
 
-**© 2026 Vitor Santos. Todos os direitos reservados.**
+### Frontend Mastery
+- **React 18 Architecture** (Concurrent Mode Ready)
+- **Tailwind v4 (Experimental)** / Premium Vanilla CSS
+- **Framer Motion** (Physical transitions & path morphing)
 
-Este repositório existe exclusivamente para fins de demonstração de portfólio. O código-fonte, design e ativos **não são de código aberto**. É proibida a cópia, redistribuição ou uso de qualquer parte deste projeto para fins comerciais ou pessoais sem autorização prévia.
+### Backend Engineering
+- **Edge-Ready Node.js**
+- **Distributed Security Protocols**
+- **Netlify & Supabase Cloud Native**
 
-Desenvolvido por [Vitor Santos](https://github.com/vihisantos).
+---
+
+## 📄 Intellectual Property & Compliance
+
+**© 2026 Capybara Holding. All Rights Reserved.**
+
+This repository is a proprietary demonstration of the Holding's capabilities. 
+Usage, modification, or redistribution of these patterns is strictly governed by the Holding's commercial statutes.
+
+---
+
+**"The future is built on precision. We are the architects."**
+— *Capybara Holding Visionary Team*

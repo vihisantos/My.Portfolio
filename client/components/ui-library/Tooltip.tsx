@@ -90,10 +90,10 @@ const Tooltip = () => {
 
 export default Tooltip;
 `;
-export function Tooltip() {
+export function Tooltip({ text = "FAQ Tooltip" }: { text?: string }) {
   return (
     <ComponentShowcase title="FAQ Tooltip" code={code} className="min-h-[150px] flex items-center justify-center">
-      <TooltipContent />
+      <TooltipContent text={text} />
     </ComponentShowcase>
   );
 }

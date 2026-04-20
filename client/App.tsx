@@ -43,17 +43,34 @@ function RootApp() {
     }
   }, []);
 
+  useEffect(() => {
+    let originalTitle = document.title;
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (document.title !== "eii, volta aqui... 💤") {
+          originalTitle = document.title;
+        }
+        document.title = "eii, volta aqui... 💤";
+      } else {
+        document.title = originalTitle;
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <ErrorBoundary>
-        <HelmetProvider>
-          <TooltipProvider>
-            <LanguageProvider>
-              <ScrollProgress />
-              <BackToTop />
-              <Toaster />
-              <Sonner />
-              <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <HelmetProvider>
+        <TooltipProvider>
+          <LanguageProvider>
+            <BrowserRouter basename={import.meta.env.BASE_URL}>
+              <ErrorBoundary>
+                <ScrollProgress />
+                <BackToTop />
+                <Toaster />
+                <Sonner />
                 <CommandBar />
                 <PageLoadingWrapper>
                   <Suspense fallback={<Loader />}>
@@ -71,11 +88,11 @@ function RootApp() {
                     </Routes>
                   </Suspense>
                 </PageLoadingWrapper>
-              </BrowserRouter>
-            </LanguageProvider>
-          </TooltipProvider>
-        </HelmetProvider>
-      </ErrorBoundary>
+              </ErrorBoundary>
+            </BrowserRouter>
+          </LanguageProvider>
+        </TooltipProvider>
+      </HelmetProvider>
     </QueryClientProvider>
   );
 }
