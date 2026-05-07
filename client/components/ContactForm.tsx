@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, MessageSquare, User } from 'lucide-react';
+import { trackFormSubmission } from '@/lib/analytics';
 
 interface FormData {
   name: string;
@@ -45,6 +46,7 @@ export function ContactForm() {
         setStatus('success');
         setMessage(t('contactForm.success'));
         setFormData({ name: '', email: '', message: '' });
+        trackFormSubmission("contact", true);
 
         setTimeout(() => {
           setStatus('idle');
@@ -56,6 +58,7 @@ export function ContactForm() {
     } catch (error) {
       setStatus('error');
       setMessage(t('contactForm.error'));
+      trackFormSubmission("contact", false);
 
       setTimeout(() => {
         setStatus('idle');

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Language, getTranslation } from '@/lib/i18n';
+import { trackLanguageChange } from '@/lib/analytics';
 
 interface LanguageContextType {
   language: Language;
@@ -28,6 +29,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
+    trackLanguageChange(lang);
   };
 
   const t = (key: string): string => {

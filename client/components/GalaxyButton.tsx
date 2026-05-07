@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { trackExternalLink } from '@/lib/analytics';
 
 interface GalaxyButtonProps {
   href: string;
@@ -276,7 +277,7 @@ const GalaxyButton = ({ href, text, download }: GalaxyButtonProps) => {
       </style>
 
       {download || href.startsWith('http') ? (
-        <a href={href} download={download} className="no-underline block w-full">
+        <a href={href} download={download} className="no-underline block w-full" onClick={() => href.startsWith('http') && trackExternalLink(href, text)}>
           <div className="uiverse w-full">
             <div className="wrapper">
               <span>{text}</span>

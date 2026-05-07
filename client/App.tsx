@@ -5,7 +5,7 @@ import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackToTop } from "@/components/BackToTop";
@@ -13,6 +13,7 @@ import { PageLoadingWrapper } from "@/components/PageLoadingWrapper";
 import { Loader } from "@/components/Loader";
 import { CommandBar } from "@/components/CommandBar";
 import { Suspense, lazy, useEffect } from "react";
+import { trackPageView, trackThemeChange } from "./lib/analytics";
 
 // Carregamento lento de páginas para desempenho
 const Index = lazy(() => import("./pages/Index"));
@@ -24,6 +25,16 @@ const Sponsorship = lazy(() => import("./pages/Sponsorship"));
 const Documentation = lazy(() => import("./pages/Documentation"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ServerError = lazy(() => import("./pages/ServerError"));
+
+function AnalyticsTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location]);
+
+  return null;
+}
 
 import { HelmetProvider } from "react-helmet-async";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -38,8 +49,10 @@ function RootApp() {
 
     if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
       document.documentElement.classList.add("dark");
+      trackThemeChange("dark");
     } else {
       document.documentElement.classList.remove("dark");
+      trackThemeChange("light");
     }
   }, []);
 
@@ -66,6 +79,7 @@ function RootApp() {
         <TooltipProvider>
           <LanguageProvider>
             <BrowserRouter basename={import.meta.env.BASE_URL}>
+              <AnalyticsTracker />
               <ErrorBoundary>
                 <ScrollProgress />
                 <BackToTop />

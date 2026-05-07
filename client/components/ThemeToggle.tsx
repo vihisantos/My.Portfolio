@@ -1,5 +1,6 @@
 import { Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { trackThemeChange } from '@/lib/analytics';
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
@@ -16,10 +17,12 @@ export function ThemeToggle() {
       html.classList.remove('dark');
       localStorage.setItem('theme', 'light');
       setIsDark(false);
+      trackThemeChange("light");
     } else {
       html.classList.add('dark');
       localStorage.setItem('theme', 'dark');
       setIsDark(true);
+      trackThemeChange("dark");
     }
   };
 

@@ -1,6 +1,7 @@
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
+import { trackExternalLink, trackSocialClick } from "@/lib/analytics";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -75,6 +76,7 @@ export function Footer() {
                 aria-label="Github"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackSocialClick("github")}
               >
                 <Github size={18} />
               </a>
@@ -84,6 +86,7 @@ export function Footer() {
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackSocialClick("linkedin")}
               >
                 <Linkedin size={18} />
               </a>
@@ -93,6 +96,7 @@ export function Footer() {
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackSocialClick("instagram")}
               >
                 <svg fillRule="nonzero" height="18px" width="18px" viewBox="0,0,256,256" xmlns="http://www.w3.org/2000/svg" className="fill-current">
                   <g transform="scale(8,8)">

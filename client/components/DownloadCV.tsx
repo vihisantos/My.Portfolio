@@ -4,6 +4,7 @@ import { jsPDF } from 'jspdf';
 import { timelineData } from './Timeline';
 import { translations } from '@/lib/i18n';
 import { useState } from 'react';
+import { trackDownload } from '@/lib/analytics';
 
 // Profile picture from Index.tsx
 const PROFILE_URL = "https://cdn.builder.io/api/v1/image/assets%2Fcc7241044f564726a1519da181bd3eaa%2F5c680c48aefc4fabb891e721833c1d9e?format=jpeg&width=800";
@@ -226,6 +227,7 @@ export function DownloadCV() {
       });
 
       doc.save(`Vitor_Santos_${language === 'pt' ? 'Curriculo' : 'CV'}.pdf`);
+      trackDownload("cv");
     } catch (error) {
       console.error("Error generating PDF:", error);
       alert("Error generating PDF. Please try again.");
