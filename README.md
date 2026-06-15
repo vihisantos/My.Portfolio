@@ -1,9 +1,5 @@
 
-<h1 align="center">
-  <strong>Capybara Holding</strong>
-  <br>
-  <sub>Portfolio & Ecosystem</sub>
-</h1>
+# Capybara Holding — Portfolio
 
 <p align="center">
   <strong>Engineering the pulse of the digital ecosystem.</strong>
@@ -27,7 +23,7 @@
 
 ## Sobre
 
-Este repositorio e o portfolio旗舰 da Capybara Holding, uma iniciativa que reune produtos digitais de alto nivel — de plataformas educacionais gamificadas a ferramentas de inteligencia de cores, aplicacoes desktop e componentes de UI premium.
+Este repositorio e o portfolio flagship da Capybara Holding, uma iniciativa que reune produtos digitais de alto nivel — de plataformas educacionais gamificadas a ferramentas de inteligencia de cores, aplicacoes desktop e componentes de UI premium.
 
 Cada projeto aqui reflete os principios da Holding: engenharia precisa, design com alma e experiencia do usuario impecavel.
 
@@ -80,7 +76,6 @@ Cada projeto aqui reflete os principios da Holding: engenharia precisa, design c
 | **Netlify** | Deploy e hosting |
 | **Docker** | Containerizacao |
 | **Vitest** | Testes unitarios |
-| **Vitest** | Testes unitarios |
 | **Prettier** | Formatacao de codigo |
 | **pnpm** | Gerenciador de pacotes |
 
@@ -109,25 +104,25 @@ Aplicacao desktop para download de audio/video do YouTube.
 
 ```
 My.Portfolio/
-├── client/                 # Frontend React SPA
-│   ├── pages/              # Componentes de rota
-│   ├── components/         # Componentes reutilizaveis
-│   │   └── ui/             # Biblioteca de componentes Radix UI
-│   ├── contexts/           # Contextos React (ThemeContext)
-│   ├── hooks/              # Custom hooks
-│   ├── lib/                # Utilitarios e servicos
-│   ├── data/               # Dados estaticos
-│   ├── assets/             # Imagens e assets bundlados
-│   ├── App.tsx             # Entry point + rotas
-│   └── global.css          # Tema Tailwind e estilos globais
-├── server/                 # Backend API Express
-│   ├── index.ts            # Configuracao do servidor
-│   ├── routes/             # Manipuladores de API
-│   └── node-build.ts       # Build para producao
-├── shared/                 # Tipos compartilhados
-│   └── api.ts              # Interfaces de API
-├── public/                 # Assets estaticos
-└── dist/                   # Build de producao
+  client/                  Frontend React SPA
+    pages/                 Componentes de rota
+    components/            Componentes reutilizaveis
+      ui/                  Biblioteca de componentes Radix UI
+    contexts/              Contextos React (ThemeContext)
+    hooks/                 Custom hooks
+    lib/                   Utilitarios e servicos
+    data/                  Dados estaticos
+    assets/                Imagens e assets bundlados
+    App.tsx                Entry point + rotas
+    global.css             Tema Tailwind e estilos globais
+  server/                  Backend API Express
+    index.ts               Configuracao do servidor
+    routes/                Manipuladores de API
+    node-build.ts          Build para producao
+  shared/                  Tipos compartilhados
+    api.ts                 Interfaces de API
+  public/                  Assets estaticos
+  dist/                    Build de producao
 ```
 
 ---
@@ -150,21 +145,19 @@ Desenvolvimento em porta unica (8080) com integracao Vite + Express, hot reload 
 
 ## Componentes de Destaque
 
-- **FunMetrics** &mdash; Dashboard animado com estatisticas (Cafe, Codigo, Bugs)
-- **SpotifyWidget** &mdash; Player de musica simulado com playlist interna e visualizador de audio
-- **Interactive Playground** &mdash; Area com fisica de icones arrastaveis (framer-motion)
-- **Timeline Expandida** &mdash; Linha do tempo com multiplos tipos de eventos (Educacao, Trabalho, Livros)
-- **PageLoadingWrapper** &mdash; Transicoes suaves entre rotas com loader animado
-- **Sponsorship System** &mdash; Sistema de patrocinio com 3 tiers e Wall of Fame
-- **Capybara Holding Page** &mdash; Pagina institucional com visao, missao e servicos
+- **FunMetrics** — Dashboard animado com estatisticas (Cafe, Codigo, Bugs)
+- **SpotifyWidget** — Player de musica simulado com playlist interna e visualizador de audio
+- **Interactive Playground** — Area com fisica de icones arrastaveis (framer-motion)
+- **Timeline Expandida** — Linha do tempo com multiplos tipos de eventos (Educacao, Trabalho, Livros)
+- **PageLoadingWrapper** — Transicoes suaves entre rotas com loader animado
+- **Sponsorship System** — Sistema de patrocinio com 3 tiers e Wall of Fame
+- **Capybara Holding Page** — Pagina institucional com visao, missao e servicos
 
 ---
 
 <p align="center">
   <br>
-  <sub>
-    Desenvolvido por <a href="https://capybaraholding.com.br" target="_blank"><strong>Capybara Holding</strong></a>
-  </sub>
+  <sub>Desenvolvido por <a href="https://capybaraholding.com.br" target="_blank"><strong>Capybara Holding</strong></a></sub>
   <br>
   <sub>&copy; 2026 Capybara Holding. Todos os direitos reservados.</sub>
 </p>
