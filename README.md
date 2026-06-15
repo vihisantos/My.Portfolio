@@ -1,56 +1,170 @@
-# CAPYBARA HOLDING | The Vision 🐊
 
-> "Engineering the pulse of the digital ecosystem. Preserving quality, accelerating innovation."
+<h1 align="center">
+  <strong>Capybara Holding</strong>
+  <br>
+  <sub>Portfolio & Ecosystem</sub>
+</h1>
 
-Welcome to the central vision repository of **Capybara Holding**. This is not just a codebase; it is the manifestation of a premium digital strategy centered around high-fidelity engineering, visionary design, and consistent excellence.
+<p align="center">
+  <strong>Engineering the pulse of the digital ecosystem.</strong>
+  <br>
+  Portfolio oficial da Capybara Holding — uma vitrine de engenharia premium,
+  <br>
+  design de alta fidelidade e produtos digitais com alma.
+</p>
 
----
-
-## 💎 Core Values (P0 Principles)
-
-### 1. Soul & Preservation
-We believe digital products should have a soul. We preserve "delighters"—those small, premium details that make a user smile—and ensure that performance NEVER comes at the cost of aesthetics.
-
-### 2. Radical Transparency
-Every architectural decision is documented with intent. We don't just write code; we architect solutions that are self-explanatory and robust.
-
-### 3. Global Compliance
-Our branding is our promise. From the exact glitch-ratio in our footer to the HSL tokens in our design system, every pixel reflects the Holding's global standards.
-
----
-
-## 🚀 The Portfolio Ecosystem
-
-This repository serves as the flagship demonstration of our technical "Tech Stack Kit", featuring:
-
-- **✨ Magic Lab Components**: A UI library of premium, semi-transparent, and high-performance components.
-- **⚡ SVG Morphing Architecture**: Advanced micro-interactions that bridge the gap between static icons and interactive experiences.
-- **🌍 Adaptive Brand Intelligence**: Real-time context-aware feedback systems for modern web interactions.
+<p align="center">
+  <img src="https://img.shields.io/badge/React%2018-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express">
+  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js">
+  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify">
+</p>
 
 ---
 
-## 🛠️ The Holding's Arsenal
+## Sobre
 
-### Frontend Mastery
-- **React 18 Architecture** (Concurrent Mode Ready)
-- **Tailwind v4 (Experimental)** / Premium Vanilla CSS
-- **Framer Motion** (Physical transitions & path morphing)
+Este repositorio e o portfolio旗舰 da Capybara Holding, uma iniciativa que reune produtos digitais de alto nivel — de plataformas educacionais gamificadas a ferramentas de inteligencia de cores, aplicacoes desktop e componentes de UI premium.
 
-### Backend Engineering
-- **Edge-Ready Node.js**
-- **Distributed Security Protocols**
-- **Netlify & Supabase Cloud Native**
+Cada projeto aqui reflete os principios da Holding: engenharia precisa, design com alma e experiencia do usuario impecavel.
 
 ---
 
-## 📄 Intellectual Property & Compliance
+## Tech Stack
 
-**© 2026 Capybara Holding. All Rights Reserved.**
+### Frontend
 
-This repository is a proprietary demonstration of the Holding's capabilities. 
-Usage, modification, or redistribution of these patterns is strictly governed by the Holding's commercial statutes.
+| Tecnologia | Proposito |
+|---|---|
+| **React 18** | Biblioteca de interface |
+| **TypeScript** | Tipagem estatica em toda a codebase |
+| **Vite 7** | Build tool e dev server |
+| **React Router 6** | Roteamento SPA |
+| **Tailwind CSS 3** | Estilizacao utilitaria |
+| **Framer Motion** | Animacoes e transicoes fisicas |
+| **Radix UI** | Componentes primitivos acessiveis (Dialog, Dropdown, Tabs, Toast, etc.) |
+| **Three.js + React Three Fiber + Drei** | Renderizacao 3D interativa |
+| **GSAP** | Animacoes de alta performance |
+| **Lucide React** | Iconografia |
+| **React Helmet Async** | Gerenciamento de meta tags e SEO |
+| **Recharts** | Graficos e visualizacao de dados |
+| **React Hook Form + Zod** | Formularios e validacao |
+| **TanStack React Query** | Gerenciamento de estado servidor |
+| **Styled Components** | Estilizacao CSS-in-JS |
+| **Embla Carousel** | Carrossel performatico |
+| **Sonner** | Notificacoes toast |
+| **date-fns** | Manipulacao de datas |
+| **jsPDF** | Geracao de PDF |
+| **next-themes** | Tema dark/light |
+| **cmdk + vaul + input-otp + react-day-picker** | Componentes especializados |
+| **class-variance-authority + clsx + tailwind-merge** | Utilitarios de classe |
+
+### Backend (Integrado)
+
+| Tecnologia | Proposito |
+|---|---|
+| **Express 5** | Servidor HTTP |
+| **Helmet** | Seguranca (headers) |
+| **express-rate-limit** | Rate limiting |
+| **cors** | Cross-origin requests |
+| **dotenv** | Variaveis de ambiente |
+| **serverless-http** | Deploy serverless |
+
+### Infraestrutura & Ferramentas
+
+| Tecnologia | Proposito |
+|---|---|
+| **Netlify** | Deploy e hosting |
+| **Docker** | Containerizacao |
+| **Vitest** | Testes unitarios |
+| **Vitest** | Testes unitarios |
+| **Prettier** | Formatacao de codigo |
+| **pnpm** | Gerenciador de pacotes |
 
 ---
 
-**"The future is built on precision. We are the architects."**
-— *Capybara Holding Visionary Team*
+## Projetos no Portfolio
+
+### ColorFlicks
+Ferramenta cinematica de extracao de paletas de cores a partir de posters de filmes.
+- **Stack:** React 18, Vite, Tailwind CSS v4, ColorThief, TVMaze API
+- **Destaques:** Extracao client-side, suporte biligue (EN/PT), modo escuro/claro, compartilhamento social com html2canvas
+
+### CapyFlow Academy
+Plataforma de ensino gamificada focada em desenvolvimento de software.
+- **Stack:** Next.js 16, NestJS 11, TypeScript, Tailwind CSS v4, PostgreSQL, Firebase
+- **Destaques:** Editor Monaco ao vivo, autenticacao hibrida Firebase + JWT, sistema de XP e niveis
+
+### Mizin Youtube App
+Aplicacao desktop para download de audio/video do YouTube.
+- **Stack:** Python, CustomTkinter, yt-dlp
+- **Destaques:** Interface moderna, multiplas qualidades, modo portatil
+
+---
+
+## Estrutura do Projeto
+
+```
+My.Portfolio/
+├── client/                 # Frontend React SPA
+│   ├── pages/              # Componentes de rota
+│   ├── components/         # Componentes reutilizaveis
+│   │   └── ui/             # Biblioteca de componentes Radix UI
+│   ├── contexts/           # Contextos React (ThemeContext)
+│   ├── hooks/              # Custom hooks
+│   ├── lib/                # Utilitarios e servicos
+│   ├── data/               # Dados estaticos
+│   ├── assets/             # Imagens e assets bundlados
+│   ├── App.tsx             # Entry point + rotas
+│   └── global.css          # Tema Tailwind e estilos globais
+├── server/                 # Backend API Express
+│   ├── index.ts            # Configuracao do servidor
+│   ├── routes/             # Manipuladores de API
+│   └── node-build.ts       # Build para producao
+├── shared/                 # Tipos compartilhados
+│   └── api.ts              # Interfaces de API
+├── public/                 # Assets estaticos
+└── dist/                   # Build de producao
+```
+
+---
+
+## Arquitetura
+
+```
+[Cliente React SPA] ---- fetch /api/* ---- [Servidor Express]
+       |                                          |
+       | React Router 6                    Helmet + Rate Limit
+       | Framer Motion                     Rotas da API
+       | Radix UI + Tailwind               Tipos compartilhados
+       v                                          v
+[Netlify Deploy]                             [Serverless / Docker]
+```
+
+Desenvolvimento em porta unica (8080) com integracao Vite + Express, hot reload completo e tipos compartilhados entre frontend e backend via alias `@shared/*`.
+
+---
+
+## Componentes de Destaque
+
+- **FunMetrics** &mdash; Dashboard animado com estatisticas (Cafe, Codigo, Bugs)
+- **SpotifyWidget** &mdash; Player de musica simulado com playlist interna e visualizador de audio
+- **Interactive Playground** &mdash; Area com fisica de icones arrastaveis (framer-motion)
+- **Timeline Expandida** &mdash; Linha do tempo com multiplos tipos de eventos (Educacao, Trabalho, Livros)
+- **PageLoadingWrapper** &mdash; Transicoes suaves entre rotas com loader animado
+- **Sponsorship System** &mdash; Sistema de patrocinio com 3 tiers e Wall of Fame
+- **Capybara Holding Page** &mdash; Pagina institucional com visao, missao e servicos
+
+---
+
+<p align="center">
+  <br>
+  <sub>
+    Desenvolvido por <a href="https://capybaraholding.com.br" target="_blank"><strong>Capybara Holding</strong></a>
+  </sub>
+  <br>
+  <sub>&copy; 2026 Capybara Holding. Todos os direitos reservados.</sub>
+</p>
