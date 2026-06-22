@@ -78,8 +78,15 @@ export function Testimonials() {
           })}
         </div>
         {/* Client Testimonials */}
-        <div className="mt-12">
-          <h3 className="text-2xl font-bold text-center mb-6">{t('testimonials.clientSectionTitle') || 'Depoimentos'}</h3>
+        <div className="mt-16">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-primary font-medium tracking-wider uppercase text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+              {t('testimonials.clientSectionTitle') || 'Depoimentos'}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-800 to-slate-600 dark:from-white dark:to-slate-400">
+              {t('testimonials.clientSectionTitle') || 'Depoimentos'}
+            </h2>
+          </div>
           {testimonials.length > 0 && (
             testimonials.length > 3 ? (
               <Carousel className="w-full" opts={{ loop: false, dragFree: false }}>
