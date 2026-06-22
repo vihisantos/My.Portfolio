@@ -1,10 +1,10 @@
 
-# Capybara Holding - Portfolio
+# Capybara Holding — Portfolio
 
 <p align="center">
   <strong>Engineering the pulse of the digital ecosystem.</strong>
   <br>
-  Portfolio oficial da Capybara Holding - uma vitrine de engenharia premium,
+  Portfolio oficial da Capybara Holding — uma vitrine de engenharia premium,
   <br>
   design de alta fidelidade e produtos digitais com alma.
 </p>
@@ -23,7 +23,7 @@
 
 ## Sobre
 
-Este repositorio e o portfolio flagship da Capybara Holding, uma iniciativa que reune produtos digitais de alto nivel - de plataformas educacionais gamificadas a ferramentas de inteligencia de cores, aplicacoes desktop e componentes de UI premium.
+Este repositorio e o portfolio flagship da Capybara Holding, uma iniciativa que reune produtos digitais de alto nivel — de plataformas educacionais gamificadas a ferramentas de inteligencia de cores, aplicacoes desktop e componentes de UI premium.
 
 Cada projeto aqui reflete os principios da Holding: engenharia precisa, design com alma e experiencia do usuario impecavel.
 
@@ -145,14 +145,13 @@ Desenvolvimento em porta unica (8080) com integracao Vite + Express, hot reload 
 
 ## Componentes de Destaque
 
-- **FunMetrics** - Dashboard animado com estatisticas (Cafe, Codigo, Bugs)
-- **SpotifyWidget** - Player de musica simulado com playlist interna e visualizador de audio
-- **Interactive Playground** - Area com fisica de icones arrastaveis (framer-motion)
-- **Timeline Expandida** - Linha do tempo com multiplos tipos de eventos (Educacao, Trabalho, Livros)
-- **PageLoadingWrapper** - Transicoes suaves entre rotas com loader animado
-- **Sponsorship System** - Sistema de patrocinio com 3 tiers e Wall of Fame
-- **Capybara Holding Page** - Pagina institucional com visao, missao e servicos
-- **Client Testimonials** - Nova seção “Depoimentos” abaixo de “O que ofereço”, exibindo um card real de cliente com foto, nome e texto, usando o mesmo estilo da carta Terapia Quântica.
+- **FunMetrics** — Dashboard animado com estatisticas (Cafe, Codigo, Bugs)
+- **SpotifyWidget** — Player de musica simulado com playlist interna e visualizador de audio
+- **Interactive Playground** — Area com fisica de icones arrastaveis (framer-motion)
+- **Timeline Expandida** — Linha do tempo com multiplos tipos de eventos (Educacao, Trabalho, Livros)
+- **PageLoadingWrapper** — Transicoes suaves entre rotas com loader animado
+- **Sponsorship System** — Sistema de patrocinio com 3 tiers e Wall of Fame
+- **Capybara Holding Page** — Pagina institucional com visao, missao e servicos
 
 ---
 

@@ -9,20 +9,8 @@ import logoVitor from "../assets/logo.png";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import * as React from "react";
 
 export function Navigation() {
-  const startXRef = React.useRef<number | null>(null);
-  const handleDragStart = (e: React.TouchEvent) => {
-    startXRef.current = e.touches[0].clientX;
-  };
-  const handleDragEnd = (e: React.TouchEvent) => {
-    if (startXRef.current !== null) {
-      const diff = startXRef.current - e.changedTouches[0].clientX;
-      if (diff > 80) setIsOpen(false); // swipe left >80px closes
-    }
-    startXRef.current = null;
-  };
   const { t } = useLanguage();
   const location = useLocation();
   const { theme } = useTheme();
@@ -132,12 +120,12 @@ export function Navigation() {
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden touch-target">
+              <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] flex flex-col" onTouchStart={handleDragStart} onTouchEnd={handleDragEnd}>
+            <SheetContent side="right" className="w-[300px] flex flex-col">
               <SheetHeader>
                 <SheetTitle className="text-left flex items-center gap-2">
                   <img src={logoVitor} alt="Logo" className="w-8 h-8 rounded-lg" />
@@ -153,7 +141,7 @@ export function Navigation() {
                       to={item.path}
                       onClick={closeMenu}
                       className={cn(
-                        "flex items-center py-3 px-4 rounded-xl text-base font-medium transition-colors touch-target",
+                        "flex items-center py-3 px-4 rounded-xl text-base font-medium transition-colors",
                         isLinkActive(item.path)
                           ? "bg-primary/10 text-primary border border-primary/20"
                           : "hover:bg-slate-100 dark:hover:bg-slate-800/50 text-muted-foreground"
@@ -169,7 +157,7 @@ export function Navigation() {
                         closeMenu();
                         handleScroll(e, item.path);
                       }}
-                      className="flex items-center py-3 px-4 rounded-xl text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800/50 text-muted-foreground transition-colors touch-target"
+                      className="flex items-center py-3 px-4 rounded-xl text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800/50 text-muted-foreground transition-colors"
                     >
                       {item.label}
                     </Link>

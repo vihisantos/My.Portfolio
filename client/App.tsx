@@ -14,7 +14,6 @@ import { Loader } from "@/components/Loader";
 import { CommandBar } from "@/components/CommandBar";
 import { Suspense, lazy, useEffect } from "react";
 import { trackPageView, trackThemeChange } from "./lib/analytics";
-import { RoutePrefetch } from "@/components/RoutePrefetch";
 
 // Carregamento lento de páginas para desempenho
 const Index = lazy(() => import("./pages/Index"));
@@ -82,7 +81,6 @@ function RootApp() {
             <BrowserRouter basename={import.meta.env.BASE_URL}>
               <AnalyticsTracker />
               <ErrorBoundary>
-                <RoutePrefetch routes={['/', '/projects', '/capybara-holding', '/sponsorship', '/docs']} />
                 <ScrollProgress />
                 <BackToTop />
                 <Toaster />

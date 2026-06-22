@@ -1,37 +1,16 @@
-# robots.txt for Capybara Holding Portfolio
-# https://vihisantos.github.io/My.Portfolio/
-
-User-agent: *
-Allow: /
-
-# Sitemap location
-Sitemap: https://vihisantos.github.io/My.Portfolio/sitemap.xml
-
-# Crawl-delay for polite crawling (optional)
-Crawl-delay: 1
-
-# Allow all major search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Slurp
+User-agent: Twitterbot
 Allow: /
 
-User-agent: DuckDuckBot
+User-agent: facebookexternalhit
 Allow: /
 
-User-agent: Baiduspider
+User-agent: *
 Allow: /
 
-User-agent: YandexBot
-Allow: /
-
-# Disallow private or sensitive paths (if any)
-# Disallow: /admin/
-# Disallow: /api/private/
-
-# Host (optional - specify preferred domain)
-Host: https://vihisantos.github.io/My.Portfolio/
+Sitemap: https://vihisantos.github.io/My.Portfolio/sitemap.xml

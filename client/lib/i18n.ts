@@ -180,114 +180,6 @@ export const translations = {
           impact: 'Demonstra a capacidade de renderização 3D avançada em interfaces web modernas e performáticas.'
         }
       },
-      koda: {
-        title: 'Koda - Dashboard SEO',
-        description: 'Dashboard administrativo de alto nível para análise de métricas de SEO e tráfego orgânico. Visualize cliques, impressões, CTR, posicionamento e backlinks com dados em tempo real.',
-        story: {
-          challenge: 'Profissionais de SEO precisam de dashboards intuitivos e rápidos para analisar métricas complexas sem depender de ferramentas caras e lentas.',
-          solution: 'Dashboard construído com SvelteKit 5 e runes reativas, entregando gráficos interativos e exportação de relatórios PDF com performance extrema.',
-          impact: 'Demonstra capacidade de desenvolvimento em frameworks além de React, com foco em performance e experiência do usuário.'
-        }
-      },
-      cuidabem: {
-        title: 'CuidaBem - Conexão de Cuidadores',
-        description: 'App mobile/web que conecta idosos a cuidadores de confiança. Design system completo extraído do Figma com 10 páginas e componentes React acessíveis.',
-        story: {
-          challenge: 'Famílias têm dificuldade em encontrar cuidadores confiáveis para idosos, e o processo manual é lento e inseguro.',
-          solution: 'Design system profissional extraído do Figma, com 10 páginas funcionais (Login, Busca, Perfil, Pedidos, Mapa) usando React e Radix UI.',
-          impact: 'Demonstra capacidade de traduzir designs do Figma para código production-grade com foco em acessibilidade e experiência do usuário.'
-        }
-      },
-      odontosign: {
-        title: 'Odontosign - Gestão Odontológica',
-        description: 'App web completo para gestão de clínicas odontológicas. Agendamento de consultas, cadastro de pacientes, emissão de recibos com assinatura digital e controle financeiro.',
-        story: {
-          challenge: 'Clínicas odontológicas dependem de sistemas genéricos ou planilhas para gerenciar consultas e pacientes, causando erros e perda de tempo.',
-          solution: 'Aplicativo web com Zustand para estado reativo, assinatura digital via react-signature-canvas e geração de recibos em PDF com jsPDF.',
-          impact: 'Demonstra desenvolvimento de aplicação verticalizada para nicho específico com funcionalidades reais de produção.'
-        }
-      },
-      terapiaquantica: {
-        title: 'Terapia Quântica Atlantis',
-        description: 'Landing page premium para serviços de terapia quântica. Design com glassmorphism, orbs animados, carrossel de depoimentos e foco em conversão via WhatsApp.',
-        badge: 'Entregue para Cliente',
-        testimonial: 'A Capybara Holding superou todas as minhas expectativas. Transformou minha visão em uma landing page premium que transmite exatamente a energia e a exclusividade que eu queria passar para minhas clientes. Profissionalismo impecável!',
-        story: {
-          challenge: 'Profissionais de bem-estar precisam de presença digital sofisticada para transmitir autoridade e converters visitantes em clientes.',
-          solution: 'Landing page de alto impacto visual com React 19, glassmorphism premium, orbs animados, carrossel Swiper e integração WhatsApp para conversão.',
-          impact: 'Projeto entregue para cliente real, demonstrando capacidade de criar interfaces premium de alta conversão.'
-        }
-      },
-      loveflow: {
-        title: 'Love Flow - Convite de Casamento',
-        description: 'Template premium de convite de casamento com RSVP, lista de presentes, contagem regressiva e animações fluidas. Design elegante com Framer Motion e scroll suave.',
-        badge: 'Template p/ Venda',
-        story: {
-          challenge: 'Casais precisam de convites digitais elegantes e funcionais, mas templates comuns são genéricos e sem personalização.',
-          solution: 'Template premium com Next.js 16, RSVP com banco Supabase, lista de presentes interativa e animações Framer Motion.',
-          impact: 'Demonstra capacidade de criar templates de nicho de alto valor com funcionalidades completas de produção.'
-        }
-      },
-      tplAdvogado: {
-        title: 'Jurídico - Advocacia',
-        description: 'Template premium para escritórios de advocacia. Design sóbrio e profissional com foco em credibilidade e conversão de clientes.',
-        badge: 'Template p/ Venda',
-        story: {
-          challenge: 'Escritórios de advocacia precisam de presença digital que transmita confiança e autoridade.',
-          solution: 'Template React/Vite com design sóbrio, tipografia elegante e layout otimizado para captação de clientes.',
-          impact: 'Template escalável para múltiplos escritórios de advocacia.'
-        }
-      },
-      tplAgencia: {
-        title: 'Agência Digital',
-        description: 'Template para agências de marketing e empresas de tecnologia. Design moderno com foco em portfólio de serviços.',
-        badge: 'Template p/ Venda',
-        story: {
-          challenge: 'Agências digitais precisam de um site que demonstre sua própria capacidade técnica e criativa.',
-          solution: 'Template React/Vite com design vibrante, seção de serviços e portfólio de projetos.',
-          impact: 'Demonstra capacidade de criar templates para o próprio mercado de tecnologia.'
-        }
-      },
-      tplClinica: {
-        title: 'Clínica - Saúde',
-        description: 'Template para clínicas médicas e odontológicas. Design limpo e acessível com foco em agendamento e credibilidade.',
-        badge: 'Template p/ Venda',
-        story: {
-          challenge: 'Clínicas precisam de sites que transmitam higiene, confiança e facilitem o agendamento.',
-          solution: 'Template React/Vite com design clean, cores de saúde e seção de agendamento integrada.',
-          impact: 'Template versátil para múltiplos tipos de clínicas.'
-        }
-      },
-      tplFotografo: {
-        title: 'Fotógrafo - Portfólio',
-        description: 'Template premium para fotógrafos e artistas visuais. Design dark mode com galeria masonry e animações suaves.',
-        badge: 'Template p/ Venda',
-        story: {
-          challenge: 'Fotógrafos precisam de portfólios que destaquem suas imagens sem distrações visuais.',
-          solution: 'Template React/Vite com dark mode nativo, galeria masonry e Framer Motion para transições.',
-          impact: 'Template de alto valor para profissionais de fotografia.'
-        }
-      },
-      tplLoja: {
-        title: 'Loja - Produto Único',
-        description: 'Template para e-commerce de produto único. Design focado em conversão com CTA claro e prova social.',
-        badge: 'Template p/ Venda',
-        story: {
-          challenge: 'Lojas de produto único precisam de landing pages que convertam visitantes em compradores.',
-          solution: 'Template React/Vite com design focado em conversão, seção de benefícios e CTA estratégico.',
-          impact: 'Template de alta conversão para produtos digitais e físicos.'
-        }
-      },
-      tplRestaurante: {
-        title: 'Restaurante - Delivery',
-        description: 'Template para restaurantes e delivery. Design appetitoso com cardápio digital e integração de pedidos.',
-        badge: 'Template p/ Venda',
-        story: {
-          challenge: 'Restaurantes precisam de sites que mostrem o cardápio de forma appetitosa e facilitem pedidos.',
-          solution: 'Template React/Vite com design gastronômico, cardápio digital e botão de pedidos.',
-          impact: 'Template completo para o mercado de gastronomia.'
-        }
-      },
     },
     capybara: {
       badge: 'Minha Iniciativa',
@@ -565,9 +457,6 @@ export const translations = {
     testimonials: {
       badge: 'O que ofereço',
       title: 'Soluções sob medida para seu negócio',
-    clientSectionDescription: 'Depoimentos de clientes reais que trabalharam conosco, incluindo foto, nome e comentário.',
-    clientSectionKeywords: ['depoimento', 'cliente', 'case', 'testemunho', 'feedback', 'Capybara Holding'],
-      clientSectionTitle: 'Depoimentos',
     },
     servicesList: [
       {
@@ -586,10 +475,10 @@ export const translations = {
         icon: "Zap"
       },
       {
-          title: "Consultoria Técnica",
-          description: "Ajudo a escolher a melhor tecnologia para sua ideia e desenho a arquitetura do seu projeto.",
-          icon: "Terminal"
-        },
+        title: "Consultoria Técnica",
+        description: "Ajudo a escolher a melhor tecnologia para sua ideia e desenho a arquitetura do seu projeto.",
+        icon: "Terminal"
+      }
     ],
     certificates: {
       button: "Ver Certificações",
@@ -986,114 +875,6 @@ export const translations = {
           impact: 'Demonstrates advanced 3D rendering capabilities in modern and performant web interfaces.'
         }
       },
-      koda: {
-        title: 'Koda - SEO Dashboard',
-        description: 'High-level administrative dashboard for SEO metrics and organic traffic analysis. View clicks, impressions, CTR, positioning and backlinks with real-time data.',
-        story: {
-          challenge: 'SEO professionals need intuitive, fast dashboards to analyze complex metrics without relying on expensive, slow tools.',
-          solution: 'Dashboard built with SvelteKit 5 and reactive runes, delivering interactive charts and PDF report export with extreme performance.',
-          impact: 'Demonstrates development capability beyond React, with a focus on performance and user experience.'
-        }
-      },
-      cuidabem: {
-        title: 'CuidaBem - Caregiver Connection',
-        description: 'Mobile/web app connecting elderly people with trusted caregivers. Complete design system extracted from Figma with 10 pages and accessible React components.',
-        story: {
-          challenge: 'Families struggle to find trustworthy caregivers for elderly relatives, and the manual process is slow and unsafe.',
-          solution: 'Professional design system extracted from Figma, with 10 functional pages (Login, Search, Profile, Orders, Map) using React and Radix UI.',
-          impact: 'Demonstrates ability to translate Figma designs into production-grade code with a focus on accessibility and user experience.'
-        }
-      },
-      odontosign: {
-        title: 'Odontosign - Dental Management',
-        description: 'Complete web app for dental clinic management. Appointment scheduling, patient registration, digital signature receipts and financial control.',
-        story: {
-          challenge: 'Dental clinics rely on generic systems or spreadsheets to manage appointments and patients, causing errors and wasted time.',
-          solution: 'Web application with Zustand for reactive state, digital signature via react-signature-canvas and PDF receipt generation with jsPDF.',
-          impact: 'Demonstrates development of a verticalized application for a specific niche with real production features.'
-        }
-      },
-      terapiaquantica: {
-        title: 'Quantum Therapy Atlantis',
-        description: 'Premium landing page for quantum therapy services. Design with glassmorphism, animated orbs, testimonial carousel and focus on WhatsApp conversion.',
-        badge: 'Delivered for Client',
-        testimonial: 'Capybara Holding exceeded all my expectations. They transformed my vision into a premium landing page that conveys exactly the energy and exclusivity I wanted to传递 to my clients. Impeccable professionalism!',
-        story: {
-          challenge: 'Wellness professionals need sophisticated digital presence to convey authority and convert visitors into clients.',
-          solution: 'High visual impact landing page with React 19, premium glassmorphism, animated orbs, Swiper carousel and WhatsApp integration for conversion.',
-          impact: 'Project delivered for a real client, demonstrating ability to create premium high-conversion interfaces.'
-        }
-      },
-      loveflow: {
-        title: 'Love Flow - Wedding Invitation',
-        description: 'Premium wedding invitation template with RSVP, gift list, countdown and fluid animations. Elegant design with Framer Motion and smooth scroll.',
-        badge: 'For Sale',
-        story: {
-          challenge: 'Couples need elegant, functional digital invitations, but common templates are generic and lack customization.',
-          solution: 'Premium template with Next.js 16, RSVP with Supabase database, interactive gift list and Framer Motion animations.',
-          impact: 'Demonstrates ability to create high-value niche templates with complete production features.'
-        }
-      },
-      tplAdvogado: {
-        title: 'Legal - Law Firm',
-        description: 'Premium template for law firms. Serious, professional design focused on credibility and client conversion.',
-        badge: 'For Sale',
-        story: {
-          challenge: 'Law firms need a digital presence that conveys trust and authority.',
-          solution: 'React/Vite template with sober design, elegant typography and layout optimized for client acquisition.',
-          impact: 'Scalable template for multiple law firms.'
-        }
-      },
-      tplAgencia: {
-        title: 'Digital Agency',
-        description: 'Template for marketing agencies and tech companies. Modern design focused on service portfolio.',
-        badge: 'For Sale',
-        story: {
-          challenge: 'Digital agencies need a site that demonstrates their own technical and creative capability.',
-          solution: 'React/Vite template with vibrant design, services section and project portfolio.',
-          impact: 'Demonstrates ability to create templates for the technology market itself.'
-        }
-      },
-      tplClinica: {
-        title: 'Clinic - Healthcare',
-        description: 'Template for medical and dental clinics. Clean, accessible design focused on scheduling and credibility.',
-        badge: 'For Sale',
-        story: {
-          challenge: 'Clinics need websites that convey cleanliness, trust and ease of scheduling.',
-          solution: 'React/Vite template with clean design, healthcare colors and integrated scheduling section.',
-          impact: 'Versatile template for multiple types of clinics.'
-        }
-      },
-      tplFotografo: {
-        title: 'Photographer - Portfolio',
-        description: 'Premium template for photographers and visual artists. Dark mode design with masonry gallery and smooth animations.',
-        badge: 'For Sale',
-        story: {
-          challenge: 'Photographers need portfolios that highlight their images without visual distractions.',
-          solution: 'React/Vite template with native dark mode, masonry gallery and Framer Motion transitions.',
-          impact: 'High-value template for photography professionals.'
-        }
-      },
-      tplLoja: {
-        title: 'Store - Single Product',
-        description: 'Template for single product e-commerce. Conversion-focused design with clear CTA and social proof.',
-        badge: 'For Sale',
-        story: {
-          challenge: 'Single product stores need landing pages that convert visitors into buyers.',
-          solution: 'React/Vite template with conversion-focused design, benefits section and strategic CTA.',
-          impact: 'High-conversion template for digital and physical products.'
-        }
-      },
-      tplRestaurante: {
-        title: 'Restaurant - Delivery',
-        description: 'Template for restaurants and delivery. Appetizing design with digital menu and order integration.',
-        badge: 'For Sale',
-        story: {
-          challenge: 'Restaurants need sites that showcase their menu appetizingly and facilitate orders.',
-          solution: 'React/Vite template with gastronomic design, digital menu and order button.',
-          impact: 'Complete template for the gastronomy market.'
-        }
-      },
     },
     capybara: {
       badge: 'My Initiative',
@@ -1369,9 +1150,6 @@ export const translations = {
       cta: "Learn more about the Holding"
     },
     testimonials: {
-      clientSectionTitle: 'Testimonials',
-      clientSectionDescription: 'Real client testimonials with photo, name and comment.',
-      clientSectionKeywords: ['testimonial', 'client', 'review', 'feedback', 'Capybara Holding'],
       badge: 'What I Offer',
       title: 'Tailored solutions for your business',
     },

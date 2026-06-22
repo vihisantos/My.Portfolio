@@ -1,7 +1,6 @@
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/i18n";
@@ -89,12 +88,6 @@ export default function Sponsorship() {
 
     return (
         <div className="min-h-screen bg-white dark:bg-slate-950">
-            <SEO
-                title="Seja um Parceiro | Capybara Holding Sponsorship"
-                description="Apoie projetos de impacto no comércio, educação e criatividade. Escolha seu tier de patrocínio e faça parte do ecossistema Capybara Holding."
-                keywords={['Patrocínio', 'Sponsorship', 'Parceria', 'Investimento', 'Capybara Holding', 'Visionário', 'Guardião']}
-                type="website"
-            />
             <Navigation />
 
             {/* Hero Section */}
