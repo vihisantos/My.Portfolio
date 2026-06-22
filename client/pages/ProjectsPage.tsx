@@ -2,7 +2,7 @@
 import { Navigation } from "@/components/Navigation";
 import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
-import { ProjectFilter } from "@/components/ProjectFilter";
+import { AdvancedProjectFilter } from "@/components/AdvancedFilterModal";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
 import { SectionDivider } from "@/components/SectionDivider";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -14,7 +14,10 @@ import { HolographicCard } from "@/components/HolographicCard";
 
 export default function ProjectsPage() {
     const { t } = useLanguage();
-    const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
+    const [filters, setFilters] = useState<{ selectedTechs: string[]; searchQuery: string; projectType?: string }>({
+        selectedTechs: [],
+        searchQuery: '',
+    });
     const navigate = useNavigate();
 
     const handleProjectClick = (project: any) => {
@@ -28,16 +31,30 @@ export default function ProjectsPage() {
         new Set(allProjects.flatMap((p) => p.technologies))
     ), [allProjects]);
 
-    // Filter projects based on selected technologies
-    const projects = useMemo(
-        () =>
-            selectedTechs.length === 0
-                ? allProjects
-                : allProjects.filter((p) =>
-                    selectedTechs.every((tech) => p.technologies.includes(tech))
-                ),
-        [selectedTechs, allProjects]
-    );
+    // Filter projects based on selected technologies, search query, and project type
+    const projects = useMemo(() => {
+        return allProjects.filter((p) => {
+            // Tech filter
+            if (filters.selectedTechs.length > 0) {
+                if (!filters.selectedTechs.every((tech) => p.technologies.includes(tech))) return false;
+            }
+            // Search filter
+            if (filters.searchQuery) {
+                const query = filters.searchQuery.toLowerCase();
+                const matchTitle = p.title.toLowerCase().includes(query);
+                const matchDesc = p.description.toLowerCase().includes(query);
+                const matchTech = p.technologies.some(t => t.toLowerCase().includes(query));
+                if (!matchTitle && !matchDesc && !matchTech) return false;
+            }
+            // Type filter
+            if (filters.projectType) {
+                const techs = p.technologies || [];
+                if (filters.projectType === 'desktop' && !techs.includes('Python') && !techs.includes('CustomTkinter')) return false;
+                if (filters.projectType === 'mobile' && !techs.includes('React Native')) return false;
+            }
+            return true;
+        });
+    }, [filters, allProjects]);
 
     return (
         <div className="min-h-screen bg-white dark:bg-slate-950">
@@ -60,7 +77,7 @@ export default function ProjectsPage() {
                         </p>
                     </div>
 
-                    <ProjectFilter technologies={allTechnologies} onFilterChange={setSelectedTechs} />
+                    <AdvancedProjectFilter technologies={allTechnologies} onFilterChange={setFilters} projects={allProjects} />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                         {projects.map((project, index) => {

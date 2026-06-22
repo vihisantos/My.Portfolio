@@ -10,7 +10,7 @@ import { TechStack } from "@/components/TechStack";
 import { FunMetrics } from "@/components/FunMetrics";
 import { Timeline } from "@/components/Timeline";
 // import { SkillChart } from "@/components/SkillChart";
-import { ProjectFilter } from "@/components/ProjectFilter";
+import { AdvancedProjectFilter } from "@/components/AdvancedFilterModal";
 import { ContactForm } from "@/components/ContactForm";
 import { Testimonials } from "@/components/Testimonials";
 import { DownloadCV } from "@/components/DownloadCV";
@@ -33,7 +33,10 @@ const profilePhotoUrl = "https://cdn.builder.io/api/v1/image/assets%2Fcc7241044f
 
 export default function Index() {
   const { t, language } = useLanguage();
-  const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
+  const [filters, setFilters] = useState<{ selectedTechs: string[]; searchQuery: string; projectType?: string }>({
+    selectedTechs: [],
+    searchQuery: '',
+  });
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -60,16 +63,30 @@ export default function Index() {
     new Set(allProjects.flatMap((p) => p.technologies))
   ), [allProjects]);
 
-  // Filter projects based on selected technologies
-  const filteredProjects = useMemo(
-    () =>
-      selectedTechs.length === 0
-        ? allProjects
-        : allProjects.filter((p) =>
-          selectedTechs.every((tech) => p.technologies.includes(tech))
-        ),
-    [selectedTechs, allProjects]
-  );
+  // Filter projects based on technologies, search, and type
+  const filteredProjects = useMemo(() => {
+    return allProjects.filter((p) => {
+      // Tech filter
+      if (filters.selectedTechs.length > 0) {
+        if (!filters.selectedTechs.every((tech) => p.technologies.includes(tech))) return false;
+      }
+      // Search filter
+      if (filters.searchQuery) {
+        const query = filters.searchQuery.toLowerCase();
+        const matchTitle = p.title.toLowerCase().includes(query);
+        const matchDesc = p.description.toLowerCase().includes(query);
+        const matchTech = p.technologies.some(t => t.toLowerCase().includes(query));
+        if (!matchTitle && !matchDesc && !matchTech) return false;
+      }
+      // Type filter
+      if (filters.projectType) {
+        const techs = p.technologies || [];
+        if (filters.projectType === 'desktop' && !techs.includes('Python') && !techs.includes('CustomTkinter')) return false;
+        if (filters.projectType === 'mobile' && !techs.includes('React Native')) return false;
+      }
+      return true;
+    });
+  }, [filters, allProjects]);
 
   // Home page only shows 6 projects
   const displayProjects = filteredProjects.slice(0, 6);
@@ -275,7 +292,7 @@ export default function Index() {
             </p>
           </div>
 
-          <ProjectFilter technologies={allTechnologies} onFilterChange={setSelectedTechs} />
+          <AdvancedProjectFilter technologies={allTechnologies} onFilterChange={setFilters} projects={allProjects} />
           <div className="mb-12" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
