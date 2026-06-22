@@ -7,7 +7,7 @@ import mizinAppImg from "@/assets/projects/Mizin.png";
 import siteInstitucionalImg from "@/assets/projects/site institucional.png";
 import zapediaImg from "@/assets/projects/zapedia.png";
 import medHubImg from "@/assets/projects/med-hub.png";
-import fotografoImg from "@/assets/projects/fotografo+template.png";
+import fotografoImg from "@/assets/projects/template+fotografo.png";
 import ongTemplateImg from "@/assets/projects/ong_template.png";
 import imersiveblockImg from "@/assets/projects/imersiveblock.png";
 import kodaImg from "@/assets/projects/koda.png";
