@@ -180,6 +180,111 @@ export const translations = {
           impact: 'Demonstra a capacidade de renderização 3D avançada em interfaces web modernas e performáticas.'
         }
       },
+      koda: {
+        title: 'Koda - SEO Dashboard',
+        description: 'Dashboard administrativo para análise de métricas de SEO e tráfego orgânico com SvelteKit.',
+        story: {
+          challenge: 'Profissionais de SEO precisam de uma ferramenta visual e intuitiva para monitorar métricas em tempo real.',
+          solution: 'Dashboard completo com SvelteKit 5, runes, gráficos interativos e dark mode.',
+          impact: 'Visualização clara de métricas que antes estavam espalhadas em múltiplas ferramentas.'
+        }
+      },
+      cuidabem: {
+        title: 'CuidaBem - App de Cuidadores',
+        description: 'Aplicativo mobile/web para conexão de idosos com cuidadores de confiança.',
+        story: {
+          challenge: 'Famílias têm dificuldade em encontrar cuidadores qualificados e confiáveis para seus idosos.',
+          solution: 'Plataforma com busca, agendamento, avaliações e perfil verificado de profissionais.',
+          impact: 'Conecta famílias a cuidadores de forma segura e transparente.'
+        }
+      },
+      odontosign: {
+        title: 'OdontoSign - Assinatura Digital',
+        description: 'Sistema de assinatura digital de termos de consentimento para clínicas odontológicas.',
+        story: {
+          challenge: 'Clínicas odontológicas precisam de consentimento assinado mas o processo em papel é lento e inseguro.',
+          solution: 'Plataforma web com assinatura digital, geração de PDF e envio por WhatsApp.',
+          impact: 'Digitalizou 100% do processo de consentimento, reduzindo tempo em 80%.'
+        }
+      },
+      terapiaquantica: {
+        title: 'Terapia Quântica',
+        description: 'Landing page premium para terapeuta quântica com design imersivo e animações suaves.',
+        story: {
+          challenge: 'Profissionais de terapias alternativas precisam de presença digital que transmita confiança e seriedade.',
+          solution: 'Landing page com Swiper, AOS animations e design elegante focado em conversão.',
+          impact: 'Aumento significativo nos agendamentos via site após o lançamento.'
+        }
+      },
+      loveflow: {
+        title: 'Love Flow - Convite de Casamento',
+        description: 'Template premium de convite de casamento com RSVP, contagem regressiva e lista de presentes.',
+        story: {
+          challenge: 'Convites de casamento tradicionais são caros e não oferecem interatividade.',
+          solution: 'Template digital com Next.js, Framer Motion, Supabase e integração WhatsApp.',
+          impact: 'Experiência moderna e personalizável para casais que buscam algo único.'
+        }
+      },
+      tplAdvogado: {
+        title: 'Template Advocacia',
+        description: 'Template premium para escritórios de advocacia com dark mode e design sofisticado.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Escritórios de advocacia precisam de presença digital que transmita autoridade e confiança.',
+          solution: 'Template React com Tailwind, dark mode, animações e formulário de contato.',
+          impact: 'Design profissional que converte visitantes em clientes.'
+        }
+      },
+      tplAgencia: {
+        title: 'Template Agência Digital',
+        description: 'Template para agências digitais e empresas B2B com cases de sucesso e métricas.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Agências precisam de um site que demonstre sua expertise através de resultados.',
+          solution: 'Template com seção de cases, métricas de impacto e formulário de contato.',
+          impact: 'Apresenta resultados de forma visual e persuasiva.'
+        }
+      },
+      tplClinica: {
+        title: 'Template Clínica',
+        description: 'Template para clínicas e consultórios com FAQ interativo e agendamento.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Clínicas precisam de um site que responda dúvidas e facilite o agendamento.',
+          solution: 'Template com FAQ accordion, depoimentos e integração WhatsApp.',
+          impact: 'Reduz dúvidas frequentes e aumenta agendamentos.'
+        }
+      },
+      tplFotografo: {
+        title: 'Template Fotógrafo',
+        description: 'Portfolio elegante para fotógrafos com galeria, lightbox e design premium.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Fotógrafos precisam de um portfolio que destaque suas imagens sem distrações.',
+          solution: 'Template com galeria interativa, lightbox e dark mode.',
+          impact: 'Apresenta o trabalho de forma premium e profissional.'
+        }
+      },
+      tplLoja: {
+        title: 'Template Loja de Produto',
+        description: 'Landing page de alta conversão para loja de produto único com seletor de cores.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Lojas de produto único precisam de uma página focada em conversão.',
+          solution: 'Landing page com countdown, seletor de cores e checkout integrado.',
+          impact: 'Design focado em maximizar a taxa de conversão.'
+        }
+      },
+      tplRestaurante: {
+        title: 'Template Restaurante',
+        description: 'Template para restaurantes e delivery com cardápio interativo e pedidos pelo WhatsApp.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Restaurantes precisam de um cardápio digital que incentive pedidos.',
+          solution: 'Template com cardápio por categorias, galeria e pedidos pelo WhatsApp.',
+          impact: 'Aumenta pedidos online com experiência visual atraente.'
+        }
+      },
     },
     capybara: {
       badge: 'Minha Iniciativa',
@@ -873,6 +978,111 @@ export const translations = {
           challenge: 'Creating 3D web experiences usually requires high processing and complex code that sacrifices performance.',
           solution: 'Interactive application developed with React Three Fiber and Vite, delivering impressive graphics without losing fluidity.',
           impact: 'Demonstrates advanced 3D rendering capabilities in modern and performant web interfaces.'
+        }
+      },
+      koda: {
+        title: 'Koda - SEO Dashboard',
+        description: 'Admin dashboard for SEO metrics and organic traffic analysis with SvelteKit.',
+        story: {
+          challenge: 'SEO professionals need a visual and intuitive tool to monitor metrics in real-time.',
+          solution: 'Complete dashboard with SvelteKit 5, runes, interactive charts and dark mode.',
+          impact: 'Clear visualization of metrics that were previously scattered across multiple tools.'
+        }
+      },
+      cuidabem: {
+        title: 'CuidaBem - Caregiver App',
+        description: 'Mobile/web app connecting elderly people with trusted caregivers.',
+        story: {
+          challenge: 'Families struggle to find qualified and trustworthy caregivers for their elderly.',
+          solution: 'Platform with search, scheduling, reviews and verified professional profiles.',
+          impact: 'Connects families to caregivers safely and transparently.'
+        }
+      },
+      odontosign: {
+        title: 'OdontoSign - Digital Signature',
+        description: 'Digital consent form signing system for dental clinics.',
+        story: {
+          challenge: 'Dental clinics need signed consent but the paper process is slow and insecure.',
+          solution: 'Web platform with digital signature, PDF generation and WhatsApp delivery.',
+          impact: 'Digitized 100% of the consent process, reducing time by 80%.'
+        }
+      },
+      terapiaquantica: {
+        title: 'Quantum Therapy',
+        description: 'Premium landing page for quantum therapist with immersive design and smooth animations.',
+        story: {
+          challenge: 'Alternative therapy professionals need digital presence that conveys trust and seriousness.',
+          solution: 'Landing page with Swiper, AOS animations and elegant conversion-focused design.',
+          impact: 'Significant increase in bookings via website after launch.'
+        }
+      },
+      loveflow: {
+        title: 'Love Flow - Wedding Invitation',
+        description: 'Premium wedding invitation template with RSVP, countdown and gift registry.',
+        story: {
+          challenge: 'Traditional wedding invitations are expensive and lack interactivity.',
+          solution: 'Digital template with Next.js, Framer Motion, Supabase and WhatsApp integration.',
+          impact: 'Modern and customizable experience for couples seeking something unique.'
+        }
+      },
+      tplAdvogado: {
+        title: 'Law Firm Template',
+        description: 'Premium template for law firms with dark mode and sophisticated design.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Law firms need digital presence that conveys authority and trust.',
+          solution: 'React template with Tailwind, dark mode, animations and contact form.',
+          impact: 'Professional design that converts visitors into clients.'
+        }
+      },
+      tplAgencia: {
+        title: 'Digital Agency Template',
+        description: 'Template for digital agencies and B2B companies with success cases and metrics.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Agencies need a site that demonstrates expertise through results.',
+          solution: 'Template with case studies section, impact metrics and contact form.',
+          impact: 'Presents results visually and persuasively.'
+        }
+      },
+      tplClinica: {
+        title: 'Clinic Template',
+        description: 'Template for clinics and offices with interactive FAQ and scheduling.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Clinics need a site that answers questions and facilitates scheduling.',
+          solution: 'Template with FAQ accordion, testimonials and WhatsApp integration.',
+          impact: 'Reduces frequent questions and increases appointments.'
+        }
+      },
+      tplFotografo: {
+        title: 'Photographer Template',
+        description: 'Elegant portfolio for photographers with gallery, lightbox and premium design.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Photographers need a portfolio that highlights their images without distractions.',
+          solution: 'Template with interactive gallery, lightbox and dark mode.',
+          impact: 'Presents work in a premium and professional way.'
+        }
+      },
+      tplLoja: {
+        title: 'Product Store Template',
+        description: 'High-conversion landing page for single product stores with color selector.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Single product stores need a page focused on conversion.',
+          solution: 'Landing page with countdown, color selector and integrated checkout.',
+          impact: 'Design focused on maximizing conversion rate.'
+        }
+      },
+      tplRestaurante: {
+        title: 'Restaurant Template',
+        description: 'Template for restaurants and delivery with interactive menu and WhatsApp orders.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Restaurants need a digital menu that encourages orders.',
+          solution: 'Template with categorized menu, gallery and WhatsApp orders.',
+          impact: 'Increases online orders with attractive visual experience.'
         }
       },
     },
