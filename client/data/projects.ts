@@ -1,4 +1,5 @@
 import ecommerceImg from "@/assets/projects/ecommerce.png";
+import restauranteImg from "@/assets/projects/restaurante.png";
 import taskManagementImg from "@/assets/projects/task-management.png";
 import aiChatImg from "@/assets/projects/ai-chat.png";
 import colorFlicksImg from "@/assets/projects/ColorFlick.png";
@@ -294,7 +295,7 @@ export const getProjects = (t: any) => [
         title: t('projects.tplRestaurante.title'),
         description: t('projects.tplRestaurante.description'),
         technologies: ["React", "Vite", "TypeScript", "Tailwind CSS"],
-        image: ecommerceImg,
+        image: restauranteImg,
         badge: t('projects.tplRestaurante.badge'),
         badgeType: 'sale',
         demoUrl: "https://vihisantos.github.io/template-restaurante-delivery-react/",
