@@ -18,7 +18,6 @@ import loveFlowImg from "@/assets/projects/love-flow.png";
 import advocaciaImg from "@/assets/projects/advocacia.png";
 import agenciaImg from "@/assets/projects/Agência Digital.png";
 import clinicaImg from "@/assets/projects/clinica+saude.png";
-import fotografoTemplateImg from "@/assets/projects/fotografo+template.png";
 
 export const getProjects = (t: any) => [
     {
@@ -269,7 +268,7 @@ export const getProjects = (t: any) => [
         title: t('projects.tplFotografo.title'),
         description: t('projects.tplFotografo.description'),
         technologies: ["React", "Vite", "TypeScript", "Tailwind CSS"],
-        image: fotografoTemplateImg,
+        image: loveFlowImg,
         badge: t('projects.tplFotografo.badge'),
         badgeType: 'sale',
         demoUrl: "https://vihisantos.github.io/template-fotografo-criativo-react/",
