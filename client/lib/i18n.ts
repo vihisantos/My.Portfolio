@@ -285,6 +285,16 @@ export const translations = {
           impact: 'Aumenta pedidos online com experiência visual atraente.'
         }
       },
+      tplPetshop: {
+        title: 'PetShop - Template',
+        description: 'Template moderno para pet shops e animais de estimação. Design vibrante e acolhedor com catálogo de serviços, agendamento e integração WhatsApp.',
+        badge: 'Template p/ Venda',
+        story: {
+          challenge: 'Pet shops precisam de presença digital que transmita carinho e profissionalismo para atrair e reter clientes.',
+          solution: 'Template React/Vite com design vibrante, seção de serviços, galeria de pets e botão de agendamento via WhatsApp.',
+          impact: 'Template completo para o mercado pet com foco em conversão e experiência do cliente.'
+        }
+      },
     },
     capybara: {
       badge: 'Minha Iniciativa',
@@ -1008,8 +1018,10 @@ export const translations = {
         }
       },
       terapiaquantica: {
-        title: 'Quantum Therapy',
-        description: 'Premium landing page for quantum therapist with immersive design and smooth animations.',
+        title: 'Quantum Therapy Atlantis',
+        description: 'Premium landing page for quantum therapy services. Design with glassmorphism, animated orbs, testimonial carousel and focus on WhatsApp conversion.',
+        badge: 'Delivered for Client',
+        testimonial: 'Capybara Holding exceeded all my expectations. They transformed my vision into a premium landing page that conveys exactly the energy and exclusivity I wanted to convey to my clients. Impeccable professionalism!',
         story: {
           challenge: 'Alternative therapy professionals need digital presence that conveys trust and seriousness.',
           solution: 'Landing page with Swiper, AOS animations and elegant conversion-focused design.',
@@ -1083,6 +1095,16 @@ export const translations = {
           challenge: 'Restaurants need a digital menu that encourages orders.',
           solution: 'Template with categorized menu, gallery and WhatsApp orders.',
           impact: 'Increases online orders with attractive visual experience.'
+        }
+      },
+      tplPetshop: {
+        title: 'PetShop - Template',
+        description: 'Modern template for pet shops and pet care. Vibrant, welcoming design with service catalog, scheduling and WhatsApp integration.',
+        badge: 'For Sale',
+        story: {
+          challenge: 'Pet shops need a digital presence that conveys care and professionalism to attract and retain customers.',
+          solution: 'React/Vite template with vibrant design, services section, pet gallery and WhatsApp booking button.',
+          impact: 'Complete template for the pet market focused on conversion and customer experience.'
         }
       },
     },
