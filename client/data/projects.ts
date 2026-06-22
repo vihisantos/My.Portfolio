@@ -7,7 +7,7 @@ import mizinAppImg from "@/assets/projects/Mizin.png";
 import siteInstitucionalImg from "@/assets/projects/site institucional.png";
 import zapediaImg from "@/assets/projects/zapedia.png";
 import medHubImg from "@/assets/projects/med-hub.png";
-import fotografoImg from "@/assets/projects/template+fotografo.png";
+import fotografoImg from "@/assets/projects/fotografo+template.png";
 import ongTemplateImg from "@/assets/projects/ong_template.png";
 import imersiveblockImg from "@/assets/projects/imersiveblock.png";
 import kodaImg from "@/assets/projects/koda.png";
@@ -294,7 +294,7 @@ export const getProjects = (t: any) => [
         title: t('projects.tplRestaurante.title'),
         description: t('projects.tplRestaurante.description'),
         technologies: ["React", "Vite", "TypeScript", "Tailwind CSS"],
-        image: loveFlowImg,
+        image: ecommerceImg,
         badge: t('projects.tplRestaurante.badge'),
         badgeType: 'sale',
         demoUrl: "https://vihisantos.github.io/template-restaurante-delivery-react/",
