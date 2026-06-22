@@ -36,3 +36,4 @@ Unlock.md
 *.exe
 *.rar
 temp_extract/
+.builder/
