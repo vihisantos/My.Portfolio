@@ -281,7 +281,7 @@ export const getProjects = (t: any) => [
         title: t('projects.tplLoja.title'),
         description: t('projects.tplLoja.description'),
         technologies: ["React", "Vite", "TypeScript", "Tailwind CSS"],
-        image: loveFlowImg,
+        image: ecommerceImg,
         badge: t('projects.tplLoja.badge'),
         badgeType: 'sale',
         demoUrl: "https://vihisantos.github.io/template-loja-produto-unico-react/",
