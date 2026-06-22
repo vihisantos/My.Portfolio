@@ -8,17 +8,17 @@ import { handleDemo } from "./routes/demo";
 export function createServer() {
   const app = express();
 
-  // Security Headers
-  app.use(helmet());
+  // Security Headers - DISABLED FOR DEV
+  // app.use(helmet());
 
-  // Rate Limiting
-  const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 1000, // Limit each IP to 1000 requests per windowMs
-    standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-  });
-  app.use(limiter);
+  // Rate Limiting - DISABLED FOR DEV
+  // const limiter = rateLimit({
+  //   windowMs: 15 * 60 * 1000, // 15 minutes
+  //   max: 1000, // Limit each IP to 1000 requests per windowMs
+  //   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  //   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  // });
+  // app.use(limiter);
 
   // CORS Configuration
   app.use(cors({ origin: true, credentials: true })); // Allow all origins for now
@@ -32,6 +32,8 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  app.use((_req, res, next) => next());
 
   return app;
 }

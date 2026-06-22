@@ -137,6 +137,9 @@
 }
 
 @layer utilities {
+  .touch-target {
+    @apply min-w-[44px] min-h-[44px];
+  }
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {

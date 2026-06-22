@@ -4,7 +4,7 @@ import { getProjects } from "@/data/projects";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { ArrowLeft, Rocket, ExternalLink, Calendar, Layers, Download, MessageCircle, Search } from "lucide-react";
+import { ArrowLeft, Rocket, ExternalLink, Calendar, Layers, Download, MessageCircle, Search, GitBranch, Quote } from "lucide-react";
 import { SectionDivider } from "@/components/SectionDivider";
 import { useEffect } from "react";
 import GalaxyButton from "@/components/GalaxyButton";
@@ -180,7 +180,9 @@ export default function ProjectDetails() {
                                     ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
                                     : project.badgeType === 'new'
                                         ? 'bg-blue-500/10 text-blue-600 border-blue-500/20'
-                                        : 'bg-primary/10 text-primary border-primary/20'
+                                        : project.badgeType === 'client'
+                                            ? 'bg-amber-500/10 text-amber-600 border-amber-500/20'
+                                            : 'bg-primary/10 text-primary border-primary/20'
                                     }`}>
                                     {project.badge}
                                 </span>
@@ -255,6 +257,35 @@ export default function ProjectDetails() {
                                         )}
                                     </div>
                                 )}
+
+                                {/* Client Testimonial */}
+                                {project.clientTestimonial && (
+                                    <div className="mt-8 p-6 rounded-2xl border-2 border-amber-200 dark:border-amber-800/40 bg-gradient-to-br from-amber-50/50 to-orange-50/50 dark:from-amber-900/10 dark:to-orange-900/10">
+                                        <div className="flex items-start gap-4">
+                                            {project.clientPhoto && (
+                                                <img
+                                                    src={project.clientPhoto}
+                                                    alt={project.clientName}
+                                                    className="w-16 h-16 rounded-full object-cover border-2 border-amber-300 dark:border-amber-700 shadow-md flex-shrink-0"
+                                                />
+                                            )}
+                                            <div className="flex-1">
+                                                <div className="flex items-center gap-2 mb-3">
+                                                    <Quote size={20} className="text-amber-500" />
+                                                    <span className="text-sm font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider">
+                                                        Depoimento do Cliente
+                                                    </span>
+                                                </div>
+                                                <p className="text-muted-foreground italic leading-relaxed mb-3">
+                                                    "{project.clientTestimonial}"
+                                                </p>
+                                                <p className="text-sm font-semibold text-amber-700 dark:text-amber-400">
+                                                    — {project.clientName}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -273,6 +304,18 @@ export default function ProjectDetails() {
                                     >
                                         <Rocket size={18} />
                                         Live Demo
+                                    </a>
+                                )}
+
+                                {project.repoUrl && (
+                                    <a
+                                        href={project.repoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-800 dark:bg-slate-700 text-white font-semibold shadow-lg hover:bg-slate-700 dark:hover:bg-slate-600 hover:-translate-y-1 transition-all"
+                                    >
+                                        <GitBranch size={18} />
+                                        Ver Código
                                     </a>
                                 )}
 

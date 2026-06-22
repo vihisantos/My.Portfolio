@@ -1,6 +1,16 @@
 import { Code2, Palette, Zap, Terminal } from 'lucide-react';
+import { SEO } from '@/components/SEO';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from '@/components/ui/carousel';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/lib/i18n';
+import { getProjects } from '@/data/projects';
+
 
 // Map icon strings to components
 const iconMap: Record<string, any> = {
@@ -13,6 +23,8 @@ const iconMap: Record<string, any> = {
 export function Testimonials() {
   const { language, t } = useLanguage();
   const services = translations[language].servicesList || [];
+  const allProjects = getProjects(t);
+  const testimonials = allProjects.filter(p => p.clientTestimonial && p.clientPhoto && p.clientName);
 
   return (
     <section className="py-20 relative overflow-hidden" id="services">
@@ -29,7 +41,11 @@ export function Testimonials() {
             {t('testimonials.title')}
           </h2>
         </div>
-
+        <SEO
+          title={t('testimonials.clientSectionTitle') || 'Depoimentos'}
+          description={t('testimonials.clientSectionDescription')}
+          keywords={(translations[language] as any).testimonials.clientSectionKeywords as unknown as string[]}
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {services.map((service: any, index: number) => {
             const Icon = iconMap[service.icon] || Code2;
@@ -48,7 +64,8 @@ export function Testimonials() {
                   {/* Icon Box - Floating Effect */}
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 text-white shadow-lg shadow-primary/20 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300">
                     <Icon size={28} strokeWidth={2.5} />
-                  </div>
+        </div>
+
 
                   <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors">
                     {service.title}
@@ -60,9 +77,71 @@ export function Testimonials() {
                 </div>
               </div>
             );
-          })}
+             })}
+
+        </div>
+        {/* Client Testimonials */}
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold text-center mb-6">{t('testimonials.clientSectionTitle') || 'Depoimentos'}</h3>
+          {testimonials.length > 0 && (
+            testimonials.length > 3 ? (
+              <Carousel className="w-full" opts={{ loop: false, dragFree: false }}>
+                <CarouselContent>
+                  {testimonials.map(p => (
+                    <CarouselItem key={p.id}>
+                      <TestimonialCard project={p} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="touch-target" />
+                <CarouselNext className="touch-target" />
+              </Carousel>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                {testimonials.map(p => (
+                  <TestimonialCard key={p.id} project={p} />
+                ))}
+              </div>
+            )
+          )}
         </div>
       </div>
     </section>
   );
 }
+
+function TestimonialCard({ project }: { project: any }) {
+  const { clientPhoto, clientName, clientTestimonial } = project;
+  if (!clientPhoto || !clientName || !clientTestimonial) return null;
+
+  return (
+    <div className="group p-8 rounded-3xl bg-white border border-slate-200 dark:bg-slate-900/50 dark:border-white/5 hover:border-primary/50 dark:hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all duration-500 backdrop-blur-sm relative overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2">
+      {/* Watermark Icon */}
+      <div className="absolute -top-6 -right-6 opacity-[0.03] dark:opacity-[0.02] group-hover:opacity-[0.08] dark:group-hover:opacity-[0.05] transition-all duration-700 text-primary dark:text-white transform group-hover:scale-150 group-hover:rotate-12">
+        <Zap size={200} />
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center">
+        <img src={clientPhoto} alt={clientName} className="w-20 h-20 rounded-full mb-4 object-cover border border-primary/20" loading="lazy" decoding="async" />
+        <h4 className="text-lg font-semibold text-slate-900 dark:text-white">{clientName}</h4>
+        <p className="mt-2 text-center text-slate-600 dark:text-slate-400">{clientTestimonial}</p>
+      </div>
+      {/* JSON‑LD for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: clientName,
+          image: clientPhoto,
+        },
+        reviewBody: clientTestimonial,
+        itemReviewed: {
+          "@type": "Product",
+          name: project.title,
+        },
+      }) }} />
+    </div>
+  );
+}
+

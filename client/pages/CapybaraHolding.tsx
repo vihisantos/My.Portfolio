@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowLeft, Rocket, Shield, Zap, Layout, ShoppingBag, BarChart3, Users, Clapperboard, Palette, Share2, Code2, GraduationCap, Laptop, Youtube, Download, Stars } from "lucide-react";
@@ -12,6 +13,12 @@ export default function CapybaraHolding() {
 
     return (
         <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500">
+            <SEO
+                title="Capybara Holding | Ecossistema de Inovação Digital"
+                description="Engineering the pulse of the digital ecosystem. Conheça a Capybara Holding - Vitrine360, ColorFlicks, CapyFlow Academy e mais projetos de impacto."
+                keywords={['Capybara Holding', 'Vitrine360', 'ColorFlicks', 'CapyFlow Academy', 'Ecossistema Digital', 'Inovação', 'SaaS', 'EdTech']}
+                type="website"
+            />
             <Navigation />
 
             {/* Hero Section */}

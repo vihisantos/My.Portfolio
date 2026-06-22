@@ -10,12 +10,16 @@ import { TechStack } from "@/components/TechStack";
 import { FunMetrics } from "@/components/FunMetrics";
 import { Timeline } from "@/components/Timeline";
 // import { SkillChart } from "@/components/SkillChart";
-import { ProjectFilter } from "@/components/ProjectFilter";
+// ProjectFilter removed; using AdvancedProjectFilter
+import { AdvancedProjectFilter } from "@/components/AdvancedProjectFilter";
 import { ContactForm } from "@/components/ContactForm";
 import { Testimonials } from "@/components/Testimonials";
 import { DownloadCV } from "@/components/DownloadCV";
 import { Certificates } from "@/components/Certificates";
-import { ScrollFadeIn } from "@/components/ScrollFadeIn";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
+
+
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Code2, Database, GitBranch, Zap } from "lucide-react";
 import ecommerceImg from "@/assets/projects/ecommerce.png";
@@ -31,9 +35,19 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const profilePhotoUrl = "https://cdn.builder.io/api/v1/image/assets%2Fcc7241044f564726a1519da181bd3eaa%2F5c680c48aefc4fabb891e721833c1d9e?format=webp&width=800";
 
+interface FilterState {
+  selectedTechs: string[];
+  searchQuery: string;
+  projectType?: string;
+}
+
 export default function Index() {
   const { t, language } = useLanguage();
-  const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
+  const [filterState, setFilterState] = useState<FilterState>({
+    selectedTechs: [],
+    searchQuery: '',
+    projectType: undefined,
+  });
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -50,25 +64,40 @@ export default function Index() {
   }, [location.hash]);
 
   const handleProjectClick = (project: any) => {
-    navigate(`/project/${project.id}`);
-  };
+  navigate(`/project/${project.id}`);
+};
 
-  const allProjects = useMemo(() => getProjects(t), [t]);
+
+
+   const allProjects = useMemo(() => getProjects(t), [t]);
+
+
 
   // Get unique technologies for filter
-  const allTechnologies = useMemo(() => Array.from(
+const allTechnologies = useMemo(() => Array.from(
     new Set(allProjects.flatMap((p) => p.technologies))
   ), [allProjects]);
 
-  // Filter projects based on selected technologies
+  // Filter projects based on selected technologies and search
   const filteredProjects = useMemo(
     () =>
-      selectedTechs.length === 0
-        ? allProjects
-        : allProjects.filter((p) =>
-          selectedTechs.every((tech) => p.technologies.includes(tech))
-        ),
-    [selectedTechs, allProjects]
+      allProjects.filter((project) => {
+        // Tech filter
+        const techMatch = filterState.selectedTechs.length === 0 ||
+          filterState.selectedTechs.every((tech) => project.technologies.includes(tech));
+        
+        // Search filter
+        const searchMatch = !filterState.searchQuery ||
+          project.title.toLowerCase().includes(filterState.searchQuery.toLowerCase()) ||
+          project.description.toLowerCase().includes(filterState.searchQuery.toLowerCase()) ||
+          project.technologies.some(t => t.toLowerCase().includes(filterState.searchQuery.toLowerCase()));
+        
+        // Type filter (simplified - all are web for now)
+        const typeMatch = !filterState.projectType || filterState.projectType === 'all';
+        
+        return techMatch && searchMatch && typeMatch;
+      }),
+    [filterState, allProjects]
   );
 
   // Home page only shows 6 projects
@@ -79,6 +108,8 @@ export default function Index() {
       <SEO
         title={t('seo.home.title')}
         description={t('seo.home.description')}
+        keywords={['Desenvolvedor Full Stack', 'React', 'TypeScript', 'Portfolio', 'Capybara Holding', 'Vitor Santos', 'Web Developer', 'Frontend', 'Backend']}
+        type="profile"
       />
       <Navigation />
 
@@ -161,22 +192,26 @@ export default function Index() {
       {/* About Section */}
       <section id="about" className="section-padding">
         <div className="container-custom">
-          {/* Bio Section - Full Width */}
-          <div className="mb-12 space-y-8 max-w-4xl">
-            <div>
-              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-                {t('about.badge')}
-              </span>
-              <h2 className="text-4xl font-bold mt-2">
-                {t('about.title')}{" "}
-                <span className="gradient-text">{t('about.titleGradient')}</span>
-              </h2>
-            </div>
+            {/* Bio Section - Full Width */}
+            <div className="mb-12 space-y-8 max-w-4xl">
+              <ScrollAnimation delay={0.2} from={{ opacity: 0, y: 30 }}>
+                <div>
+                  <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                    {t('about.badge')}
+                  </span>
+                  <h2 className="text-4xl font-bold mt-2">
+                    {t('about.title')}{" "}
+                    <span className="gradient-text">{t('about.titleGradient')}</span>
+                  </h2>
+                </div>
+              </ScrollAnimation>
 
-            <p className="text-lg text-muted-foreground">
-              {t('about.description')}
-            </p>
-          </div>
+              <ScrollAnimation delay={0.4} from={{ opacity: 0, y: 30 }}>
+                <p className="text-lg text-muted-foreground">
+                  {t('about.description')}
+                </p>
+              </ScrollAnimation>
+            </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-8">
@@ -192,37 +227,45 @@ export default function Index() {
 
                 {/* Skills Cards - Moved from Right Column */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-primary/50 transition-colors group">
-                    <Code2 className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="font-semibold">{t('about.frontend')}</h3>
-                    <p className="text-sm text-muted-foreground min-h-[40px]">
-                      {t('about.frontendDesc')}
-                    </p>
-                  </div>
+                  <ScrollAnimation delay={0.1} from={{ opacity: 0, scale: 0.9 }}>
+                    <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-primary/50 transition-colors group">
+                      <Code2 className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      <h3 className="font-semibold">{t('about.frontend')}</h3>
+                      <p className="text-sm text-muted-foreground min-h-[40px]">
+                        {t('about.frontendDesc')}
+                      </p>
+                    </div>
+                  </ScrollAnimation>
 
-                  <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-secondary/50 transition-colors group">
-                    <Database className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="font-semibold">{t('about.backend')}</h3>
-                    <p className="text-sm text-muted-foreground min-h-[40px]">
-                      {t('about.backendDesc')}
-                    </p>
-                  </div>
+                  <ScrollAnimation delay={0.2} from={{ opacity: 0, scale: 0.9 }}>
+                    <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-secondary/50 transition-colors group">
+                      <Database className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform duration-300" />
+                      <h3 className="font-semibold">{t('about.backend')}</h3>
+                      <p className="text-sm text-muted-foreground min-h-[40px]">
+                        {t('about.backendDesc')}
+                      </p>
+                    </div>
+                  </ScrollAnimation>
 
-                  <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-accent/50 transition-colors group">
-                    <GitBranch className="w-8 h-8 text-accent group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="font-semibold">{t('about.databases')}</h3>
-                    <p className="text-sm text-muted-foreground min-h-[40px]">
-                      {t('about.databasesDesc')}
-                    </p>
-                  </div>
+                  <ScrollAnimation delay={0.3} from={{ opacity: 0, scale: 0.9 }}>
+                    <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-accent/50 transition-colors group">
+                      <GitBranch className="w-8 h-8 text-accent group-hover:scale-110 transition-transform duration-300" />
+                      <h3 className="font-semibold">{t('about.databases')}</h3>
+                      <p className="text-sm text-muted-foreground min-h-[40px]">
+                        {t('about.databasesDesc')}
+                      </p>
+                    </div>
+                  </ScrollAnimation>
 
-                  <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-primary/50 transition-colors group">
-                    <Zap className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="font-semibold">{t('about.devops')}</h3>
-                    <p className="text-sm text-muted-foreground min-h-[40px]">
-                      {t('about.devopsDesc')}
-                    </p>
-                  </div>
+                  <ScrollAnimation delay={0.4} from={{ opacity: 0, scale: 0.9 }}>
+                    <div className="glass-card p-6 rounded-2xl space-y-2 hover:border-primary/50 transition-colors group">
+                      <Zap className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      <h3 className="font-semibold">{t('about.devops')}</h3>
+                      <p className="text-sm text-muted-foreground min-h-[40px]">
+                        {t('about.devopsDesc')}
+                      </p>
+                    </div>
+                  </ScrollAnimation>
                 </div>
 
                 {/* Tech Stack - Categorized Icons */}
@@ -275,16 +318,20 @@ export default function Index() {
             </p>
           </div>
 
-          <ProjectFilter technologies={allTechnologies} onFilterChange={setSelectedTechs} />
+          <AdvancedProjectFilter
+            technologies={allTechnologies}
+            onFilterChange={(filters) => setFilterState(filters)}
+            projects={allProjects}
+          />
           <div className="mb-12" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayProjects.map((project, index) => {
               // Calculate delay for stagger effect
-              const delay = index * 100;
+              const delay = index * 0.1;
 
               return (
-                <ScrollFadeIn key={project.id} delay={delay}>
+                <ScrollAnimation key={project.id} delay={delay} from={{ opacity: 0, y: 50 }} once={true}>
                   <HolographicCard>
                     <div
                       onClick={() => handleProjectClick(project)}
@@ -297,6 +344,7 @@ export default function Index() {
                           alt={project.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           loading="lazy"
+                          decoding="async"
                         />
                         <div className="absolute top-4 right-4 z-20">
                           {project.badgeType === 'sale' ? (
@@ -306,6 +354,10 @@ export default function Index() {
                           ) : project.badgeType === 'new' ? (
                             <span className="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-blue-400 shadow-lg shadow-blue-500/20 uppercase tracking-wider">
                               {t('uiLibrary.newFreeApp')}
+                            </span>
+                          ) : project.badgeType === 'client' ? (
+                            <span className="bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-full border border-amber-400 shadow-lg shadow-amber-500/20 uppercase tracking-wider">
+                              {project.badge}
                             </span>
                           ) : (
                             <span className="bg-background/80 backdrop-blur-sm text-foreground text-xs font-bold px-3 py-1 rounded-full border border-border">
@@ -356,7 +408,7 @@ export default function Index() {
                       </div>
                     </div>
                   </HolographicCard>
-                </ScrollFadeIn>
+                </ScrollAnimation>
               );
             })}
           </div>
@@ -553,9 +605,9 @@ export default function Index() {
 
       {/* Testimonials Section */}
       <section className="bg-slate-50 dark:bg-slate-900">
-        <ScrollFadeIn>
+        <ScrollAnimation>
           <Testimonials />
-        </ScrollFadeIn>
+        </ScrollAnimation>
       </section>
 
       {/* Contact Section */}
@@ -576,9 +628,9 @@ export default function Index() {
               </p>
             </div>
 
-            <ScrollFadeIn>
+            <ScrollAnimation>
               <ContactForm />
-            </ScrollFadeIn>
+            </ScrollAnimation>
 
             <div className="mt-12 pt-8 border-t border-border text-center">
               <p className="text-sm text-muted-foreground">
