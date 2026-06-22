@@ -268,7 +268,7 @@ export const getProjects = (t: any) => [
         title: t('projects.tplFotografo.title'),
         description: t('projects.tplFotografo.description'),
         technologies: ["React", "Vite", "TypeScript", "Tailwind CSS"],
-        image: loveFlowImg,
+        image: fotografoImg,
         badge: t('projects.tplFotografo.badge'),
         badgeType: 'sale',
         demoUrl: "https://vihisantos.github.io/template-fotografo-criativo-react/",
