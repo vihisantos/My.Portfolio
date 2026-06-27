@@ -577,6 +577,7 @@ export default function UILibrary() {
             <SEO
                 title={t('seo.uiLibrary.title')}
                 description={t('seo.uiLibrary.description')}
+                keywords={t('seo.uiLibrary.keywords')}
             />
             {/* Elementos de Fundo do Laboratório */}
             <div className="absolute inset-0 z-0 pointer-events-none">

@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SEO } from "@/components/SEO";
 import { translations } from "@/lib/i18n";
 import { ArrowLeft, Check, Crown, HandHeart, Heart, Send, ShieldCheck, Stars, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -89,6 +90,11 @@ export default function Sponsorship() {
     return (
         <div className="min-h-screen bg-white dark:bg-slate-950">
             <Navigation />
+            <SEO
+                title={t('seo.sponsorship.title')}
+                description={t('seo.sponsorship.description')}
+                keywords={t('seo.sponsorship.keywords')}
+            />
 
             {/* Hero Section */}
             <section className="pt-32 pb-24 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 overflow-hidden relative border-b border-slate-200/10 dark:border-white/5">

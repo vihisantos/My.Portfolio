@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft, Rocket, Shield, Zap, Layout, ShoppingBag, BarChart3, Users, Clapperboard, Palette, Share2, Code2, GraduationCap, Laptop, Youtube, Download, Stars } from "lucide-react";
 import { Link } from "react-router-dom";
 import { translations } from "@/lib/i18n";
@@ -13,6 +14,11 @@ export default function CapybaraHolding() {
     return (
         <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500">
             <Navigation />
+            <SEO
+                title={t('seo.capybara.title')}
+                description={t('seo.capybara.description')}
+                keywords={t('seo.capybara.keywords')}
+            />
 
             {/* Hero Section */}
             <section className="pt-32 pb-32 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 overflow-hidden relative border-b border-slate-200/10 dark:border-white/5">

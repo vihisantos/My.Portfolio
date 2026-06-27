@@ -147,6 +147,7 @@ export default function ProjectDetails() {
             <SEO
                 title={`${project.title} | Vitor.dev`}
                 description={project.description.slice(0, 160)}
+                keywords={t('seo.projectDetails.keywords')}
                 image={project.image}
             />
             <Navigation />

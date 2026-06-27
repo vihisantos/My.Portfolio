@@ -96,6 +96,7 @@ export default function Index() {
       <SEO
         title={t('seo.home.title')}
         description={t('seo.home.description')}
+        keywords={t('seo.home.keywords')}
       />
       <Navigation />
 

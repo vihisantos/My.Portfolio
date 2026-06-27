@@ -45,21 +45,42 @@ export const translations = {
     seo: {
       defaultTitle: 'Vitor.dev | Desenvolvedor Full-Stack',
       defaultDescription: 'Portfólio de Vitor.dev. Desenvolvedor Full-stack e Designer UX/UI criando experiências digitais modernas.',
+      defaultKeywords: 'contratar desenvolvedor full stack, criar site profissional, portfólio react, freelancer web, ux/ui design, vitor.dev, aplicações sob medida, orçamento site',
       home: {
         title: 'Vitor.dev | Início',
-        description: 'Bem-vindo ao meu laboratório digital. Explore meus projetos e experimentos.'
+        description: 'Bem-vindo ao meu laboratório digital. Explore meus projetos e experimentos.',
+        keywords: 'contratar desenvolvedor, portfólio vitor.dev, projetos web, freelancer react',
       },
       projects: {
         title: 'Vitor.dev | Projetos',
-        description: 'Confira meus estudos de caso e projetos recentes em desenvolvimento web.'
+        description: 'Confira meus estudos de caso e projetos recentes em desenvolvimento web.',
+        keywords: 'projetos desenvolvimento web, cases de sucesso, portfólio, contratar freelancer',
       },
       uiLibrary: {
         title: 'Vitor.dev | Biblioteca UI',
-        description: 'Uma coleção de componentes de interface modernos e interativos.'
+        description: 'Uma coleção de componentes de interface modernos e interativos.',
+        keywords: 'biblioteca ui, design system, componentes react',
       },
       projectDetails: {
         title: 'Projeto | Vitor.dev',
-      }
+        description: 'Detalhes técnicos e visuais do projeto de desenvolvimento web.',
+        keywords: 'detalhes do projeto, tecnologia, soluções web',
+      },
+      capybara: {
+        title: 'Capybara Holding | Vitor.dev',
+        description: 'Conheça a Capybara Holding, ecossistema digital que reúne inovação, tecnologia e educação.',
+        keywords: 'capybara holding, ecossistema digital, inovação, desenvolvimento de software',
+      },
+      sponsorship: {
+        title: 'Patrocínio | Vitor.dev',
+        description: 'Apoie o desenvolvimento de projetos open source e faça parte da comunidade.',
+        keywords: 'patrocínio, apoiar projeto, comunidade, open source',
+      },
+      documentation: {
+        title: 'Documentação | Vitor.dev',
+        description: 'Documentação oficial e detalhes técnicos do portfolio.',
+        keywords: 'documentação, guia, portfólio, configuração, setup',
+      },
     },
     projects: {
       badge: 'Portfólio',
@@ -858,21 +879,42 @@ export const translations = {
     seo: {
       defaultTitle: 'Vitor.dev | Full-Stack Developer',
       defaultDescription: 'Vitor.dev Portfolio. Full-stack Developer and UX/UI Designer creating modern digital experiences.',
+      defaultKeywords: 'hire full stack developer, professional web development, react portfolio, freelance web developer, ux/ui design, vitor.dev, custom web apps, web project quote',
       home: {
         title: 'Vitor.dev | Home',
-        description: 'Welcome to my digital lab. Explore my projects and experiments.'
+        description: 'Welcome to my digital lab. Explore my projects and experiments.',
+        keywords: 'hire developer, vitor.dev portfolio, web projects, react freelancer',
       },
       projects: {
         title: 'Vitor.dev | Projects',
-        description: 'Check out my case studies and recent web development projects.'
+        description: 'Check out my case studies and recent web development projects.',
+        keywords: 'web development projects, success cases, portfolio, hire freelancer',
       },
       uiLibrary: {
         title: 'Vitor.dev | UI Library',
-        description: 'A collection of modern and interactive UI components.'
+        description: 'A collection of modern and interactive UI components.',
+        keywords: 'ui library, design system, react components',
       },
       projectDetails: {
         title: 'Project | Vitor.dev',
-      }
+        description: 'Technical and visual details of the web development project.',
+        keywords: 'project details, tech stack, web solutions',
+      },
+      capybara: {
+        title: 'Capybara Holding | Vitor.dev',
+        description: 'Discover Capybara Holding, a digital ecosystem of innovation, technology and education.',
+        keywords: 'capybara holding, digital ecosystem, innovation, software development',
+      },
+      sponsorship: {
+        title: 'Sponsorship | Vitor.dev',
+        description: 'Support open source projects and be part of the community.',
+        keywords: 'sponsorship, support project, community, open source',
+      },
+      documentation: {
+        title: 'Documentation | Vitor.dev',
+        description: 'Official documentation and technical details of the portfolio.',
+        keywords: 'documentation, guide, portfolio, setup, getting started',
+      },
     },
     projects: {
       badge: 'Portfolio',

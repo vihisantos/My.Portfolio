@@ -5,6 +5,7 @@ import { translations } from "@/lib/i18n";
 interface SEOProps {
     title?: string;
     description?: string;
+    keywords?: string;
     image?: string;
     url?: string;
 }
@@ -12,6 +13,7 @@ interface SEOProps {
 export function SEO({
     title,
     description,
+    keywords,
     image = "/og-image.png",
     url
 }: SEOProps) {
@@ -20,6 +22,7 @@ export function SEO({
 
     const siteTitle = title || t.defaultTitle;
     const siteDescription = description || t.defaultDescription;
+    const metaKeywords = keywords || t.defaultKeywords || '';
 
     const siteUrl = "https://vihisantos.github.io/My.Portfolio";
     const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
@@ -29,6 +32,7 @@ export function SEO({
         <Helmet>
             <title>{siteTitle}</title>
             <meta name="description" content={siteDescription} />
+            <meta name="keywords" content={metaKeywords} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content="website" />

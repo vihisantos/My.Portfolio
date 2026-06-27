@@ -1,7 +1,8 @@
 import React from 'react';
 import { ComponentShowcase } from "../components/ui-library/ComponentShowcase";
 import readmeContent from '../../README.md?raw';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from "@/components/SEO";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
@@ -143,12 +144,14 @@ const MarkdownRenderer = ({ content }: { content: string }) => {
 };
 
 export default function Documentation() {
+    const { t } = useLanguage();
     return (
         <div className="min-h-screen pt-24 pb-20 px-4">
-            <Helmet>
-                <title>Documentação | Vitor.dev</title>
-                <meta name="description" content="Documentação oficial e detalhes técnicos do projeto Portfolio." />
-            </Helmet>
+            <SEO
+                title={t('seo.documentation.title')}
+                description={t('seo.documentation.description')}
+                keywords={t('seo.documentation.keywords')}
+            />
 
             <div className="container-custom mx-auto">
                 <div className="mb-8">

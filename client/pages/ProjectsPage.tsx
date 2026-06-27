@@ -61,6 +61,7 @@ export default function ProjectsPage() {
             <SEO
                 title={t('seo.projects.title')}
                 description={t('seo.projects.description')}
+                keywords={t('seo.projects.keywords')}
             />
             <Navigation />
 
