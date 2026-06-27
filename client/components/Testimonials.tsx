@@ -41,10 +41,9 @@ export function Testimonials() {
             {t('testimonials.title')}
           </h2>
         </div>
-        <SEO
-          title={t('testimonials.clientSectionTitle') || 'Depoimentos'}
-          description={t('testimonials.clientSectionDescription')}
-        />
+<SEO
+  description={t('testimonials.clientSectionDescription')}
+/>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {services.map((service: any, index: number) => {
             const Icon = iconMap[service.icon] || Code2;
