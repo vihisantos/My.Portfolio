@@ -9,7 +9,33 @@ export function createServer() {
   const app = express();
 
   // Security Headers
-  app.use(helmet());
+  app.use(helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          "https://www.googletagmanager.com",
+          "https://www.google-analytics.com",
+        ],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+        fontSrc:  ["'self'", "https://fonts.gstatic.com"],
+        imgSrc:   ["'self'", "https:", "data:", "blob:"],
+        connectSrc: ["'self'", "ws://localhost:*", "wss://localhost:*"],
+        frameSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        upgradeInsecureRequests: [],
+      },
+    },
+    hsts: {
+      maxAge: 31536000,
+      includeSubDomains: true,
+      preload: true,
+    },
+    frameguard: { action: 'deny' },
+  }));
 
   // Rate Limiting
   const limiter = rateLimit({
