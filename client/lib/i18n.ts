@@ -572,6 +572,8 @@ export const translations = {
     testimonials: {
       badge: 'O que ofereço',
       title: 'Soluções sob medida para seu negócio',
+      clientSectionTitle: 'Depoimentos',
+      clientSectionDescription: 'O que meus clientes dizem',
     },
     servicesList: [
       {
@@ -1384,6 +1386,8 @@ export const translations = {
     testimonials: {
       badge: 'What I Offer',
       title: 'Tailored solutions for your business',
+      clientSectionTitle: 'Testimonials',
+      clientSectionDescription: 'What my clients say',
     },
     servicesList: [
       {
