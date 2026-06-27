@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -13,17 +15,37 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Node
+      - name: Set up Node (with pnpm cache)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
 
+      # Ensure pnpm is available (corepack will auto‑install, but keep for safety)
       - name: Install pnpm
         run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Run code formatter
+        run: pnpm format.fix
+
+      - name: Run TypeScript type‑check (acts as lint)
+        run: pnpm typecheck
+
+      - name: Check for test files
+        id: check_tests
+        run: |
+          if git ls-files '*.{test,spec}.?(c|m)[jt]s?(x)' | grep -q .; then
+            echo "tests_exist=true" >> $GITHUB_OUTPUT
+          else
+            echo "tests_exist=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run tests
+        if: steps.check_tests.outputs.tests_exist == 'true'
+        run: pnpm test
 
       - name: Build project
         run: pnpm build
