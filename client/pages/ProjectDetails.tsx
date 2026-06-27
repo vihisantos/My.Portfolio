@@ -182,6 +182,10 @@ export default function ProjectDetails() {
                     <img
                         src={project.image}
                         alt={project.title}
+                        width="1200"
+                        height="600"
+                        fetchPriority="high"
+                        decoding="async"
                         className="w-full h-full object-cover blur-[5px] scale-105 opacity-50 dark:opacity-30"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent dark:from-slate-950 dark:via-slate-950/50 dark:to-transparent" />
@@ -234,6 +238,10 @@ export default function ProjectDetails() {
                                 <img
                                     src={project.image}
                                     alt={project.title}
+                                    width="1200"
+                                    height="675"
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-auto"
                                 />
                             </div>

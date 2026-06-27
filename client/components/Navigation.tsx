@@ -59,7 +59,7 @@ export function Navigation() {
             <div className="relative w-10 h-10">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl blur-sm opacity-70 group-hover:opacity-100 transition-opacity"></div>
               <div className="absolute inset-0 bg-white dark:bg-slate-900 rounded-xl flex items-center justify-center overflow-hidden shadow-inner border border-white/10">
-                <img src={logoVitor} alt="vitor.dev logo" className="w-full h-full object-cover scale-[1.1] group-hover:scale-[1.2] transition-transform" />
+                <img src={logoVitor} alt="vitor.dev logo" width="40" height="40" className="w-full h-full object-cover scale-[1.1] group-hover:scale-[1.2] transition-transform" />
               </div>
             </div>
             <span className="font-bold text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -128,7 +128,7 @@ export function Navigation() {
             <SheetContent side="right" className="w-[300px] flex flex-col">
               <SheetHeader>
                 <SheetTitle className="text-left flex items-center gap-2">
-                  <img src={logoVitor} alt="Logo" className="w-8 h-8 rounded-lg" />
+                  <img src={logoVitor} alt="Logo" width="32" height="32" className="w-8 h-8 rounded-lg" />
                   Vitor.dev
                 </SheetTitle>
               </SheetHeader>

@@ -76,6 +76,10 @@ export function SpotifyWidget() {
                     <img
                         src={currentTrack.albumArt}
                         alt="Album Art"
+                        width="40"
+                        height="40"
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                     />
                     {/* Vinyl Center Hole for realistic look in collapsed mode */}

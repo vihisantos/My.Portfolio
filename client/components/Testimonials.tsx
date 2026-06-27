@@ -125,7 +125,7 @@ function TestimonialCard({ project }: { project: any }) {
       </div>
 
       <div className="relative z-10 flex flex-col items-center">
-        <img src={clientPhoto} alt={clientName} className="w-20 h-20 rounded-full mb-4 object-cover border border-primary/20" loading="lazy" decoding="async" />
+        <img src={clientPhoto} alt={clientName} width="80" height="80" className="w-20 h-20 rounded-full mb-4 object-cover border border-primary/20" loading="lazy" decoding="async" />
         <h4 className="text-lg font-semibold text-slate-900 dark:text-white">{clientName}</h4>
         <p className="mt-2 text-center text-slate-600 dark:text-slate-400">{clientTestimonial}</p>
       </div>

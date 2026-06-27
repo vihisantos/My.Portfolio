@@ -36,7 +36,7 @@ export const TechCard = ({
             <button className="brutalist-button" style={style}>
                 <div className="tech-icon-container">
                     {imageUrl ? (
-                        <img src={imageUrl} alt={name} className="tech-icon" />
+                        <img src={imageUrl} alt={name} width="48" height="48" loading="lazy" decoding="async" className="tech-icon" />
                     ) : (
                         <div className="tech-icon flex items-center justify-center">
                             {icon}

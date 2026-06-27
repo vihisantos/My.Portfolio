@@ -298,6 +298,9 @@ export default function Index() {
                   <img
                     src={profilePhotoUrl}
                     alt="Profile"
+                    width="800"
+                    height="800"
+                    decoding="async"
                     className="w-full h-auto rounded-2xl object-cover"
                   />
                 </div>
@@ -343,6 +346,9 @@ export default function Index() {
                         <img
                           src={project.image}
                           alt={project.title}
+                          width="640"
+                          height="360"
+                          decoding="async"
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           loading="lazy"
                         />

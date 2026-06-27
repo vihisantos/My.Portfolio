@@ -56,7 +56,7 @@ const MarkdownRenderer = ({ content }: { content: string }) => {
 
             elements.push(
                 <div key={`img-${index}`} className="my-6">
-                    <img src={imgSrc} alt={imgMatch[1]} className="rounded-xl shadow-lg border border-black/10 dark:border-white/10 w-full max-w-3xl mx-auto" />
+                    <img src={imgSrc} alt={imgMatch[1]} loading="lazy" decoding="async" className="rounded-xl shadow-lg border border-black/10 dark:border-white/10 w-full max-w-3xl mx-auto" />
                     {imgMatch[1] && <p className="text-center text-sm text-custom-gray mt-2 italic">{imgMatch[1]}</p>}
                 </div>
             );
