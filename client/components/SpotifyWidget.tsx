@@ -41,13 +41,13 @@ export function SpotifyWidget() {
         return () => clearTimeout(timer);
     }, [currentIndex]);
 
-    const handleNext = (e: React.MouseEvent) => {
-        e.stopPropagation();
+    const handleNext = (e?: React.MouseEvent) => {
+        e?.stopPropagation();
         setCurrentIndex((prev) => (prev + 1) % tracks.length);
     };
 
-    const toggleCollapse = (e: React.MouseEvent) => {
-        e.stopPropagation();
+    const toggleCollapse = (e?: React.MouseEvent) => {
+        e?.stopPropagation();
         setIsCollapsed(!isCollapsed);
     };
 
@@ -65,6 +65,10 @@ export function SpotifyWidget() {
             transition={{ delay: 1 }}
             className={`fixed bottom-6 left-6 z-40 hidden md:flex items-center gap-3 ${isCollapsed ? 'bg-transparent p-0' : 'bg-white/95 dark:bg-slate-900/80 p-2 border-2 border-slate-300 dark:border-slate-700/50 shadow-xl'} backdrop-blur-md rounded-full overflow-hidden group cursor-pointer ${isCollapsed ? 'hover:scale-105' : ''}`}
             onClick={isCollapsed ? toggleCollapse : handleNext}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); isCollapsed ? toggleCollapse() : handleNext(); } }}
+            aria-label={isCollapsed ? "Expandir Player" : "Próxima Música"}
             title={isCollapsed ? "Expandir Player" : "Próxima Música"}
         >
             <div className="relative shrink-0">
@@ -128,6 +132,7 @@ export function SpotifyWidget() {
                                     size={12}
                                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                                     onClick={handleNext}
+                                    aria-label="Próxima música"
                                 />
                             </div>
                         </div>
@@ -179,6 +184,7 @@ export function SpotifyWidget() {
             {/* Toggle Button */}
             <button
                 onClick={toggleCollapse}
+                aria-label="Recolher player"
                 className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-8 bg-slate-200 dark:bg-slate-800 rounded-l-md opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center hover:bg-slate-300 dark:hover:bg-slate-700 z-10"
                 style={{ right: isCollapsed ? '-100px' : '0' }} // Hidden when collapsed, handled by container click
             >
