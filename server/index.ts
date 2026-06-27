@@ -14,14 +14,14 @@ export function createServer() {
   // Rate Limiting
   const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 1000, // Limit each IP to 1000 requests per windowMs
+    max: 200, // Limit each IP to 200 requests per windowMs
     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
   });
   app.use(limiter);
 
   // CORS Configuration
-  app.use(cors({ origin: true, credentials: true })); // Allow all origins for now
+  app.use(cors({ origin: ['http://localhost:8080', 'https://vihisantos.github.io'], credentials: true }));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
