@@ -2,20 +2,23 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, MessageSquare, User } from 'lucide-react';
 import { trackFormSubmission } from '@/lib/analytics';
+import { contactSchema } from '@shared/validation';
+import type { ContactFormData } from '@shared/validation';
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
 }
 
 export function ContactForm() {
   const { t } = useLanguage();
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     message: '',
   });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
 
@@ -24,10 +27,26 @@ export function ContactForm() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
+
+    const result = contactSchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: FormErrors = {};
+      for (const issue of result.error.issues) {
+        const field = issue.path[0] as keyof FormErrors;
+        fieldErrors[field] = issue.message;
+      }
+      setErrors(fieldErrors);
+      return;
+    }
+
     setStatus('loading');
 
     try {
@@ -83,6 +102,7 @@ export function ContactForm() {
             placeholder={t('contactForm.name')}
             className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
           />
+          {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
         </div>
       </div>
 
@@ -100,6 +120,7 @@ export function ContactForm() {
             placeholder="your@email.com"
             className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
           />
+          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
         </div>
       </div>
 
@@ -117,6 +138,7 @@ export function ContactForm() {
             rows={5}
             className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
           />
+          {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
         </div>
       </div>
 

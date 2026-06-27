@@ -9,6 +9,7 @@ import { ArrowLeft, Check, Crown, HandHeart, Heart, Send, ShieldCheck, Stars, Za
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { sponsorshipSchema } from '@shared/validation';
 
 type SponsorTier = 'visionary' | 'guardian' | 'community';
 
@@ -52,6 +53,17 @@ export default function Sponsorship() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        const result = sponsorshipSchema.safeParse(formData);
+        if (!result.success) {
+            toast({
+                variant: "destructive",
+                title: "Erro de validação",
+                description: result.error.issues[0]?.message || "Verifique os campos do formulário.",
+            });
+            return;
+        }
+
         setLoading(true);
 
         try {
