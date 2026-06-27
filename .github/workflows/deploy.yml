@@ -2,38 +2,35 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
-
-permissions:
-  contents: write
+    branches: [main]
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
-
+    runs-on: windows-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install pnpm 📦
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js ⚙️
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: 'pnpm'
 
-      - name: Install dependencies 🔧
-        run: pnpm install
+      - name: Install pnpm
+        run: npm install -g pnpm
 
-      - name: Build 🏗️
-        run: |
-          pnpm run build:client
-          cp dist/spa/index.html dist/spa/404.html
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Build project
+        run: pnpm build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          folder: dist/spa
-          branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/spa
+          force_orphan: true
