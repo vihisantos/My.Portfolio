@@ -97,6 +97,36 @@ export default function Index() {
         title={t('seo.home.title')}
         description={t('seo.home.description')}
         keywords={t('seo.home.keywords')}
+        url="/"
+        structuredData={[
+          {
+            "@type": "Person",
+            "name": "Vitor Santos",
+            "givenName": "Vitor",
+            "familyName": "Santos",
+            "jobTitle": "Full-Stack Developer & UX/UI Designer",
+            "url": "https://vihisantos.github.io/My.Portfolio",
+            "sameAs": [
+              "https://github.com/vihisantos/",
+              "https://www.linkedin.com/in/manoel-vitor-santos-santana-627a05227/",
+              "https://www.instagram.com/vih_isantos.dev/"
+            ],
+            "image": profilePhotoUrl
+          },
+          {
+            "@type": "WebSite",
+            "name": "Vitor.dev | Portfolio",
+            "url": "https://vihisantos.github.io/My.Portfolio",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://vihisantos.github.io/My.Portfolio/projects?search={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]}
       />
       <Navigation />
 

@@ -62,6 +62,14 @@ export default function ProjectsPage() {
                 title={t('seo.projects.title')}
                 description={t('seo.projects.description')}
                 keywords={t('seo.projects.keywords')}
+                url="/projects"
+                structuredData={{
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://vihisantos.github.io/My.Portfolio" },
+                        { "@type": "ListItem", "position": 2, "name": "Projetos", "item": "https://vihisantos.github.io/My.Portfolio/projects" }
+                    ]
+                }}
             />
             <Navigation />
 

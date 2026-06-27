@@ -149,6 +149,29 @@ export default function ProjectDetails() {
                 description={project.description.slice(0, 160)}
                 keywords={t('seo.projectDetails.keywords')}
                 image={project.image}
+                url={`/project/${project.id}`}
+                structuredData={[
+                    {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://vihisantos.github.io/My.Portfolio" },
+                            { "@type": "ListItem", "position": 2, "name": "Projetos", "item": "https://vihisantos.github.io/My.Portfolio/projects" },
+                            { "@type": "ListItem", "position": 3, "name": project.title, "item": `https://vihisantos.github.io/My.Portfolio/project/${project.id}` }
+                        ]
+                    },
+                    {
+                        "@type": "CreativeWork",
+                        "name": project.title,
+                        "description": project.description.slice(0, 160),
+                        "url": `https://vihisantos.github.io/My.Portfolio/project/${project.id}`,
+                        "image": typeof project.image === 'string' ? project.image : '',
+                        "keywords": Array.isArray(project.technologies) ? project.technologies.join(', ') : '',
+                        "author": {
+                            "@type": "Person",
+                            "name": "Vitor Santos"
+                        }
+                    }
+                ]}
             />
             <Navigation />
 

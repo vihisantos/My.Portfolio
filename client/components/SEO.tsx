@@ -8,6 +8,7 @@ interface SEOProps {
     keywords?: string;
     image?: string;
     url?: string;
+    structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 export function SEO({
@@ -15,7 +16,8 @@ export function SEO({
     description,
     keywords,
     image = "/og-image.png",
-    url
+    url,
+    structuredData
 }: SEOProps) {
     const { language } = useLanguage();
     const t = translations[language].seo;
@@ -48,6 +50,12 @@ export function SEO({
             <meta property="twitter:title" content={siteTitle} />
             <meta property="twitter:description" content={siteDescription} />
             <meta property="twitter:image" content={fullImage} />
+
+            {structuredData && (Array.isArray(structuredData) ? structuredData : [structuredData]).map((data, i) => (
+                <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({ "@context": "https://schema.org", ...data })
+                }} />
+            ))}
         </Helmet>
     );
 }

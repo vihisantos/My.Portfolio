@@ -18,6 +18,18 @@ export default function CapybaraHolding() {
                 title={t('seo.capybara.title')}
                 description={t('seo.capybara.description')}
                 keywords={t('seo.capybara.keywords')}
+                url="/capybara-holding"
+                structuredData={{
+                    "@type": "Organization",
+                    "name": "Capybara Holding",
+                    "description": "Ecossistema digital que reúne inovação, tecnologia e educação.",
+                    "url": "https://vihisantos.github.io/My.Portfolio/capybara-holding",
+                    "logo": "https://vihisantos.github.io/My.Portfolio/og-image.png",
+                    "sameAs": [
+                        "https://github.com/vihisantos/",
+                        "https://www.linkedin.com/in/manoel-vitor-santos-santana-627a05227/"
+                    ]
+                }}
             />
 
             {/* Hero Section */}
