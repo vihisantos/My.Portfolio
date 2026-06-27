@@ -14,6 +14,7 @@ import { Loader } from "@/components/Loader";
 import { CommandBar } from "@/components/CommandBar";
 import { Suspense, lazy, useEffect } from "react";
 import { trackPageView, trackThemeChange } from "./lib/analytics";
+import { reportWebVitals } from "./lib/webVitals";
 
 // Carregamento lento de páginas para desempenho
 const Index = lazy(() => import("./pages/Index"));
@@ -54,6 +55,8 @@ function RootApp() {
       document.documentElement.classList.remove("dark");
       trackThemeChange("light");
     }
+
+    reportWebVitals();
   }, []);
 
   useEffect(() => {
