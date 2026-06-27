@@ -33,6 +33,7 @@ export function SEO({
             <title>{siteTitle}</title>
             <meta name="description" content={siteDescription} />
             <meta name="keywords" content={metaKeywords} />
+            <link rel="canonical" href={fullUrl} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content="website" />
