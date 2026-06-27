@@ -1,5 +1,5 @@
 
-# Capybara Holding — Portfolio
+# Professional Portfolio — Capybara Holding
 
 <p align="center">
   <strong>Engineering the pulse of the digital ecosystem.</strong>
@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
   <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express">
   <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js">
-  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify">
+  <img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white" alt="GitHub Pages">
 </p>
 
 ---
@@ -73,7 +73,7 @@ Cada projeto aqui reflete os principios da Holding: engenharia precisa, design c
 
 | Tecnologia | Proposito |
 |---|---|
-| **Netlify** | Deploy e hosting |
+| **GitHub Pages** | Deploy estático |
 | **Docker** | Containerizacao |
 | **Vitest** | Testes unitarios |
 | **Prettier** | Formatacao de codigo |
@@ -136,7 +136,7 @@ My.Portfolio/
        | Framer Motion                     Rotas da API
        | Radix UI + Tailwind               Tipos compartilhados
        v                                          v
-[Netlify Deploy]                             [Serverless / Docker]
+[GitHub Pages Deploy]                             [Serverless / Docker]
 ```
 
 Desenvolvimento em porta unica (8080) com integracao Vite + Express, hot reload completo e tipos compartilhados entre frontend e backend via alias `@shared/*`.
