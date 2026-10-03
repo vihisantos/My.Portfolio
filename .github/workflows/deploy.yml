@@ -8,22 +8,24 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.14.0
+          run_install: false
+
       - name: Set up Node (with pnpm cache)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-
-      # Ensure pnpm is available (corepack will auto‑install, but keep for safety)
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -36,11 +38,26 @@ jobs:
 
       - name: Check for test files
         id: check_tests
+        shell: bash
         run: |
-          if git ls-files '*.{test,spec}.?(c|m)[jt]s?(x)' | grep -q .; then
-            echo "tests_exist=true" >> $GITHUB_OUTPUT
+          if git ls-files | grep -E '\.(test|spec)\.(c|m)?[jt]sx?
+      - name: Run tests
+        if: steps.check_tests.outputs.tests_exist == 'true'
+        run: pnpm test
+
+      - name: Build project
+        run: pnpm build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/spa
+          force_orphan: true
+ | grep -q .; then
+            echo "tests_exist=true" >> "$GITHUB_OUTPUT"
           else
-            echo "tests_exist=false" >> $GITHUB_OUTPUT
+            echo "tests_exist=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Run tests
