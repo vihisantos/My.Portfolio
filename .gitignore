@@ -41,3 +41,7 @@ IMPROVEMENTS.md
 *.rar
 temp_extract/
 .builder/
+
+
+# Gerado pelo build (fetch-github-projects.mjs)
+client/data/generated/

@@ -14,8 +14,10 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run build:client && npm run build:server",
-    "build:client": "node scripts/generate-sitemap.mjs && vite build",
+    "build:client": "node scripts/fetch-github-projects.mjs && node scripts/generate-sitemap.mjs && vite build",
     "build:server": "vite build --config vite.config.server.ts",
+    "sync:github": "node scripts/fetch-github-projects.mjs",
+    "sync:github:strict": "node scripts/fetch-github-projects.mjs --strict",
     "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format": "prettier --check .",
