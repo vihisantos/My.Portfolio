@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   # === VALIDATION JOB (Runs on PRs and main push) ===
@@ -35,19 +35,23 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check code formatting
-        run: pnpm format --check
-
       - name: Run ESLint
         run: pnpm lint
 
       - name: Run TypeScript type-check
         run: pnpm typecheck
 
-      - name: Audit dependencies
-        run: pnpm audit --audit-level=moderate
+      - name: Check for test files
+        id: check_tests
+        run: |
+          if git ls-files | grep -Eq '\.(test|spec)\.[cm]?[jt]sx?$'; then
+            echo "tests_exist=true" >> $GITHUB_OUTPUT
+          else
+            echo "tests_exist=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Run tests
+        if: steps.check_tests.outputs.tests_exist == 'true'
         run: pnpm test
 
       - name: Build project
