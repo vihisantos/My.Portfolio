@@ -23,14 +23,17 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.14.0
+          run_install: false
+
       - name: Set up Node (with pnpm cache)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -43,11 +46,12 @@ jobs:
 
       - name: Check for test files
         id: check_tests
+        shell: bash
         run: |
           if git ls-files | grep -Eq '\.(test|spec)\.[cm]?[jt]sx?$'; then
-            echo "tests_exist=true" >> $GITHUB_OUTPUT
+            echo "tests_exist=true" >> "$GITHUB_OUTPUT"
           else
-            echo "tests_exist=false" >> $GITHUB_OUTPUT
+            echo "tests_exist=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Run tests
@@ -71,14 +75,17 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.14.0
+          run_install: false
+
       - name: Set up Node (with pnpm cache)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
