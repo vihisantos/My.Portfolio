@@ -1,10 +1,13 @@
 import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import { fileURLToPath } from "url";
 import { createServer } from "./server";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   base: "/My.Portfolio/",
   server: {
     host: "::",

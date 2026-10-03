@@ -1,14 +1,22 @@
-name: Deploy to GitHub Pages
+name: CI/CD Pipeline
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    runs-on: windows-latest
+  # === VALIDATION JOB (Runs on PRs and main push) ===
+  validate:
+    name: Validate & Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,31 +29,55 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
 
-      # Ensure pnpm is available (corepack will auto‑install, but keep for safety)
       - name: Install pnpm
         run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run code formatter
-        run: pnpm format.fix
+      - name: Check code formatting
+        run: pnpm format --check
 
-      - name: Run TypeScript type‑check (acts as lint)
+      - name: Run ESLint
+        run: pnpm lint
+
+      - name: Run TypeScript type-check
         run: pnpm typecheck
 
-      - name: Check for test files
-        id: check_tests
-        run: |
-          if git ls-files '*.{test,spec}.?(c|m)[jt]s?(x)' | grep -q .; then
-            echo "tests_exist=true" >> $GITHUB_OUTPUT
-          else
-            echo "tests_exist=false" >> $GITHUB_OUTPUT
-          fi
+      - name: Audit dependencies
+        run: pnpm audit --audit-level=moderate
 
       - name: Run tests
-        if: steps.check_tests.outputs.tests_exist == 'true'
         run: pnpm test
+
+      - name: Build project
+        run: pnpm build
+
+  # === DEPLOY JOB (Runs only on main push, after validate passes) ===
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node (with pnpm cache)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
         run: pnpm build
