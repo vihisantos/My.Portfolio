@@ -67,7 +67,7 @@ export function SpotifyWidget() {
             onClick={isCollapsed ? toggleCollapse : handleNext}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); isCollapsed ? toggleCollapse() : handleNext(); } }}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isCollapsed) { toggleCollapse(); } else { handleNext(); } } }}
             aria-label={isCollapsed ? "Expandir Player" : "Próxima Música"}
             title={isCollapsed ? "Expandir Player" : "Próxima Música"}
         >
