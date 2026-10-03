@@ -10,7 +10,7 @@ const ServerError = () => {
     const codeRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             // Melting effect for 500
             gsap.to(codeRef.current, {
                 scaleY: 1.1,
