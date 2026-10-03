@@ -17,7 +17,7 @@ const NotFound = () => {
       location.pathname,
     );
 
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       // Main 404 Glitch
       const glitchTl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
       glitchTl
