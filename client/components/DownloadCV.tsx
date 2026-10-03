@@ -124,7 +124,7 @@ export function DownloadCV() {
       });
 
       // --- MAIN CONTENT (Right) ---
-      let mainX = 80;
+      const mainX = 80;
       let mainY = 20;
       doc.setTextColor(30, 30, 30); // Dark text for main content
 
