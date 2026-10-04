@@ -1,14 +1,35 @@
 import type { SyncedProject } from './synced-projects';
 
-export interface HardcodedProject {
+/**
+ * Forma que a interface consome. Espelha o formato historico de
+ * `client/data/projects.ts`, entao um projeto sincronizado e um legado sao
+ * indistinguiveis para os componentes.
+ */
+export interface ProjectCard {
   id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  image: string;
   demoUrl?: string;
+  badge?: string;
+  badgeType?: string;
+  challenge?: string;
+  solution?: string;
+  impact?: string;
+  repoUrl?: string;
+  downloadLink?: string;
+  clientName?: string;
+  clientPhoto?: string;
+  clientTestimonial?: string;
 }
 
-export interface MergeResult<T> {
-  entries: Array<T | SyncedProject>;
-  duplicates: SyncedProject[];
-}
+/**
+ * Os ids legados ocupam 1..26. Projetos sincronizados entram a partir daqui,
+ * em ordem estavel (a ordem do dataset gerado), sem colidir com o legado nem
+ * mudar a numeracao existente - `/project/:id` continua resolvendo igual.
+ */
+const SYNCED_PROJECT_ID_OFFSET = 1000;
 
 function normalizeUrl(value: string | null | undefined): string | null {
   if (typeof value !== 'string') {
@@ -25,56 +46,83 @@ function normalizeUrl(value: string | null | undefined): string | null {
 }
 
 /**
- * Junta o dataset hardcoded (fonte atual, tem precedencia) com o dataset
- * sincronizado do GitHub.
+ * Converte um projeto sincronizado no mesmo formato de card do legado.
  *
- * O projeto sincronizado e descartado quando:
- * - a `homepage` ou `htmlUrl` bate com o `demoUrl` de um projeto hardcoded; ou
- * - o `slug` ja apareceu no dataset sincronizado.
- *
- * Assim o Vitrine360 hardcoded (id 5) permanece sendo o exibido e o
- * sincronizado nao vira uma segunda Vitrine360 na interface.
+ * Devolve `null` quando o repositorio nao tem `cover`: os cards da interface
+ * assumem imagem, e publicar um card sem imagem alteraria o layout. Um
+ * repositorio so entra no portfolio com `portfolio: true` **e** `cover`.
  */
-export function mergeProjects<T extends HardcodedProject>(
-  hardcoded: T[],
+function toProjectCard(project: SyncedProject): Omit<ProjectCard, 'id'> | null {
+  const cover = project.cover === null ? '' : project.cover.trim();
+  if (cover === '') {
+    return null;
+  }
+
+  const technologies = [project.language, ...project.topics].filter(
+    (value): value is string => typeof value === 'string' && value.trim() !== '',
+  );
+
+  return {
+    title: project.name,
+    description: project.description === null ? '' : project.description,
+    technologies: Array.from(new Set(technologies)),
+    image: cover,
+    demoUrl: project.homepage === null ? project.htmlUrl : project.homepage,
+    repoUrl: project.htmlUrl,
+  };
+}
+
+/**
+ * Junta o legado com o dataset sincronizado.
+ *
+ * O legado sempre vem primeiro e nunca e removido: ele e o fallback quando o
+ * dataset sincronizado esta vazio, ausente no build ou invalido.
+ *
+ * Um projeto sincronizado e descartado quando ja existe um legado com a mesma
+ * URL (mesmo `demoUrl`) ou quando repete outro sincronizado. A comparacao e por
+ * URL normalizada e por `slug`, entao vale para qualquer repositorio, nao
+ * apenas para um caso especifico.
+ */
+export function mergeProjects(
+  legacy: ProjectCard[],
   synced: SyncedProject[],
-): MergeResult<T> {
-  const hardcodedUrls = new Set<string>();
-  for (const project of hardcoded) {
+): ProjectCard[] {
+  const legacyUrls = new Set<string>();
+  for (const project of legacy) {
     const url = normalizeUrl(project.demoUrl);
-    if (url) {
-      hardcodedUrls.add(url);
+    if (url !== null) {
+      legacyUrls.add(url);
     }
   }
 
-  const seenSlugs = new Set<string>();
   const seenUrls = new Set<string>();
-  const accepted: SyncedProject[] = [];
-  const duplicates: SyncedProject[] = [];
+  const seenSlugs = new Set<string>();
+  const cards: ProjectCard[] = [];
 
   for (const project of synced) {
-    const homepage = normalizeUrl(project.homepage);
-    const htmlUrl = normalizeUrl(project.htmlUrl);
+    const card = toProjectCard(project);
+    if (card === null) {
+      continue;
+    }
 
-    const collidesHardcoded = [homepage, htmlUrl].some((url) => url !== null && hardcodedUrls.has(url));
+    const urls = [normalizeUrl(card.demoUrl), normalizeUrl(card.repoUrl)];
+    const collidesLegacy = urls.some((url) => url !== null && legacyUrls.has(url));
     const collidesSynced =
-      seenSlugs.has(project.slug) ||
-      [homepage, htmlUrl].some((url) => url !== null && seenUrls.has(url));
+      seenSlugs.has(project.slug) || urls.some((url) => url !== null && seenUrls.has(url));
 
-    if (collidesHardcoded || collidesSynced) {
-      duplicates.push(project);
+    if (collidesLegacy || collidesSynced) {
       continue;
     }
 
     seenSlugs.add(project.slug);
-    if (homepage) {
-      seenUrls.add(homepage);
+    for (const url of urls) {
+      if (url !== null) {
+        seenUrls.add(url);
+      }
     }
-    if (htmlUrl) {
-      seenUrls.add(htmlUrl);
-    }
-    accepted.push(project);
+
+    cards.push({ id: SYNCED_PROJECT_ID_OFFSET + cards.length + 1, ...card });
   }
 
-  return { entries: [...hardcoded, ...accepted], duplicates };
+  return [...legacy, ...cards];
 }
