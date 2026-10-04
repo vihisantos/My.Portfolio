@@ -15,6 +15,7 @@ import { CommandBar } from "@/components/CommandBar";
 import { Suspense, lazy, useEffect } from "react";
 import { trackPageView, trackThemeChange } from "./lib/analytics";
 import { reportWebVitals } from "./lib/webVitals";
+import { inject } from "@vercel/analytics";
 
 // Carregamento lento de páginas para desempenho
 const Index = lazy(() => import("./pages/Index"));
@@ -57,6 +58,9 @@ function RootApp() {
     }
 
     reportWebVitals();
+    
+    // Initialize Vercel Web Analytics
+    inject();
   }, []);
 
   useEffect(() => {
