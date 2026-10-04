@@ -21,8 +21,11 @@ import agenciaImg from "@/assets/projects/Agência Digital.png";
 import clinicaImg from "@/assets/projects/clinica+saude.png";
 import lojaImg from "@/assets/projects/loja_produto_unico.png";
 import petshopImg from "@/assets/projects/petshop.png";
+import { mergeProjects } from "@/data/merge-projects";
+import type { ProjectCard } from "@/data/merge-projects";
+import { getSyncedProjects } from "@/data/synced-projects";
 
-export const getProjects = (t: any) => [
+export const getProjects = (t: any): ProjectCard[] => mergeProjects([
     {
         id: 12,
         title: t('projects.portfoliofotografo.title'),
@@ -317,4 +320,4 @@ export const getProjects = (t: any) => [
         solution: t('projects.tplPetshop.story.solution'),
         impact: t('projects.tplPetshop.story.impact'),
     }
-];
+], getSyncedProjects());
