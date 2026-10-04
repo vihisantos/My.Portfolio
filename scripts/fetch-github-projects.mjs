@@ -240,6 +240,33 @@ function parseManifest(raw) {
   };
 }
 
+/**
+ * Campos publicados no dataset gerado.
+ *
+ * Allowlist de proposito: qualquer campo novo em `normalizeProject` nao chega ao
+ * JSON, entao metadado de repositorio privado (como `description`) nunca e
+ * publicado por accident. `description` nao entra aqui de proposito - o card usa
+ * texto proprio do legado ou string vazia.
+ */
+const DATASET_FIELDS = [
+  'owner',
+  'repository',
+  'slug',
+  'portfolio',
+  'featured',
+  'category',
+  'name',
+  'htmlUrl',
+  'homepage',
+  'language',
+  'topics',
+  'updatedAt',
+  'cover',
+  'screenshots',
+];
+
+const DATASET_REQUIRED_STRINGS = ['owner', 'repository', 'slug', 'name', 'htmlUrl'];
+
 function normalizeProject(owner, repository, parsed) {
   const name = repository.name;
   const ref = repository.default_branch;
@@ -253,7 +280,6 @@ function normalizeProject(owner, repository, parsed) {
     featured: parsed.featured,
     category: parsed.category,
     name,
-    description: typeof repository.description === 'string' ? repository.description : null,
     htmlUrl: repository.html_url,
     homepage: typeof repository.homepage === 'string' && repository.homepage !== '' ? repository.homepage : null,
     language: typeof repository.language === 'string' ? repository.language : null,
@@ -262,6 +288,39 @@ function normalizeProject(owner, repository, parsed) {
     cover: parsed.cover ? rawUrl(parsed.cover) : null,
     screenshots: parsed.screenshots.map(rawUrl),
   };
+}
+
+/**
+ * Deixa passar para o JSON apenas os campos da allowlist, com tipo correto.
+ * Devolve `null` quando um campo obrigatorio falta, e o projeto e descartado
+ * ainda no sincronizador.
+ */
+function sanitizeProject(project) {
+  for (const field of DATASET_REQUIRED_STRINGS) {
+    const value = project[field];
+    if (typeof value !== 'string' || value.trim() === '') {
+      return null;
+    }
+  }
+
+  const clean = {};
+
+  for (const field of DATASET_FIELDS) {
+    if (DATASET_REQUIRED_STRINGS.includes(field)) {
+      clean[field] = project[field].trim();
+    } else if (field === 'portfolio' || field === 'featured') {
+      clean[field] = project[field] === true;
+    } else if (field === 'topics' || field === 'screenshots') {
+      clean[field] = Array.isArray(project[field])
+        ? project[field].filter((value) => typeof value === 'string' && value.trim() !== '')
+        : [];
+    } else {
+      clean[field] =
+        typeof project[field] === 'string' && project[field].trim() !== '' ? project[field].trim() : null;
+    }
+  }
+
+  return clean;
 }
 
 function readPreviousPayload() {
@@ -347,7 +406,16 @@ async function sync() {
       }
 
       seenSlugs.add(parsed.manifest.slug);
-      projects.push(normalizeProject(owner, repository, parsed.manifest));
+
+      const sanitized = sanitizeProject(normalizeProject(owner, repository, parsed.manifest));
+      if (sanitized === null) {
+        optedOut += 1;
+        seenSlugs.delete(parsed.manifest.slug);
+        warn(`${owner}/${repository.name} ignorado: campos obrigatorios ausentes no dataset`);
+        continue;
+      }
+
+      projects.push(sanitized);
     }
 
     if (rateLimitRemaining === 0) {

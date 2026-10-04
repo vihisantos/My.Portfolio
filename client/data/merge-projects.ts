@@ -64,7 +64,9 @@ function toProjectCard(project: SyncedProject): Omit<ProjectCard, 'id'> | null {
 
   return {
     title: project.name,
-    description: project.description === null ? '' : project.description,
+    // O dataset nao publica a `description` do GitHub de proposito: card
+    // sincronizado usa string vazia para nao expor metadado de repo privado.
+    description: '',
     technologies: Array.from(new Set(technologies)),
     image: cover,
     demoUrl: project.homepage === null ? project.htmlUrl : project.homepage,

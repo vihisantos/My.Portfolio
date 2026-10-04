@@ -26,7 +26,6 @@ export interface SyncedProject {
   featured: boolean;
   category: string | null;
   name: string;
-  description: string | null;
   htmlUrl: string;
   homepage: string | null;
   language: string | null;
@@ -105,7 +104,6 @@ function toSyncedProject(value: unknown): SyncedProject | null {
     featured: raw.featured === true,
     category: asString(raw.category),
     name: asString(raw.name) ?? '',
-    description: asString(raw.description),
     htmlUrl: asString(raw.htmlUrl) ?? '',
     homepage: asString(raw.homepage),
     language: asString(raw.language),
